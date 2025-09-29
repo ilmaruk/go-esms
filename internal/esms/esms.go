@@ -1,9 +1,15 @@
 package esms
 
-import "math/rand"
+import (
+	"fmt"
+	"math/rand"
+)
 
 const (
 	numPlayers = 11 // number of players in a team
+
+	YELLOW = 1
+	RED    = 2
 )
 
 var (
@@ -17,62 +23,439 @@ var (
 	rnd *rand.Rand // random number generator
 )
 
-func play() {
+type DidWhat int
+
+const (
+	DID_SHOT DidWhat = iota
+	DID_FOUL
+	DID_TACKLE
+	DID_ASSIST
+)
+
+func Play() {
 }
 
-// func send_off(a, b int) {
-//     teams[a].Players[b].yellowcards = 0;
-//     teams[a].Players[b].redcards++;
-//     teams[a].Players[b].active = 0;
+// Called on each minute to handle a scoring chance of team
+// a for this minute.
+func ifShot(a int) {
+	var shooter int
+	var assister int
+	var tackler int
+	var chance_tackled int
+	chance_assisted := 0
 
-//     if team[a].CurrentGK == b {/* If a GK was sent off */
-//         int i = 12, found = 0;
+	// Did a scoring chance occur ?
+	//
+	if randomp(int(teams[a].ShotProb)) == 1 {
+		// There's a 0.75 probability that a chance was assisted, and
+		// 0.25 that it's a solo
+		//
+		if randomp(7500) == 1 {
+			assister = whoDidIt(a, DID_ASSIST)
+			chance_assisted = 1
 
-//         if (team[a].substitutions < 3)
-//         {
-//             while (!found && i <= num_players) /* Look for a keeper on the bench */
-//             {
-//                 /* If found a keeper */
-//                 if (!strcmp(team[a].player[i].pos, "GK") && team[a].player[i].active == 2)
-//                 {
-//                     int n = 11;
+			shooter = whoGotAssist(a, assister)
 
-//                     found = 1;
+			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), team[a].name, team[a].player[assister].name.c_str(), team[a].player[shooter].name.c_str()).c_str());
+			teams[a].Players[assister].keypasses++
+		} else {
+			shooter = whoDidIt(a, DID_SHOT)
 
-//                     while (team[a].player[n].active != 1) /* Sub him for another player */
-//                         n--;
-//                     substitute_player(a, n, i, "GK");
-//                     team[a].current_gk = i;
-//                 }
-//                 else
-//                 {
-//                     found = 0;
-//                     i++;
-//                 }
-//             }
+			chance_assisted = 0
+			assister = 0
+			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), team[a].name, team[a].player[shooter].name.c_str()).c_str());
+		}
 
-//             if (!found)     /*  If there was no keeper on the bench   */
-//             {               /*  Change the position of another player */
-//                 int n = 11; /*  (who is on the field) to GK           */
+		notA := 1 - a
+		chance_tackled = int(4000.0 * ((teams[notA].TeamTackling * 3.0) / (teams[a].TeamPassing*2.0 + teams[a].TeamShooting)))
 
-//                 while (team[a].player[n].active != 1)
-//                     n--;
+		/* If the chance was tackled */
+		if randomp(chance_tackled) == 1 {
+			tackler = whoDidIt(notA, DID_TACKLE)
+			teams[notA].Players[tackler].tackles++
 
-//                 change_position(a, n, string("GK"));
-//                 team[a].current_gk = n;
-//             }
-//         }
-//         else /* If substitutions >= 3 */
-//         {
-//             int n = 11;
+			// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", team[!a].player[tackler].name.c_str()).c_str());
+		} else { /* Chance was not tackled, it will be a shot on goal */
+			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", team[a].player[shooter].name.c_str()).c_str());
+			teams[a].Players[shooter].shots++
 
-//             while (team[a].player[n].active != 1)
-//                 n--;
-//             change_position(a, n, string("GK"));
-//             team[a].current_gk = n;
-//         }
-//     }
-// }
+			if ifOnTarget(a, shooter) == 1 {
+				teams[a].FinalShotsOn++
+				teams[a].Players[shooter].shots_on++
+
+				if ifGoal(a, shooter) == 1 {
+					// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
+
+					if isGoalCancelled() == 0 {
+						teams[a].Score++
+
+						// If the assister was the shooter, there was no
+						// assist, but a simple goal.
+						//
+						if chance_assisted == 1 && (assister != shooter) {
+							teams[a].Players[assister].assists++ /* For final stats */
+						}
+
+						teams[a].Players[shooter].goals++
+						teams[notA].Players[teams[notA].CurrentGK].conceded++
+
+						// fprintf(comm, "\n          ...  %s %d-%d %s ...",
+						//         team[0].name,
+						//         team[0].score,
+						//         team[1].score,
+						//         team[1].name);
+
+						// report_event *an_event = new report_event_goal(team[a].player[shooter].name.c_str(),
+						//                                                team[a].name, formal_minute_str().c_str());
+
+						// report_vec.push_back(an_event);
+					}
+				} else {
+					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", team[!a].player[team[!a].current_gk].name.c_str()).c_str());
+					teams[notA].Players[teams[notA].CurrentGK].saves++
+				}
+			} else {
+				teams[a].Players[shooter].shots_off++
+				// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str())
+				teams[a].FinalShotsOff++
+			}
+		}
+	}
+}
+
+// When a chance was generated for the team and assisted by the
+// assister, who got the assist ?
+//
+// This is almost like who_did_it, but it also takes
+// into account the side of the assister - a player on his side
+// has a higher chance to get the assist.
+//
+// How it's done: if the side of the shooter (picked by who_did_it)
+// is different from the side of the asssiter, who_did_it is run
+// once again - but this happens only once. This increases the
+// chance of the player on the same side to be picked, but leaves
+// a possibility for other sides as well.
+func whoGotAssist(a, assister int) int {
+	shooter := assister
+
+	// Shooter and assister must be different, so re-run each time the same
+	// one is generated
+	//
+	for shooter == assister {
+		shooter = whoDidIt(a, DID_SHOT)
+
+		// if the side is different, re-run once
+		//
+		if teams[a].Players[shooter].Side != teams[a].Players[assister].Side {
+			shooter = whoDidIt(a, DID_SHOT)
+		}
+	}
+
+	return shooter
+}
+
+/* Whether the shot is on target. */
+func ifOnTarget(a, b int) int {
+	if randomp(int(5800.0*teams[a].Players[b].fatigue)) == 1 {
+		return 1
+	} else {
+		return 0
+	}
+}
+
+// Given a shot on target (team a shot on team b's goal),
+// was it a goal ?
+func ifGoal(a, b int) int {
+	// Factors taken into account:
+	// The shooter's Sh and fatigue against the GK's St
+	//
+	// The "median" is 0.35
+	// Lower and upper bounds are 0.1 and 0.9 respectively
+	//
+	notA := 1 - a
+	var temp float64 = float64(teams[a].Players[b].sh*int(teams[a].Players[b].fatigue)*200 - teams[notA].Players[teams[notA].CurrentGK].st*200 + 3500)
+
+	if temp > 9000 {
+		temp = 9000
+	}
+	if temp < 1000 {
+		temp = 1000
+	}
+
+	if randomp(int(temp)) == 1 {
+		return 1
+	} else {
+		return 0
+	}
+}
+
+func isGoalCancelled() int {
+	if randomp(500) == 1 {
+		// fprintf(comm, "%s", the_commentary().rand_comment("GOALCANCELLED").c_str());
+		return 1
+	}
+
+	return 0
+}
+
+// Given a team and an event (eg. SHOT)
+// picks one player at (weighted) random
+// that performed this event.
+//
+// For example, for SHOT, pick a player
+// at weighted random according to his
+// shooting skill
+func whoDidIt(a int, event DidWhat) int {
+	k := 0
+	var total float64 = 0
+	var weight float64 = 0
+	ar := make([]float64, numPlayers)
+
+	// Employs the weighted random algorithm
+	// A player's chance to DO_IT is his
+	// contribution relative to the team's total
+	// contribution
+	//
+
+	for k := 0; k < numPlayers; k++ {
+		switch event {
+		case DID_SHOT:
+			weight += teams[a].Players[k].sh_contrib * 100.0
+			total = teams[a].TeamShooting * 100.0
+		case DID_FOUL:
+			weight += teams[a].Players[k].ag
+			total = teams[a].Aggression
+		case DID_TACKLE:
+			weight += teams[a].Players[k].tk_contrib * 100.0
+			total = teams[a].TeamTackling * 100.0
+		case DID_ASSIST:
+			weight += teams[a].Players[k].ps_contrib * 100.0
+			total = teams[a].TeamPassing * 100.0
+		default:
+			panic(fmt.Errorf("internal error"))
+			// cout << "Internal error, " << __FILE__ << ", line " << __LINE__ << endl;
+			// MY_EXIT(1);
+		}
+
+		ar[k] = weight
+	}
+
+	rand_value := float64(myRandom(int(total)))
+
+	for k := 2; ar[k] <= rand_value; k++ {
+		if k == numPlayers {
+			panic(fmt.Errorf("internal error"))
+			// cout << "Internal error, " << __FILE__ << ", line " << __LINE__ << endl;
+			// MY_EXIT(1);
+		}
+	}
+
+	// delete[] ar;
+
+	return k
+}
+
+// ifFoul handles fouls (called on each minute with for each team)
+func ifFoul(a int) {
+	var fouler int
+
+	if randomp(int(teams[a].Aggression*.75)) == 1 {
+		fouler = whoDidIt(a, DID_FOUL)
+		// fprintf(comm, "%s", the_commentary().rand_comment("FOUL", minute_str().c_str(), team[a].name, team[a].player[fouler].name.c_str()).c_str());
+
+		teams[a].FinalFouls++ /* For final stats */
+		teams[a].Players[fouler].fouls++
+
+		/* The chance of the foul to result in a yellow or red card */
+		if randomp(6000) == 1 {
+			bookings(a, fouler, YELLOW)
+		} else if randomp(400) == 1 {
+			bookings(a, fouler, RED)
+		} else {
+			// fprintf(comm, "%s", the_commentary().rand_comment("WARNED").c_str());
+		}
+
+		notA := 1 - a
+
+		/* Condition for a penalty to occur (if GK fouled, or random) */
+		if fouler == teams[a].CurrentGK || randomp(500) == 1 {
+			// If the nominated PK taker isn't active, choose the
+			// best shooter to take the PK
+			//
+			if teams[notA].Players[teams[notA].PenaltyTaker].Active != 1 || teams[notA].PenaltyTaker == -1 {
+				var max float64 = -1
+				max_index := 1
+
+				for i := 0; i < numPlayers; i++ {
+					if teams[notA].Players[i].Active == 1 && float64(teams[notA].Players[i].sh)*teams[notA].Players[i].fatigue > max {
+						max = float64(teams[notA].Players[i].sh) * teams[notA].Players[i].fatigue
+						max_index = i
+					}
+				}
+
+				teams[notA].PenaltyTaker = max_index
+			}
+
+			// fprintf(comm, "%s", the_commentary().rand_comment("PENALTY", team[!a].player[team[!a].penalty_taker].name.c_str()).c_str());
+
+			/* If Penalty... Goal ? */
+			if randomp(8000+teams[notA].Players[teams[notA].PenaltyTaker].sh*100-teams[a].Players[teams[a].CurrentGK].st*100) == 1 {
+				// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
+				teams[notA].Score++
+				teams[notA].Players[teams[notA].PenaltyTaker].goals++
+				teams[a].Players[teams[a].CurrentGK].conceded++
+				// fprintf(comm, "\n          ...  %s %d-%d %s...", team[0].name, team[0].score,
+				//         team[1].score, team[1].name);
+
+				// report_event *an_event = new report_event_penalty(team[!a].player[team[!a].penalty_taker].name,
+				//                                                   team[!a].name, formal_minute_str().c_str());
+				// report_vec.push_back(an_event);
+			} else { /* If the penalty taker didn't score */
+				// Either it was saved, or it went off-target
+				//
+				if randomp(7500) == 1 {
+					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", team[a].player[team[a].current_gk].name.c_str()).c_str());
+				} else { /* Or it went off-target */
+					// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str());
+				}
+			}
+		}
+	}
+}
+
+// bookings deals with yellow and red cards
+func bookings(a, b, card_color int) {
+	if card_color == YELLOW {
+		// fprintf(comm, "%s", the_commentary().rand_comment("YELLOWCARD").c_str());
+		teams[a].Players[b].yellowcards++
+
+		// A second yellow card is equal to a red card
+		//
+		if teams[a].Players[b].yellowcards == 2 {
+			// fprintf(comm, "%s", the_commentary().rand_comment("SECONDYELLOWCARD").c_str());
+			sendOff(a, b)
+
+			// report_event *an_event = new report_event_red_card(team[a].player[b].name.c_str(),
+			//                                                    team[a].name, formal_minute_str().c_str());
+			// report_vec.push_back(an_event);
+
+			redCarded[a] = b
+		} else {
+			yellowCarded[a] = b
+		}
+	} else if card_color == RED {
+		// fprintf(comm, "%s", the_commentary().rand_comment("REDCARD").c_str());
+		sendOff(a, b)
+
+		// report_event *an_event = new report_event_red_card(team[a].player[b].name.c_str(),
+		//                                                    team[a].name, formal_minute_str().c_str());
+		// report_vec.push_back(an_event);
+
+		redCarded[a] = b
+	}
+}
+
+// substitutePlayer substitutites player in for player out in team a, he'll play
+// position newpos
+func substitutePlayer(a, out, in int, newpos string) {
+	max_substitutions := theConfig.getIntConfig("SUBSTITUTIONS", 5)
+
+	if teams[a].Players[out].Active == 1 && teams[a].Players[in].Active == 2 && teams[a].Substitutions < max_substitutions {
+		teams[a].Players[out].Active = 0
+		teams[a].Players[in].Active = 1
+
+		if newpos == "GK" {
+			teams[a].Players[in].Pos = "GK"
+		} else {
+			teams[a].Players[in].Pos = fullpos2position(newpos)
+			teams[a].Players[in].Side = fullpos2side(newpos)
+		}
+
+		if out == teams[a].CurrentGK {
+			teams[a].CurrentGK = in
+		}
+
+		teams[a].Substitutions++
+
+		// fputs(the_commentary().rand_comment("SUB", minute_str().c_str(), team[a].name,
+		//                                     team[a].player[in].name.c_str(),
+		//                                     team[a].player[out].name.c_str(),
+		//                                     newpos.c_str())
+		//           .c_str(),
+		//       comm);
+	}
+}
+
+func changePosition(a, b int, newpos string) {
+	// Can't reposition a GK or an inactive player
+	if b != teams[a].CurrentGK && teams[a].Players[b].Active == 1 {
+		// If he plays on this position anyway, don't change it
+		if posAndSide2fullpos(teams[a].Players[b].Pos, teams[a].Players[b].Side) != newpos {
+			// fputs(the_commentary().rand_comment("CHANGEPOSITION", minute_str().c_str(),
+			//                                     team[a].name,
+			//                                     team[a].player[b].name.c_str(),
+			//                                     newpos.c_str())
+			//           .c_str(),
+			//       comm);
+
+			teams[a].Players[b].Pos = fullpos2position(newpos)
+			teams[a].Players[b].Side = fullpos2side(newpos)
+		}
+	}
+}
+
+func sendOff(a, b int) {
+	teams[a].Players[b].yellowcards = 0
+	teams[a].Players[b].redcards++
+	teams[a].Players[b].Active = 0
+
+	if teams[a].CurrentGK == b { /* If a GK was sent off */
+		i := 12
+		found := false
+
+		if teams[a].Substitutions < 3 {
+			for !found && i <= numPlayers { /* Look for a keeper on the bench */
+				/* If found a keeper */
+				if teams[a].Players[i].Pos == "GK" && teams[a].Players[i].Active == 2 {
+					n := 11
+
+					found = true
+
+					for teams[a].Players[n].Active != 1 { /* Sub him for another player */
+						n--
+					}
+					substitutePlayer(a, n, i, "GK")
+					teams[a].CurrentGK = i
+				} else {
+					found = false
+					i++
+				}
+			}
+
+			/*  If there was no keeper on the bench   */
+			/*  Change the position of another player */
+			/*  (who is on the field) to GK           */
+			if !found {
+				n := 11
+
+				for teams[a].Players[n].Active != 1 {
+					n--
+				}
+
+				changePosition(a, n, string("GK"))
+				teams[a].CurrentGK = n
+			}
+		} else { /* If substitutions >= 3 */
+			n := 11
+
+			for teams[a].Players[n].Active != 1 {
+				n--
+			}
+			changePosition(a, n, string("GK"))
+			teams[a].CurrentGK = n
+		}
+	}
+}
 
 // calcAbility uses the constants contained in league.dat
 // to calculate the ability change of each player.
