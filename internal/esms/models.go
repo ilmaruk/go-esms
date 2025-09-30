@@ -1,12 +1,15 @@
 package esms
 
 type Player struct {
+	Name string
+
 	Active  int // 1 if the player is currently active on the field, 0 - TODO: should be a bool
 	Minutes int // number of minutes played
 
 	Pos  string // position: "GK", "DF", "MF", "FW"
 	Side string // "L", "C", "R" - left, center, right
 
+	pref_side    string
 	likes_right  bool
 	likes_left   bool
 	likes_center bool
@@ -27,6 +30,12 @@ type Player struct {
 
 	fatigue                    float64
 	nominal_fatigue_per_minute float64
+	injured                    int
+	fitness                    int
+	stamina                    int
+
+	injury     int
+	suspension int
 
 	// Contributions
 	tk_contrib float64
@@ -49,18 +58,28 @@ type Player struct {
 }
 
 type Team struct {
-	Players       [numPlayers]Player
-	Score         int
-	CurrentGK     int
-	Substitutions int
-	Aggression    float64
-	FinalFouls    int
-	PenaltyTaker  int // index of the player who takes penalties
-	TeamTackling  float64
-	TeamPassing   float64
-	TeamShooting  float64
-	ShotProb      float64
-	FinalShotsOn  int
-	FinalShotsOff int
-	Tactic        string
+	Name           string
+	Players        [numPlayers]Player
+	Score          int
+	CurrentGK      int
+	Substitutions  int
+	Aggression     float64
+	FinalFouls     int
+	PenaltyTaker   int // index of the player who takes penalties
+	TeamTackling   float64
+	TeamPassing    float64
+	TeamShooting   float64
+	ShotProb       float64
+	FinalShotsOn   int
+	FinalShotsOff  int
+	Tactic         string
+	Injuries       int
+	roster_players []Player
+}
+
+type Teamsheet struct {
+	tactic string
+	field  []Player
+	bench  []Player
+	pk     string
 }

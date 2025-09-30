@@ -11,3 +11,13 @@ func (tm *TacticManager) get_positions_names() []string {
 	// Dummy implementation, replace with actual logic
 	return []string{"GK", "DF", "MF", "FW"}
 }
+
+func (tm *TacticManager) tactic_exists(tactic string) bool {
+	// Dummy implementation, replace with actual logic
+	return true
+}
+
+func (tm *TacticManager) position_exists(position string) bool {
+	// Dummy implementation, replace with actual logic
+	return true
+}

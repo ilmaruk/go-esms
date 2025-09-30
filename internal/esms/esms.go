@@ -22,6 +22,8 @@ var (
 	yellowCarded [2]int  // indicators of yellow carded players for both teams
 	redCarded    [2]int  // indicators of red carded players for both teams
 
+	injured_ind [2]int // indices of injured players for both teams
+
 	homeBonus float64
 
 	rnd *rand.Rand // random number generator
@@ -38,6 +40,328 @@ const (
 
 func Play() {
 	fmt.Println("Playing a match...")
+}
+
+func init_teams_data(teamsheet [2]Teamsheet) {
+	for l := 0; l <= 1; l++ {
+		teams[l].Tactic = teamsheet[l].tactic
+
+		if !tact_manager.tactic_exists(teams[l].Tactic) {
+			panic(fmt.Errorf("Invalid tactic %s in %s's teamsheet", teams[l].Tactic, teams[l].Name))
+		}
+
+		for i := 0; i < numPlayers; i++ {
+			var full_pos string
+
+			/* Read players's position and name */
+			if i < 11 {
+				teams[l].Players[i].Name = teamsheet[l].field[i].Name
+				full_pos = teamsheet[l].field[i].Pos
+			} else {
+				teams[l].Players[i].Name = teamsheet[l].bench[i-11].Name
+				full_pos = teamsheet[l].bench[i-11].Pos
+			}
+
+			// For GKs, just copy the position as is
+			//
+			if full_pos == "GK" {
+				teams[l].Players[i].Pos = "GK"
+			} else {
+				if !is_legal_position(full_pos) {
+					panic(fmt.Errorf("Illegal position %s of %s in %s's teamsheet", full_pos, teams[l].Players[i].Name, teams[l].Name))
+				}
+
+				teams[l].Players[i].Pos = fullpos2position(full_pos)
+				teams[l].Players[i].Side = fullpos2side(full_pos)
+			}
+
+			/* The first specified player must be a GK */
+			if i == 1 && teams[l].Players[i].Pos != "GK" {
+				panic(fmt.Errorf("The first player in %s's teamsheet must be a GK", teams[l].Name))
+			}
+
+			if teams[l].Players[i].Pos == "PK:" {
+				panic(fmt.Errorf("PK: where player %d was expected (%s)", i, teams[l].Name))
+			}
+
+			found := 0
+
+			// Search for this player in the roster, and when found assign his info
+			// to the player structure.
+			//
+			for _, player := range teams[l].roster_players {
+				if teams[l].Players[i].Name != player.Name {
+					continue
+				}
+
+				found = 1
+
+				// Check if the player is available for the game
+				//
+				if player.injury > 0 {
+					panic(fmt.Errorf("Player %s (%s) is injured", player.Name, teams[l].Name))
+				}
+
+				if player.suspension > 0 {
+					panic(fmt.Errorf("Player %s (%s) is suspended", player.Name, teams[l].Name))
+				}
+
+				teams[l].Players[i].pref_side = player.pref_side
+
+				teams[l].Players[i].likes_left = false
+				teams[l].Players[i].likes_right = false
+				teams[l].Players[i].likes_center = false
+
+				if teams[l].Players[i].pref_side == "L" {
+					teams[l].Players[i].likes_left = true
+				}
+
+				if teams[l].Players[i].pref_side == "R" {
+					teams[l].Players[i].likes_right = true
+				}
+
+				if teams[l].Players[i].pref_side == "C" {
+					teams[l].Players[i].likes_center = true
+				}
+
+				teams[l].Players[i].st = player.st
+				teams[l].Players[i].tk = player.tk
+				teams[l].Players[i].ps = player.ps
+				teams[l].Players[i].sh = player.sh
+				teams[l].Players[i].stamina = player.stamina
+
+				// Each player has a nominal_fatigue_per_minute rating that's
+				// calculated once, based on his stamina.
+				//
+				// I'd like the average rating be 0.031 - so that an average player
+				// (stamina = 50) will lose 30 fitness points during a full game.
+				//
+				// The range is approximately 50 - 10 points, and the stamina range
+				// is 1-99. So, first the ratio is normalized and then subtracted
+				// from the average 0.031 (which, times 90 minutes, is 0.279).
+				// The formula for each player is:
+				//
+				// fatigue            stamina - 50
+				// ------- = 0.0031 - ------------  * 0.0022
+				//  minute                 50
+				//
+				//
+				// This gives (approximately) 30 lost fitness points for average players,
+				// 50 for the worse stamina and 10 for the best stamina.
+				//
+				// A small random factor is added each minute, so the exact numbers are
+				// not deterministic.
+				//
+				normalized_stamina_ratio := float64(teams[l].Players[i].stamina-50) / 50.0
+				teams[l].Players[i].nominal_fatigue_per_minute = 0.0031 - normalized_stamina_ratio*0.0022
+
+				teams[l].Players[i].ag = player.ag
+				teams[l].Players[i].fatigue = float64(player.fitness) / 100.0
+
+				break
+			}
+
+			if found == 0 {
+				panic(fmt.Errorf("Player %s (%s) doesn't exist in the roster file", teams[l].Players[i].Name, teams[l].Name))
+			}
+		}
+
+		// There's an optional "PK: <Name>" line.
+		// If it exists, the <Name> must be listed in the teamsheet.
+		var i int
+		for i = numPlayers - 1; i >= 0; i-- {
+			if teamsheet[l].pk == teams[l].Players[i].Name {
+				teams[l].PenaltyTaker = i
+				break
+			}
+		}
+
+		if i < 0 {
+			panic(fmt.Errorf("Error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].pk))
+		}
+	}
+
+	ensure_no_duplicate_names()
+
+	// Temporarily disable
+	// read_conditionals(teamsheet);
+
+	// Set active flags
+	for j := 0; j <= 1; j++ {
+		teams[j].Substitutions = 0
+		teams[j].Injuries = 0
+
+		for i := 0; i < numPlayers; i++ {
+			if i < 11 {
+				teams[j].Players[i].Active = 1
+			} else {
+				teams[j].Players[i].Active = 2
+			}
+		}
+	}
+
+	/* In the beginning, player n.1 is always the GK */
+	teams[0].CurrentGK = 1
+	teams[1].CurrentGK = 1
+
+	/* Data initialization */
+	for j := 0; j <= 1; j++ {
+		teams[j].Score = 0
+		teams[j].FinalShotsOn = 0
+		teams[j].FinalShotsOff = 0
+		teams[j].FinalFouls = 0
+		teams[j].TeamTackling = 0
+		teams[j].TeamPassing = 0
+		teams[j].TeamShooting = 0
+
+		for i := 0; i < numPlayers; i++ {
+			teams[j].Players[i].tk_contrib = 0
+			teams[j].Players[i].ps_contrib = 0
+			teams[j].Players[i].sh_contrib = 0
+
+			teams[j].Players[i].yellowcards = 0
+			teams[j].Players[i].redcards = 0
+			teams[j].Players[i].injured = 0
+			teams[j].Players[i].tk_ab = 0
+			teams[j].Players[i].ps_ab = 0
+			teams[j].Players[i].sh_ab = 0
+			teams[j].Players[i].st_ab = 0
+
+			// final stats initialization
+			teams[j].Players[i].Minutes = 0
+			teams[j].Players[i].shots = 0
+			teams[j].Players[i].goals = 0
+			teams[j].Players[i].saves = 0
+			teams[j].Players[i].assists = 0
+			teams[j].Players[i].tackles = 0
+			teams[j].Players[i].keypasses = 0
+			teams[j].Players[i].fouls = 0
+			teams[j].Players[i].redcards = 0
+			teams[j].Players[i].yellowcards = 0
+			teams[j].Players[i].conceded = 0
+			teams[j].Players[i].shots_on = 0
+			teams[j].Players[i].shots_off = 0
+		}
+	}
+}
+
+// / Goes over both teams and checks that there are no duplicate player
+// / names. If there are, exits with an error.
+// /
+func ensure_no_duplicate_names() {
+	for j := 0; j <= 1; j++ {
+		for i := 0; i <= numPlayers; i++ {
+			for k := 0; k <= numPlayers; k++ {
+				if k != i && teams[j].Players[i].Name == teams[j].Players[k].Name {
+					panic(fmt.Errorf("Player %s (%s) is named twice in the team sheet", teams[j].Players[i].Name, teams[j].Name))
+				}
+			}
+		}
+	}
+}
+
+func change_tactic(a int, newtct string) {
+	if newtct != teams[a].Tactic {
+		teams[a].Tactic = newtct
+
+		// fputs(the_commentary().rand_comment("CHANGETACTIC",
+		//                                     minute_str().c_str(),
+		//                                     teams[a].name, teams[a].name,
+		//                                     teams[a].tactic)
+		//           .c_str(),
+		//       comm);
+	}
+}
+
+/* This function controls the random injuries occurance. */
+/* The CHANCE of a player to get injured depends on a    */
+/* constant factor + total aggression of the rival team. */
+/* The function will find who was injured and substitute */
+/* him for player on his position.                       */
+func random_injury(a int) {
+	var injured int
+	var found int
+
+	notA := 1 - a
+	if randomp(int((1500+teams[notA].Aggression)/50)) == 1 { /* If someone got injured */
+		teams[a].Injuries++
+
+		for { /* The inj_player can't be n.0 and must be playing */
+			injured = myRandom(numPlayers + 1)
+			if injured != 0 && teams[a].Players[injured].Active == 1 {
+				break
+			}
+		} // while (injured == 0 || teams[a].Players[injured].active != 1);
+
+		// fprintf(comm, "%s",
+		//         the_commentary().rand_comment("INJURY", minute_str().c_str(), teams[a].name,
+		//                                       teams[a].Players[injured].name.c_str())
+		//             .c_str());
+
+		// report_event *an_event = new report_event_injury(teams[a].Players[injured].name,
+		//                                                  teams[a].name, formal_minute_str().c_str());
+		// report_vec.push_back(an_event);
+
+		injured_ind[a] = injured
+
+		/* Only 3 substitutions are allowed per team per game */
+		if teams[a].Substitutions >= 5 { /* No substitutions left */
+			teams[a].Players[injured].Active = 0
+			// fprintf(comm, "%s", the_commentary().rand_comment("NOSUBSLEFT").c_str());
+
+			if teams[a].Players[injured].Pos == "GK" {
+				n := 11
+
+				for teams[a].Players[n].Active != 1 { /* Sub him for another player */
+					n--
+				}
+
+				changePosition(a, n, string("GK"))
+				teams[a].CurrentGK = n
+			}
+		} else {
+			b := 12
+
+			for found == 0 && b < numPlayers { /* Look for subs on the same position */
+				if teams[a].Players[injured].Pos == teams[a].Players[b].Pos && teams[a].Players[b].Active == 2 {
+					substitutePlayer(a, injured, b, posAndSide2fullpos(teams[a].Players[injured].Pos, teams[a].Players[injured].Side))
+
+					if injured == teams[a].CurrentGK {
+						teams[a].CurrentGK = b
+					}
+
+					found = 1
+				} else {
+					b++
+				}
+			}
+
+			if found == 0 { /* If there are no subs on his position */
+				/* Then, sub him for any other player on the bench who is not a   */
+				/* goalkeeper. If a GK will be injured, he will be subbed for the */
+				/* GK on the bench by the previous loop, if there won't be any    */
+				/* GK on the bench, he will be subbed for another player          */
+				b = 12
+
+				for found == 0 && b < numPlayers {
+					if teams[a].Players[b].Pos != "GK" && teams[a].Players[b].Active == 2 {
+						substitutePlayer(a, injured, b, posAndSide2fullpos(teams[a].Players[injured].Pos, teams[a].Players[injured].Side))
+						found = 1
+
+						if injured == teams[a].CurrentGK {
+							teams[a].CurrentGK = b
+						}
+					} else {
+						b++
+					}
+				} // while (!found && b <= num_players)
+			} // if (!found)
+		} // if (teams[a].substitutions >= 3)
+
+		teams[a].Players[injured].injured = 1
+		teams[a].Players[injured].Active = 0
+
+	} // if (randomp((1500 + teams[notA].aggression)/50))
 }
 
 func calc_shotprob(a int) {
@@ -230,14 +554,14 @@ func ifShot(a int) {
 
 			shooter = whoGotAssist(a, assister)
 
-			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), teams[a].name, teams[a].player[assister].name.c_str(), teams[a].player[shooter].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[assister].name.c_str(), teams[a].Players[shooter].name.c_str()).c_str());
 			teams[a].Players[assister].keypasses++
 		} else {
 			shooter = whoDidIt(a, DID_SHOT)
 
 			chance_assisted = 0
 			assister = 0
-			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), teams[a].name, teams[a].player[shooter].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[shooter].name.c_str()).c_str());
 		}
 
 		notA := 1 - a
@@ -248,9 +572,9 @@ func ifShot(a int) {
 			tackler = whoDidIt(notA, DID_TACKLE)
 			teams[notA].Players[tackler].tackles++
 
-			// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", team[!a].player[tackler].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", teams[notA].Players[tackler].name.c_str()).c_str());
 		} else { /* Chance was not tackled, it will be a shot on goal */
-			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", teams[a].player[shooter].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", teams[a].Players[shooter].name.c_str()).c_str());
 			teams[a].Players[shooter].shots++
 
 			if ifOnTarget(a, shooter) == 1 {
@@ -274,18 +598,18 @@ func ifShot(a int) {
 						teams[notA].Players[teams[notA].CurrentGK].conceded++
 
 						// fprintf(comm, "\n          ...  %s %d-%d %s ...",
-						//         team[0].name,
-						//         team[0].score,
-						//         team[1].score,
-						//         team[1].name);
+						//         teams[0].name,
+						//         teams[0].score,
+						//         teams[1].score,
+						//         teams[1].name);
 
-						// report_event *an_event = new report_event_goal(teams[a].player[shooter].name.c_str(),
+						// report_event *an_event = new report_event_goal(teams[a].Players[shooter].name.c_str(),
 						//                                                teams[a].name, formal_minute_str().c_str());
 
 						// report_vec.push_back(an_event);
 					}
 				} else {
-					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", team[!a].player[team[!a].current_gk].name.c_str()).c_str());
+					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[notA].Players[teams[notA].current_gk].name.c_str()).c_str());
 					teams[notA].Players[teams[notA].CurrentGK].saves++
 				}
 			} else {
@@ -435,7 +759,7 @@ func ifFoul(a int) {
 
 	if randomp(int(teams[a].Aggression*.75)) == 1 {
 		fouler = whoDidIt(a, DID_FOUL)
-		// fprintf(comm, "%s", the_commentary().rand_comment("FOUL", minute_str().c_str(), teams[a].name, teams[a].player[fouler].name.c_str()).c_str());
+		// fprintf(comm, "%s", the_commentary().rand_comment("FOUL", minute_str().c_str(), teams[a].name, teams[a].Players[fouler].name.c_str()).c_str());
 
 		teams[a].FinalFouls++ /* For final stats */
 		teams[a].Players[fouler].fouls++
@@ -470,7 +794,7 @@ func ifFoul(a int) {
 				teams[notA].PenaltyTaker = max_index
 			}
 
-			// fprintf(comm, "%s", the_commentary().rand_comment("PENALTY", team[!a].player[team[!a].penalty_taker].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("PENALTY", teams[notA].Players[teams[notA].penalty_taker].name.c_str()).c_str());
 
 			/* If Penalty... Goal ? */
 			if randomp(8000+teams[notA].Players[teams[notA].PenaltyTaker].sh*100-teams[a].Players[teams[a].CurrentGK].st*100) == 1 {
@@ -478,17 +802,17 @@ func ifFoul(a int) {
 				teams[notA].Score++
 				teams[notA].Players[teams[notA].PenaltyTaker].goals++
 				teams[a].Players[teams[a].CurrentGK].conceded++
-				// fprintf(comm, "\n          ...  %s %d-%d %s...", team[0].name, team[0].score,
-				//         team[1].score, team[1].name);
+				// fprintf(comm, "\n          ...  %s %d-%d %s...", teams[0].name, teams[0].score,
+				//         teams[1].score, teams[1].name);
 
-				// report_event *an_event = new report_event_penalty(team[!a].player[team[!a].penalty_taker].name,
-				//                                                   team[!a].name, formal_minute_str().c_str());
+				// report_event *an_event = new report_event_penalty(teams[notA].Players[teams[notA].penalty_taker].name,
+				//                                                   teams[notA].name, formal_minute_str().c_str());
 				// report_vec.push_back(an_event);
 			} else { /* If the penalty taker didn't score */
 				// Either it was saved, or it went off-target
 				//
 				if randomp(7500) == 1 {
-					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[a].player[teams[a].current_gk].name.c_str()).c_str());
+					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[a].Players[teams[a].current_gk].name.c_str()).c_str());
 				} else { /* Or it went off-target */
 					// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str());
 				}
@@ -509,7 +833,7 @@ func bookings(a, b, card_color int) {
 			// fprintf(comm, "%s", the_commentary().rand_comment("SECONDYELLOWCARD").c_str());
 			sendOff(a, b)
 
-			// report_event *an_event = new report_event_red_card(teams[a].player[b].name.c_str(),
+			// report_event *an_event = new report_event_red_card(teams[a].Players[b].name.c_str(),
 			//                                                    teams[a].name, formal_minute_str().c_str());
 			// report_vec.push_back(an_event);
 
@@ -521,7 +845,7 @@ func bookings(a, b, card_color int) {
 		// fprintf(comm, "%s", the_commentary().rand_comment("REDCARD").c_str());
 		sendOff(a, b)
 
-		// report_event *an_event = new report_event_red_card(teams[a].player[b].name.c_str(),
+		// report_event *an_event = new report_event_red_card(teams[a].Players[b].name.c_str(),
 		//                                                    teams[a].name, formal_minute_str().c_str());
 		// report_vec.push_back(an_event);
 
@@ -552,8 +876,8 @@ func substitutePlayer(a, out, in int, newpos string) {
 		teams[a].Substitutions++
 
 		// fputs(the_commentary().rand_comment("SUB", minute_str().c_str(), teams[a].name,
-		//                                     teams[a].player[in].name.c_str(),
-		//                                     teams[a].player[out].name.c_str(),
+		//                                     teams[a].Players[in].name.c_str(),
+		//                                     teams[a].Players[out].name.c_str(),
 		//                                     newpos.c_str())
 		//           .c_str(),
 		//       comm);
@@ -567,7 +891,7 @@ func changePosition(a, b int, newpos string) {
 		if posAndSide2fullpos(teams[a].Players[b].Pos, teams[a].Players[b].Side) != newpos {
 			// fputs(the_commentary().rand_comment("CHANGEPOSITION", minute_str().c_str(),
 			//                                     teams[a].name,
-			//                                     teams[a].player[b].name.c_str(),
+			//                                     teams[a].Players[b].name.c_str(),
 			//                                     newpos.c_str())
 			//           .c_str(),
 			//       comm);
@@ -696,7 +1020,7 @@ func calcAbility() {
 					if teams[j].Players[n].Minutes != 0 && n != num {
 						break
 					}
-				} // while (!teams[j].player[n].minutes || n == num);
+				} // while (!teams[j].Players[n].minutes || n == num);
 
 				//
 				// Decide the ability which gets the increase
@@ -731,7 +1055,7 @@ func calcAbility() {
 						break
 					}
 
-				} // while (!teams[j].player[n].minutes || n == num);
+				} // while (!teams[j].Players[n].minutes || n == num);
 
 				//
 				// Decide the ability which gets the decrease
@@ -764,7 +1088,7 @@ func calcAbility() {
 				if teams[j].Players[n].Minutes != 0 && teams[j].Players[n].Pos != "GK" {
 					break
 				}
-			} // while (teams[j].player[n].minutes < 46 || (strcmp(teams[j].player[n].pos, "GK")));
+			} // while (teams[j].Players[n].minutes < 46 || (strcmp(teams[j].Players[n].pos, "GK")));
 
 			if n >= numPlayers {
 				n = 1
@@ -778,7 +1102,7 @@ func calcAbility() {
 				if teams[j].Players[n].Minutes != 0 && teams[j].Players[n].Pos != "DF" {
 					break
 				}
-			} // while (!teams[j].player[n].minutes || (strcmp(teams[j].player[n].pos, "DF")));
+			} // while (!teams[j].Players[n].minutes || (strcmp(teams[j].Players[n].pos, "DF")));
 
 			teams[j].Players[n].tk_ab += ab_cleansheet
 		}

@@ -21,3 +21,23 @@ func posAndSide2fullpos(pos, side string) string {
 	fullpos += side
 	return fullpos
 }
+
+// Position: 3 letters (DFL, AMC, etc.) or GK
+func is_legal_position(position string) bool {
+	if position == "GK" {
+		return true
+	}
+
+	if len(position) != 3 {
+		return false
+	}
+
+	raw_position := position[0:2]
+	side := position[2:3]
+
+	return tact_manager.position_exists(raw_position) && is_legal_side(side)
+}
+
+func is_legal_side(side string) bool {
+	return side == "L" || side == "R" || side == "C"
+}
