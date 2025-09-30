@@ -7,10 +7,16 @@ type Player struct {
 	Pos  string // position: "GK", "DF", "MF", "FW"
 	Side string // "L", "C", "R" - left, center, right
 
+	likes_right  bool
+	likes_left   bool
+	likes_center bool
+
 	ag float64
 
 	// Skills
 	st int
+	tk int
+	ps int
 	sh int
 
 	// Abilities
@@ -19,7 +25,8 @@ type Player struct {
 	tk_ab int
 	st_ab int
 
-	fatigue float64
+	fatigue                    float64
+	nominal_fatigue_per_minute float64
 
 	// Contributions
 	tk_contrib float64
@@ -55,4 +62,5 @@ type Team struct {
 	ShotProb      float64
 	FinalShotsOn  int
 	FinalShotsOff int
+	Tactic        string
 }

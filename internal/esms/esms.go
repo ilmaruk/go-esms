@@ -2,6 +2,7 @@ package esms
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 )
 
@@ -13,12 +14,15 @@ const (
 )
 
 var (
-	theConfig = &Config{}
+	theConfig    = &Config{}
+	tact_manager = &TacticManager{}
 
 	teams        [2]Team // two teams
 	injuredInd   [2]int  // indicators of injured players for both teams
 	yellowCarded [2]int  // indicators of yellow carded players for both teams
 	redCarded    [2]int  // indicators of red carded players for both teams
+
+	homeBonus float64
 
 	rnd *rand.Rand // random number generator
 )
@@ -33,6 +37,176 @@ const (
 )
 
 func Play() {
+	fmt.Println("Playing a match...")
+}
+
+func calc_shotprob(a int) {
+	// Note: 1.0 is added to tackling, to avoid singularity when the
+	// team tackling is 0
+	//
+	notA := 1 - a
+	teams[a].ShotProb = 1.8 * (teams[a].Aggression/50.0 + 800.0*math.Pow(((1.0/3.0*teams[a].TeamShooting+2.0/3.0*teams[a].TeamPassing)/(teams[notA].TeamTackling+1.0)), 2))
+
+	// If it is the home team, add home bonus
+	//
+	if a == 0 {
+		teams[a].ShotProb += homeBonus
+	}
+}
+
+// Calculate the contributions of player b of team a
+func calc_player_contributions(a, b int) {
+	notA := 1 - a
+	if teams[a].Players[b].Active == 1 && teams[a].CurrentGK != b {
+		tk_mult := tact_manager.get_mult(teams[a].Tactic, teams[notA].Tactic, teams[a].Players[b].Pos, "TK")
+		ps_mult := tact_manager.get_mult(teams[a].Tactic, teams[notA].Tactic, teams[a].Players[b].Pos, "PS")
+		sh_mult := tact_manager.get_mult(teams[a].Tactic, teams[notA].Tactic, teams[a].Players[b].Pos, "SH")
+
+		var side_factor float64
+
+		if (teams[a].Players[b].Side == "R" && teams[a].Players[b].likes_right) ||
+			(teams[a].Players[b].Side == "L" && teams[a].Players[b].likes_left) ||
+			(teams[a].Players[b].Side == "C" && teams[a].Players[b].likes_center) {
+			side_factor = 1.0
+		} else {
+			side_factor = 0.75
+		}
+
+		teams[a].Players[b].tk_contrib = tk_mult * side_factor * float64(teams[a].Players[b].tk) * teams[a].Players[b].fatigue
+		teams[a].Players[b].ps_contrib = ps_mult * side_factor * float64(teams[a].Players[b].ps) * teams[a].Players[b].fatigue
+		teams[a].Players[b].sh_contrib = sh_mult * side_factor * float64(teams[a].Players[b].sh) * teams[a].Players[b].fatigue
+	} else { // The contributions of an inactive player or of a GK are 0
+		teams[a].Players[b].tk_contrib = 0
+		teams[a].Players[b].ps_contrib = 0
+		teams[a].Players[b].sh_contrib = 0
+	}
+}
+
+// Adjusts players' total contributions, taking into account the
+// side balance on each position
+func adjust_contrib_with_side_balance(a int) {
+	// The side balance:
+	// For each position (w/o side), keep a vector of 3 elements
+	// to specify the number of players playing R [0], L [1], C [2] on this position
+	//
+	balance := make(map[string][]int)
+
+	// Init the side balance for all positions
+	//
+	positions := tact_manager.get_positions_names()
+	for _, pos := range positions {
+		balance[pos] = []int{3, 0}
+	}
+
+	// Go over the team's players and record on what side they play,
+	// updating the side balance
+	//
+	for b := 2; b <= numPlayers; b++ {
+		if teams[a].Players[b].Active == 1 && teams[a].Players[b].Pos != "GK" {
+			if teams[a].Players[b].Side == "R" {
+				balance[teams[a].Players[b].Pos][0]++
+			} else if teams[a].Players[b].Side == "L" {
+				balance[teams[a].Players[b].Pos][1]++
+			} else if teams[a].Players[b].Side == "C" {
+				balance[teams[a].Players[b].Pos][2]++
+			} else {
+				panic(fmt.Errorf("internal error"))
+			}
+		}
+	}
+
+	// For all positions, check if the side balance is equal for R and L
+	// If it isn't, penalize the contributions of the players on those positions
+	//
+	// Additionally, penalize teams who play with more than 3 C players on
+	// some position without R and L
+	//
+	for _, pos := range positions {
+		on_pos_right := balance[pos][0]
+		on_pos_left := balance[pos][1]
+		on_pos_center := balance[pos][2]
+
+		var taxed_multiplier float64 = 1.0
+
+		if on_pos_left != on_pos_right {
+			tax_ratio := 0.25 * math.Abs(float64(on_pos_right-on_pos_left)) / float64(on_pos_right+on_pos_left)
+			taxed_multiplier = 1 - tax_ratio
+		} else if on_pos_left == 0 && on_pos_right == 0 && on_pos_center > 3 {
+			taxed_multiplier = 0.87
+		}
+
+		if taxed_multiplier != 1 {
+			for b := 1; b < numPlayers; b++ {
+				if teams[a].Players[b].Active == 1 && teams[a].Players[b].Pos == pos {
+					teams[a].Players[b].tk_contrib *= taxed_multiplier
+					teams[a].Players[b].ps_contrib *= taxed_multiplier
+					teams[a].Players[b].sh_contrib *= taxed_multiplier
+				}
+			}
+		}
+	}
+}
+
+// This function is called by the game running loop in the
+// beginning of each minute of the game.
+// It recalculates player contributions, aggression, fatigue,
+// team total contributions and shotprob.
+func recalculate_teams_data() {
+	for a := 0; a <= 1; a++ {
+		teams[a].TeamTackling = 0
+		teams[a].TeamPassing = 0
+		teams[a].TeamShooting = 0
+		calc_aggression(a)
+
+		for b := 1; b < numPlayers; b++ {
+			if teams[a].Players[b].Active == 1 {
+				fatigue_deduction := teams[a].Players[b].nominal_fatigue_per_minute
+				mrnd := myRandom(100)
+				fatigue_deduction += float64(mrnd-50) / 50.0 * 0.003
+
+				teams[a].Players[b].fatigue -= fatigue_deduction
+
+				if teams[a].Players[b].fatigue < 0.10 {
+					teams[a].Players[b].fatigue = 0.10
+				}
+			}
+		}
+
+		for b := 1; b < numPlayers; b++ {
+			calc_player_contributions(a, b)
+		}
+
+		adjust_contrib_with_side_balance(a)
+		calc_team_contributions_total(a)
+	}
+
+	for a := 0; a <= 1; a++ {
+		calc_shotprob(a)
+	}
+}
+
+func calc_team_contributions_total(a int) {
+	for b := 2; b <= numPlayers; b++ {
+		if teams[a].Players[b].Active == 1 {
+			teams[a].TeamTackling += teams[a].Players[b].tk_contrib
+			teams[a].TeamPassing += teams[a].Players[b].ps_contrib
+			teams[a].TeamShooting += teams[a].Players[b].sh_contrib
+		}
+	}
+}
+
+// This function sets the aggression of all inactive players to 0
+// and then adds up all aggressions in the team total aggression
+func calc_aggression(a int) {
+	teams[a].Aggression = 0
+
+	for i := 0; i < numPlayers; i++ {
+		if teams[a].Players[i].Active != 1 {
+			teams[a].Players[i].ag = 0
+		}
+
+		teams[a].Aggression += teams[a].Players[i].ag
+	}
 }
 
 // Called on each minute to handle a scoring chance of team
@@ -56,14 +230,14 @@ func ifShot(a int) {
 
 			shooter = whoGotAssist(a, assister)
 
-			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), team[a].name, team[a].player[assister].name.c_str(), team[a].player[shooter].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), teams[a].name, teams[a].player[assister].name.c_str(), teams[a].player[shooter].name.c_str()).c_str());
 			teams[a].Players[assister].keypasses++
 		} else {
 			shooter = whoDidIt(a, DID_SHOT)
 
 			chance_assisted = 0
 			assister = 0
-			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), team[a].name, team[a].player[shooter].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), teams[a].name, teams[a].player[shooter].name.c_str()).c_str());
 		}
 
 		notA := 1 - a
@@ -76,7 +250,7 @@ func ifShot(a int) {
 
 			// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", team[!a].player[tackler].name.c_str()).c_str());
 		} else { /* Chance was not tackled, it will be a shot on goal */
-			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", team[a].player[shooter].name.c_str()).c_str());
+			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", teams[a].player[shooter].name.c_str()).c_str());
 			teams[a].Players[shooter].shots++
 
 			if ifOnTarget(a, shooter) == 1 {
@@ -105,8 +279,8 @@ func ifShot(a int) {
 						//         team[1].score,
 						//         team[1].name);
 
-						// report_event *an_event = new report_event_goal(team[a].player[shooter].name.c_str(),
-						//                                                team[a].name, formal_minute_str().c_str());
+						// report_event *an_event = new report_event_goal(teams[a].player[shooter].name.c_str(),
+						//                                                teams[a].name, formal_minute_str().c_str());
 
 						// report_vec.push_back(an_event);
 					}
@@ -261,7 +435,7 @@ func ifFoul(a int) {
 
 	if randomp(int(teams[a].Aggression*.75)) == 1 {
 		fouler = whoDidIt(a, DID_FOUL)
-		// fprintf(comm, "%s", the_commentary().rand_comment("FOUL", minute_str().c_str(), team[a].name, team[a].player[fouler].name.c_str()).c_str());
+		// fprintf(comm, "%s", the_commentary().rand_comment("FOUL", minute_str().c_str(), teams[a].name, teams[a].player[fouler].name.c_str()).c_str());
 
 		teams[a].FinalFouls++ /* For final stats */
 		teams[a].Players[fouler].fouls++
@@ -314,7 +488,7 @@ func ifFoul(a int) {
 				// Either it was saved, or it went off-target
 				//
 				if randomp(7500) == 1 {
-					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", team[a].player[team[a].current_gk].name.c_str()).c_str());
+					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[a].player[teams[a].current_gk].name.c_str()).c_str());
 				} else { /* Or it went off-target */
 					// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str());
 				}
@@ -335,8 +509,8 @@ func bookings(a, b, card_color int) {
 			// fprintf(comm, "%s", the_commentary().rand_comment("SECONDYELLOWCARD").c_str());
 			sendOff(a, b)
 
-			// report_event *an_event = new report_event_red_card(team[a].player[b].name.c_str(),
-			//                                                    team[a].name, formal_minute_str().c_str());
+			// report_event *an_event = new report_event_red_card(teams[a].player[b].name.c_str(),
+			//                                                    teams[a].name, formal_minute_str().c_str());
 			// report_vec.push_back(an_event);
 
 			redCarded[a] = b
@@ -347,8 +521,8 @@ func bookings(a, b, card_color int) {
 		// fprintf(comm, "%s", the_commentary().rand_comment("REDCARD").c_str());
 		sendOff(a, b)
 
-		// report_event *an_event = new report_event_red_card(team[a].player[b].name.c_str(),
-		//                                                    team[a].name, formal_minute_str().c_str());
+		// report_event *an_event = new report_event_red_card(teams[a].player[b].name.c_str(),
+		//                                                    teams[a].name, formal_minute_str().c_str());
 		// report_vec.push_back(an_event);
 
 		redCarded[a] = b
@@ -377,9 +551,9 @@ func substitutePlayer(a, out, in int, newpos string) {
 
 		teams[a].Substitutions++
 
-		// fputs(the_commentary().rand_comment("SUB", minute_str().c_str(), team[a].name,
-		//                                     team[a].player[in].name.c_str(),
-		//                                     team[a].player[out].name.c_str(),
+		// fputs(the_commentary().rand_comment("SUB", minute_str().c_str(), teams[a].name,
+		//                                     teams[a].player[in].name.c_str(),
+		//                                     teams[a].player[out].name.c_str(),
 		//                                     newpos.c_str())
 		//           .c_str(),
 		//       comm);
@@ -392,8 +566,8 @@ func changePosition(a, b int, newpos string) {
 		// If he plays on this position anyway, don't change it
 		if posAndSide2fullpos(teams[a].Players[b].Pos, teams[a].Players[b].Side) != newpos {
 			// fputs(the_commentary().rand_comment("CHANGEPOSITION", minute_str().c_str(),
-			//                                     team[a].name,
-			//                                     team[a].player[b].name.c_str(),
+			//                                     teams[a].name,
+			//                                     teams[a].player[b].name.c_str(),
 			//                                     newpos.c_str())
 			//           .c_str(),
 			//       comm);
