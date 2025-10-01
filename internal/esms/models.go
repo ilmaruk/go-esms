@@ -58,28 +58,63 @@ type Player struct {
 }
 
 type Team struct {
-	Name           string
-	Players        [numPlayers]Player
-	Score          int
-	CurrentGK      int
-	Substitutions  int
-	Aggression     float64
-	FinalFouls     int
-	PenaltyTaker   int // index of the player who takes penalties
-	TeamTackling   float64
-	TeamPassing    float64
-	TeamShooting   float64
-	ShotProb       float64
-	FinalShotsOn   int
-	FinalShotsOff  int
-	Tactic         string
-	Injuries       int
-	roster_players []Player
+	Name          string
+	Players       [20]Player
+	Score         int
+	CurrentGK     int
+	Substitutions int
+	Aggression    float64
+	FinalFouls    int
+	PenaltyTaker  int // index of the player who takes penalties
+	TeamTackling  float64
+	TeamPassing   float64
+	TeamShooting  float64
+	ShotProb      float64
+	FinalShotsOn  int
+	FinalShotsOff int
+	Tactic        string
+	Injuries      int
+	RosterPlayer  []RosterPlayer
 }
 
 type Teamsheet struct {
-	tactic string
-	field  []Player
-	bench  []Player
-	pk     string
+	Tactic string   `json:"tactic"`
+	Field  []Player `json:"field"`
+	Bench  []Player `json:"bench"`
+	PK     string   `json:"pk"`
+	Name   string   `json:"team_name"`
+}
+
+type Roster struct {
+	TeamName string         `json:"team_name"`
+	Players  []RosterPlayer `json:"players"`
+}
+
+type RosterPlayer struct {
+	Ag          float64 `json:"ag"`
+	Age         int     `json:"age"`
+	Assists     int     `json:"assists"`
+	Dp          int     `json:"dp"`
+	Fitness     int     `json:"fitness"`
+	Games       int     `json:"games"`
+	Goals       int     `json:"goals"`
+	Injury      int     `json:"injury"`
+	KeyPasses   int     `json:"keypasses"`
+	Name        string  `json:"name"`
+	Nationality string  `json:"nationality"`
+	PrefSide    string  `json:"pref_side"`
+	Ps          int     `json:"ps"`
+	PsAb        int     `json:"ps_ab"`
+	Saves       int     `json:"saves"`
+	Sh          int     `json:"sh"`
+	ShAb        int     `json:"sh_ab"`
+	Shots       int     `json:"shots"`
+	St          int     `json:"st"`
+	StAb        int     `json:"st_ab"`
+	Stamina     int     `json:"stamina"`
+	Suspension  int     `json:"suspension"`
+	Tackles     int     `json:"tackles"`
+	Team        string  `json:"team"`
+	Tk          int     `json:"tk"`
+	TkAb        int     `json:"tk_ab"`
 }

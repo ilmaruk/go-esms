@@ -1,0 +1,73 @@
+{
+    "bench": [
+        {
+            "name": "Valton Bezjak",
+            "pos": "GK"
+        },
+        {
+            "name": "Aleksandr Borysov",
+            "pos": "DFC"
+        },
+        {
+            "name": "JiÅi MorÃ¡vek",
+            "pos": "MFC"
+        },
+        {
+            "name": "Serafim Mestre",
+            "pos": "DFC"
+        },
+        {
+            "name": "Ronei Schultz",
+            "pos": "FWC"
+        }
+    ],
+    "field": [
+        {
+            "name": "Jhonata Bessa",
+            "pos": "GK"
+        },
+        {
+            "name": "Butrint Haxhijaj",
+            "pos": "DFC"
+        },
+        {
+            "name": "Ronny Van Hecke",
+            "pos": "DFC"
+        },
+        {
+            "name": "Lasse Hartveit",
+            "pos": "DFC"
+        },
+        {
+            "name": "Abdel Verbeeck",
+            "pos": "DFC"
+        },
+        {
+            "name": "Ricky Villeneuve",
+            "pos": "MFC"
+        },
+        {
+            "name": "Michi Meier",
+            "pos": "MFC"
+        },
+        {
+            "name": "ZdenÄk Bauer",
+            "pos": "MFC"
+        },
+        {
+            "name": "Rudolf Akimov",
+            "pos": "MFC"
+        },
+        {
+            "name": "Josue Lavigne",
+            "pos": "FWC"
+        },
+        {
+            "name": "ÐÑÑÐ° ÄervenÃ½",
+            "pos": "FWC"
+        }
+    ],
+    "pk": "Josue Lavigne",
+    "tactic": "N",
+    "team_name": "ss2"
+}

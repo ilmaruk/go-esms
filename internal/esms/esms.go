@@ -1,19 +1,22 @@
 package esms
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"math"
 	"math/rand"
+	"os"
 )
 
 const (
-	numPlayers = 11 // number of players in a team
-
 	YELLOW = 1
 	RED    = 2
 )
 
 var (
+	numPlayers int
+
 	theConfig    = &Config{}
 	tact_manager = &TacticManager{}
 
@@ -40,11 +43,70 @@ const (
 
 func Play() {
 	fmt.Println("Playing a match...")
+
+	var (
+		homeTeamsheet Teamsheet
+		awayTeamsheet Teamsheet
+	)
+
+	// Home Teamsheet
+	if err := loadTeamsheet("./data/ss1_sht.json", &homeTeamsheet); err != nil {
+		panic(err)
+	}
+	teams[0].Name = homeTeamsheet.Name
+
+	// Away Teamsheet
+	if err := loadTeamsheet("./data/ss2_sht.json", &awayTeamsheet); err != nil {
+		panic(err)
+	}
+	teams[1].Name = homeTeamsheet.Name
+
+	var (
+		homeRoster Roster
+		awayRoster Roster
+	)
+
+	// Home Teamsheet
+	if err := loadRoster("./data/ss1.json", &homeRoster); err != nil {
+		panic(err)
+	}
+	teams[0].RosterPlayer = homeRoster.Players
+
+	// Away Teamsheet
+	if err := loadRoster("./data/ss2.json", &awayRoster); err != nil {
+		panic(err)
+	}
+	teams[1].RosterPlayer = awayRoster.Players
+
+	numSubs := theConfig.getIntConfig("NUM_SUBS", 5)
+	numPlayers = 11 + numSubs
+
+	init_teams_data([2]Teamsheet{homeTeamsheet, awayTeamsheet})
+
+	prettyPrintTeam(teams[0])
+}
+
+// Temporary, for testing purposes
+func prettyPrintTeam(t Team) {
+	b, _ := json.Marshal(t)
+	fmt.Println(string(b))
+
+	var out bytes.Buffer
+	if err := json.Indent(&out, b, "", "  "); err != nil {
+		fmt.Fprintln(os.Stderr, "invalid JSON:", err)
+		os.Exit(1)
+	}
+
+	out.WriteByte('\n')
+	if _, err := out.WriteTo(os.Stdout); err != nil {
+		fmt.Fprintln(os.Stderr, "write error:", err)
+		os.Exit(1)
+	}
 }
 
 func init_teams_data(teamsheet [2]Teamsheet) {
 	for l := 0; l <= 1; l++ {
-		teams[l].Tactic = teamsheet[l].tactic
+		teams[l].Tactic = teamsheet[l].Tactic
 
 		if !tact_manager.tactic_exists(teams[l].Tactic) {
 			panic(fmt.Errorf("Invalid tactic %s in %s's teamsheet", teams[l].Tactic, teams[l].Name))
@@ -55,11 +117,11 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 
 			/* Read players's position and name */
 			if i < 11 {
-				teams[l].Players[i].Name = teamsheet[l].field[i].Name
-				full_pos = teamsheet[l].field[i].Pos
+				teams[l].Players[i].Name = teamsheet[l].Field[i].Name
+				full_pos = teamsheet[l].Field[i].Pos
 			} else {
-				teams[l].Players[i].Name = teamsheet[l].bench[i-11].Name
-				full_pos = teamsheet[l].bench[i-11].Pos
+				teams[l].Players[i].Name = teamsheet[l].Bench[i-11].Name
+				full_pos = teamsheet[l].Bench[i-11].Pos
 			}
 
 			// For GKs, just copy the position as is
@@ -68,7 +130,7 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 				teams[l].Players[i].Pos = "GK"
 			} else {
 				if !is_legal_position(full_pos) {
-					panic(fmt.Errorf("Illegal position %s of %s in %s's teamsheet", full_pos, teams[l].Players[i].Name, teams[l].Name))
+					panic(fmt.Errorf("illegal position %s of %s in %s's teamsheet", full_pos, teams[l].Players[i].Name, teams[l].Name))
 				}
 
 				teams[l].Players[i].Pos = fullpos2position(full_pos)
@@ -76,12 +138,12 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 			}
 
 			/* The first specified player must be a GK */
-			if i == 1 && teams[l].Players[i].Pos != "GK" {
-				panic(fmt.Errorf("The first player in %s's teamsheet must be a GK", teams[l].Name))
+			if i == 0 && teams[l].Players[i].Pos != "GK" {
+				panic(fmt.Errorf("the first player in %s's teamsheet must be a GK", teams[l].Name))
 			}
 
 			if teams[l].Players[i].Pos == "PK:" {
-				panic(fmt.Errorf("PK: where player %d was expected (%s)", i, teams[l].Name))
+				panic(fmt.Errorf("pk: where player %d was expected (%s)", i, teams[l].Name))
 			}
 
 			found := 0
@@ -89,7 +151,7 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 			// Search for this player in the roster, and when found assign his info
 			// to the player structure.
 			//
-			for _, player := range teams[l].roster_players {
+			for _, player := range teams[l].RosterPlayer {
 				if teams[l].Players[i].Name != player.Name {
 					continue
 				}
@@ -98,15 +160,15 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 
 				// Check if the player is available for the game
 				//
-				if player.injury > 0 {
+				if player.Injury > 0 {
 					panic(fmt.Errorf("Player %s (%s) is injured", player.Name, teams[l].Name))
 				}
 
-				if player.suspension > 0 {
+				if player.Suspension > 0 {
 					panic(fmt.Errorf("Player %s (%s) is suspended", player.Name, teams[l].Name))
 				}
 
-				teams[l].Players[i].pref_side = player.pref_side
+				teams[l].Players[i].pref_side = player.PrefSide
 
 				teams[l].Players[i].likes_left = false
 				teams[l].Players[i].likes_right = false
@@ -124,11 +186,11 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 					teams[l].Players[i].likes_center = true
 				}
 
-				teams[l].Players[i].st = player.st
-				teams[l].Players[i].tk = player.tk
-				teams[l].Players[i].ps = player.ps
-				teams[l].Players[i].sh = player.sh
-				teams[l].Players[i].stamina = player.stamina
+				teams[l].Players[i].st = player.St
+				teams[l].Players[i].tk = player.Tk
+				teams[l].Players[i].ps = player.Ps
+				teams[l].Players[i].sh = player.Sh
+				teams[l].Players[i].stamina = player.Stamina
 
 				// Each player has a nominal_fatigue_per_minute rating that's
 				// calculated once, based on his stamina.
@@ -155,8 +217,8 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 				normalized_stamina_ratio := float64(teams[l].Players[i].stamina-50) / 50.0
 				teams[l].Players[i].nominal_fatigue_per_minute = 0.0031 - normalized_stamina_ratio*0.0022
 
-				teams[l].Players[i].ag = player.ag
-				teams[l].Players[i].fatigue = float64(player.fitness) / 100.0
+				teams[l].Players[i].ag = player.Ag
+				teams[l].Players[i].fatigue = float64(player.Fitness) / 100.0
 
 				break
 			}
@@ -170,14 +232,14 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 		// If it exists, the <Name> must be listed in the teamsheet.
 		var i int
 		for i = numPlayers - 1; i >= 0; i-- {
-			if teamsheet[l].pk == teams[l].Players[i].Name {
+			if teamsheet[l].PK == teams[l].Players[i].Name {
 				teams[l].PenaltyTaker = i
 				break
 			}
 		}
 
 		if i < 0 {
-			panic(fmt.Errorf("Error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].pk))
+			panic(fmt.Errorf("error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].PK))
 		}
 	}
 

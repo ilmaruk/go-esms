@@ -1,0 +1,73 @@
+{
+    "bench": [
+        {
+            "name": "Adem Wang",
+            "pos": "GK"
+        },
+        {
+            "name": "Augusto Caldeira",
+            "pos": "DFC"
+        },
+        {
+            "name": "Pipo Ignatovski",
+            "pos": "MFC"
+        },
+        {
+            "name": "Finn Schultz",
+            "pos": "DFC"
+        },
+        {
+            "name": "Florian Ingold",
+            "pos": "FWC"
+        }
+    ],
+    "field": [
+        {
+            "name": "Ferran Ullastres",
+            "pos": "GK"
+        },
+        {
+            "name": "Ivan Giordano",
+            "pos": "DFC"
+        },
+        {
+            "name": "Venidikt Gurin",
+            "pos": "DFC"
+        },
+        {
+            "name": "Dauken Akhmedov",
+            "pos": "DFC"
+        },
+        {
+            "name": "Kenjy Dufour",
+            "pos": "DFC"
+        },
+        {
+            "name": "Silvio Cecere",
+            "pos": "MFC"
+        },
+        {
+            "name": "Jucimar de Magalhaes",
+            "pos": "MFC"
+        },
+        {
+            "name": "Andrei Di Carlo",
+            "pos": "MFC"
+        },
+        {
+            "name": "Ramon Blanchard",
+            "pos": "MFC"
+        },
+        {
+            "name": "Geovanny Miller",
+            "pos": "MFC"
+        },
+        {
+            "name": "Ying Zhen",
+            "pos": "FWC"
+        }
+    ],
+    "pk": "Ying Zhen",
+    "tactic": "A",
+    "team_name": "ss1"
+}
