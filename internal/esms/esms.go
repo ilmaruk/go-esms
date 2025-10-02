@@ -300,7 +300,7 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 			// to the player structure.
 			//
 			for _, player := range teams[l].RosterPlayer {
-				if teams[l].Players[i].Name != player.Name {
+				if teams[l].Players[i].Name.String() != player.Name {
 					continue
 				}
 
@@ -380,7 +380,7 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 		// If it exists, the <Name> must be listed in the teamsheet.
 		var i int
 		for i = numPlayers - 1; i >= 0; i-- {
-			if teamsheet[l].PK == teams[l].Players[i].Name {
+			if teamsheet[l].PK == teams[l].Players[i].Name.String() {
 				teams[l].PenaltyTaker = i
 				break
 			}
@@ -1418,12 +1418,12 @@ func print_final_stats(comm io.Writer) {
 
 		// Print stats for each player and collect totals
 		for i := 1; i <= numPlayers; i++ {
-			playerName := teams[j].Players[i].Name
-			if len(playerName) > 13 {
-				playerName = playerName[0:13]
-			}
+			// playerName := teams[j].Players[i].Name
+			// if len(playerName) > 13 {
+			// 	playerName = playerName[0:13]
+			// }
 			fmt.Fprintf(comm, "\n%-13s %3s %3s%3d%3d%3d%3d%3d | %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d",
-				playerName,
+				teams[j].Players[i].Name.Short(13),
 				posAndSide2fullpos(teams[j].Players[i].Pos, teams[j].Players[i].Side),
 				teams[j].Players[i].pref_side,
 				teams[j].Players[i].st, teams[j].Players[i].tk,

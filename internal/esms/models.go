@@ -1,7 +1,30 @@
 package esms
 
+import (
+	"fmt"
+	"strings"
+)
+
+type PlayerName string
+
+func (p PlayerName) String() string {
+	return string(p)
+}
+
+func (p PlayerName) Short(max int) string {
+	parts := strings.Split(string(p), " ")
+	if len(parts) == 1 {
+		return parts[0]
+	}
+	name := fmt.Sprintf("%s. %s", parts[0][0:1], strings.Join(parts[1:], " "))
+	if len(name) > max {
+		return name[0:max]
+	}
+	return name
+}
+
 type Player struct {
-	Name string
+	Name PlayerName
 
 	Active  int // 1 if the player is currently active on the field, 0 - TODO: should be a bool
 	Minutes int // number of minutes played
