@@ -4,9 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"math"
 	"math/rand"
 	"os"
+	"path/filepath"
+	"time"
 )
 
 const (
@@ -17,7 +20,9 @@ const (
 var (
 	numPlayers int
 
-	theConfig    = &Config{}
+	theConfig                = &Config{}
+	team_stats_total_enabled = false
+
 	tact_manager = &TacticManager{}
 
 	teams        [2]Team // two teams
@@ -29,7 +34,15 @@ var (
 
 	homeBonus float64
 
+	teamStatsTotal [2][][3]float64 // [team][minute_index][tk,ps,sh]
+
 	rnd *rand.Rand // random number generator
+
+	substitutions int
+	injuries      int
+	fouls         int
+
+	comm io.Writer = os.Stdout
 )
 
 type DidWhat int
@@ -41,25 +54,29 @@ const (
 	DID_ASSIST
 )
 
-func Play() {
-	fmt.Println("Playing a match...")
+func init() {
+	rnd = rand.New(rand.NewSource(time.Now().UnixNano()))
+}
 
+func Play() {
 	var (
 		homeTeamsheet Teamsheet
 		awayTeamsheet Teamsheet
 	)
 
+	dataDir := "../../data"
+
 	// Home Teamsheet
-	if err := loadTeamsheet("./data/ss1_sht.json", &homeTeamsheet); err != nil {
+	if err := loadTeamsheet(filepath.Join(dataDir, "ss1_sht.json"), &homeTeamsheet); err != nil {
 		panic(err)
 	}
 	teams[0].Name = homeTeamsheet.Name
 
 	// Away Teamsheet
-	if err := loadTeamsheet("./data/ss2_sht.json", &awayTeamsheet); err != nil {
+	if err := loadTeamsheet(filepath.Join(dataDir, "ss2_sht.json"), &awayTeamsheet); err != nil {
 		panic(err)
 	}
-	teams[1].Name = homeTeamsheet.Name
+	teams[1].Name = awayTeamsheet.Name
 
 	var (
 		homeRoster Roster
@@ -67,13 +84,13 @@ func Play() {
 	)
 
 	// Home Teamsheet
-	if err := loadRoster("./data/ss1.json", &homeRoster); err != nil {
+	if err := loadRoster(filepath.Join(dataDir, "ss1.json"), &homeRoster); err != nil {
 		panic(err)
 	}
 	teams[0].RosterPlayer = homeRoster.Players
 
 	// Away Teamsheet
-	if err := loadRoster("./data/ss2.json", &awayRoster); err != nil {
+	if err := loadRoster(filepath.Join(dataDir, "ss2.json"), &awayRoster); err != nil {
 		panic(err)
 	}
 	teams[1].RosterPlayer = awayRoster.Players
@@ -81,9 +98,104 @@ func Play() {
 	numSubs := theConfig.getIntConfig("NUM_SUBS", 5)
 	numPlayers = 11 + numSubs
 
+	team_stats_total_enabled = theConfig.getIntConfig("TEAM_STATS_TOTAL", 0) == 1 // TODO: default should be 0
+
 	init_teams_data([2]Teamsheet{homeTeamsheet, awayTeamsheet})
 
-	prettyPrintTeam(teams[0])
+	//--------------------------------------------
+	//---------- The game running loop -----------
+	//--------------------------------------------
+	//
+	// The timing logic is as follows:
+	//
+	// The game is divided to two structurally identical
+	// halves. The difference between the halves is their
+	// start times.
+	//
+	// For each half, an injury time is added. This time
+	// goes into the minute counter, but not into the
+	// formal_minute counter (that is needed for reports)
+	//
+
+	const half_length = 45
+
+	// For each half
+	//
+	for half_start := 1; half_start < 2*half_length; half_start += half_length {
+		half := 1
+		if half_start != 1 {
+			half = 2
+		}
+		last_minute_of_half := half_start + half_length - 1
+		in_inj_time := false
+
+		// Play the game minutes of this half
+		//
+		// last_minute_of_half will be increased by inj_time_length in
+		// the end of the half
+		//
+		formal_minute := half_start
+		for minute := formal_minute; minute <= last_minute_of_half; minute++ {
+			cleanInjCardIndicators()
+			recalculate_teams_data()
+
+			// For each team
+			//
+			for j := 0; j <= 1; j++ {
+				// Calculate different events
+				//
+				ifShot(j, minute)
+				ifFoul(j)
+				randomInjury(j)
+
+				// notJ := 1 - j
+				// score_diff := teams[j].Score - teams[notJ].Score
+				// check_conditionals(j);
+			}
+
+			// fixme ?
+			if team_stats_total_enabled {
+				if minute == 1 || minute%10 == 0 {
+					add_team_stats_total(minute)
+				}
+			}
+
+			if !in_inj_time {
+				formal_minute++
+
+				updatePlayersMinuteCount()
+			}
+
+			if minute == last_minute_of_half && !in_inj_time {
+				in_inj_time = true
+
+				// shouldn't have been increased, but we only know about
+				// this now
+				formal_minute--
+
+				inj_time_length := how_much_inj_time()
+				last_minute_of_half += inj_time_length
+
+				// char buf[2000];
+				// snprintf(buf, 2000 * sizeof(char), "%d", inj_time_length);
+				// fprintf(comm, "\n%s\n", the_commentary().rand_comment("COMM_INJURYTIME", buf).c_str());
+			}
+		}
+
+		in_inj_time = false
+
+		if half == 1 {
+			// fprintf(comm, "\n%s\n", the_commentary().rand_comment("COMM_HALFTIME").c_str())
+			fmt.Fprintf(comm, "\nCOMM_HALFTIME\n")
+		} else if half == 2 {
+			// fprintf(comm, "\n%s\n", the_commentary().rand_comment("COMM_FULLTIME").c_str())
+			fmt.Fprintf(comm, "\nCOMM_FULLTIME\n")
+		}
+	}
+
+	calcAbility()
+
+	fmt.Fprintln(comm, "Final score:", teams[0].Name, teams[0].Score, "-", teams[1].Score, teams[1].Name)
 }
 
 // Temporary, for testing purposes
@@ -101,6 +213,40 @@ func prettyPrintTeam(t Team) {
 	if _, err := out.WriteTo(os.Stdout); err != nil {
 		fmt.Fprintln(os.Stderr, "write error:", err)
 		os.Exit(1)
+	}
+}
+
+// / Calculates how much injury time to add.
+// /
+// / Takes into account substitutions, injuries and fouls (by both teams)
+// /
+func how_much_inj_time() int {
+	// Each time this function is called, it subtracts the last
+	// totals it had, because the stats accumulate and don't
+	// annulize between halves
+	//
+	substitutions := teams[0].Substitutions + teams[1].Substitutions - substitutions
+	injuries := teams[0].Injuries + teams[1].Injuries - injuries
+	fouls := teams[0].FinalFouls + teams[1].FinalFouls - fouls
+
+	calc := math.Ceil(float64(substitutions)*0.5 + float64(injuries)*0.5 + float64(fouls)*0.5)
+
+	return int(calc)
+}
+
+func add_team_stats_total(minute int) {
+	/* Define the correct index for the array */
+	var index int
+	if minute == 1 {
+		index = 0
+	} else {
+		index = minute / 10
+	}
+
+	for i := 0; i <= 1; i++ {
+		teamStatsTotal[i][index][0] = teams[i].TeamTackling
+		teamStatsTotal[i][index][1] = teams[i].TeamPassing
+		teamStatsTotal[i][index][2] = teams[i].TeamShooting
 	}
 }
 
@@ -340,7 +486,7 @@ func change_tactic(a int, newtct string) {
 /* constant factor + total aggression of the rival team. */
 /* The function will find who was injured and substitute */
 /* him for player on his position.                       */
-func random_injury(a int) {
+func randomInjury(a int) {
 	var injured int
 	var found int
 
@@ -481,13 +627,13 @@ func adjust_contrib_with_side_balance(a int) {
 	//
 	positions := tact_manager.get_positions_names()
 	for _, pos := range positions {
-		balance[pos] = []int{3, 0}
+		balance[pos] = []int{0, 0, 0}
 	}
 
 	// Go over the team's players and record on what side they play,
 	// updating the side balance
 	//
-	for b := 2; b <= numPlayers; b++ {
+	for b := 1; b < numPlayers; b++ {
 		if teams[a].Players[b].Active == 1 && teams[a].Players[b].Pos != "GK" {
 			if teams[a].Players[b].Side == "R" {
 				balance[teams[a].Players[b].Pos][0]++
@@ -597,7 +743,7 @@ func calc_aggression(a int) {
 
 // Called on each minute to handle a scoring chance of team
 // a for this minute.
-func ifShot(a int) {
+func ifShot(a, minute int) {
 	var shooter int
 	var assister int
 	var tackler int
@@ -617,13 +763,16 @@ func ifShot(a int) {
 			shooter = whoGotAssist(a, assister)
 
 			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[assister].name.c_str(), teams[a].Players[shooter].name.c_str()).c_str());
+			fmt.Fprintln(comm, "ASSISTEDCHANCE", minute, teams[a].Name, teams[a].Players[assister].Name, teams[a].Players[shooter].Name)
 			teams[a].Players[assister].keypasses++
 		} else {
 			shooter = whoDidIt(a, DID_SHOT)
 
 			chance_assisted = 0
 			assister = 0
+
 			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[shooter].name.c_str()).c_str());
+			fmt.Fprintln(comm, "CHANCE", minute, teams[a].Name, teams[a].Players[shooter].Name)
 		}
 
 		notA := 1 - a
@@ -635,8 +784,10 @@ func ifShot(a int) {
 			teams[notA].Players[tackler].tackles++
 
 			// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", teams[notA].Players[tackler].name.c_str()).c_str());
+			fmt.Fprintln(comm, "\tTACKLE", teams[notA].Players[tackler].Name)
 		} else { /* Chance was not tackled, it will be a shot on goal */
 			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", teams[a].Players[shooter].name.c_str()).c_str());
+			fmt.Fprintln(comm, "\tSHOT", teams[a].Players[shooter].Name)
 			teams[a].Players[shooter].shots++
 
 			if ifOnTarget(a, shooter) == 1 {
@@ -645,6 +796,7 @@ func ifShot(a int) {
 
 				if ifGoal(a, shooter) == 1 {
 					// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
+					fmt.Fprintln(comm, "\t\tGOAL")
 
 					if isGoalCancelled() == 0 {
 						teams[a].Score++
@@ -672,11 +824,14 @@ func ifShot(a int) {
 					}
 				} else {
 					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[notA].Players[teams[notA].current_gk].name.c_str()).c_str());
+					fmt.Fprintln(comm, "\t\tSAVE", teams[notA].Players[teams[notA].CurrentGK].Name)
+
 					teams[notA].Players[teams[notA].CurrentGK].saves++
 				}
 			} else {
 				teams[a].Players[shooter].shots_off++
 				// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str())
+				fmt.Fprintln(comm, "\tOFFTARGET")
 				teams[a].FinalShotsOff++
 			}
 		}
@@ -777,7 +932,7 @@ func whoDidIt(a int, event DidWhat) int {
 	// contribution
 	//
 
-	for k := 0; k < numPlayers; k++ {
+	for k = 0; k < numPlayers; k++ {
 		switch event {
 		case DID_SHOT:
 			weight += teams[a].Players[k].sh_contrib * 100.0
@@ -802,7 +957,7 @@ func whoDidIt(a int, event DidWhat) int {
 
 	rand_value := float64(myRandom(int(total)))
 
-	for k := 2; ar[k] <= rand_value; k++ {
+	for k = 2; ar[k] <= rand_value; k++ {
 		if k == numPlayers {
 			panic(fmt.Errorf("internal error"))
 			// cout << "Internal error, " << __FILE__ << ", line " << __LINE__ << endl;
