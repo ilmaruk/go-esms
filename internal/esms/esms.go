@@ -196,6 +196,8 @@ func Play() {
 	calcAbility()
 
 	fmt.Fprintln(comm, "Final score:", teams[0].Name, teams[0].Score, "-", teams[1].Score, teams[1].Name)
+
+	print_final_stats(os.Stdout)
 }
 
 // Temporary, for testing purposes
@@ -1369,4 +1371,112 @@ func cleanInjCardIndicators() {
 	yellowCarded[1] = -1
 	redCarded[0] = -1
 	redCarded[1] = -1
+}
+
+// Prints after-game statistics into the commentary file. The shots on/off
+// of each team, final score, stats (tackles, assists etc) for each player,
+// etc.
+func print_final_stats(comm io.Writer) {
+	// Print shots on/off target and final score
+	fmt.Fprintf(comm, "\n\n%-22s: %s %2d %s %d", "COMM_SHOTSOFFTARGET",
+		teams[0].Name,
+		teams[0].FinalShotsOff,
+		teams[1].Name,
+		teams[1].FinalShotsOff)
+
+	fmt.Fprintf(comm, "\n%-22s: %s %2d %s %d", "COMM_SHOTSONTARGET",
+		teams[0].Name,
+		teams[0].FinalShotsOn,
+		teams[1].Name,
+		teams[1].FinalShotsOn)
+
+	fmt.Fprintf(comm, "\n%-22s: %s %2d %s %d\n", "COMM_SCORE",
+		teams[0].Name,
+		teams[0].Score,
+		teams[1].Name,
+		teams[1].Score)
+
+	// Print final stats for players
+
+	for j := 0; j <= 1; j++ {
+		fmt.Fprintf(comm, "\n\n<<< %s %s >>>\n", "COMM_STATISTICS", teams[j].Name)
+		fmt.Fprintln(comm, "\nName          Pos Prs St Tk Ps Sh Sm | Min Sav Ktk Kps Ass Sht Gls Yel Red Inj KAb TAb PAb SAb Fit")
+		fmt.Fprintln(comm, "\n--------------------------------------------------------------------------------------------------")
+
+		// Totals
+		var (
+			t_saves       int
+			t_tackles     int
+			t_keypasses   int
+			t_assists     int
+			t_shots       int
+			t_goals       int
+			t_injured     int
+			t_yellowcards int
+			t_redcards    int
+		)
+
+		// Print stats for each player and collect totals
+		for i := 1; i <= numPlayers; i++ {
+			playerName := teams[j].Players[i].Name
+			if len(playerName) > 13 {
+				playerName = playerName[0:13]
+			}
+			fmt.Fprintf(comm, "\n%-13s %3s %3s%3d%3d%3d%3d%3d | %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d",
+				playerName,
+				posAndSide2fullpos(teams[j].Players[i].Pos, teams[j].Players[i].Side),
+				teams[j].Players[i].pref_side,
+				teams[j].Players[i].st, teams[j].Players[i].tk,
+				teams[j].Players[i].ps, teams[j].Players[i].sh,
+				teams[j].Players[i].stamina,
+				teams[j].Players[i].Minutes,
+				teams[j].Players[i].saves, teams[j].Players[i].tackles,
+				teams[j].Players[i].keypasses, teams[j].Players[i].assists,
+				teams[j].Players[i].shots, teams[j].Players[i].goals,
+				teams[j].Players[i].yellowcards,
+				teams[j].Players[i].redcards,
+				teams[j].Players[i].injured,
+				teams[j].Players[i].st_ab,
+				teams[j].Players[i].tk_ab,
+				teams[j].Players[i].ps_ab,
+				teams[j].Players[i].sh_ab,
+				int(teams[j].Players[i].fatigue*100.0))
+
+			t_saves += teams[j].Players[i].saves
+			t_tackles += teams[j].Players[i].tackles
+			t_keypasses += teams[j].Players[i].keypasses
+			t_assists += teams[j].Players[i].assists
+			t_shots += teams[j].Players[i].shots
+			t_goals += teams[j].Players[i].goals
+			t_injured += teams[j].Players[i].injured
+			t_yellowcards += teams[j].Players[i].yellowcards
+			t_redcards += teams[j].Players[i].redcards
+		}
+
+		fmt.Fprintln(comm, "\n-- Total --")
+		fmt.Fprintf(comm, "                                           %3d %3d %3d %3d %3d %3d %3d %3d %3d\n",
+			t_saves, t_tackles, t_keypasses, t_assists, t_shots, t_goals, t_yellowcards, t_redcards, t_injured)
+	}
+
+	// if (team_stats_total_enabled)
+	// {
+	//     fprintf(comm, "\n\nTeam totals");
+	//     fprintf(comm, "\nTeam  Min        Tk       Ps       Sh");
+	//     fprintf(comm, "\n-------------------------------------");
+
+	//     for (i = 0; i < 10; ++i)
+	//     {
+	//         fprintf(comm, "\n%s    %2d    %6.2f   %6.2f   %6.2f",
+	//                 team[0].name, i * 10,
+	//                 teamStatsTotal[0][i][0],
+	//                 teamStatsTotal[0][i][1],
+	//                 teamStatsTotal[0][i][2]);
+
+	//         fprintf(comm, "\n%s    %2d    %6.2f   %6.2f   %6.2f",
+	//                 team[1].name, i * 10,
+	//                 teamStatsTotal[1][i][0],
+	//                 teamStatsTotal[1][i][1],
+	//                 teamStatsTotal[1][i][2]);
+	//     }
+	// }
 }
