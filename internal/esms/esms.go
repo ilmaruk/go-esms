@@ -71,14 +71,12 @@ func Play(workDir, homeCode, awayCode string) error {
 	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", homeCode)), &homeTeamsheet); err != nil {
 		return err
 	}
-	teams[0].Name = homeTeamsheet.Name
 	teams[0].Colors = []string{"GREEN", "BLACK"}
 
 	// Away Teamsheet
 	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", awayCode)), &awayTeamsheet); err != nil {
 		return err
 	}
-	teams[1].Name = awayTeamsheet.Name
 	teams[1].Colors = []string{"RED", "WHITE"}
 
 	var (
@@ -90,20 +88,22 @@ func Play(workDir, homeCode, awayCode string) error {
 	if err := loadRoster(filepath.Join(dataDir, fmt.Sprintf("%s.json", homeCode)), &homeRoster); err != nil {
 		return err
 	}
-	teams[0].RosterPlayer = homeRoster.Players
+	teams[0].Roster = homeRoster
 
 	// Away Teamsheet
 	if err := loadRoster(filepath.Join(dataDir, fmt.Sprintf("%s.json", awayCode)), &awayRoster); err != nil {
 		return err
 	}
-	teams[1].RosterPlayer = awayRoster.Players
+	teams[1].Roster = awayRoster
 
 	numSubs := theConfig.getIntConfig("NUM_SUBS", 5)
 	numPlayers = 11 + numSubs
 
-	team_stats_total_enabled = theConfig.getIntConfig("TEAM_STATS_TOTAL", 0) == 1 // TODO: default should be 0
+	team_stats_total_enabled = theConfig.getIntConfig("TEAM_STATS_TOTAL", 0) == 1
 
-	init_teams_data([2]Teamsheet{homeTeamsheet, awayTeamsheet})
+	if err := initTeamsData([2]Teamsheet{homeTeamsheet, awayTeamsheet}); err != nil {
+		return err
+	}
 
 	//--------------------------------------------
 	//---------- The game running loop -----------
@@ -176,7 +176,7 @@ func Play(workDir, homeCode, awayCode string) error {
 				// this now
 				formal_minute--
 
-				inj_time_length := how_much_inj_time()
+				inj_time_length := howMuchInjuryTime()
 				last_minute_of_half += inj_time_length
 
 				// char buf[2000];
@@ -187,10 +187,11 @@ func Play(workDir, homeCode, awayCode string) error {
 
 		in_inj_time = false
 
-		if half == 1 {
+		switch half {
+		case 1:
 			// fprintf(comm, "\n%s\n", the_commentary().rand_comment("COMM_HALFTIME").c_str())
 			fmt.Fprintf(comm, "\nCOMM_HALFTIME\n")
-		} else if half == 2 {
+		case 2:
 			// fprintf(comm, "\n%s\n", the_commentary().rand_comment("COMM_FULLTIME").c_str())
 			fmt.Fprintf(comm, "\nCOMM_FULLTIME\n")
 		}
@@ -223,15 +224,13 @@ func prettyPrintTeam(t Team) {
 	}
 }
 
-// / Calculates how much injury time to add.
-// /
-// / Takes into account substitutions, injuries and fouls (by both teams)
-// /
-func how_much_inj_time() int {
+// howMuchInjuryTime calculates how much injury time to add.
+// Takes into account substitutions, injuries and fouls (by both teams)
+func howMuchInjuryTime() int {
 	// Each time this function is called, it subtracts the last
 	// totals it had, because the stats accumulate and don't
 	// annulize between halves
-	//
+
 	substitutions := teams[0].Substitutions + teams[1].Substitutions - substitutions
 	injuries := teams[0].Injuries + teams[1].Injuries - injuries
 	fouls := teams[0].FinalFouls + teams[1].FinalFouls - fouls
@@ -257,12 +256,13 @@ func add_team_stats_total(minute int) {
 	}
 }
 
-func init_teams_data(teamsheet [2]Teamsheet) {
+func initTeamsData(teamsheet [2]Teamsheet) error {
 	for l := 0; l <= 1; l++ {
+		teams[l].Name = teamsheet[l].Name
 		teams[l].Tactic = teamsheet[l].Tactic
 
 		if !tact_manager.tactic_exists(teams[l].Tactic) {
-			panic(fmt.Errorf("Invalid tactic %s in %s's teamsheet", teams[l].Tactic, teams[l].Name))
+			panic(fmt.Errorf("invalid tactic %s in %s's teamsheet", teams[l].Tactic, teams[l].Name))
 		}
 
 		for i := 0; i < numPlayers; i++ {
@@ -296,89 +296,80 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 			}
 
 			if teams[l].Players[i].Pos == "PK:" {
-				panic(fmt.Errorf("pk: where player %d was expected (%s)", i, teams[l].Name))
+				return fmt.Errorf("pk: where player %d was expected (%s)", i, teams[l].Name)
 			}
-
-			found := 0
 
 			// Search for this player in the roster, and when found assign his info
 			// to the player structure.
 			//
-			for _, player := range teams[l].RosterPlayer {
-				if teams[l].Players[i].Name.String() != player.Name {
-					continue
-				}
-
-				found = 1
-
-				// Check if the player is available for the game
-				//
-				if player.Injury > 0 {
-					panic(fmt.Errorf("Player %s (%s) is injured", player.Name, teams[l].Name))
-				}
-
-				if player.Suspension > 0 {
-					panic(fmt.Errorf("Player %s (%s) is suspended", player.Name, teams[l].Name))
-				}
-
-				teams[l].Players[i].pref_side = player.PrefSide
-
-				teams[l].Players[i].likes_left = false
-				teams[l].Players[i].likes_right = false
-				teams[l].Players[i].likes_center = false
-
-				if teams[l].Players[i].pref_side == "L" {
-					teams[l].Players[i].likes_left = true
-				}
-
-				if teams[l].Players[i].pref_side == "R" {
-					teams[l].Players[i].likes_right = true
-				}
-
-				if teams[l].Players[i].pref_side == "C" {
-					teams[l].Players[i].likes_center = true
-				}
-
-				teams[l].Players[i].st = player.St
-				teams[l].Players[i].tk = player.Tk
-				teams[l].Players[i].ps = player.Ps
-				teams[l].Players[i].sh = player.Sh
-				teams[l].Players[i].stamina = player.Stamina
-
-				// Each player has a nominal_fatigue_per_minute rating that's
-				// calculated once, based on his stamina.
-				//
-				// I'd like the average rating be 0.031 - so that an average player
-				// (stamina = 50) will lose 30 fitness points during a full game.
-				//
-				// The range is approximately 50 - 10 points, and the stamina range
-				// is 1-99. So, first the ratio is normalized and then subtracted
-				// from the average 0.031 (which, times 90 minutes, is 0.279).
-				// The formula for each player is:
-				//
-				// fatigue            stamina - 50
-				// ------- = 0.0031 - ------------  * 0.0022
-				//  minute                 50
-				//
-				//
-				// This gives (approximately) 30 lost fitness points for average players,
-				// 50 for the worse stamina and 10 for the best stamina.
-				//
-				// A small random factor is added each minute, so the exact numbers are
-				// not deterministic.
-				//
-				normalized_stamina_ratio := float64(teams[l].Players[i].stamina-50) / 50.0
-				teams[l].Players[i].nominal_fatigue_per_minute = 0.0031 - normalized_stamina_ratio*0.0022
-
-				teams[l].Players[i].ag = player.Ag
-				teams[l].Players[i].fatigue = float64(player.Fitness) / 100.0
-
-				break
+			player := teams[l].Roster.Players.FindByName(teams[l].Players[i].Name.String())
+			if player == nil {
+				return fmt.Errorf("Player %s (%s) doesn't exist in the roster file", teams[l].Players[i].Name, teams[l].Name)
 			}
 
-			if found == 0 {
-				panic(fmt.Errorf("Player %s (%s) doesn't exist in the roster file", teams[l].Players[i].Name, teams[l].Name))
+			// Check if the player is available for the game
+			//
+			if player.Injury > 0 {
+				return fmt.Errorf("Player %s (%s) is injured", player.Name, teams[l].Name)
 			}
+
+			if player.Suspension > 0 {
+				return fmt.Errorf("Player %s (%s) is suspended", player.Name, teams[l].Name)
+			}
+
+			teams[l].Players[i].Player = player
+
+			teams[l].Players[i].pref_side = player.PrefSide
+
+			teams[l].Players[i].likes_left = false
+			teams[l].Players[i].likes_right = false
+			teams[l].Players[i].likes_center = false
+
+			if teams[l].Players[i].pref_side == "L" {
+				teams[l].Players[i].likes_left = true
+			}
+
+			if teams[l].Players[i].pref_side == "R" {
+				teams[l].Players[i].likes_right = true
+			}
+
+			if teams[l].Players[i].pref_side == "C" {
+				teams[l].Players[i].likes_center = true
+			}
+
+			teams[l].Players[i].st = player.St
+			teams[l].Players[i].tk = player.Tk
+			teams[l].Players[i].ps = player.Ps
+			teams[l].Players[i].sh = player.Sh
+			teams[l].Players[i].stamina = player.Stamina
+
+			// Each player has a nominal_fatigue_per_minute rating that's
+			// calculated once, based on his stamina.
+			//
+			// I'd like the average rating be 0.031 - so that an average player
+			// (stamina = 50) will lose 30 fitness points during a full game.
+			//
+			// The range is approximately 50 - 10 points, and the stamina range
+			// is 1-99. So, first the ratio is normalized and then subtracted
+			// from the average 0.031 (which, times 90 minutes, is 0.279).
+			// The formula for each player is:
+			//
+			// fatigue            stamina - 50
+			// ------- = 0.0031 - ------------  * 0.0022
+			//  minute                 50
+			//
+			//
+			// This gives (approximately) 30 lost fitness points for average players,
+			// 50 for the worse stamina and 10 for the best stamina.
+			//
+			// A small random factor is added each minute, so the exact numbers are
+			// not deterministic.
+			//
+			normalized_stamina_ratio := float64(teams[l].Players[i].stamina-50) / 50.0
+			teams[l].Players[i].nominal_fatigue_per_minute = 0.0031 - normalized_stamina_ratio*0.0022
+
+			teams[l].Players[i].ag = player.Ag
+			teams[l].Players[i].fatigue = float64(player.Fitness) / 100.0
 		}
 
 		// There's an optional "PK: <Name>" line.
@@ -392,7 +383,7 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 		}
 
 		if i < 0 {
-			panic(fmt.Errorf("error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].PK))
+			return fmt.Errorf("error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].PK)
 		}
 	}
 
@@ -416,8 +407,8 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 	}
 
 	/* In the beginning, player n.1 is always the GK */
-	teams[0].CurrentGK = 1
-	teams[1].CurrentGK = 1
+	teams[0].CurrentGK = 0
+	teams[1].CurrentGK = 0
 
 	/* Data initialization */
 	for j := 0; j <= 1; j++ {
@@ -458,6 +449,8 @@ func init_teams_data(teamsheet [2]Teamsheet) {
 			teams[j].Players[i].shots_off = 0
 		}
 	}
+
+	return nil
 }
 
 // / Goes over both teams and checks that there are no duplicate player
@@ -947,15 +940,12 @@ func isGoalCancelled() int {
 	return 0
 }
 
-// Given a team and an event (eg. SHOT)
-// picks one player at (weighted) random
-// that performed this event.
+// whoDidIt picks one player at (weighted) random
+// that performed the given event (eg. SHOT).
 //
-// For example, for SHOT, pick a player
-// at weighted random according to his
-// shooting skill
+// For example, for SHOT, pick a player at weighted random
+// according to his shooting skill
 func whoDidIt(a int, event DidWhat) int {
-	k := 0
 	var total float64 = 0
 	var weight float64 = 0
 	ar := make([]float64, numPlayers)
@@ -966,6 +956,7 @@ func whoDidIt(a int, event DidWhat) int {
 	// contribution
 	//
 
+	k := 0
 	for k = 0; k < numPlayers; k++ {
 		switch event {
 		case DID_SHOT:
@@ -1011,6 +1002,7 @@ func ifFoul(minute, a int) {
 	if randomp(int(teams[a].Aggression*.75)) == 1 {
 		fouler = whoDidIt(a, DID_FOUL)
 		// fprintf(comm, "%s", the_commentary().rand_comment("FOUL", minute_str().c_str(), teams[a].name, teams[a].Players[fouler].name.c_str()).c_str());
+		fmt.Fprintln(comm, "FOUL", minute, teams[a].Name, teams[a].Players[fouler].Name)
 
 		teams[a].FinalFouls++ /* For final stats */
 		teams[a].Players[fouler].fouls++
@@ -1022,6 +1014,7 @@ func ifFoul(minute, a int) {
 			bookings(minute, a, fouler, RED)
 		} else {
 			// fprintf(comm, "%s", the_commentary().rand_comment("WARNED").c_str());
+			fmt.Fprintln(comm, "WARNED")
 		}
 
 		notA := 1 - a
@@ -1046,15 +1039,19 @@ func ifFoul(minute, a int) {
 			}
 
 			// fprintf(comm, "%s", the_commentary().rand_comment("PENALTY", teams[notA].Players[teams[notA].penalty_taker].name.c_str()).c_str());
+			fmt.Fprintln(comm, "PENALTY", teams[notA].Players[teams[notA].PenaltyTaker].Name)
 
 			/* If Penalty... Goal ? */
 			if randomp(8000+teams[notA].Players[teams[notA].PenaltyTaker].sh*100-teams[a].Players[teams[a].CurrentGK].st*100) == 1 {
 				// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
+				fmt.Fprintln(comm, "GOAL")
+
 				teams[notA].Score++
 				teams[notA].Players[teams[notA].PenaltyTaker].goals++
 				teams[a].Players[teams[a].CurrentGK].conceded++
 				// fprintf(comm, "\n          ...  %s %d-%d %s...", teams[0].name, teams[0].score,
 				//         teams[1].score, teams[1].name);
+				fmt.Fprintf(comm, "          ...  %s %d-%d %s...\n", teams[0].Name, teams[0].Score, teams[1].Score, teams[1].Name)
 
 				// report_event *an_event = new report_event_penalty(teams[notA].Players[teams[notA].penalty_taker].name,
 				//                                                   teams[notA].name, formal_minute_str().c_str());
@@ -1064,8 +1061,10 @@ func ifFoul(minute, a int) {
 				//
 				if randomp(7500) == 1 {
 					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[a].Players[teams[a].current_gk].name.c_str()).c_str());
+					fmt.Fprintln(comm, "SAVE", teams[a].Players[teams[a].CurrentGK].Name)
 				} else { /* Or it went off-target */
 					// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str());
+					fmt.Fprintln(comm, "OFFTARGET")
 				}
 			}
 		}

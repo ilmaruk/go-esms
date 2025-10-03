@@ -23,8 +23,9 @@ func (p PlayerName) Short(max int) string {
 	return name
 }
 
-type Player struct {
-	Name PlayerName
+type TeamPlayer struct {
+	Player *Player
+	Name   PlayerName
 
 	Active  int // 1 if the player is currently active on the field, 0 - TODO: should be a bool
 	Minutes int // number of minutes played
@@ -82,7 +83,7 @@ type Player struct {
 
 type Team struct {
 	Name          string
-	Players       [20]Player
+	Players       [20]TeamPlayer
 	Score         int
 	CurrentGK     int
 	Substitutions int
@@ -97,24 +98,40 @@ type Team struct {
 	FinalShotsOff int
 	Tactic        string
 	Injuries      int
-	RosterPlayer  []RosterPlayer
+	Roster        Roster
 	Colors        []string
 }
 
 type Teamsheet struct {
-	Tactic string   `json:"tactic"`
-	Field  []Player `json:"field"`
-	Bench  []Player `json:"bench"`
-	PK     string   `json:"pk"`
-	Name   string   `json:"team_name"`
+	Tactic string            `json:"tactic"`
+	Field  []TeamsheetPlayer `json:"field"`
+	Bench  []TeamsheetPlayer `json:"bench"`
+	PK     string            `json:"pk"`
+	Name   string            `json:"team_name"`
+}
+
+type TeamsheetPlayer struct {
+	Name PlayerName `json:"name"`
+	Pos  string     `json:"pos"`
 }
 
 type Roster struct {
-	TeamName string         `json:"team_name"`
-	Players  []RosterPlayer `json:"players"`
+	TeamName string  `json:"team_name"`
+	Players  Players `json:"players"`
 }
 
-type RosterPlayer struct {
+type Players []Player
+
+func (p Players) FindByName(name string) *Player {
+	for _, pl := range p {
+		if pl.Name == name {
+			return &pl
+		}
+	}
+	return nil
+}
+
+type Player struct {
 	Ag          float64 `json:"ag"`
 	Age         int     `json:"age"`
 	Assists     int     `json:"assists"`

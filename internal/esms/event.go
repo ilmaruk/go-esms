@@ -19,10 +19,10 @@ type Event struct {
 	Minute int
 	Type   string
 	Team   Team
-	Player Player
+	Player TeamPlayer
 }
 
-func NewEvent(minute int, team Team, player Player) Event {
+func NewEvent(minute int, team Team, player TeamPlayer) Event {
 	return Event{
 		Minute: minute,
 		Team:   team,
@@ -32,26 +32,26 @@ func NewEvent(minute int, team Team, player Player) Event {
 
 type ChanceEvent struct {
 	Event
-	Assister *Player
-	Tackler  *Player
+	Assister *TeamPlayer
+	Tackler  *TeamPlayer
 	Outcome  string
 }
 
 func NewChanceEvent(minute int, team Team) ChanceEvent {
 	return ChanceEvent{
-		Event: NewEvent(minute, team, Player{}),
+		Event: NewEvent(minute, team, TeamPlayer{}),
 	}
 }
 
-func (e *ChanceEvent) WithShooter(p Player) {
+func (e *ChanceEvent) WithShooter(p TeamPlayer) {
 	e.Player = p
 }
 
-func (e *ChanceEvent) WithAssister(p Player) {
+func (e *ChanceEvent) WithAssister(p TeamPlayer) {
 	e.Assister = &p
 }
 
-func (e *ChanceEvent) WithTackler(p Player) {
+func (e *ChanceEvent) WithTackler(p TeamPlayer) {
 	e.Tackler = &p
 }
 
@@ -68,8 +68,9 @@ func (e *ChanceEvent) String() string {
 
 	b.WriteString(fmt.Sprintf("Chance for %s", home(e.Player.Name.String())))
 	if e.Assister != nil {
-		b.WriteString(fmt.Sprintf(", assisted by %s:", home(e.Assister.Name.String())))
+		b.WriteString(fmt.Sprintf(", assisted by %s", home(e.Assister.Name.String())))
 	}
+	b.WriteString(":")
 
 	if e.Tackler != nil {
 		away := color.New(color.FgCyan, color.Bold).SprintFunc()
@@ -94,7 +95,7 @@ type BookingEvent struct {
 	Outcome string
 }
 
-func NewBookingEvent(minute int, team Team, player Player) BookingEvent {
+func NewBookingEvent(minute int, team Team, player TeamPlayer) BookingEvent {
 	return BookingEvent{
 		Event: NewEvent(minute, team, player),
 	}
