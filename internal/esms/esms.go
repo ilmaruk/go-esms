@@ -18,14 +18,6 @@ const (
 	RED
 )
 
-// Emojis
-const (
-	YELLOW_CARD = '\U0001F7E8'
-	RED_CARD    = '\U0001F7E5'
-	SOCCER_BALL = '\U000026BD'
-	CRUTCHES    = '\U0001F9F9'
-)
-
 var (
 	numPlayers int
 
@@ -153,8 +145,8 @@ func Play(workDir, homeCode, awayCode string) error {
 			for j := 0; j <= 1; j++ {
 				// Calculate different events
 				//
-				ifShot(j, minute)
-				ifFoul(j)
+				ifShot(minute, j)
+				ifFoul(minute, j)
 				randomInjury(j)
 
 				// notJ := 1 - j
@@ -756,7 +748,7 @@ func calc_aggression(a int) {
 
 // Called on each minute to handle a scoring chance of team
 // a for this minute.
-func ifShot(a, minute int) {
+func ifShot(minute, a int) {
 	var shooter int
 	var assister int
 	var tackler int
@@ -765,90 +757,117 @@ func ifShot(a, minute int) {
 
 	// Did a scoring chance occur ?
 	//
-	if randomp(int(teams[a].ShotProb)) == 1 {
-		// There's a 0.75 probability that a chance was assisted, and
-		// 0.25 that it's a solo
-		//
-		if randomp(7500) == 1 {
-			assister = whoDidIt(a, DID_ASSIST)
-			chance_assisted = 1
-
-			shooter = whoGotAssist(a, assister)
-
-			// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[assister].name.c_str(), teams[a].Players[shooter].name.c_str()).c_str());
-			fmt.Fprintln(comm, "ASSISTEDCHANCE", minute, teams[a].Name, teams[a].Players[assister].Name, teams[a].Players[shooter].Name)
-			teams[a].Players[assister].keypasses++
-		} else {
-			shooter = whoDidIt(a, DID_SHOT)
-
-			chance_assisted = 0
-			assister = 0
-
-			// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[shooter].name.c_str()).c_str());
-			fmt.Fprintln(comm, "CHANCE", minute, teams[a].Name, teams[a].Players[shooter].Name)
-		}
-
-		notA := 1 - a
-		chance_tackled = int(4000.0 * ((teams[notA].TeamTackling * 3.0) / (teams[a].TeamPassing*2.0 + teams[a].TeamShooting)))
-
-		/* If the chance was tackled */
-		if randomp(chance_tackled) == 1 {
-			tackler = whoDidIt(notA, DID_TACKLE)
-			teams[notA].Players[tackler].tackles++
-
-			// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", teams[notA].Players[tackler].name.c_str()).c_str());
-			fmt.Fprintln(comm, "\tTACKLE", teams[notA].Players[tackler].Name)
-		} else { /* Chance was not tackled, it will be a shot on goal */
-			// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", teams[a].Players[shooter].name.c_str()).c_str());
-			fmt.Fprintln(comm, "\tSHOT", teams[a].Players[shooter].Name)
-			teams[a].Players[shooter].shots++
-
-			if ifOnTarget(a, shooter) == 1 {
-				teams[a].FinalShotsOn++
-				teams[a].Players[shooter].shots_on++
-
-				if ifGoal(a, shooter) == 1 {
-					// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
-					fmt.Fprintf(comm, "\t\t%c GOAL\n", SOCCER_BALL)
-
-					if isGoalCancelled() == 0 {
-						teams[a].Score++
-
-						// If the assister was the shooter, there was no
-						// assist, but a simple goal.
-						//
-						if chance_assisted == 1 && (assister != shooter) {
-							teams[a].Players[assister].assists++ /* For final stats */
-						}
-
-						teams[a].Players[shooter].goals++
-						teams[notA].Players[teams[notA].CurrentGK].conceded++
-
-						// fprintf(comm, "\n          ...  %s %d-%d %s ...",
-						//         teams[0].name,
-						//         teams[0].score,
-						//         teams[1].score,
-						//         teams[1].name);
-
-						// report_event *an_event = new report_event_goal(teams[a].Players[shooter].name.c_str(),
-						//                                                teams[a].name, formal_minute_str().c_str());
-
-						// report_vec.push_back(an_event);
-					}
-				} else {
-					// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[notA].Players[teams[notA].current_gk].name.c_str()).c_str());
-					fmt.Fprintln(comm, "\t\tSAVE", teams[notA].Players[teams[notA].CurrentGK].Name)
-
-					teams[notA].Players[teams[notA].CurrentGK].saves++
-				}
-			} else {
-				teams[a].Players[shooter].shots_off++
-				// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str())
-				fmt.Fprintln(comm, "\tOFFTARGET")
-				teams[a].FinalShotsOff++
-			}
-		}
+	if randomp(int(teams[a].ShotProb)) == 0 {
+		return
 	}
+
+	// A chance did occur.
+	event := NewChanceEvent(minute, teams[a].Name)
+	defer func() {
+		fmt.Fprintln(comm, event.String())
+	}()
+
+	// There's a 0.75 probability that a chance was assisted, and
+	// 0.25 that it's a solo
+	//
+	if randomp(7500) == 1 {
+		assister = whoDidIt(a, DID_ASSIST)
+		chance_assisted = 1
+
+		shooter = whoGotAssist(a, assister)
+
+		// fprintf(comm, "%s", the_commentary().rand_comment("ASSISTEDCHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[assister].name.c_str(), teams[a].Players[shooter].name.c_str()).c_str());
+		// fmt.Fprintln(comm, "ASSISTEDCHANCE", minute, teams[a].Name, teams[a].Players[assister].Name, teams[a].Players[shooter].Name)
+		teams[a].Players[assister].keypasses++
+
+		event.WithShooter(teams[a].Players[shooter])
+		event.WithAssister(teams[a].Players[assister])
+	} else {
+		shooter = whoDidIt(a, DID_SHOT)
+
+		chance_assisted = 0
+		assister = 0
+
+		// fprintf(comm, "%s", the_commentary().rand_comment("CHANCE", minute_str().c_str(), teams[a].name, teams[a].Players[shooter].name.c_str()).c_str());
+		// fmt.Fprintln(comm, "CHANCE", minute, teams[a].Name, teams[a].Players[shooter].Name)
+
+		event.WithShooter(teams[a].Players[shooter])
+	}
+
+	notA := 1 - a
+	chance_tackled = int(4000.0 * ((teams[notA].TeamTackling * 3.0) / (teams[a].TeamPassing*2.0 + teams[a].TeamShooting)))
+
+	/* If the chance was tackled */
+	if randomp(chance_tackled) == 1 {
+		tackler = whoDidIt(notA, DID_TACKLE)
+		teams[notA].Players[tackler].tackles++
+
+		// fprintf(comm, "%s", the_commentary().rand_comment("TACKLE", teams[notA].Players[tackler].name.c_str()).c_str());
+		// fmt.Fprintln(comm, "\tTACKLE", teams[notA].Players[tackler].Name)
+
+		event.WithTackler(teams[notA].Players[tackler])
+
+		return
+	}
+
+	/* Chance was not tackled, it will be a shot on goal */
+	// fprintf(comm, "%s", the_commentary().rand_comment("SHOT", teams[a].Players[shooter].name.c_str()).c_str());
+	// fmt.Fprintln(comm, "\tSHOT", teams[a].Players[shooter].Name)
+	teams[a].Players[shooter].shots++
+
+	if ifOnTarget(a, shooter) == 0 {
+		teams[a].Players[shooter].shots_off++
+		// fprintf(comm, "%s", the_commentary().rand_comment("OFFTARGET").c_str())
+		// fmt.Fprintln(comm, "\tOFFTARGET")
+		teams[a].FinalShotsOff++
+
+		event.WithOutcome("OFFTARGET")
+
+		return
+	}
+
+	teams[a].FinalShotsOn++
+	teams[a].Players[shooter].shots_on++
+
+	if ifGoal(a, shooter) == 0 {
+		// fprintf(comm, "%s", the_commentary().rand_comment("SAVE", teams[notA].Players[teams[notA].current_gk].name.c_str()).c_str());
+		// fmt.Fprintln(comm, "\t\tSAVE", teams[notA].Players[teams[notA].CurrentGK].Name)
+
+		teams[notA].Players[teams[notA].CurrentGK].saves++
+
+		event.WithOutcome("SAVE")
+
+		return
+	}
+
+	// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
+	// fmt.Fprintf(comm, "\t\t%c GOAL\n", SOCCER_BALL)
+
+	if isGoalCancelled() == 1 {
+		return
+	}
+	teams[a].Score++
+
+	// If the assister was the shooter, there was no
+	// assist, but a simple goal.
+	//
+	if chance_assisted == 1 && (assister != shooter) {
+		teams[a].Players[assister].assists++ /* For final stats */
+	}
+
+	teams[a].Players[shooter].goals++
+	teams[notA].Players[teams[notA].CurrentGK].conceded++
+
+	// fprintf(comm, "\n          ...  %s %d-%d %s ...",
+	//         teams[0].name,
+	//         teams[0].score,
+	//         teams[1].score,
+	//         teams[1].name);
+
+	// report_event *an_event = new report_event_goal(teams[a].Players[shooter].name.c_str(),
+	//                                                teams[a].name, formal_minute_str().c_str());
+
+	// report_vec.push_back(an_event);
 }
 
 // When a chance was generated for the team and assisted by the
@@ -984,7 +1003,7 @@ func whoDidIt(a int, event DidWhat) int {
 }
 
 // ifFoul handles fouls (called on each minute with for each team)
-func ifFoul(a int) {
+func ifFoul(minute, a int) {
 	var fouler int
 
 	if randomp(int(teams[a].Aggression*.75)) == 1 {
@@ -996,9 +1015,9 @@ func ifFoul(a int) {
 
 		/* The chance of the foul to result in a yellow or red card */
 		if randomp(6000) == 1 {
-			bookings(a, fouler, YELLOW)
+			bookings(minute, a, fouler, YELLOW)
 		} else if randomp(400) == 1 {
-			bookings(a, fouler, RED)
+			bookings(minute, a, fouler, RED)
 		} else {
 			// fprintf(comm, "%s", the_commentary().rand_comment("WARNED").c_str());
 		}
@@ -1052,16 +1071,19 @@ func ifFoul(a int) {
 }
 
 // bookings deals with yellow and red cards
-func bookings(a, b, card_color int) {
+func bookings(minute, a, b, card_color int) {
+	event := NewBookingEvent(minute, teams[a].Name, teams[a].Players[b])
 	if card_color == YELLOW {
-		fmt.Fprintf(comm, "%c YELLOWCARD %s\n", YELLOW_CARD, teams[a].Players[b].Name)
+		// fmt.Fprintf(comm, "%c YELLOWCARD %s\n", YELLOW_CARD, teams[a].Players[b].Name)
 		// fprintf(comm, "%s", the_commentary().rand_comment("YELLOWCARD").c_str());
 		teams[a].Players[b].yellowcards++
 
 		// A second yellow card is equal to a red card
 		//
 		if teams[a].Players[b].yellowcards == 2 {
-			fmt.Fprintf(comm, "%c%c SECONDYELLOWCARD %s\n", YELLOW_CARD, RED_CARD, teams[a].Players[b].Name)
+			event.WithOutcome("SECONDYELLOW")
+
+			// fmt.Fprintf(comm, "%c SECONDYELLOWCARD %s\n", RED_CARD, teams[a].Players[b].Name)
 			// fprintf(comm, "%s", the_commentary().rand_comment("SECONDYELLOWCARD").c_str());
 			sendOff(a, b)
 
@@ -1071,10 +1093,13 @@ func bookings(a, b, card_color int) {
 
 			redCarded[a] = b
 		} else {
+			event.WithOutcome("YELLOW")
 			yellowCarded[a] = b
 		}
 	} else if card_color == RED {
-		fmt.Fprintf(comm, "%c REDCARD %s\n", RED_CARD, teams[a].Players[b].Name)
+		event.WithOutcome("RED")
+
+		// fmt.Fprintf(comm, "%c REDCARD %s\n", RED_CARD, teams[a].Players[b].Name)
 		// fprintf(comm, "%s", the_commentary().rand_comment("REDCARD").c_str());
 		sendOff(a, b)
 
@@ -1084,6 +1109,7 @@ func bookings(a, b, card_color int) {
 
 		redCarded[a] = b
 	}
+	fmt.Fprintln(comm, event.String())
 }
 
 // substitutePlayer substitutites player in for player out in team a, he'll play
