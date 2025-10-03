@@ -1,9 +1,72 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+
 	"github.com/ilmaruk/go-esms/internal/esms"
 )
 
+var (
+	workDir string
+
+	homeCode string
+	awayCode string
+)
+
+var rootCmd = &cobra.Command{
+	Use:   "esms",
+	Short: "Elecronic Soccer Manager Simulator",
+	Long:  `esms is the re-implementation of Eli Benderski's esms in Golang.`,
+	// PersistentPreRun: loadTasks,
+	// PersistentPostRun: saveTasks,
+}
+
+var playCmd = &cobra.Command{
+	Use:   "play",
+	Short: "Play a new game",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+	RunE: playGame,
+}
+
+func init() {
+	// Persistent flags available to all commands
+	rootCmd.PersistentFlags().StringVarP(&workDir, "work-dir", "d", ".", "working directory")
+
+	// Local flags for specific commands
+	playCmd.Flags().StringVar(&homeCode, "home", "", "home team code")
+	playCmd.Flags().StringVar(&awayCode, "away", "", "away team code")
+	// addCmd.Flags().StringVarP(&priority, "priority", "p", "medium", "task priority (high, medium, low)")
+	// listCmd.Flags().BoolVarP(&showAll, "all", "a", false, "show completed tasks too")
+
+	// Add subcommands
+	rootCmd.AddCommand(playCmd)
+
+	// Setup configuration
+	setupConfig()
+}
+
+func setupConfig() {
+	viper.SetConfigName("esms")
+	viper.SetConfigType("yaml")
+	viper.AddConfigPath("$HOME")
+	// viper.SetDefault("priority", "medium")
+	// viper.SetDefault("file", filepath.Join(os.Getenv("HOME"), ".taskman.json"))
+
+	viper.ReadInConfig()
+}
+
+func playGame(cmd *cobra.Command, args []string) error {
+	return esms.Play(workDir, homeCode, awayCode)
+}
+
 func main() {
-	esms.Play()
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }

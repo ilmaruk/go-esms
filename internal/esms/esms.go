@@ -13,8 +13,17 @@ import (
 )
 
 const (
-	YELLOW = 1
-	RED    = 2
+	// Cards
+	YELLOW int = iota
+	RED
+)
+
+// Emojis
+const (
+	YELLOW_CARD = '\U0001F7E8'
+	RED_CARD    = '\U0001F7E5'
+	SOCCER_BALL = '\U000026BD'
+	CRUTCHES    = '\U0001F9F9'
 )
 
 var (
@@ -58,23 +67,23 @@ func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixNano()))
 }
 
-func Play() {
+func Play(workDir, homeCode, awayCode string) error {
 	var (
 		homeTeamsheet Teamsheet
 		awayTeamsheet Teamsheet
 	)
 
-	dataDir := "../../data"
+	dataDir := filepath.Join(workDir, "data")
 
 	// Home Teamsheet
-	if err := loadTeamsheet(filepath.Join(dataDir, "ss1_sht.json"), &homeTeamsheet); err != nil {
-		panic(err)
+	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", homeCode)), &homeTeamsheet); err != nil {
+		return err
 	}
 	teams[0].Name = homeTeamsheet.Name
 
 	// Away Teamsheet
-	if err := loadTeamsheet(filepath.Join(dataDir, "ss2_sht.json"), &awayTeamsheet); err != nil {
-		panic(err)
+	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", awayCode)), &awayTeamsheet); err != nil {
+		return err
 	}
 	teams[1].Name = awayTeamsheet.Name
 
@@ -84,14 +93,14 @@ func Play() {
 	)
 
 	// Home Teamsheet
-	if err := loadRoster(filepath.Join(dataDir, "ss1.json"), &homeRoster); err != nil {
-		panic(err)
+	if err := loadRoster(filepath.Join(dataDir, fmt.Sprintf("%s.json", homeCode)), &homeRoster); err != nil {
+		return err
 	}
 	teams[0].RosterPlayer = homeRoster.Players
 
 	// Away Teamsheet
-	if err := loadRoster(filepath.Join(dataDir, "ss2.json"), &awayRoster); err != nil {
-		panic(err)
+	if err := loadRoster(filepath.Join(dataDir, fmt.Sprintf("%s.json", awayCode)), &awayRoster); err != nil {
+		return err
 	}
 	teams[1].RosterPlayer = awayRoster.Players
 
@@ -197,7 +206,9 @@ func Play() {
 
 	fmt.Fprintln(comm, "Final score:", teams[0].Name, teams[0].Score, "-", teams[1].Score, teams[1].Name)
 
-	print_final_stats(os.Stdout)
+	print_final_stats(os.Stderr)
+
+	return nil
 }
 
 // Temporary, for testing purposes
@@ -798,7 +809,7 @@ func ifShot(a, minute int) {
 
 				if ifGoal(a, shooter) == 1 {
 					// fprintf(comm, "%s", the_commentary().rand_comment("GOAL").c_str());
-					fmt.Fprintln(comm, "\t\tGOAL")
+					fmt.Fprintf(comm, "\t\t%c GOAL\n", SOCCER_BALL)
 
 					if isGoalCancelled() == 0 {
 						teams[a].Score++
@@ -1043,12 +1054,14 @@ func ifFoul(a int) {
 // bookings deals with yellow and red cards
 func bookings(a, b, card_color int) {
 	if card_color == YELLOW {
+		fmt.Fprintf(comm, "%c YELLOWCARD %s\n", YELLOW_CARD, teams[a].Players[b].Name)
 		// fprintf(comm, "%s", the_commentary().rand_comment("YELLOWCARD").c_str());
 		teams[a].Players[b].yellowcards++
 
 		// A second yellow card is equal to a red card
 		//
 		if teams[a].Players[b].yellowcards == 2 {
+			fmt.Fprintf(comm, "%c%c SECONDYELLOWCARD %s\n", YELLOW_CARD, RED_CARD, teams[a].Players[b].Name)
 			// fprintf(comm, "%s", the_commentary().rand_comment("SECONDYELLOWCARD").c_str());
 			sendOff(a, b)
 
@@ -1061,6 +1074,7 @@ func bookings(a, b, card_color int) {
 			yellowCarded[a] = b
 		}
 	} else if card_color == RED {
+		fmt.Fprintf(comm, "%c REDCARD %s\n", RED_CARD, teams[a].Players[b].Name)
 		// fprintf(comm, "%s", the_commentary().rand_comment("REDCARD").c_str());
 		sendOff(a, b)
 
