@@ -98,6 +98,7 @@ type Team struct {
 	Tactic        string
 	Injuries      int
 	RosterPlayer  []RosterPlayer
+	Colors        []string
 }
 
 type Teamsheet struct {

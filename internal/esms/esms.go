@@ -72,12 +72,14 @@ func Play(workDir, homeCode, awayCode string) error {
 		return err
 	}
 	teams[0].Name = homeTeamsheet.Name
+	teams[0].Colors = []string{"GREEN", "BLACK"}
 
 	// Away Teamsheet
 	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", awayCode)), &awayTeamsheet); err != nil {
 		return err
 	}
 	teams[1].Name = awayTeamsheet.Name
+	teams[1].Colors = []string{"RED", "WHITE"}
 
 	var (
 		homeRoster Roster
@@ -762,7 +764,7 @@ func ifShot(minute, a int) {
 	}
 
 	// A chance did occur.
-	event := NewChanceEvent(minute, teams[a].Name)
+	event := NewChanceEvent(minute, teams[a])
 	defer func() {
 		fmt.Fprintln(comm, event.String())
 	}()
@@ -1072,7 +1074,7 @@ func ifFoul(minute, a int) {
 
 // bookings deals with yellow and red cards
 func bookings(minute, a, b, card_color int) {
-	event := NewBookingEvent(minute, teams[a].Name, teams[a].Players[b])
+	event := NewBookingEvent(minute, teams[a], teams[a].Players[b])
 	if card_color == YELLOW {
 		// fmt.Fprintf(comm, "%c YELLOWCARD %s\n", YELLOW_CARD, teams[a].Players[b].Name)
 		// fprintf(comm, "%s", the_commentary().rand_comment("YELLOWCARD").c_str());

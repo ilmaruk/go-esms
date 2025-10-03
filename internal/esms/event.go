@@ -18,11 +18,11 @@ const (
 type Event struct {
 	Minute int
 	Type   string
-	Team   string
+	Team   Team
 	Player Player
 }
 
-func NewEvent(minute int, team string, player Player) Event {
+func NewEvent(minute int, team Team, player Player) Event {
 	return Event{
 		Minute: minute,
 		Team:   team,
@@ -37,7 +37,7 @@ type ChanceEvent struct {
 	Outcome  string
 }
 
-func NewChanceEvent(minute int, team string) ChanceEvent {
+func NewChanceEvent(minute int, team Team) ChanceEvent {
 	return ChanceEvent{
 		Event: NewEvent(minute, team, Player{}),
 	}
@@ -60,10 +60,11 @@ func (e *ChanceEvent) WithOutcome(o string) {
 }
 
 func (e *ChanceEvent) String() string {
+	teamColor := color.New(colorToBg(e.Team.Colors[0]), colorToFg(e.Team.Colors[1]), color.Bold).SprintFunc()
 	home := color.New(color.FgBlue, color.Bold).SprintFunc()
 
 	b := strings.Builder{}
-	b.WriteString(fmt.Sprintf("[%2d - %s] ", e.Minute, e.Team))
+	b.WriteString(fmt.Sprintf("%s [%2dm] ", teamColor(strings.ToUpper(e.Team.Name)), e.Minute))
 
 	b.WriteString(fmt.Sprintf("Chance for %s", home(e.Player.Name.String())))
 	if e.Assister != nil {
@@ -71,7 +72,7 @@ func (e *ChanceEvent) String() string {
 	}
 
 	if e.Tackler != nil {
-		away := color.New(color.FgRed, color.Bold).SprintFunc()
+		away := color.New(color.FgCyan, color.Bold).SprintFunc()
 		b.WriteString(fmt.Sprintf(" tackled by %s!", away(e.Tackler.Name.String())))
 		return b.String()
 	}
@@ -93,7 +94,7 @@ type BookingEvent struct {
 	Outcome string
 }
 
-func NewBookingEvent(minute int, team string, player Player) BookingEvent {
+func NewBookingEvent(minute int, team Team, player Player) BookingEvent {
 	return BookingEvent{
 		Event: NewEvent(minute, team, player),
 	}
@@ -104,10 +105,11 @@ func (e *BookingEvent) WithOutcome(o string) {
 }
 
 func (e BookingEvent) String() string {
+	teamColor := color.New(colorToBg(e.Team.Colors[0]), colorToFg(e.Team.Colors[1]), color.Bold).SprintFunc()
 	home := color.New(color.FgBlue, color.Bold).SprintFunc()
 
 	b := strings.Builder{}
-	b.WriteString(fmt.Sprintf("[%2d - %s] ", e.Minute, e.Team))
+	b.WriteString(fmt.Sprintf("%s [%2dm] ", teamColor(strings.ToUpper(e.Team.Name)), e.Minute))
 
 	switch e.Outcome {
 	case "YELLOW":
@@ -119,4 +121,36 @@ func (e BookingEvent) String() string {
 	}
 
 	return b.String()
+}
+
+// TODO: use a map instead
+func colorToFg(c string) color.Attribute {
+	switch c {
+	case "RED":
+		return color.FgRed
+	case "GREEN":
+		return color.FgGreen
+	case "WHITE":
+		return color.FgWhite
+	case "BLACK":
+		fallthrough
+	default:
+		return color.FgBlack
+	}
+}
+
+// TODO: use a map instead
+func colorToBg(c string) color.Attribute {
+	switch c {
+	case "RED":
+		return color.BgRed
+	case "GREEN":
+		return color.BgGreen
+	case "BLACK":
+		return color.BgBlack
+	case "WHITE":
+		fallthrough
+	default:
+		return color.BgWhite
+	}
 }
