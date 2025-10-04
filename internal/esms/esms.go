@@ -841,6 +841,8 @@ func ifShot(minute, a int) {
 	if isGoalCancelled() == 1 {
 		return
 	}
+
+	event.WithOutcome("GOAL")
 	teams[a].Score++
 
 	// If the assister was the shooter, there was no

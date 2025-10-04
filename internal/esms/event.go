@@ -64,7 +64,7 @@ func (e *ChanceEvent) String() string {
 	home := color.New(color.FgBlue, color.Bold).SprintFunc()
 
 	b := strings.Builder{}
-	b.WriteString(fmt.Sprintf("%s [%2dm] ", teamColor(strings.ToUpper(e.Team.Name)), e.Minute))
+	b.WriteString(fmt.Sprintf("%s [%2dm] %c ", teamColor(strings.ToUpper(e.Team.Name)), e.Minute, outcomeToEmoji(e.Outcome)))
 
 	b.WriteString(fmt.Sprintf("Chance for %s", home(e.Player.Name.String())))
 	if e.Assister != nil {
@@ -83,8 +83,6 @@ func (e *ChanceEvent) String() string {
 		b.WriteString(" the shot is off-target!")
 	case "SAVE":
 		b.WriteString(" the shot is saved!")
-	default:
-		b.WriteString(fmt.Sprintf(" it's in goal!!! %c", SOCCER_BALL))
 	}
 
 	return b.String()
@@ -110,7 +108,7 @@ func (e BookingEvent) String() string {
 	home := color.New(color.FgBlue, color.Bold).SprintFunc()
 
 	b := strings.Builder{}
-	b.WriteString(fmt.Sprintf("%s [%2dm] ", teamColor(strings.ToUpper(e.Team.Name)), e.Minute))
+	b.WriteString(fmt.Sprintf("%s [%2dm] %c ", teamColor(strings.ToUpper(e.Team.Name)), e.Minute, outcomeToEmoji(e.Outcome)))
 
 	switch e.Outcome {
 	case "YELLOW":
@@ -122,6 +120,22 @@ func (e BookingEvent) String() string {
 	}
 
 	return b.String()
+}
+
+// TODO: use a map instead
+func outcomeToEmoji(o string) rune {
+	switch o {
+	case "GOAL":
+		return SOCCER_BALL
+	case "YELLOW":
+		return YELLOW_CARD
+	case "SECONDYELLOW":
+		fallthrough
+	case "RED":
+		return RED_CARD
+	default:
+		return ' '
+	}
 }
 
 // TODO: use a map instead
