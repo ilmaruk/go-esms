@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/ilmaruk/go-esms/internal/esms"
+	"github.com/ilmaruk/go-esms/internal/roster"
 )
 
 var (
@@ -33,6 +34,21 @@ var playCmd = &cobra.Command{
 	RunE: playGame,
 }
 
+var rosterCmd = &cobra.Command{
+	Use:   "roster",
+	Short: "Roster functionalities",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+}
+
+var rosterCreateCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Create a new roster",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+	RunE: createRoster,
+}
+
 func init() {
 	// Persistent flags available to all commands
 	rootCmd.PersistentFlags().StringVarP(&workDir, "work-dir", "d", ".", "working directory")
@@ -44,7 +60,8 @@ func init() {
 	// listCmd.Flags().BoolVarP(&showAll, "all", "a", false, "show completed tasks too")
 
 	// Add subcommands
-	rootCmd.AddCommand(playCmd)
+	rosterCmd.AddCommand(rosterCreateCmd)
+	rootCmd.AddCommand(playCmd, rosterCmd)
 
 	// Setup configuration
 	setupConfig()
@@ -62,6 +79,10 @@ func setupConfig() {
 
 func playGame(cmd *cobra.Command, args []string) error {
 	return esms.Play(workDir, homeCode, awayCode)
+}
+
+func createRoster(cmd *cobra.Command, args []string) error {
+	return roster.CreateRoster(25)
 }
 
 func main() {
