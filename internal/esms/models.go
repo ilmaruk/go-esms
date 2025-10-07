@@ -3,6 +3,8 @@ package esms
 import (
 	"fmt"
 	"strings"
+
+	"github.com/ilmaruk/go-esms/internal"
 )
 
 type PlayerName string
@@ -24,7 +26,7 @@ func (p PlayerName) Short(max int) string {
 }
 
 type TeamPlayer struct {
-	Player *Player
+	Player *internal.Player
 	Name   PlayerName
 
 	Active  int // 1 if the player is currently active on the field, 0 - TODO: should be a bool
@@ -98,7 +100,7 @@ type Team struct {
 	FinalShotsOff int
 	Tactic        string
 	Injuries      int
-	Roster        Roster
+	Roster        internal.Roster
 	Colors        []string
 }
 

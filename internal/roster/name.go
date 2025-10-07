@@ -40,8 +40,7 @@ func generatePersons(qty int) ([]internal.Person, error) {
 	parserNameClient := parsername.New(parserNameApiKey)
 	generate := parserNameClient.Generate().
 		WithGender("m").
-		WithResults(qty).
-		WithCountryCode("IT")
+		WithResults(qty)
 	resp, err := generate.Do()
 	if err != nil {
 		return nil, err

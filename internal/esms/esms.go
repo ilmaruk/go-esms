@@ -10,6 +10,8 @@ import (
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/ilmaruk/go-esms/internal/database"
 )
 
 const (
@@ -79,22 +81,17 @@ func Play(workDir, homeCode, awayCode string) error {
 	}
 	teams[1].Colors = []string{"RED", "WHITE"}
 
-	var (
-		homeRoster Roster
-		awayRoster Roster
-	)
+	var err error
 
 	// Home Teamsheet
-	if err := loadRoster(filepath.Join(dataDir, fmt.Sprintf("%s.json", homeCode)), &homeRoster); err != nil {
+	if teams[0].Roster, err = database.LoadRoster(workDir, homeCode); err != nil {
 		return err
 	}
-	teams[0].Roster = homeRoster
 
 	// Away Teamsheet
-	if err := loadRoster(filepath.Join(dataDir, fmt.Sprintf("%s.json", awayCode)), &awayRoster); err != nil {
+	if teams[1].Roster, err = database.LoadRoster(workDir, awayCode); err != nil {
 		return err
 	}
-	teams[1].Roster = awayRoster
 
 	numSubs := theConfig.getIntConfig("NUM_SUBS", 5)
 	numPlayers = 11 + numSubs

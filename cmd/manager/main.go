@@ -16,6 +16,9 @@ var (
 
 	homeCode string
 	awayCode string
+
+	teamCode string
+	teamName string
 )
 
 var rootCmd = &cobra.Command{
@@ -59,6 +62,9 @@ func init() {
 	// addCmd.Flags().StringVarP(&priority, "priority", "p", "medium", "task priority (high, medium, low)")
 	// listCmd.Flags().BoolVarP(&showAll, "all", "a", false, "show completed tasks too")
 
+	rosterCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
+	rosterCreateCmd.Flags().StringVarP(&teamName, "name", "n", "", "team name")
+
 	// Add subcommands
 	rosterCmd.AddCommand(rosterCreateCmd)
 	rootCmd.AddCommand(playCmd, rosterCmd)
@@ -82,7 +88,7 @@ func playGame(cmd *cobra.Command, args []string) error {
 }
 
 func createRoster(cmd *cobra.Command, args []string) error {
-	return roster.CreateRoster(25)
+	return roster.CreateRoster(workDir, teamCode, teamName)
 }
 
 func main() {
