@@ -13,26 +13,21 @@ import (
 var (
 	rnd *rand.Rand
 
-	cfg_n_gk = 3
-	cfg_n_df = 8
-	cfg_n_dm = 3
-	cfg_n_mf = 8
-	cfg_n_am = 3
-	cfg_n_fw = 5
-
-	cfg_average_stamina         = 0
-	cfg_average_aggression      = 0
-	cfg_average_main_skill      = 4
-	cfg_average_mid_skill       = 1
-	cfg_average_secondary_skill = 7
+	// supportedCountries = []string{
+	// 	"AR", "AU", "BR", "BG",
+	// 	"cam", "HR", "DE", "EN",
+	// 	"FR", "DE", "NL", "IE",
+	// 	"isr", "IT", "JP", "nig",
+	// 	"NO", "ZA", "ES", "US",
+	// }
 )
 
 func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixMicro()))
 }
 
-func CreateRoster(workDir, teamCode, teamName string) error {
-	var numPlayers = 25
+func CreateRoster(workDir, teamCode, teamName string, cfg internal.RosterCreatorConfig) error {
+	var numPlayers = cfg.NumGK + cfg.NumDF + cfg.NumDM + cfg.NumMF + cfg.NumAM + cfg.NumFW
 
 	roster := internal.Roster{
 		TeamCode: teamCode,
@@ -56,11 +51,11 @@ func CreateRoster(workDir, teamCode, teamName string) error {
 
 		// Age: Varies between 16 and 30
 		//
-		player.Age = averaged_random(23, 7)
+		player.Age = averagedRandom(23, 7)
 
 		// Preferred side: preset probability for each
 		//
-		temp_rand := uniform_random(150)
+		temp_rand := unoformRandom(150)
 
 		var temp_side string
 		if temp_rand <= 8 {
@@ -81,50 +76,50 @@ func CreateRoster(workDir, teamCode, teamName string) error {
 
 		player.PrefSide = temp_side
 
-		half_average_secondary_skill := cfg_average_secondary_skill / 2
+		half_average_secondary_skill := cfg.AvgSecondarySkill / 2
 
 		// Skills: Depends on the position, first n_goalkeepers
 		// will get the highest skill in St, and so on...
 		//
-		if p <= cfg_n_gk {
-			player.St = averaged_random_part_dev(cfg_average_main_skill, 3)
-			player.Tk = averaged_random_part_dev(half_average_secondary_skill, 2)
-			player.Ps = averaged_random_part_dev(half_average_secondary_skill, 2)
-			player.Sh = averaged_random_part_dev(half_average_secondary_skill, 2)
-		} else if p <= cfg_n_gk+cfg_n_df {
-			player.Tk = averaged_random_part_dev(cfg_average_main_skill, 3)
-			player.St = averaged_random_part_dev(half_average_secondary_skill, 2)
-			player.Ps = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-			player.Sh = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-		} else if p <= cfg_n_gk+cfg_n_df+cfg_n_dm {
-			player.Ps = averaged_random_part_dev(cfg_average_mid_skill, 3)
-			player.Tk = averaged_random_part_dev(cfg_average_mid_skill, 3)
-			player.St = averaged_random_part_dev(half_average_secondary_skill, 2)
-			player.Sh = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-		} else if p <= cfg_n_gk+cfg_n_df+cfg_n_dm+cfg_n_mf {
-			player.Ps = averaged_random_part_dev(cfg_average_main_skill, 3)
-			player.St = averaged_random_part_dev(half_average_secondary_skill, 2)
-			player.Tk = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-			player.Sh = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-		} else if p <= cfg_n_gk+cfg_n_df+cfg_n_dm+cfg_n_mf+cfg_n_am {
-			player.Ps = averaged_random_part_dev(cfg_average_mid_skill, 3)
-			player.Sh = averaged_random_part_dev(cfg_average_mid_skill, 3)
-			player.Tk = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-			player.St = averaged_random_part_dev(half_average_secondary_skill, 2)
+		if p < cfg.NumGK {
+			player.St = averagedRandomPartDev(cfg.AvgMainSkill, 3)
+			player.Tk = averagedRandomPartDev(half_average_secondary_skill, 2)
+			player.Ps = averagedRandomPartDev(half_average_secondary_skill, 2)
+			player.Sh = averagedRandomPartDev(half_average_secondary_skill, 2)
+		} else if p < cfg.NumGK+cfg.NumDF {
+			player.Tk = averagedRandomPartDev(cfg.AvgMainSkill, 3)
+			player.St = averagedRandomPartDev(half_average_secondary_skill, 2)
+			player.Ps = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+			player.Sh = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+		} else if p < cfg.NumGK+cfg.NumDF+cfg.NumDM {
+			player.Ps = averagedRandomPartDev(cfg.AvgMidSkill, 3)
+			player.Tk = averagedRandomPartDev(cfg.AvgMidSkill, 3)
+			player.St = averagedRandomPartDev(half_average_secondary_skill, 2)
+			player.Sh = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+		} else if p < cfg.NumGK+cfg.NumDF+cfg.NumDM+cfg.NumMF {
+			player.Ps = averagedRandomPartDev(cfg.AvgMainSkill, 3)
+			player.St = averagedRandomPartDev(half_average_secondary_skill, 2)
+			player.Tk = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+			player.Sh = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+		} else if p < cfg.NumGK+cfg.NumDF+cfg.NumDM+cfg.NumMF+cfg.NumAM {
+			player.Ps = averagedRandomPartDev(cfg.AvgMidSkill, 3)
+			player.Sh = averagedRandomPartDev(cfg.AvgMidSkill, 3)
+			player.Tk = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+			player.St = averagedRandomPartDev(half_average_secondary_skill, 2)
 		} else {
-			player.Sh = averaged_random_part_dev(cfg_average_main_skill, 3)
-			player.St = averaged_random_part_dev(half_average_secondary_skill, 2)
-			player.Tk = averaged_random_part_dev(cfg_average_secondary_skill, 2)
-			player.Ps = averaged_random_part_dev(cfg_average_secondary_skill, 2)
+			player.Sh = averagedRandomPartDev(cfg.AvgMainSkill, 3)
+			player.St = averagedRandomPartDev(half_average_secondary_skill, 2)
+			player.Tk = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
+			player.Ps = averagedRandomPartDev(cfg.AvgSecondarySkill, 2)
 		}
 
 		// Stamina
 		//
-		player.Stamina = averaged_random_part_dev(cfg_average_stamina, 2)
+		player.Stamina = averagedRandomPartDev(cfg.AvgStamina, 2)
 
 		// Aggression
 		//
-		player.Ag = float64(averaged_random_part_dev(cfg_average_aggression, 3))
+		player.Ag = float64(averagedRandomPartDev(cfg.AvgAggression, 3))
 
 		// Abilities: set all to 300
 		//
@@ -153,53 +148,22 @@ func CreateRoster(workDir, teamCode, teamName string) error {
 	return database.SaveRoster(workDir, roster)
 }
 
-func more_st(p1, p2 internal.Player) bool {
-	return p1.St > p2.St
+func averagedRandomPartDev(average, div int) int {
+	return averagedRandom(float64(average), float64(average)/float64(div))
 }
 
-func more_tk(p1, p2 internal.Player) bool {
-	return p1.Tk > p2.Tk
-}
-
-func more_ps(p1, p2 internal.Player) bool {
-	return p1.Ps > p2.Ps
-}
-
-func more_sh(p1, p2 internal.Player) bool {
-	return p1.Sh > p2.Sh
-}
-
-func averaged_random_part_dev(average, div int) int {
-	return averaged_random(float64(average), float64(average)/float64(div))
-}
-
-func averaged_random(average, max_deviation float64) int {
+func averagedRandom(average, max_deviation float64) int {
 	return int(rnd.NormFloat64()*max_deviation + average)
-}
-
-// Given a string with comma separated values (like "a,cd,k")
-// returns a random value.
-func rand_elem(csv string) string {
-	elems := strings.Split(csv, ",")
-	return elems[uniform_random(len(elems))]
 }
 
 // Return a pseudo-random integer uniformly distributed
 // between 0 and max
-func uniform_random(max int) int {
+func unoformRandom(max int) int {
 	return rnd.Intn(max)
 	// double d = rand() / (double)RAND_MAX;
 	// unsigned u = (unsigned)(d * (max + 1));
 
 	// return (u == max + 1 ? max - 1 : u);
-}
-
-// Throws a bet with probability prob of success. Returns
-// true if succeeded.
-func throw_with_prob(prob int) bool {
-	a_throw := 1 + uniform_random(99)
-
-	return prob >= a_throw
 }
 
 func nameToID(name string) string {

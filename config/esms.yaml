@@ -1,0 +1,12 @@
+roster_creator:
+  num_gk: 3
+  num_df: 8
+  num_dm: 3
+  num_mf: 8
+  num_am: 3
+  num_fw: 5
+  avg_stamina: 60
+  avg_aggression: 30
+  avg_main_skill: 14
+  avg_mid_skill: 11
+  avg_secondary_skill: 7

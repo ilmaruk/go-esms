@@ -7,12 +7,15 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
+	"github.com/ilmaruk/go-esms/internal"
 	"github.com/ilmaruk/go-esms/internal/esms"
 	"github.com/ilmaruk/go-esms/internal/roster"
 )
 
 var (
 	workDir string
+
+	cfg internal.Config
 
 	homeCode string
 	awayCode string
@@ -70,17 +73,24 @@ func init() {
 	rootCmd.AddCommand(playCmd, rosterCmd)
 
 	// Setup configuration
-	setupConfig()
+	if err := setupConfig(); err != nil {
+		panic(err)
+	}
 }
 
-func setupConfig() {
+func setupConfig() error {
 	viper.SetConfigName("esms")
 	viper.SetConfigType("yaml")
-	viper.AddConfigPath("$HOME")
+	viper.AddConfigPath(".")
+	viper.AddConfigPath("./config")
 	// viper.SetDefault("priority", "medium")
 	// viper.SetDefault("file", filepath.Join(os.Getenv("HOME"), ".taskman.json"))
 
-	viper.ReadInConfig()
+	if err := viper.ReadInConfig(); err != nil {
+		return err
+	}
+
+	return viper.Unmarshal(&cfg)
 }
 
 func playGame(cmd *cobra.Command, args []string) error {
@@ -88,7 +98,7 @@ func playGame(cmd *cobra.Command, args []string) error {
 }
 
 func createRoster(cmd *cobra.Command, args []string) error {
-	return roster.CreateRoster(workDir, teamCode, teamName)
+	return roster.CreateRoster(workDir, teamCode, teamName, cfg.RosterCreator)
 }
 
 func main() {

@@ -1,8 +1,6 @@
 package roster
 
 import (
-	"fmt"
-
 	"github.com/ilmaruk/go-esms/internal"
 	parsername "github.com/ilmaruk/go-esms/internal/clients/parser_name"
 	"github.com/rainycape/unidecode"
@@ -33,28 +31,36 @@ type parserNameGenerate struct {
 }
 
 func generatePersons(qty int) ([]internal.Person, error) {
-	if qty > 25 {
-		return nil, fmt.Errorf("invalid quantity; max is 25")
-	}
+	persons := make([]internal.Person, 0, qty)
 
 	parserNameClient := parsername.New(parserNameApiKey)
-	generate := parserNameClient.Generate().
-		WithGender("m").
-		WithResults(qty)
-	resp, err := generate.Do()
-	if err != nil {
-		return nil, err
+
+	missing := qty
+	for missing > 0 {
+		results := missing
+		if results > 25 {
+			results = 25
+		}
+		generate := parserNameClient.Generate().
+			WithGender("m").
+			WithResults(results)
+		resp, err := generate.Do()
+		if err != nil {
+			return nil, err
+		}
+
+		for _, o := range resp.(parsername.GenerateResponse).Data {
+			person := internal.Person{
+				FirstName: normaliseName(o.Person.FirstName.Name, o.Country.Code),
+				LastName:  normaliseName(o.Person.LastName.Name, o.Country.Code),
+				Country:   o.Country.CodeAlpha,
+			}
+			persons = append(persons, person)
+		}
+
+		missing -= results
 	}
 
-	persons := make([]internal.Person, 0, qty)
-	for _, o := range resp.(parsername.GenerateResponse).Data {
-		person := internal.Person{
-			FirstName: normaliseName(o.Person.FirstName.Name, o.Country.Code),
-			LastName:  normaliseName(o.Person.LastName.Name, o.Country.Code),
-			Country:   o.Country.CodeAlpha,
-		}
-		persons = append(persons, person)
-	}
 	return persons, nil
 }
 
