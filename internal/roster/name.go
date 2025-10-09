@@ -3,37 +3,30 @@ package roster
 import (
 	"github.com/ilmaruk/go-esms/internal"
 	parsername "github.com/ilmaruk/go-esms/internal/clients/parser_name"
+	randomuser "github.com/ilmaruk/go-esms/internal/clients/random_user"
 	"github.com/rainycape/unidecode"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 )
 
+type PersonGenerator interface {
+	Generate(int) ([]internal.Person, error)
+}
+
 const parserNameApiKey = "99b06ec70c6c0d7c40cd8dcbe5dd46c9"
 
-type parserNameName struct {
-	Name      string `json:"name"`
-	NameASCII string `json:"name_ascii"`
+type parserNameGenerator struct {
+	client *parsername.ParserName
 }
 
-type parserNameObject struct {
-	Person struct {
-		FirstName parserNameName `json:"firstname"`
-		LastName  parserNameName `json:"lastname"`
-	} `json:"name"`
-	Country struct {
-		Code      string `json:"country_code"`
-		CodeAlpha string `json:"country_code_alpha"`
-	} `json:"country"`
+func newParserNameGenerator(apiKey string) *parserNameGenerator {
+	return &parserNameGenerator{
+		client: parsername.New(parserNameApiKey),
+	}
 }
 
-type parserNameGenerate struct {
-	Data []parserNameObject `json:"data"`
-}
-
-func generatePersons(qty int) ([]internal.Person, error) {
+func (g *parserNameGenerator) Generate(qty int) ([]internal.Person, error) {
 	persons := make([]internal.Person, 0, qty)
-
-	parserNameClient := parsername.New(parserNameApiKey)
 
 	missing := qty
 	for missing > 0 {
@@ -41,9 +34,10 @@ func generatePersons(qty int) ([]internal.Person, error) {
 		if results > 25 {
 			results = 25
 		}
-		generate := parserNameClient.Generate().
+
+		generate := g.client.Generate().
 			WithGender("m").
-			WithResults(results)
+			WithResults(qty)
 		resp, err := generate.Do()
 		if err != nil {
 			return nil, err
@@ -59,6 +53,57 @@ func generatePersons(qty int) ([]internal.Person, error) {
 		}
 
 		missing -= results
+	}
+
+	return persons, nil
+}
+
+type randomUserGenerator struct {
+	client *randomuser.RandomUser
+}
+
+func newRandomUserGenerator() *randomUserGenerator {
+	return &randomUserGenerator{
+		client: randomuser.New(),
+	}
+}
+
+func (g *randomUserGenerator) Generate(qty int) ([]internal.Person, error) {
+	persons := make([]internal.Person, 0, qty)
+
+	generate := g.client.WithGender("male").
+		WithCountryCode("AU").
+		WithCountryCode("BR").
+		WithCountryCode("CA").
+		WithCountryCode("CH").
+		WithCountryCode("DE").
+		WithCountryCode("DK").
+		WithCountryCode("ES").
+		WithCountryCode("FI").
+		WithCountryCode("FR").
+		WithCountryCode("GB").
+		WithCountryCode("IE").
+		WithCountryCode("MX").
+		WithCountryCode("NL").
+		WithCountryCode("NO").
+		WithCountryCode("NZ").
+		WithCountryCode("RS").
+		WithCountryCode("TR").
+		WithCountryCode("UA").
+		WithCountryCode("US").
+		WithResults(qty)
+	resp, err := generate.Generate()
+	if err != nil {
+		return nil, err
+	}
+
+	for _, o := range resp.Results {
+		person := internal.Person{
+			FirstName: normaliseName(o.Name.First, o.Nationality),
+			LastName:  normaliseName(o.Name.Last, o.Nationality),
+			Country:   o.Nationality,
+		}
+		persons = append(persons, person)
 	}
 
 	return persons, nil

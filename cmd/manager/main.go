@@ -22,6 +22,7 @@ var (
 
 	teamCode string
 	teamName string
+	avgSkill int
 )
 
 var rootCmd = &cobra.Command{
@@ -67,6 +68,7 @@ func init() {
 
 	rosterCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
 	rosterCreateCmd.Flags().StringVarP(&teamName, "name", "n", "", "team name")
+	rosterCreateCmd.Flags().IntVarP(&avgSkill, "skill", "s", 14, "average main skill")
 
 	// Add subcommands
 	rosterCmd.AddCommand(rosterCreateCmd)
@@ -98,7 +100,7 @@ func playGame(cmd *cobra.Command, args []string) error {
 }
 
 func createRoster(cmd *cobra.Command, args []string) error {
-	return roster.CreateRoster(workDir, teamCode, teamName, cfg.RosterCreator)
+	return roster.CreateRoster(workDir, teamCode, teamName, avgSkill, cfg.RosterCreator)
 }
 
 func main() {

@@ -7,6 +7,6 @@ roster_creator:
   num_fw: 5
   avg_stamina: 60
   avg_aggression: 30
-  avg_main_skill: 14
-  avg_mid_skill: 11
-  avg_secondary_skill: 7
+  avg_main_skill: 28
+  avg_mid_skill: 22
+  avg_secondary_skill: 14

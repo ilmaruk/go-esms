@@ -1457,7 +1457,7 @@ func print_final_stats(comm io.Writer) {
 		)
 
 		// Print stats for each player and collect totals
-		for i := 1; i <= numPlayers; i++ {
+		for i := 0; i < numPlayers; i++ {
 			// playerName := teams[j].Players[i].Name
 			// if len(playerName) > 13 {
 			// 	playerName = playerName[0:13]

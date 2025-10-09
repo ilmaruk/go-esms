@@ -26,8 +26,12 @@ func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixMicro()))
 }
 
-func CreateRoster(workDir, teamCode, teamName string, cfg internal.RosterCreatorConfig) error {
+func CreateRoster(workDir, teamCode, teamName string, skill int, cfg internal.RosterCreatorConfig) error {
 	var numPlayers = cfg.NumGK + cfg.NumDF + cfg.NumDM + cfg.NumMF + cfg.NumAM + cfg.NumFW
+
+	cfg.AvgMainSkill = skill
+	cfg.AvgMidSkill = 11
+	cfg.AvgSecondarySkill = skill / 2
 
 	roster := internal.Roster{
 		TeamCode: teamCode,
@@ -36,7 +40,9 @@ func CreateRoster(workDir, teamCode, teamName string, cfg internal.RosterCreator
 	}
 
 	// First generate the names for all the players in a single go
-	persons, err := generatePersons(numPlayers)
+	// generator := newParserNameGenerator(parserNameApiKey)
+	generator := newRandomUserGenerator()
+	persons, err := generator.Generate(numPlayers)
 	if err != nil {
 		return err
 	}
