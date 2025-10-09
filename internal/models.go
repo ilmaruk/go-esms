@@ -69,3 +69,17 @@ type Player struct {
 	Tk          int     `json:"tk"`
 	TkAb        int     `json:"tk_ab"`
 }
+
+type Teamsheet struct {
+	Tactic       string            `json:"tactic"`
+	Field        []TeamsheetPlayer `json:"field"`
+	Bench        []TeamsheetPlayer `json:"bench"`
+	PenaltyTaker string            `json:"pk"`
+	Name         string            `json:"team_name"`
+	Code         string            `json:"team_code"`
+}
+
+type TeamsheetPlayer struct {
+	Name string `json:"name"`
+	Pos  string `json:"pos"`
+}

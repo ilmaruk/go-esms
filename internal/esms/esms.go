@@ -8,10 +8,11 @@ import (
 	"math"
 	"math/rand"
 	"os"
-	"path/filepath"
 	"time"
 
+	"github.com/ilmaruk/go-esms/internal"
 	"github.com/ilmaruk/go-esms/internal/database"
+	"github.com/ilmaruk/go-esms/internal/teamsheet"
 )
 
 const (
@@ -63,33 +64,45 @@ func init() {
 
 func Play(workDir, homeCode, awayCode string) error {
 	var (
-		homeTeamsheet Teamsheet
-		awayTeamsheet Teamsheet
+		homeTeamsheet internal.Teamsheet
+		awayTeamsheet internal.Teamsheet
 	)
 
-	dataDir := filepath.Join(workDir, "data")
+	// dataDir := filepath.Join(workDir, "data")
 
-	// Home Teamsheet
-	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", homeCode)), &homeTeamsheet); err != nil {
-		return err
-	}
-	teams[0].Colors = []string{"GREEN", "BLACK"}
+	// // Home Teamsheet
+	// if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", homeCode)), &homeTeamsheet); err != nil {
+	// 	return err
+	// }
+	// teams[0].Colors = []string{"GREEN", "BLACK"}
 
-	// Away Teamsheet
-	if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", awayCode)), &awayTeamsheet); err != nil {
-		return err
-	}
-	teams[1].Colors = []string{"RED", "WHITE"}
+	// // Away Teamsheet
+	// if err := loadTeamsheet(filepath.Join(dataDir, fmt.Sprintf("%s_sht.json", awayCode)), &awayTeamsheet); err != nil {
+	// 	return err
+	// }
+	// teams[1].Colors = []string{"RED", "WHITE"}
 
 	var err error
 
-	// Home Teamsheet
+	// Home Roster
 	if teams[0].Roster, err = database.LoadRoster(workDir, homeCode); err != nil {
 		return err
 	}
 
-	// Away Teamsheet
+	// Home Teamsheet
+	if homeTeamsheet, err = teamsheet.CreateTeamsheet(workDir, homeCode, "rand"); err != nil {
+		return err
+	}
+	teams[0].Colors = []string{"GREEN", "BLACK"}
+
+	// Away Roster
 	if teams[1].Roster, err = database.LoadRoster(workDir, awayCode); err != nil {
+		return err
+	}
+	teams[1].Colors = []string{"RED", "WHITE"}
+
+	// Away Teamsheet
+	if awayTeamsheet, err = teamsheet.CreateTeamsheet(workDir, awayCode, "rand"); err != nil {
 		return err
 	}
 
@@ -98,7 +111,7 @@ func Play(workDir, homeCode, awayCode string) error {
 
 	team_stats_total_enabled = theConfig.getIntConfig("TEAM_STATS_TOTAL", 0) == 1
 
-	if err := initTeamsData([2]Teamsheet{homeTeamsheet, awayTeamsheet}); err != nil {
+	if err := initTeamsData([2]internal.Teamsheet{homeTeamsheet, awayTeamsheet}); err != nil {
 		return err
 	}
 
@@ -253,7 +266,7 @@ func add_team_stats_total(minute int) {
 	}
 }
 
-func initTeamsData(teamsheet [2]Teamsheet) error {
+func initTeamsData(teamsheet [2]internal.Teamsheet) error {
 	for l := 0; l <= 1; l++ {
 		teams[l].Name = teamsheet[l].Name
 		teams[l].Tactic = teamsheet[l].Tactic
@@ -267,10 +280,10 @@ func initTeamsData(teamsheet [2]Teamsheet) error {
 
 			/* Read players's position and name */
 			if i < 11 {
-				teams[l].Players[i].Name = teamsheet[l].Field[i].Name
+				teams[l].Players[i].Name = PlayerName(teamsheet[l].Field[i].Name)
 				full_pos = teamsheet[l].Field[i].Pos
 			} else {
-				teams[l].Players[i].Name = teamsheet[l].Bench[i-11].Name
+				teams[l].Players[i].Name = PlayerName(teamsheet[l].Bench[i-11].Name)
 				full_pos = teamsheet[l].Bench[i-11].Pos
 			}
 
@@ -316,22 +329,22 @@ func initTeamsData(teamsheet [2]Teamsheet) error {
 
 			teams[l].Players[i].Player = player
 
-			teams[l].Players[i].pref_side = player.PrefSide
+			teams[l].Players[i].PrefSide = player.PrefSide
 
-			teams[l].Players[i].likes_left = false
-			teams[l].Players[i].likes_right = false
-			teams[l].Players[i].likes_center = false
+			teams[l].Players[i].LikesLeft = false
+			teams[l].Players[i].LikesRight = false
+			teams[l].Players[i].LikesCenter = false
 
-			if teams[l].Players[i].pref_side == "L" {
-				teams[l].Players[i].likes_left = true
+			if teams[l].Players[i].PrefSide == "L" {
+				teams[l].Players[i].LikesLeft = true
 			}
 
-			if teams[l].Players[i].pref_side == "R" {
-				teams[l].Players[i].likes_right = true
+			if teams[l].Players[i].PrefSide == "R" {
+				teams[l].Players[i].LikesRight = true
 			}
 
-			if teams[l].Players[i].pref_side == "C" {
-				teams[l].Players[i].likes_center = true
+			if teams[l].Players[i].PrefSide == "C" {
+				teams[l].Players[i].LikesCenter = true
 			}
 
 			teams[l].Players[i].st = player.St
@@ -373,14 +386,14 @@ func initTeamsData(teamsheet [2]Teamsheet) error {
 		// If it exists, the <Name> must be listed in the teamsheet.
 		var i int
 		for i = numPlayers - 1; i >= 0; i-- {
-			if teamsheet[l].PK == teams[l].Players[i].Name.String() {
+			if teamsheet[l].PenaltyTaker == teams[l].Players[i].Name.String() {
 				teams[l].PenaltyTaker = i
 				break
 			}
 		}
 
 		if i < 0 {
-			return fmt.Errorf("error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].PK)
+			return fmt.Errorf("error in penalty kick taker of %s, player %s not listed", teams[l].Name, teamsheet[l].PenaltyTaker)
 		}
 	}
 
@@ -593,9 +606,9 @@ func calc_player_contributions(a, b int) {
 
 		var side_factor float64
 
-		if (teams[a].Players[b].Side == "R" && teams[a].Players[b].likes_right) ||
-			(teams[a].Players[b].Side == "L" && teams[a].Players[b].likes_left) ||
-			(teams[a].Players[b].Side == "C" && teams[a].Players[b].likes_center) {
+		if (teams[a].Players[b].Side == "R" && teams[a].Players[b].LikesRight) ||
+			(teams[a].Players[b].Side == "L" && teams[a].Players[b].LikesLeft) ||
+			(teams[a].Players[b].Side == "C" && teams[a].Players[b].LikesCenter) {
 			side_factor = 1.0
 		} else {
 			side_factor = 0.75
@@ -1465,7 +1478,7 @@ func print_final_stats(comm io.Writer) {
 			fmt.Fprintf(comm, "\n%-13s %3s %3s%3d%3d%3d%3d%3d | %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d %3d",
 				teams[j].Players[i].Name.Short(13),
 				posAndSide2fullpos(teams[j].Players[i].Pos, teams[j].Players[i].Side),
-				teams[j].Players[i].pref_side,
+				teams[j].Players[i].PrefSide,
 				teams[j].Players[i].st, teams[j].Players[i].tk,
 				teams[j].Players[i].ps, teams[j].Players[i].sh,
 				teams[j].Players[i].stamina,

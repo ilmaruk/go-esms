@@ -35,10 +35,10 @@ type TeamPlayer struct {
 	Pos  string // position: "GK", "DF", "MF", "FW"
 	Side string // "L", "C", "R" - left, center, right
 
-	pref_side    string
-	likes_right  bool
-	likes_left   bool
-	likes_center bool
+	PrefSide    string
+	LikesRight  bool
+	LikesLeft   bool
+	LikesCenter bool
 
 	ag float64
 

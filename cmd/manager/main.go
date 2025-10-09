@@ -8,8 +8,10 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/ilmaruk/go-esms/internal"
+	"github.com/ilmaruk/go-esms/internal/database"
 	"github.com/ilmaruk/go-esms/internal/esms"
 	"github.com/ilmaruk/go-esms/internal/roster"
+	"github.com/ilmaruk/go-esms/internal/teamsheet"
 )
 
 var (
@@ -23,6 +25,8 @@ var (
 	teamCode string
 	teamName string
 	avgSkill int
+
+	tactic string
 )
 
 var rootCmd = &cobra.Command{
@@ -56,6 +60,21 @@ var rosterCreateCmd = &cobra.Command{
 	RunE: createRoster,
 }
 
+var teamsheetCmd = &cobra.Command{
+	Use:   "teamsheet",
+	Short: "Teamsheet functionalities",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+}
+
+var teamsheetCreateCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Create a new teamsheet",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+	RunE: createTeamsheet,
+}
+
 func init() {
 	// Persistent flags available to all commands
 	rootCmd.PersistentFlags().StringVarP(&workDir, "work-dir", "d", ".", "working directory")
@@ -68,11 +87,14 @@ func init() {
 
 	rosterCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
 	rosterCreateCmd.Flags().StringVarP(&teamName, "name", "n", "", "team name")
-	rosterCreateCmd.Flags().IntVarP(&avgSkill, "skill", "s", 14, "average main skill")
+
+	teamsheetCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
+	teamsheetCreateCmd.Flags().StringVar(&tactic, "tactic", "442N", "team tactic")
 
 	// Add subcommands
 	rosterCmd.AddCommand(rosterCreateCmd)
-	rootCmd.AddCommand(playCmd, rosterCmd)
+	teamsheetCmd.AddCommand(teamsheetCreateCmd)
+	rootCmd.AddCommand(playCmd, rosterCmd, teamsheetCmd)
 
 	// Setup configuration
 	if err := setupConfig(); err != nil {
@@ -101,6 +123,14 @@ func playGame(cmd *cobra.Command, args []string) error {
 
 func createRoster(cmd *cobra.Command, args []string) error {
 	return roster.CreateRoster(workDir, teamCode, teamName, avgSkill, cfg.RosterCreator)
+}
+
+func createTeamsheet(cmd *cobra.Command, args []string) error {
+	ts, err := teamsheet.CreateTeamsheet(workDir, teamCode, tactic)
+	if err != nil {
+		return err
+	}
+	return database.SaveTeamsheet(workDir, ts)
 }
 
 func main() {

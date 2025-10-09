@@ -147,6 +147,8 @@ func colorToFg(c string) color.Attribute {
 		return color.FgGreen
 	case "WHITE":
 		return color.FgWhite
+	case "BLUE":
+		return color.FgBlue
 	case "BLACK":
 		fallthrough
 	default:
@@ -163,6 +165,8 @@ func colorToBg(c string) color.Attribute {
 		return color.BgGreen
 	case "BLACK":
 		return color.BgBlack
+	case "BLUE":
+		return color.BgBlue
 	case "WHITE":
 		fallthrough
 	default:
