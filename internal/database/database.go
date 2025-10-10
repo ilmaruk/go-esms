@@ -3,6 +3,7 @@ package database
 import (
 	"encoding/json"
 	"os"
+	"path/filepath"
 )
 
 func loadData(path string, data any) error {
@@ -14,6 +15,6 @@ func loadData(path string, data any) error {
 	return json.Unmarshal(b, data)
 }
 
-// func loadTeamsheet(path string, ts *Teamsheet) error {
-// 	return loadData(path, ts)
-// }
+func dataDir(rootDir string) string {
+	return filepath.Join(rootDir, "data")
+}

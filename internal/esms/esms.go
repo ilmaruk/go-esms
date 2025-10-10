@@ -62,7 +62,7 @@ func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixNano()))
 }
 
-func Play(workDir, homeCode, awayCode string) error {
+func Play(rootDir, homeCode, awayCode string) error {
 	var (
 		homeTeamsheet internal.Teamsheet
 		awayTeamsheet internal.Teamsheet
@@ -85,7 +85,7 @@ func Play(workDir, homeCode, awayCode string) error {
 	var err error
 
 	// Home Roster
-	if teams[0].Roster, err = database.LoadRoster(workDir, homeCode); err != nil {
+	if teams[0].Roster, err = database.LoadRoster(rootDir, homeCode); err != nil {
 		return err
 	}
 
@@ -96,7 +96,7 @@ func Play(workDir, homeCode, awayCode string) error {
 	teams[0].Colors = []string{"GREEN", "BLACK"}
 
 	// Away Roster
-	if teams[1].Roster, err = database.LoadRoster(workDir, awayCode); err != nil {
+	if teams[1].Roster, err = database.LoadRoster(rootDir, awayCode); err != nil {
 		return err
 	}
 	teams[1].Colors = []string{"RED", "WHITE"}

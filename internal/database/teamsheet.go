@@ -10,11 +10,11 @@ import (
 	"github.com/ilmaruk/go-esms/internal"
 )
 
-func SaveTeamsheet(workDir string, teamsheet internal.Teamsheet) error {
-	b, err := json.MarshalIndent(teamsheet, "", " ")
+func SaveTeamsheet(rootDir string, teamsheet internal.Teamsheet) error {
+	b, err := json.MarshalIndent(teamsheet, "", "  ")
 	if err != nil {
 		return err
 	}
-	path := filepath.Join(workDir, "data", "teamsheets", strings.ToLower(fmt.Sprintf("%s.json", teamsheet.Code)))
+	path := filepath.Join(dataDir(rootDir), "teamsheets", strings.ToLower(fmt.Sprintf("%s.json", teamsheet.Code)))
 	return os.WriteFile(path, b, 0644)
 }

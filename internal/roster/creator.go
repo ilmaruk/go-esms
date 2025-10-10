@@ -26,7 +26,7 @@ func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixMicro()))
 }
 
-func CreateRoster(workDir, teamCode, teamName string, skill int, cfg internal.RosterCreatorConfig) error {
+func CreateRoster(rootDir, teamCode, teamName string, skill int, cfg internal.RosterCreatorConfig) error {
 	var numPlayers = cfg.NumGK + cfg.NumDF + cfg.NumDM + cfg.NumMF + cfg.NumAM + cfg.NumFW
 
 	cfg.AvgMainSkill = skill
@@ -151,7 +151,7 @@ func CreateRoster(workDir, teamCode, teamName string, skill int, cfg internal.Ro
 		roster.Players = append(roster.Players, player)
 	}
 
-	return database.SaveRoster(workDir, roster)
+	return database.SaveRoster(rootDir, roster)
 }
 
 func averagedRandomPartDev(average, div int) int {

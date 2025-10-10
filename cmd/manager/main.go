@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	workDir string
+	rootDir string
 
 	cfg internal.Config
 
@@ -77,7 +77,7 @@ var teamsheetCreateCmd = &cobra.Command{
 
 func init() {
 	// Persistent flags available to all commands
-	rootCmd.PersistentFlags().StringVarP(&workDir, "work-dir", "d", ".", "working directory")
+	rootCmd.PersistentFlags().StringVarP(&rootDir, "root-dir", "d", ".", "root directory")
 
 	// Local flags for specific commands
 	playCmd.Flags().StringVar(&homeCode, "home", "", "home team code")
@@ -119,15 +119,15 @@ func setupConfig() error {
 }
 
 func playGame(cmd *cobra.Command, args []string) error {
-	return esms.Play(workDir, homeCode, awayCode)
+	return esms.Play(rootDir, homeCode, awayCode)
 }
 
 func createRoster(cmd *cobra.Command, args []string) error {
-	return roster.CreateRoster(workDir, teamCode, teamName, avgSkill, cfg.RosterCreator)
+	return roster.CreateRoster(rootDir, teamCode, teamName, avgSkill, cfg.RosterCreator)
 }
 
 func createTeamsheet(cmd *cobra.Command, args []string) error {
-	roster, err := database.LoadRoster(workDir, teamCode)
+	roster, err := database.LoadRoster(rootDir, teamCode)
 	if err != nil {
 		return err
 	}
@@ -136,7 +136,7 @@ func createTeamsheet(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	return database.SaveTeamsheet(workDir, ts)
+	return database.SaveTeamsheet(rootDir, ts)
 }
 
 func main() {
