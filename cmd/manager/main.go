@@ -87,6 +87,7 @@ func init() {
 
 	rosterCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
 	rosterCreateCmd.Flags().StringVarP(&teamName, "name", "n", "", "team name")
+	rosterCreateCmd.Flags().IntVarP(&avgSkill, "skill", "s", 14, "average skill")
 
 	teamsheetCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
 	teamsheetCreateCmd.Flags().StringVar(&tactic, "tactic", "442N", "team tactic")
@@ -126,7 +127,12 @@ func createRoster(cmd *cobra.Command, args []string) error {
 }
 
 func createTeamsheet(cmd *cobra.Command, args []string) error {
-	ts, err := teamsheet.CreateTeamsheet(workDir, teamCode, tactic)
+	roster, err := database.LoadRoster(workDir, teamCode)
+	if err != nil {
+		return err
+	}
+
+	ts, err := teamsheet.CreateTeamsheet(roster, tactic)
 	if err != nil {
 		return err
 	}

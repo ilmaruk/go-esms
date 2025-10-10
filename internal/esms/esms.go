@@ -90,7 +90,7 @@ func Play(workDir, homeCode, awayCode string) error {
 	}
 
 	// Home Teamsheet
-	if homeTeamsheet, err = teamsheet.CreateTeamsheet(workDir, homeCode, "rand"); err != nil {
+	if homeTeamsheet, err = teamsheet.CreateTeamsheet(teams[0].Roster, "rand"); err != nil {
 		return err
 	}
 	teams[0].Colors = []string{"GREEN", "BLACK"}
@@ -102,7 +102,7 @@ func Play(workDir, homeCode, awayCode string) error {
 	teams[1].Colors = []string{"RED", "WHITE"}
 
 	// Away Teamsheet
-	if awayTeamsheet, err = teamsheet.CreateTeamsheet(workDir, awayCode, "rand"); err != nil {
+	if awayTeamsheet, err = teamsheet.CreateTeamsheet(teams[1].Roster, "rand"); err != nil {
 		return err
 	}
 

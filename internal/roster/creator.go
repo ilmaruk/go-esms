@@ -159,7 +159,18 @@ func averagedRandomPartDev(average, div int) int {
 }
 
 func averagedRandom(average, max_deviation float64) int {
-	return int(rnd.NormFloat64()*max_deviation + average)
+	val := int(rnd.NormFloat64()*max_deviation + average)
+
+	// TODO: this is not great, because values at the edges have a higher probability than expected
+	minVal := int(average - max_deviation)
+	if val < minVal {
+		return minVal
+	}
+	maxVal := int(average + max_deviation)
+	if val > maxVal {
+		return maxVal
+	}
+	return val
 }
 
 // Return a pseudo-random integer uniformly distributed

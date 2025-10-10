@@ -11,7 +11,7 @@ import (
 )
 
 func LoadRoster(workDir, code string) (internal.Roster, error) {
-	path := filepath.Join(workDir, "data", fmt.Sprintf("%s.json", code))
+	path := filepath.Join(workDir, "data", "teams", fmt.Sprintf("%s.json", code))
 	var r internal.Roster
 	err := loadData(path, &r)
 	return r, err

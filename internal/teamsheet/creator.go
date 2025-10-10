@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/ilmaruk/go-esms/internal"
-	"github.com/ilmaruk/go-esms/internal/database"
 )
 
 var rnd *rand.Rand
@@ -16,7 +15,7 @@ func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixMicro()))
 }
 
-func CreateTeamsheet(workDir, teamCode, tactic string) (internal.Teamsheet, error) {
+func CreateTeamsheet(roster internal.Roster, tactic string) (internal.Teamsheet, error) {
 	num_subs := 7
 
 	t_player := make([]internal.TeamsheetPlayer, 11+num_subs)
@@ -36,18 +35,13 @@ func CreateTeamsheet(workDir, teamCode, tactic string) (internal.Teamsheet, erro
 	//
 	sub_pos_iter := 0
 
-	players, err := database.LoadRoster(workDir, teamCode)
-	if err != nil {
-		return internal.Teamsheet{}, err
-	}
-
-	if len(players.Players) < 11+num_subs {
+	if len(roster.Players) < 11+num_subs {
 		return internal.Teamsheet{}, fmt.Errorf("not enough players in roster")
 	}
 
 	ts := internal.Teamsheet{
-		Name:   players.TeamName,
-		Code:   players.TeamCode,
+		Name:   roster.TeamName,
+		Code:   roster.TeamCode,
 		Tactic: tactic,
 	}
 
@@ -88,7 +82,7 @@ func CreateTeamsheet(workDir, teamCode, tactic string) (internal.Teamsheet, erro
 
 	// set the best GK for N.1 position
 	//
-	t_player[0].Name = choose_best_player(players.Players, chosen_players, st_getter)
+	t_player[0].Name = choose_best_player(roster.Players, chosen_players, st_getter)
 	chosen_players[t_player[0].Name] = struct{}{}
 
 	// From now on, j is the index for players in the teamsheet
@@ -97,27 +91,27 @@ func CreateTeamsheet(workDir, teamCode, tactic string) (internal.Teamsheet, erro
 	// Set the starting defenders
 	//
 	for j := 1; j <= last_df; j++ {
-		t_player[j].Name = choose_best_player(players.Players, chosen_players, tk_getter)
+		t_player[j].Name = choose_best_player(roster.Players, chosen_players, tk_getter)
 		chosen_players[t_player[j].Name] = struct{}{}
 	}
 
 	// Set the starting midfielders
 	//
 	for j := last_df + 1; j <= last_mf; j++ {
-		t_player[j].Name = choose_best_player(players.Players, chosen_players, ps_getter)
+		t_player[j].Name = choose_best_player(roster.Players, chosen_players, ps_getter)
 		chosen_players[t_player[j].Name] = struct{}{}
 	}
 
 	// Set the starting forwards
 	//
 	for j := last_mf + 1; j < 11; j++ {
-		t_player[j].Name = choose_best_player(players.Players, chosen_players, sh_getter)
+		t_player[j].Name = choose_best_player(roster.Players, chosen_players, sh_getter)
 		chosen_players[t_player[j].Name] = struct{}{}
 	}
 
 	// Set the substitute GK
 	//
-	t_player[11].Name = choose_best_player(players.Players, chosen_players, st_getter)
+	t_player[11].Name = choose_best_player(roster.Players, chosen_players, st_getter)
 	t_player[11].Pos = "GK"
 	chosen_players[t_player[11].Name] = struct{}{}
 
@@ -127,11 +121,11 @@ func CreateTeamsheet(workDir, teamCode, tactic string) (internal.Teamsheet, erro
 		// What position should the current sub be on ?
 		//
 		if sub_position[sub_pos_iter] == "DFC" {
-			name_of_best = choose_best_player(players.Players, chosen_players, tk_getter)
+			name_of_best = choose_best_player(roster.Players, chosen_players, tk_getter)
 		} else if sub_position[sub_pos_iter] == "MFC" {
-			name_of_best = choose_best_player(players.Players, chosen_players, ps_getter)
+			name_of_best = choose_best_player(roster.Players, chosen_players, ps_getter)
 		} else if sub_position[sub_pos_iter] == "FWC" {
-			name_of_best = choose_best_player(players.Players, chosen_players, sh_getter)
+			name_of_best = choose_best_player(roster.Players, chosen_players, sh_getter)
 		} else {
 			return ts, fmt.Errorf("position index out of bound")
 		}
