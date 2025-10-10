@@ -1,4 +1,3 @@
-import math
 import subprocess
 import sys
 
@@ -39,7 +38,7 @@ if __name__ == "__main__":
             "-c", code, 
             "-n", name,
             "-s", str(actual_skill),
-            "-d", "./data",
+            "-d", "..",
         ]
         # print(" ".join(cmd))
         result = subprocess.run(cmd, capture_output=True, text=True)

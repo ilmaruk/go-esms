@@ -10,6 +10,7 @@ import (
 	"github.com/ilmaruk/go-esms/internal"
 	"github.com/ilmaruk/go-esms/internal/database"
 	"github.com/ilmaruk/go-esms/internal/esms"
+	"github.com/ilmaruk/go-esms/internal/fixtures"
 	"github.com/ilmaruk/go-esms/internal/roster"
 	"github.com/ilmaruk/go-esms/internal/teamsheet"
 )
@@ -27,6 +28,8 @@ var (
 	avgSkill int
 
 	tactic string
+
+	teamCodes []string
 )
 
 var rootCmd = &cobra.Command{
@@ -75,6 +78,21 @@ var teamsheetCreateCmd = &cobra.Command{
 	RunE: createTeamsheet,
 }
 
+var fixturesCmd = &cobra.Command{
+	Use:   "fixtures",
+	Short: "Fixtures functionalities",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+}
+
+var fixturesCreateCmd = &cobra.Command{
+	Use:   "create",
+	Short: "Create new fixtures",
+	// Long:  "Play a new game",
+	// Args:  cobra.MinimumNArgs(1),
+	RunE: createFixtures,
+}
+
 func init() {
 	// Persistent flags available to all commands
 	rootCmd.PersistentFlags().StringVarP(&rootDir, "root-dir", "d", ".", "root directory")
@@ -92,10 +110,13 @@ func init() {
 	teamsheetCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
 	teamsheetCreateCmd.Flags().StringVar(&tactic, "tactic", "442N", "team tactic")
 
+	fixturesCreateCmd.Flags().StringSliceVarP(&teamCodes, "teams", "t", nil, "team codes")
+
 	// Add subcommands
 	rosterCmd.AddCommand(rosterCreateCmd)
 	teamsheetCmd.AddCommand(teamsheetCreateCmd)
-	rootCmd.AddCommand(playCmd, rosterCmd, teamsheetCmd)
+	fixturesCmd.AddCommand(fixturesCreateCmd)
+	rootCmd.AddCommand(playCmd, rosterCmd, teamsheetCmd, fixturesCmd)
 
 	// Setup configuration
 	if err := setupConfig(); err != nil {
@@ -137,6 +158,10 @@ func createTeamsheet(cmd *cobra.Command, args []string) error {
 		return err
 	}
 	return database.SaveTeamsheet(rootDir, ts)
+}
+
+func createFixtures(cmd *cobra.Command, args []string) error {
+	return fixtures.CreateFixtures(rootDir, teamCodes)
 }
 
 func main() {
