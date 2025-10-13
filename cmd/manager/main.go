@@ -30,6 +30,9 @@ var (
 	tactic string
 
 	teamCodes []string
+
+	league string
+	season int
 )
 
 var rootCmd = &cobra.Command{
@@ -110,7 +113,8 @@ func init() {
 	teamsheetCreateCmd.Flags().StringVarP(&teamCode, "code", "c", "", "team code")
 	teamsheetCreateCmd.Flags().StringVar(&tactic, "tactic", "442N", "team tactic")
 
-	fixturesCreateCmd.Flags().StringSliceVarP(&teamCodes, "teams", "t", nil, "team codes")
+	fixturesCreateCmd.Flags().StringVarP(&league, "league", "l", "", "the league")
+	fixturesCreateCmd.Flags().IntVarP(&season, "season", "s", 0, "the season")
 
 	// Add subcommands
 	rosterCmd.AddCommand(rosterCreateCmd)
@@ -161,7 +165,7 @@ func createTeamsheet(cmd *cobra.Command, args []string) error {
 }
 
 func createFixtures(cmd *cobra.Command, args []string) error {
-	return fixtures.CreateFixtures(rootDir, teamCodes)
+	return fixtures.Create(rootDir, league, season)
 }
 
 func main() {

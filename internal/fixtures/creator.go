@@ -1,14 +1,19 @@
 package fixtures
 
 import (
+	"encoding/json"
 	"fmt"
 	"math/rand"
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/google/uuid"
+	"github.com/ilmaruk/go-esms/internal"
+	"github.com/ilmaruk/go-esms/internal/database"
 )
 
-const dummy = "DMMY"
+// const dummy = "DMMY"
 
 var rnd *rand.Rand
 
@@ -16,16 +21,40 @@ func init() {
 	rnd = rand.New(rand.NewSource(time.Now().UnixMicro()))
 }
 
-func CreateFixtures(rootDir string, teams []string) error {
+func Create(rootDir, league string, season int) error {
+	teams, err := database.LoadClubsByLeague(rootDir, league)
+	if err != nil {
+		return err
+	}
+
+	calendar, err := createFixtures(league, season, teams)
+	if err != nil {
+		return err
+	}
+
+	fh, err := os.Create(filepath.Join(rootDir, "data", "fixtures.json"))
+	if err != nil {
+		return err
+	}
+	defer fh.Close()
+
+	b, _ := json.MarshalIndent(calendar, "", "  ")
+	fh.Write(b)
+
+	return nil
+}
+
+func createFixtures(league string, season int, teams []internal.Club) (internal.Fixtures, error) {
 	num_teams := len(teams)
 
 	if num_teams < 2 {
-		return fmt.Errorf("two teams or more are needed for a league")
+		return internal.Fixtures{}, fmt.Errorf("two teams or more are needed for a league")
 	}
 
 	if num_teams%2 == 1 {
-		teams = append(teams, dummy)
-		num_teams++
+		return internal.Fixtures{}, fmt.Errorf("the number of teams is not even")
+		// teams = append(teams, dummy)
+		// num_teams++
 	}
 
 	// Initialize the games vector
@@ -41,7 +70,7 @@ func CreateFixtures(rootDir string, teams []string) error {
 	// Initialize 1st week (1st vs. 2nd, 3rd vs. 4th, etc...)
 	//
 	for i := 0; i < num_teams; i++ {
-		games[0][i] = teams[i]
+		games[0][i] = teams[i].Code
 	}
 
 	// Create a round of games
@@ -79,15 +108,20 @@ func CreateFixtures(rootDir string, teams []string) error {
 		}
 	}
 
-	fh, err := os.Create(filepath.Join(rootDir, "data", "fixtures.txt"))
-	if err != nil {
-		return err
+	calendar := internal.Fixtures{
+		League: league,
+		Season: season,
+		Clubs:  map[string]internal.Club{},
+		Weeks:  make([]internal.GameWeek, 0, num_weeks_in_round*2),
 	}
-	defer fh.Close()
-
-	// Fixtures calendar = {};
+	for _, t := range teams {
+		calendar.Clubs[t.Code] = t
+	}
 	for week_n := 0; week_n < num_weeks_in_round*2; week_n++ {
-		// FixturesWeek week;
+		week := internal.GameWeek{
+			ID:    week_n + 1,
+			Games: make([]internal.Game, 0, num_teams/2),
+		}
 
 		for team_n := 0; team_n < num_teams; team_n += 2 {
 			var home_team, away_team string
@@ -99,13 +133,27 @@ func CreateFixtures(rootDir string, teams []string) error {
 				away_team = games[week_n-num_weeks_in_round][team_n]
 			}
 
-			fmt.Fprintln(fh, home_team, away_team)
+			game := internal.Game{
+				ID:   makeGameID(league, season, home_team, away_team),
+				Home: home_team,
+				Away: away_team,
+				Seed: rnd.Int63(),
+			}
 
-			// week.push_back({home_team, away_team});
+			week.Games = append(week.Games, game)
 		}
 
-		// calendar.weeks.push_back(week);
+		calendar.Weeks = append(calendar.Weeks, week)
 	}
 
-	return nil
+	return calendar, nil
+}
+
+func makeGameID(league string, season int, home, away string) uuid.UUID {
+	concat := league + formatSeasonID(season) + home + away
+	return uuid.NewSHA1(uuid.NameSpaceOID, []byte(concat))
+}
+
+func formatSeasonID(id int) string {
+	return fmt.Sprintf("%03d", id)
 }

@@ -2,6 +2,8 @@ package internal
 
 import (
 	"strings"
+
+	"github.com/google/uuid"
 )
 
 type Person struct {
@@ -82,4 +84,38 @@ type Teamsheet struct {
 type TeamsheetPlayer struct {
 	Name string `json:"name"`
 	Pos  string `json:"pos"`
+}
+
+type ClubColors struct {
+	Primary   string `json:"primary"`
+	Secondary string `jsson:"secondary"`
+	Accent    string `json:"accent"`
+}
+
+type Club struct {
+	Name   string     `json:"name"`
+	Colors ClubColors `json:"colors"`
+	Code   string     `json:"code"`
+	City   string     `json:"city"`
+	Elo    int        `json:"elo"`
+	League string     `json:"league"`
+}
+
+type Game struct {
+	ID   uuid.UUID `json:"ID"`
+	Home string    `json:"home"`
+	Away string    `json:"away"`
+	Seed int64     `json:"seed"`
+}
+
+type GameWeek struct {
+	ID    int    `json:"id"`
+	Games []Game `json:"games"`
+}
+
+type Fixtures struct {
+	League string          `json:"league"`
+	Season int             `json:"season"`
+	Clubs  map[string]Club `json:"clubs"`
+	Weeks  []GameWeek      `json:"weeks"`
 }
