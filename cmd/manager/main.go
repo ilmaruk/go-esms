@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
@@ -96,6 +97,17 @@ var fixturesCreateCmd = &cobra.Command{
 	RunE: createFixtures,
 }
 
+var tablesCmd = &cobra.Command{
+	Use:   "tables",
+	Short: "Tables functionalities",
+}
+
+var tableShowCmd = &cobra.Command{
+	Use:   "show",
+	Short: "Show a league table",
+	RunE:  showTable,
+}
+
 func init() {
 	// Persistent flags available to all commands
 	rootCmd.PersistentFlags().StringVarP(&rootDir, "root-dir", "d", ".", "root directory")
@@ -120,7 +132,8 @@ func init() {
 	rosterCmd.AddCommand(rosterCreateCmd)
 	teamsheetCmd.AddCommand(teamsheetCreateCmd)
 	fixturesCmd.AddCommand(fixturesCreateCmd)
-	rootCmd.AddCommand(playCmd, rosterCmd, teamsheetCmd, fixturesCmd)
+	tablesCmd.AddCommand(tableShowCmd)
+	rootCmd.AddCommand(playCmd, rosterCmd, teamsheetCmd, fixturesCmd, tablesCmd)
 
 	// Setup configuration
 	if err := setupConfig(); err != nil {
@@ -166,6 +179,26 @@ func createTeamsheet(cmd *cobra.Command, args []string) error {
 
 func createFixtures(cmd *cobra.Command, args []string) error {
 	return fixtures.Create(rootDir, league, season)
+}
+
+func showTable(cmd *cobra.Command, args []string) error {
+	tablesRepo := database.NewDatabaseRepo(rootDir)
+	table, err := tablesRepo.Load(0, "a")
+	if err != nil {
+		return err
+	}
+
+	// data := [][]string{
+	// 	{"Alice", "23", "Engineer"},
+	// 	{"Bob", "29", "Designer"},
+	// }
+
+	w := tablewriter.NewWriter(os.Stdout)
+	w.Header([]string{"Name", "Age", "Occupation"})
+	w.Bulk(table)
+	w.Render()
+
+	return nil
 }
 
 func main() {

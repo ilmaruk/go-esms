@@ -118,3 +118,28 @@ type Fixtures struct {
 	Clubs  map[string]Club `json:"clubs"`
 	Weeks  []GameWeek      `json:"weeks"`
 }
+
+type Team struct{}
+
+type Table []TableRow
+
+type TableRow struct {
+	Team         Team `json:"team_name"`
+	Wins         uint `json:"wins"`
+	Draws        uint `json:"draws"`
+	Losses       uint `json:"losses"`
+	GoalsFor     uint `json:"goals_for"`
+	GoalsAgainst uint `json:"goals_against"`
+}
+
+func (tr TableRow) Points() uint {
+	return tr.Wins*3 + tr.Draws
+}
+
+func (tr TableRow) Played() uint {
+	return tr.Wins + tr.Draws + tr.Losses
+}
+
+func (tr TableRow) GoalDiff() uint {
+	return tr.GoalsFor - tr.GoalsAgainst
+}
