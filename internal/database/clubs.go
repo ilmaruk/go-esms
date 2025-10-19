@@ -6,9 +6,14 @@ import (
 	"github.com/ilmaruk/go-esms/internal"
 )
 
+func LoadAllClubs(rootDir string) ([]internal.Club, error) {
+	var clubs []internal.Club
+	err := loadData(filepath.Join(dataDir(rootDir), "clubs.json"), &clubs)
+	return clubs, err
+}
+
 func LoadClubsByLeague(rootDir, league string) ([]internal.Club, error) {
-	var allClubs []internal.Club
-	err := loadData(filepath.Join(dataDir(rootDir), "clubs.json"), &allClubs)
+	allClubs, err := LoadAllClubs(rootDir)
 	if err != nil {
 		return nil, err
 	}

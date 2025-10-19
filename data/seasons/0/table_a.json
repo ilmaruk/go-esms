@@ -1,0 +1,24 @@
+[
+    {
+        "team": {
+            "name": "Team A",
+            "code": "TEAA"
+        },
+        "wins": 10,
+        "draws": 5,
+        "losses": 3,
+        "goals_for": 30,
+        "goals_against": 15
+    },
+    {
+        "team": {
+            "name": "Team B",
+            "code": "TEAB"
+        },
+        "wins": 9,
+        "draws": 6,
+        "losses": 4,
+        "goals_for": 25,
+        "goals_against": 21
+    }
+]

@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"sort"
 	"strings"
 
 	"github.com/google/uuid"
@@ -119,12 +120,26 @@ type Fixtures struct {
 	Weeks  []GameWeek      `json:"weeks"`
 }
 
-type Team struct{}
-
 type Table []TableRow
 
+func (tr Table) Sort() {
+	sort.Slice(tr, func(i, j int) bool {
+		if tr[i].Points() != tr[j].Points() {
+			return tr[i].Points() > tr[j].Points()
+		}
+		if tr[i].GoalDiff() != tr[j].GoalDiff() {
+			return tr[i].GoalDiff() > tr[j].GoalDiff()
+		}
+		if tr[i].GoalsFor != tr[j].GoalsFor {
+			return tr[i].GoalsFor > tr[j].GoalsFor
+		}
+		// For now, just sort by name to have a deterministic order
+		return tr[i].Club.Name < tr[j].Club.Name
+	})
+}
+
 type TableRow struct {
-	Team         Team `json:"team_name"`
+	Club         Club `json:"club"`
 	Wins         uint `json:"wins"`
 	Draws        uint `json:"draws"`
 	Losses       uint `json:"losses"`

@@ -1,0 +1,362 @@
+[
+  {
+    "club": {
+      "name": "Dynamo Zelgor",
+      "colors": {
+        "primary": "#2AA6E0",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "DYZE",
+      "city": "Zelgor",
+      "elo": 1221,
+      "league": "CA"
+    },
+    "wins": 6,
+    "draws": 3,
+    "losses": 6,
+    "goals_for": 26,
+    "goals_against": 16
+  },
+  {
+    "club": {
+      "name": "Rudar Zelenik",
+      "colors": {
+        "primary": "#C8102E",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "RUZE",
+      "city": "Zelenik",
+      "elo": 1530,
+      "league": "BB"
+    },
+    "wins": 5,
+    "draws": 2,
+    "losses": 7,
+    "goals_for": 20,
+    "goals_against": 15
+  },
+  {
+    "club": {
+      "name": "Lokomotiv Brezna",
+      "colors": {
+        "primary": "#1E90FF",
+        "Secondary": "#FFD700"
+      },
+      "code": "LOBR",
+      "city": "Brezna",
+      "elo": 1144,
+      "league": "CC"
+    },
+    "wins": 9,
+    "draws": 6,
+    "losses": 6,
+    "goals_for": 24,
+    "goals_against": 19
+  },
+  {
+    "club": {
+      "name": "Dynamo Dalvik",
+      "colors": {
+        "primary": "#0066CC",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "DYDA",
+      "city": "Dalvik",
+      "elo": 1196,
+      "league": "CC"
+    },
+    "wins": 11,
+    "draws": 3,
+    "losses": 9,
+    "goals_for": 31,
+    "goals_against": 21
+  },
+  {
+    "club": {
+      "name": "Botev Trusna",
+      "colors": {
+        "primary": "#0066CC",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "BOTR",
+      "city": "Trusna",
+      "elo": 1548,
+      "league": "BA"
+    },
+    "wins": 13,
+    "draws": 5,
+    "losses": 4,
+    "goals_for": 23,
+    "goals_against": 23
+  },
+  {
+    "club": {
+      "name": "Cherno More Dreznik",
+      "colors": {
+        "primary": "#2AA6E0",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "CMDR",
+      "city": "Dreznik",
+      "elo": 1126,
+      "league": "CA"
+    },
+    "wins": 11,
+    "draws": 3,
+    "losses": 9,
+    "goals_for": 21,
+    "goals_against": 21
+  },
+  {
+    "club": {
+      "name": "Zorya Blenik",
+      "colors": {
+        "primary": "#C8102E",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "ZOBL",
+      "city": "Blenik",
+      "elo": 1817,
+      "league": "A"
+    },
+    "wins": 12,
+    "draws": 4,
+    "losses": 7,
+    "goals_for": 22,
+    "goals_against": 22
+  },
+  {
+    "club": {
+      "name": "Torpedo Drasnik",
+      "colors": {
+        "primary": "#006400",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "TODR",
+      "city": "Drasnik",
+      "elo": 1920,
+      "league": "A"
+    },
+    "wins": 5,
+    "draws": 2,
+    "losses": 5,
+    "goals_for": 20,
+    "goals_against": 15
+  },
+  {
+    "club": {
+      "name": "Sloga Drunov",
+      "colors": {
+        "primary": "#2AA6E0",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLDR",
+      "city": "Drunov",
+      "elo": 1686,
+      "league": "A"
+    },
+    "wins": 11,
+    "draws": 3,
+    "losses": 9,
+    "goals_for": 26,
+    "goals_against": 21
+  },
+  {
+    "club": {
+      "name": "Sloga Dornesk",
+      "colors": {
+        "primary": "#000000",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLDO",
+      "city": "Dornesk",
+      "elo": 1193,
+      "league": "CB"
+    },
+    "wins": 8,
+    "draws": 5,
+    "losses": 6,
+    "goals_for": 28,
+    "goals_against": 18
+  },
+  {
+    "club": {
+      "name": "Slavia Branik",
+      "colors": {
+        "primary": "#FF6A00",
+        "Secondary": "#000000"
+      },
+      "code": "SLBA",
+      "city": "Branik",
+      "elo": 1210,
+      "league": "CA"
+    },
+    "wins": 5,
+    "draws": 2,
+    "losses": 9,
+    "goals_for": 30,
+    "goals_against": 15
+  },
+  {
+    "club": {
+      "name": "Sloga Tavrin",
+      "colors": {
+        "primary": "#B6E3FF",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLTA",
+      "city": "Tavrin",
+      "elo": 1402,
+      "league": "BA"
+    },
+    "wins": 7,
+    "draws": 4,
+    "losses": 5,
+    "goals_for": 27,
+    "goals_against": 17
+  },
+  {
+    "club": {
+      "name": "Sloboda Orshen",
+      "colors": {
+        "primary": "#007A3D",
+        "Secondary": "#000000"
+      },
+      "code": "SLOR",
+      "city": "Orshen",
+      "elo": 1136,
+      "league": "CA"
+    },
+    "wins": 11,
+    "draws": 3,
+    "losses": 5,
+    "goals_for": 31,
+    "goals_against": 21
+  },
+  {
+    "club": {
+      "name": "Partizan Velgrad",
+      "colors": {
+        "primary": "#FFD700",
+        "Secondary": "#003399"
+      },
+      "code": "PAVE",
+      "city": "Velgrad",
+      "elo": 1353,
+      "league": "BA"
+    },
+    "wins": 8,
+    "draws": 5,
+    "losses": 5,
+    "goals_for": 23,
+    "goals_against": 18
+  },
+  {
+    "club": {
+      "name": "Spartak Dornik",
+      "colors": {
+        "primary": "#FFD700",
+        "Secondary": "#003399"
+      },
+      "code": "SPDO",
+      "city": "Dornik",
+      "elo": 1095,
+      "league": "CA"
+    },
+    "wins": 10,
+    "draws": 2,
+    "losses": 6,
+    "goals_for": 20,
+    "goals_against": 20
+  },
+  {
+    "club": {
+      "name": "Energetik Tavros",
+      "colors": {
+        "primary": "#2AA6E0",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "ENTA",
+      "city": "Tavros",
+      "elo": 1902,
+      "league": "A"
+    },
+    "wins": 7,
+    "draws": 4,
+    "losses": 8,
+    "goals_for": 32,
+    "goals_against": 17
+  },
+  {
+    "club": {
+      "name": "Lokomotiv Varlen",
+      "colors": {
+        "primary": "#8B0000",
+        "Secondary": "#003366"
+      },
+      "code": "LOVA",
+      "city": "Varlen",
+      "elo": 1021,
+      "league": "CC"
+    },
+    "wins": 6,
+    "draws": 3,
+    "losses": 9,
+    "goals_for": 21,
+    "goals_against": 16
+  },
+  {
+    "club": {
+      "name": "Rubin Kovnar",
+      "colors": {
+        "primary": "#FFFFFF",
+        "Secondary": "#FF0000"
+      },
+      "code": "RUKO",
+      "city": "Kovnar",
+      "elo": 1378,
+      "league": "BB"
+    },
+    "wins": 13,
+    "draws": 5,
+    "losses": 9,
+    "goals_for": 33,
+    "goals_against": 23
+  },
+  {
+    "club": {
+      "name": "Dynamo Bresnar",
+      "colors": {
+        "primary": "#0066CC",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "DYBR",
+      "city": "Bresnar",
+      "elo": 1374,
+      "league": "BA"
+    },
+    "wins": 9,
+    "draws": 6,
+    "losses": 5,
+    "goals_for": 29,
+    "goals_against": 19
+  },
+  {
+    "club": {
+      "name": "Vojvodina Dralov",
+      "colors": {
+        "primary": "#000000",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "VODR",
+      "city": "Dralov",
+      "elo": 1712,
+      "league": "A"
+    },
+    "wins": 7,
+    "draws": 4,
+    "losses": 7,
+    "goals_for": 22,
+    "goals_against": 17
+  }
+]

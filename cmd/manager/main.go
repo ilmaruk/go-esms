@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"math/rand/v2"
 	"os"
 
 	"github.com/olekukonko/tablewriter"
+	"github.com/olekukonko/tablewriter/tw"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
@@ -102,6 +104,12 @@ var tablesCmd = &cobra.Command{
 	Short: "Tables functionalities",
 }
 
+var tableRandomCmd = &cobra.Command{
+	Use:   "random",
+	Short: "Create a random table",
+	RunE:  createRandomTable,
+}
+
 var tableShowCmd = &cobra.Command{
 	Use:   "show",
 	Short: "Show a league table",
@@ -132,7 +140,7 @@ func init() {
 	rosterCmd.AddCommand(rosterCreateCmd)
 	teamsheetCmd.AddCommand(teamsheetCreateCmd)
 	fixturesCmd.AddCommand(fixturesCreateCmd)
-	tablesCmd.AddCommand(tableShowCmd)
+	tablesCmd.AddCommand(tableShowCmd, tableRandomCmd)
 	rootCmd.AddCommand(playCmd, rosterCmd, teamsheetCmd, fixturesCmd, tablesCmd)
 
 	// Setup configuration
@@ -183,22 +191,55 @@ func createFixtures(cmd *cobra.Command, args []string) error {
 
 func showTable(cmd *cobra.Command, args []string) error {
 	tablesRepo := database.NewDatabaseRepo(rootDir)
-	table, err := tablesRepo.Load(0, "a")
+	table, err := tablesRepo.Load(0, "x")
 	if err != nil {
 		return err
 	}
 
-	// data := [][]string{
-	// 	{"Alice", "23", "Engineer"},
-	// 	{"Bob", "29", "Designer"},
-	// }
+	table.Sort()
 
-	w := tablewriter.NewWriter(os.Stdout)
-	w.Header([]string{"Name", "Age", "Occupation"})
-	w.Bulk(table)
-	w.Render()
+	t := tablewriter.NewTable(os.Stdout,
+		tablewriter.WithConfig(tablewriter.Config{
+			Row: tw.CellConfig{
+				Alignment: tw.CellAlignment{PerColumn: []tw.Align{tw.AlignRight, tw.AlignLeft, tw.AlignRight, tw.AlignRight, tw.AlignRight, tw.AlignRight, tw.AlignRight, tw.AlignRight, tw.AlignRight, tw.AlignRight}},
+			},
+		}))
+	t.Header([]string{"Pos", "Team", "Pts", "Pld", "W", "D", "L", "GF", "GA", "GD"})
+	for pos, row := range table {
+		t.Append(pos+1, row.Club.Name, row.Points(), row.Played(), row.Wins, row.Draws, row.Losses, row.GoalsFor, row.GoalsAgainst, row.GoalDiff())
+	}
+	t.Render()
 
 	return nil
+}
+
+func createRandomTable(cmd *cobra.Command, args []string) error {
+	clubs, err := database.LoadAllClubs(rootDir)
+	if err != nil {
+		return err
+	}
+
+	// Shuffle the clubs
+	rand.Shuffle(len(clubs), func(i, j int) {
+		clubs[i], clubs[j] = clubs[j], clubs[i]
+	})
+
+	// Create a random table using the loaded clubs
+	table := internal.Table{}
+	for i := range 20 {
+		club := clubs[i]
+		row := internal.TableRow{
+			Club:         club,
+			Wins:         uint(5 + club.Elo%10),
+			Draws:        uint(2 + club.Elo%5),
+			Losses:       uint(3 + club.Elo%7),
+			GoalsFor:     uint(20 + club.Elo%15),
+			GoalsAgainst: uint(15 + club.Elo%10),
+		}
+		table = append(table, row)
+	}
+
+	return database.SaveTable(rootDir, table, 0, "x")
 }
 
 func main() {
