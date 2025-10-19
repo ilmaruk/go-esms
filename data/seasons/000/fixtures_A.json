@@ -1,0 +1,2698 @@
+{
+  "league": "A",
+  "season": 0,
+  "clubs": {
+    "CSBR": {
+      "name": "CSKA Brezhin",
+      "colors": {
+        "primary": "#800000",
+        "Secondary": "#FFDAB9"
+      },
+      "code": "CSBR",
+      "city": "Brezhin",
+      "elo": 1846,
+      "league": "A"
+    },
+    "CSDO": {
+      "name": "CSKA Dornov",
+      "colors": {
+        "primary": "#1F3A93",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "CSDO",
+      "city": "Dornov",
+      "elo": 1700,
+      "league": "A"
+    },
+    "DYKA": {
+      "name": "Dynamo Kalenov",
+      "colors": {
+        "primary": "#4B5320",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "DYKA",
+      "city": "Kalenov",
+      "elo": 1683,
+      "league": "A"
+    },
+    "DYZE": {
+      "name": "Dynamo Zelgor",
+      "colors": {
+        "primary": "#FFFFFF",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "DYZE",
+      "city": "Zelgor",
+      "elo": 1658,
+      "league": "A"
+    },
+    "HAST": {
+      "name": "Hajduk Straven",
+      "colors": {
+        "primary": "#FF8C00",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "HAST",
+      "city": "Straven",
+      "elo": 1913,
+      "league": "A"
+    },
+    "KAVA": {
+      "name": "Karpaty Valenik",
+      "colors": {
+        "primary": "#0D47A1",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "KAVA",
+      "city": "Valenik",
+      "elo": 1733,
+      "league": "A"
+    },
+    "MEDO": {
+      "name": "Metalist Dorvak",
+      "colors": {
+        "primary": "#0047AB",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "MEDO",
+      "city": "Dorvak",
+      "elo": 1829,
+      "league": "A"
+    },
+    "RAMA": {
+      "name": "Radnički Malgor",
+      "colors": {
+        "primary": "#2C9AB7",
+        "Secondary": "#2C9AB7"
+      },
+      "code": "RAMA",
+      "city": "Malgor",
+      "elo": 1892,
+      "league": "A"
+    },
+    "SEKR": {
+      "name": "Severna Kralov",
+      "colors": {
+        "primary": "#C8102E",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SEKR",
+      "city": "Kralov",
+      "elo": 1713,
+      "league": "A"
+    },
+    "SLDR": {
+      "name": "Sloga Drunov",
+      "colors": {
+        "primary": "#2E8B57",
+        "Secondary": "#2E8B57"
+      },
+      "code": "SLDR",
+      "city": "Drunov",
+      "elo": 1620,
+      "league": "A"
+    },
+    "SLDU": {
+      "name": "Sloga Durven",
+      "colors": {
+        "primary": "#000000",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLDU",
+      "city": "Durven",
+      "elo": 1527,
+      "league": "A"
+    },
+    "SLMO": {
+      "name": "Slavia Mornav",
+      "colors": {
+        "primary": "#0047AB",
+        "Secondary": "#0047AB"
+      },
+      "code": "SLMO",
+      "city": "Mornav",
+      "elo": 1812,
+      "league": "A"
+    },
+    "SLNO": {
+      "name": "Slavia Norven",
+      "colors": {
+        "primary": "#1F3A93",
+        "Secondary": "#1F3A93"
+      },
+      "code": "SLNO",
+      "city": "Norven",
+      "elo": 1754,
+      "league": "A"
+    },
+    "SLPR": {
+      "name": "Sloga Pradven",
+      "colors": {
+        "primary": "#006B6B",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLPR",
+      "city": "Pradven",
+      "elo": 1774,
+      "league": "A"
+    },
+    "SLTA": {
+      "name": "Sloga Tavrin",
+      "colors": {
+        "primary": "#1B3A4B",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLTA",
+      "city": "Tavrin",
+      "elo": 1595,
+      "league": "A"
+    },
+    "SLTR": {
+      "name": "Slavia Tresnik",
+      "colors": {
+        "primary": "#FFFFFF",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "SLTR",
+      "city": "Tresnik",
+      "elo": 1875,
+      "league": "A"
+    },
+    "TABR": {
+      "name": "Tatran Bredov",
+      "colors": {
+        "primary": "#FFFFFF",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "TABR",
+      "city": "Bredov",
+      "elo": 1548,
+      "league": "A"
+    },
+    "VAKR": {
+      "name": "Vardar Kravena",
+      "colors": {
+        "primary": "#28334A",
+        "Secondary": "#BFC8D6"
+      },
+      "code": "VAKR",
+      "city": "Kravena",
+      "elo": 1634,
+      "league": "A"
+    },
+    "VAMO": {
+      "name": "Vardar Molgrad",
+      "colors": {
+        "primary": "#8B0000",
+        "Secondary": "#F5F5F5"
+      },
+      "code": "VAMO",
+      "city": "Molgrad",
+      "elo": 1922,
+      "league": "A"
+    },
+    "ZAVO": {
+      "name": "Zaglebie Vorna",
+      "colors": {
+        "primary": "#C8102E",
+        "Secondary": "#FFFFFF"
+      },
+      "code": "ZAVO",
+      "city": "Vorna",
+      "elo": 1567,
+      "league": "A"
+    }
+  },
+  "weeks": [
+    {
+      "id": 1,
+      "games": [
+        {
+          "ID": "01df0daa-2200-53b8-a5d3-be72de9c3c34",
+          "home": "VAMO",
+          "away": "HAST",
+          "seed": 5882618554254948788
+        },
+        {
+          "ID": "0df1d7d2-a6b4-556d-a685-2d91ca5732c9",
+          "home": "RAMA",
+          "away": "SLTR",
+          "seed": 7029117234020408213
+        },
+        {
+          "ID": "fa8bae40-35c2-50ab-b1cc-03bf92e553cb",
+          "home": "CSBR",
+          "away": "MEDO",
+          "seed": 7315271117271565628
+        },
+        {
+          "ID": "829fbf7e-e8cd-5e2b-8c30-04f8cefabe59",
+          "home": "SLMO",
+          "away": "SLPR",
+          "seed": 1053995068786893405
+        },
+        {
+          "ID": "4251352b-1884-5e46-9ecf-acca37507520",
+          "home": "SLNO",
+          "away": "KAVA",
+          "seed": 220853908510524078
+        },
+        {
+          "ID": "b859a84d-1de0-531d-a316-729566a90f46",
+          "home": "SEKR",
+          "away": "CSDO",
+          "seed": 2014382530514787390
+        },
+        {
+          "ID": "83b184ee-45d0-5ba5-96d8-3908df2c4f38",
+          "home": "DYKA",
+          "away": "DYZE",
+          "seed": 538305840657508626
+        },
+        {
+          "ID": "73c7cbc8-08d8-557e-b4f4-14e061de3564",
+          "home": "VAKR",
+          "away": "SLDR",
+          "seed": 4590298101311548941
+        },
+        {
+          "ID": "067c98c9-9030-564e-9c3b-fc4bcbbd2702",
+          "home": "SLTA",
+          "away": "ZAVO",
+          "seed": 4044857453139322848
+        },
+        {
+          "ID": "7e2941eb-65ba-51d3-b577-e444487f1c72",
+          "home": "TABR",
+          "away": "SLDU",
+          "seed": 3365011301628501056
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "games": [
+        {
+          "ID": "59b1e3da-3743-54e0-86ff-148ec91ea338",
+          "home": "RAMA",
+          "away": "VAMO",
+          "seed": 2031850262698747638
+        },
+        {
+          "ID": "21a396ac-5343-5b8f-b218-5157cf343b84",
+          "home": "HAST",
+          "away": "CSBR",
+          "seed": 2181193055978855372
+        },
+        {
+          "ID": "5db86a8a-a3a9-570a-9414-c33d4ca593b2",
+          "home": "SLTR",
+          "away": "SLMO",
+          "seed": 5497513649544140286
+        },
+        {
+          "ID": "a428ce8c-2de3-56e3-bbae-09a4211880e5",
+          "home": "MEDO",
+          "away": "SLNO",
+          "seed": 260044144524805555
+        },
+        {
+          "ID": "8e665f09-973e-5fee-a9ef-29bb208ff510",
+          "home": "SLPR",
+          "away": "SEKR",
+          "seed": 7346908828513519703
+        },
+        {
+          "ID": "4e561ac8-6826-55dd-9df9-a321305bf207",
+          "home": "KAVA",
+          "away": "DYKA",
+          "seed": 2685814541774691038
+        },
+        {
+          "ID": "5766dc90-0c35-5961-b163-b383e1137197",
+          "home": "CSDO",
+          "away": "VAKR",
+          "seed": 8090684813469400628
+        },
+        {
+          "ID": "f479f4e9-6430-5e87-96db-23465cfe9629",
+          "home": "DYZE",
+          "away": "SLTA",
+          "seed": 4718987593640009724
+        },
+        {
+          "ID": "e1f51fb2-363c-5ea2-97cc-01b8120643f0",
+          "home": "SLDR",
+          "away": "TABR",
+          "seed": 4068610438414076649
+        },
+        {
+          "ID": "04c91153-5bd1-501f-b65c-b3404170d064",
+          "home": "ZAVO",
+          "away": "SLDU",
+          "seed": 47616502047923121
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "games": [
+        {
+          "ID": "80681818-4ce1-57d8-b463-91d9438f075c",
+          "home": "VAMO",
+          "away": "CSBR",
+          "seed": 1152342750479139454
+        },
+        {
+          "ID": "6e9894c1-26a0-50b6-8b2e-c5e9f189ce11",
+          "home": "SLMO",
+          "away": "RAMA",
+          "seed": 6785144739666894456
+        },
+        {
+          "ID": "5da7ae52-78f8-52c1-a3ce-500084e9c199",
+          "home": "SLNO",
+          "away": "HAST",
+          "seed": 1890223634593099606
+        },
+        {
+          "ID": "913bcf9e-69b0-5144-acf2-1e4a86c9a263",
+          "home": "SEKR",
+          "away": "SLTR",
+          "seed": 9200632471885343065
+        },
+        {
+          "ID": "d1c8581e-69e6-523b-8e78-1fb4ee7d3be2",
+          "home": "DYKA",
+          "away": "MEDO",
+          "seed": 2840997586782244470
+        },
+        {
+          "ID": "a69a8599-3390-529a-8517-c34b28cb29f2",
+          "home": "VAKR",
+          "away": "SLPR",
+          "seed": 6764336300274502714
+        },
+        {
+          "ID": "bf4481a7-1526-503b-ab06-670f50e7448d",
+          "home": "SLTA",
+          "away": "KAVA",
+          "seed": 8202021807209219277
+        },
+        {
+          "ID": "bf1212b4-2e8d-5d7f-b90d-d0b3f579e11c",
+          "home": "TABR",
+          "away": "CSDO",
+          "seed": 3196770620391066524
+        },
+        {
+          "ID": "1f23455a-8b46-560d-90bc-d7f004b8eb5b",
+          "home": "SLDU",
+          "away": "DYZE",
+          "seed": 2689048929944378124
+        },
+        {
+          "ID": "a1575506-8a03-5fdd-b8ac-cf743ebe28cc",
+          "home": "ZAVO",
+          "away": "SLDR",
+          "seed": 4660086361149240768
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "games": [
+        {
+          "ID": "df70d417-33d8-55a3-aab4-11b9f5a9caaf",
+          "home": "SLMO",
+          "away": "VAMO",
+          "seed": 6687303349330347
+        },
+        {
+          "ID": "0f67c59f-7888-518d-beee-cc6348a15756",
+          "home": "CSBR",
+          "away": "SLNO",
+          "seed": 394520931063799618
+        },
+        {
+          "ID": "f0f3ccea-08ad-5cc3-a3d5-ccbf66ba7050",
+          "home": "RAMA",
+          "away": "SEKR",
+          "seed": 4477763135964345849
+        },
+        {
+          "ID": "b15db9d4-0fe2-50d8-91e6-45f0cdbfe0af",
+          "home": "HAST",
+          "away": "DYKA",
+          "seed": 5434177455536797185
+        },
+        {
+          "ID": "d9c372ee-aa96-56f2-89b8-fce03e4ad027",
+          "home": "SLTR",
+          "away": "VAKR",
+          "seed": 7361004391744242039
+        },
+        {
+          "ID": "5146db40-a72e-508e-97f9-eb4631b6ce15",
+          "home": "MEDO",
+          "away": "SLTA",
+          "seed": 2473025286301114133
+        },
+        {
+          "ID": "916b1002-369d-5ff7-a3c9-c715a1ccd785",
+          "home": "SLPR",
+          "away": "TABR",
+          "seed": 7373628130467616891
+        },
+        {
+          "ID": "05ed4754-071c-5d1a-a168-db322c5eb26d",
+          "home": "KAVA",
+          "away": "SLDU",
+          "seed": 7034902538573952883
+        },
+        {
+          "ID": "157363cc-4e44-5f8b-a03d-af5e6dc3bb7d",
+          "home": "CSDO",
+          "away": "ZAVO",
+          "seed": 2829052422127943617
+        },
+        {
+          "ID": "9d5f8fe2-c07f-54d6-88d0-4198a13e2d09",
+          "home": "DYZE",
+          "away": "SLDR",
+          "seed": 7168811183605078366
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "games": [
+        {
+          "ID": "4a5d559b-30ca-5659-a361-43584e9294ea",
+          "home": "VAMO",
+          "away": "SLNO",
+          "seed": 8593238061892708109
+        },
+        {
+          "ID": "7f089067-42fc-5947-aec4-ed4ee7623031",
+          "home": "SEKR",
+          "away": "SLMO",
+          "seed": 8844879709039603163
+        },
+        {
+          "ID": "7f3122a5-7924-52f9-8f1e-865e2d176886",
+          "home": "DYKA",
+          "away": "CSBR",
+          "seed": 92943013611970028
+        },
+        {
+          "ID": "95898ab6-bcb8-5c52-af2f-276a28461787",
+          "home": "VAKR",
+          "away": "RAMA",
+          "seed": 5422100451243296697
+        },
+        {
+          "ID": "0de86dde-d9fc-594b-93e5-140b85388d32",
+          "home": "SLTA",
+          "away": "HAST",
+          "seed": 3146198567185720428
+        },
+        {
+          "ID": "97b4a76a-9338-5e36-92d9-c59993dabf53",
+          "home": "TABR",
+          "away": "SLTR",
+          "seed": 965677513492473939
+        },
+        {
+          "ID": "484f2fac-5636-5e04-9487-9ac77bab9b5e",
+          "home": "SLDU",
+          "away": "MEDO",
+          "seed": 3522530650733110947
+        },
+        {
+          "ID": "ae41fffd-b13f-5394-9899-983d6bc39417",
+          "home": "ZAVO",
+          "away": "SLPR",
+          "seed": 2559516575157531505
+        },
+        {
+          "ID": "acb44f81-e128-5e1d-a0b8-95b1012b853d",
+          "home": "SLDR",
+          "away": "KAVA",
+          "seed": 5895564678619979746
+        },
+        {
+          "ID": "d6c68994-42e6-507a-9dad-13c03f6ff67f",
+          "home": "DYZE",
+          "away": "CSDO",
+          "seed": 7611582692445317173
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "games": [
+        {
+          "ID": "b73c7af8-3427-5919-889a-06ca3c2b3f0b",
+          "home": "SEKR",
+          "away": "VAMO",
+          "seed": 4177124356222791155
+        },
+        {
+          "ID": "6506ea44-45ed-5acd-9e25-bf3553ffdb7b",
+          "home": "SLNO",
+          "away": "DYKA",
+          "seed": 294141885486232106
+        },
+        {
+          "ID": "7256de00-6720-5fbf-a6b5-d6ebf037b554",
+          "home": "SLMO",
+          "away": "VAKR",
+          "seed": 139884332833638026
+        },
+        {
+          "ID": "7c32530d-e83a-51a9-ad65-e4dd3692273c",
+          "home": "CSBR",
+          "away": "SLTA",
+          "seed": 8835958879049346925
+        },
+        {
+          "ID": "8f218a14-3db2-59e1-a142-97f3c8152daf",
+          "home": "RAMA",
+          "away": "TABR",
+          "seed": 197926501999372717
+        },
+        {
+          "ID": "2c9138a7-99de-5251-9469-922a0e015337",
+          "home": "HAST",
+          "away": "SLDU",
+          "seed": 1604889752250324600
+        },
+        {
+          "ID": "eadf92b3-05a6-59e8-b0dd-962cb4c4e33a",
+          "home": "SLTR",
+          "away": "ZAVO",
+          "seed": 2358340541340120056
+        },
+        {
+          "ID": "e7cd476a-8aca-5917-8dde-71bc90df174e",
+          "home": "MEDO",
+          "away": "SLDR",
+          "seed": 8405449835886258095
+        },
+        {
+          "ID": "8167b4c7-b309-5bf7-a769-ca4cd206d587",
+          "home": "SLPR",
+          "away": "DYZE",
+          "seed": 3664882036836882956
+        },
+        {
+          "ID": "3529121d-4b98-577c-b1d1-c84c93b8d5b7",
+          "home": "KAVA",
+          "away": "CSDO",
+          "seed": 8175715624095824083
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "games": [
+        {
+          "ID": "1789b7c9-78d2-5798-b3d7-08a5350fe298",
+          "home": "VAMO",
+          "away": "DYKA",
+          "seed": 852383999942710391
+        },
+        {
+          "ID": "6476c457-8171-52a7-9ae5-b6cc0d0ffa81",
+          "home": "VAKR",
+          "away": "SEKR",
+          "seed": 247391927802968661
+        },
+        {
+          "ID": "42410f9a-0572-5a46-9f17-a97e84a5aa3f",
+          "home": "SLTA",
+          "away": "SLNO",
+          "seed": 6669802747997249608
+        },
+        {
+          "ID": "5fec00be-fc55-5cf9-9d44-f92b4255a73c",
+          "home": "TABR",
+          "away": "SLMO",
+          "seed": 6763773957528376572
+        },
+        {
+          "ID": "2eaeb3b5-16cd-5b5e-b2d8-9953c158a426",
+          "home": "SLDU",
+          "away": "CSBR",
+          "seed": 2339367200597012338
+        },
+        {
+          "ID": "449eaf60-893a-5381-9194-aa6a841eb99e",
+          "home": "ZAVO",
+          "away": "RAMA",
+          "seed": 7308542706562034044
+        },
+        {
+          "ID": "e3e18635-bc4b-5fb0-ab44-8dcb21f5b935",
+          "home": "SLDR",
+          "away": "HAST",
+          "seed": 4167653191782262171
+        },
+        {
+          "ID": "12c0fa63-90d3-5d44-b3f3-1fdd234b96ba",
+          "home": "DYZE",
+          "away": "SLTR",
+          "seed": 6495404624894113110
+        },
+        {
+          "ID": "fae44fac-63a0-5caa-b572-dc578b09497a",
+          "home": "CSDO",
+          "away": "MEDO",
+          "seed": 1638664775056262688
+        },
+        {
+          "ID": "afbfb22c-4361-5edb-8dc2-e7fdfb4fc749",
+          "home": "KAVA",
+          "away": "SLPR",
+          "seed": 5292753396544034055
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "games": [
+        {
+          "ID": "63a3895e-8579-54eb-b516-43cec8e1712b",
+          "home": "VAKR",
+          "away": "VAMO",
+          "seed": 1833789062987481610
+        },
+        {
+          "ID": "ce679647-ff47-5655-9aef-da8e54adc133",
+          "home": "DYKA",
+          "away": "SLTA",
+          "seed": 6000862589450624218
+        },
+        {
+          "ID": "0c6624ac-a491-5c3e-b7fc-a88905678d41",
+          "home": "SEKR",
+          "away": "TABR",
+          "seed": 4881633301167434028
+        },
+        {
+          "ID": "584e3e86-a0fc-5c4d-9af9-e91cb2c26471",
+          "home": "SLNO",
+          "away": "SLDU",
+          "seed": 3506375746512961882
+        },
+        {
+          "ID": "fbe7be21-2c7a-56e0-8e5d-6a8e1af77143",
+          "home": "SLMO",
+          "away": "ZAVO",
+          "seed": 7068252876941107062
+        },
+        {
+          "ID": "58fbd3a2-532a-5382-b96f-9757fc99eabd",
+          "home": "CSBR",
+          "away": "SLDR",
+          "seed": 6226320381824437508
+        },
+        {
+          "ID": "303e6a0e-c90b-5295-8184-b45c44da7b12",
+          "home": "RAMA",
+          "away": "DYZE",
+          "seed": 5353203575987581791
+        },
+        {
+          "ID": "56903986-2b17-5b8a-bd93-9eadb62a902a",
+          "home": "HAST",
+          "away": "CSDO",
+          "seed": 6854644408524143914
+        },
+        {
+          "ID": "753f12f5-8310-56e6-ba69-b58ef9f86b0c",
+          "home": "SLTR",
+          "away": "KAVA",
+          "seed": 7138084894213884907
+        },
+        {
+          "ID": "abe694df-2d74-514f-a5bd-2244b9b2a2dc",
+          "home": "MEDO",
+          "away": "SLPR",
+          "seed": 7026194406557881833
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "games": [
+        {
+          "ID": "ee50045e-7817-5f02-bd2f-3696885697f7",
+          "home": "VAMO",
+          "away": "SLTA",
+          "seed": 229954300982884671
+        },
+        {
+          "ID": "fb6af295-6523-5c6f-9e4d-c0f11cfc7d65",
+          "home": "TABR",
+          "away": "VAKR",
+          "seed": 6104775997940762405
+        },
+        {
+          "ID": "7c309f4e-96c6-5ac1-8d60-7d7810bf3c63",
+          "home": "SLDU",
+          "away": "DYKA",
+          "seed": 3169539431248259019
+        },
+        {
+          "ID": "c46ea1f1-32f5-5fe4-bb10-e62dc474a1cc",
+          "home": "ZAVO",
+          "away": "SEKR",
+          "seed": 7327259625187924
+        },
+        {
+          "ID": "ac0ceb81-7cbe-5cc7-add5-8102bd125ec0",
+          "home": "SLDR",
+          "away": "SLNO",
+          "seed": 2544595774390890301
+        },
+        {
+          "ID": "0005b228-9441-5960-b212-71bb7118fc8e",
+          "home": "DYZE",
+          "away": "SLMO",
+          "seed": 6202635707554570428
+        },
+        {
+          "ID": "644741d5-8bca-57ee-8a2e-5ea25abb5078",
+          "home": "CSDO",
+          "away": "CSBR",
+          "seed": 6996605715713615801
+        },
+        {
+          "ID": "e8dc4ffb-00aa-52c0-b9be-46f9c953fc93",
+          "home": "KAVA",
+          "away": "RAMA",
+          "seed": 8881173688692092824
+        },
+        {
+          "ID": "5232b1f5-072d-58d2-94c9-74206a37967b",
+          "home": "SLPR",
+          "away": "HAST",
+          "seed": 3320746879805561793
+        },
+        {
+          "ID": "327dac00-e44a-53a7-a447-326a599d4ed2",
+          "home": "MEDO",
+          "away": "SLTR",
+          "seed": 689299871752231893
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "games": [
+        {
+          "ID": "2fe904e9-d784-5ddb-acae-f2d87cb11b56",
+          "home": "TABR",
+          "away": "VAMO",
+          "seed": 6901551890639260410
+        },
+        {
+          "ID": "8a657f24-7a26-5e17-a552-8c83288580c4",
+          "home": "SLTA",
+          "away": "SLDU",
+          "seed": 9089370031597834282
+        },
+        {
+          "ID": "e2d505fd-3743-5696-819f-4348c6af221e",
+          "home": "VAKR",
+          "away": "ZAVO",
+          "seed": 4795142243617434747
+        },
+        {
+          "ID": "ff18e48e-b975-5c5c-b932-64d56f7a6026",
+          "home": "DYKA",
+          "away": "SLDR",
+          "seed": 8927530492374999042
+        },
+        {
+          "ID": "bd71a4d2-c00f-555a-a891-c4024c573d60",
+          "home": "SEKR",
+          "away": "DYZE",
+          "seed": 4750872397084755834
+        },
+        {
+          "ID": "539d4096-abc7-5bb4-ab5c-c9e28a1585f9",
+          "home": "SLNO",
+          "away": "CSDO",
+          "seed": 3664243328029935984
+        },
+        {
+          "ID": "1bb5b7d0-4e5f-5fec-ab57-6e38762434a4",
+          "home": "SLMO",
+          "away": "KAVA",
+          "seed": 6828774889749919662
+        },
+        {
+          "ID": "7befe85c-9d55-5cbb-95f8-736440dbd18c",
+          "home": "CSBR",
+          "away": "SLPR",
+          "seed": 8741855072387583665
+        },
+        {
+          "ID": "9a559c3c-232e-57f5-b6df-12e1eb183c85",
+          "home": "RAMA",
+          "away": "MEDO",
+          "seed": 2400810005904595591
+        },
+        {
+          "ID": "887f517c-10c4-59e4-94c8-eaa16de26b2a",
+          "home": "HAST",
+          "away": "SLTR",
+          "seed": 2723775949258037103
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "games": [
+        {
+          "ID": "fbd7b2c9-59e0-5d27-b168-18807345db3d",
+          "home": "VAMO",
+          "away": "SLDU",
+          "seed": 7600629348672698441
+        },
+        {
+          "ID": "809b50ca-5da6-57c7-aed5-d9e127613e7e",
+          "home": "ZAVO",
+          "away": "TABR",
+          "seed": 2736125341984687979
+        },
+        {
+          "ID": "5d7ce174-7ac9-5596-8c70-25afc07e5b4d",
+          "home": "SLDR",
+          "away": "SLTA",
+          "seed": 8037481162399302705
+        },
+        {
+          "ID": "e408d858-6dc2-5d7d-bed7-ed8aeb0948de",
+          "home": "DYZE",
+          "away": "VAKR",
+          "seed": 6570896173965565900
+        },
+        {
+          "ID": "0ffbd09e-aaf9-536f-a815-f9abdec7d31f",
+          "home": "CSDO",
+          "away": "DYKA",
+          "seed": 3022336382315239293
+        },
+        {
+          "ID": "9092a176-2122-513b-8aef-5a2604ebb87b",
+          "home": "KAVA",
+          "away": "SEKR",
+          "seed": 6617044616918246624
+        },
+        {
+          "ID": "6dab5aae-97b1-5427-972e-5fb5e05eb42f",
+          "home": "SLPR",
+          "away": "SLNO",
+          "seed": 4276695588465473042
+        },
+        {
+          "ID": "ed43e53c-63e4-57ec-bd88-80d7f634b0fc",
+          "home": "MEDO",
+          "away": "SLMO",
+          "seed": 7719093901261222645
+        },
+        {
+          "ID": "7af2f7fc-36f5-58a8-b82f-3ea4db46323b",
+          "home": "SLTR",
+          "away": "CSBR",
+          "seed": 4580444010872908632
+        },
+        {
+          "ID": "d280f95f-7d48-53ad-b286-efe37f5b63d9",
+          "home": "HAST",
+          "away": "RAMA",
+          "seed": 6438484881627330375
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "games": [
+        {
+          "ID": "10f542b5-05fd-5dc8-bfa4-2d472340aa79",
+          "home": "ZAVO",
+          "away": "VAMO",
+          "seed": 4031015229537825861
+        },
+        {
+          "ID": "d1aaeeae-e9b0-5dbc-bdd0-2859c6c6d0c5",
+          "home": "SLDU",
+          "away": "SLDR",
+          "seed": 8998906047123313643
+        },
+        {
+          "ID": "a115db38-30bd-51be-85bb-57c6cfebe1b3",
+          "home": "TABR",
+          "away": "DYZE",
+          "seed": 5264827995011626888
+        },
+        {
+          "ID": "19f75d92-a8b1-5795-96af-e84bb5058bcc",
+          "home": "SLTA",
+          "away": "CSDO",
+          "seed": 8111362172290875506
+        },
+        {
+          "ID": "25218cd5-a5ac-5c73-9bfb-649700dc3c8d",
+          "home": "VAKR",
+          "away": "KAVA",
+          "seed": 1697460148636899759
+        },
+        {
+          "ID": "374a0966-c4cb-5ed5-80d7-157942c3e9d0",
+          "home": "DYKA",
+          "away": "SLPR",
+          "seed": 6115990908898426038
+        },
+        {
+          "ID": "4d6249de-ec65-5147-b150-96f2abbde5a5",
+          "home": "SEKR",
+          "away": "MEDO",
+          "seed": 4845858310912746462
+        },
+        {
+          "ID": "5cfe4799-2770-56bd-894d-63409b7b405f",
+          "home": "SLNO",
+          "away": "SLTR",
+          "seed": 7997386585004523901
+        },
+        {
+          "ID": "3d47b1b2-a5ce-59b0-bb51-46a7fb1d872f",
+          "home": "SLMO",
+          "away": "HAST",
+          "seed": 1749581434079751518
+        },
+        {
+          "ID": "dc1d16d8-efdd-5918-a143-1b440fa7f5c6",
+          "home": "CSBR",
+          "away": "RAMA",
+          "seed": 5977293292295683704
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "games": [
+        {
+          "ID": "18356a37-88f4-5a61-a078-285b2d0907b3",
+          "home": "VAMO",
+          "away": "SLDR",
+          "seed": 4032180319463034242
+        },
+        {
+          "ID": "8d9c40ec-cc80-5c10-b5b7-6655d10e391c",
+          "home": "DYZE",
+          "away": "ZAVO",
+          "seed": 8741511986099096555
+        },
+        {
+          "ID": "59f42c49-67ea-5558-b9cb-40f0d5fbe996",
+          "home": "CSDO",
+          "away": "SLDU",
+          "seed": 650290353941277606
+        },
+        {
+          "ID": "e4004723-950c-59c6-9b8e-74c6dc85037e",
+          "home": "KAVA",
+          "away": "TABR",
+          "seed": 3572620506808152033
+        },
+        {
+          "ID": "29839c4f-9b6f-5f36-af00-1b8747331812",
+          "home": "SLPR",
+          "away": "SLTA",
+          "seed": 7022417769814022766
+        },
+        {
+          "ID": "8f2dea78-ef56-5e75-92ea-1616c98b3598",
+          "home": "MEDO",
+          "away": "VAKR",
+          "seed": 5555540563845945237
+        },
+        {
+          "ID": "d79cee5b-613c-5aea-a6f8-94f7f5ba4300",
+          "home": "SLTR",
+          "away": "DYKA",
+          "seed": 7278821435779139979
+        },
+        {
+          "ID": "2471bcd7-77e4-512d-b004-383156671e40",
+          "home": "HAST",
+          "away": "SEKR",
+          "seed": 7125493786258950843
+        },
+        {
+          "ID": "25b20453-0a0c-53c5-b1f5-620dbf4b7bd1",
+          "home": "RAMA",
+          "away": "SLNO",
+          "seed": 3615707644794545475
+        },
+        {
+          "ID": "fe9bad7f-9691-5495-973e-49279efddde1",
+          "home": "CSBR",
+          "away": "SLMO",
+          "seed": 1933277816346334734
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "games": [
+        {
+          "ID": "689a22bd-0c9a-5665-b626-3d5d55154a75",
+          "home": "DYZE",
+          "away": "VAMO",
+          "seed": 479997570327395389
+        },
+        {
+          "ID": "8849e1df-3e5e-5463-8969-330e566a62f5",
+          "home": "SLDR",
+          "away": "CSDO",
+          "seed": 6129392684313710979
+        },
+        {
+          "ID": "0679ef1b-32dc-58d3-9494-12ba7060dba6",
+          "home": "ZAVO",
+          "away": "KAVA",
+          "seed": 1909892812448808346
+        },
+        {
+          "ID": "ef90786e-a004-5f11-8d4c-85e4ccf3dd67",
+          "home": "SLDU",
+          "away": "SLPR",
+          "seed": 1319020120698004877
+        },
+        {
+          "ID": "7a9c8ca8-90bf-5217-8bcc-d4d625df5a50",
+          "home": "TABR",
+          "away": "MEDO",
+          "seed": 7089035451929665264
+        },
+        {
+          "ID": "9a239606-2e6a-508a-bf67-d202910dafdc",
+          "home": "SLTA",
+          "away": "SLTR",
+          "seed": 8560630596170353430
+        },
+        {
+          "ID": "0de32842-2988-5147-8f7d-078a84f36d57",
+          "home": "VAKR",
+          "away": "HAST",
+          "seed": 8684366392374755888
+        },
+        {
+          "ID": "e029730b-85eb-50ba-9dca-577f23c71f66",
+          "home": "DYKA",
+          "away": "RAMA",
+          "seed": 9020966213929756474
+        },
+        {
+          "ID": "8b3ce9c7-6c02-5321-abae-6aacb06b9414",
+          "home": "SEKR",
+          "away": "CSBR",
+          "seed": 1355991720830455172
+        },
+        {
+          "ID": "a093d581-2b1f-5b01-b87c-994d08e042ca",
+          "home": "SLNO",
+          "away": "SLMO",
+          "seed": 3851806148749386189
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "games": [
+        {
+          "ID": "05f6a189-c303-5a9c-9bed-6b74a71b0dbc",
+          "home": "VAMO",
+          "away": "CSDO",
+          "seed": 8503885692727096568
+        },
+        {
+          "ID": "a3c5dfc1-83b3-5245-abc3-fad06fbddf9b",
+          "home": "KAVA",
+          "away": "DYZE",
+          "seed": 603096357867853631
+        },
+        {
+          "ID": "8fb55fda-23b0-5fca-8071-45a67d2776f8",
+          "home": "SLPR",
+          "away": "SLDR",
+          "seed": 5546807063305918281
+        },
+        {
+          "ID": "2256103d-9236-5ec7-8a5d-9b77211cd7fb",
+          "home": "MEDO",
+          "away": "ZAVO",
+          "seed": 6866182723728093164
+        },
+        {
+          "ID": "3592d9e8-f50a-5bde-8a53-e8d422ab9674",
+          "home": "SLTR",
+          "away": "SLDU",
+          "seed": 7889024218647632018
+        },
+        {
+          "ID": "7f243c59-5c6a-551e-bb87-f72e740678e6",
+          "home": "HAST",
+          "away": "TABR",
+          "seed": 2379600812966598653
+        },
+        {
+          "ID": "67a4ceab-3bfa-5f53-bb8b-6aac62b752de",
+          "home": "RAMA",
+          "away": "SLTA",
+          "seed": 3118447022243601634
+        },
+        {
+          "ID": "c203e7f4-cf1e-5b9c-887a-00a10b5e1e83",
+          "home": "CSBR",
+          "away": "VAKR",
+          "seed": 3098781518708092003
+        },
+        {
+          "ID": "441638d1-4372-5e2f-a8b6-bcf6a89d3a91",
+          "home": "SLMO",
+          "away": "DYKA",
+          "seed": 1183838048576081384
+        },
+        {
+          "ID": "9e9223e3-6d2d-5de8-839e-4040c6de5b33",
+          "home": "SLNO",
+          "away": "SEKR",
+          "seed": 28137592109718695
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "games": [
+        {
+          "ID": "4bd1b53c-53a3-5552-866a-9ec984e22888",
+          "home": "KAVA",
+          "away": "VAMO",
+          "seed": 5246684582982705545
+        },
+        {
+          "ID": "e2b0ecb6-db61-5cd3-8a38-a2e63e6fac09",
+          "home": "CSDO",
+          "away": "SLPR",
+          "seed": 1505593819783070241
+        },
+        {
+          "ID": "acb25bf0-8e7e-54d8-bd9c-864cb36471fb",
+          "home": "DYZE",
+          "away": "MEDO",
+          "seed": 1090673061217188720
+        },
+        {
+          "ID": "26183082-281d-54da-9c46-00d6fa5709bc",
+          "home": "SLDR",
+          "away": "SLTR",
+          "seed": 4121903489936405830
+        },
+        {
+          "ID": "8013dce9-cd50-5527-8668-e0211b465b65",
+          "home": "ZAVO",
+          "away": "HAST",
+          "seed": 6985114807432046629
+        },
+        {
+          "ID": "80144b02-f6d3-57af-a146-177f3b14d443",
+          "home": "SLDU",
+          "away": "RAMA",
+          "seed": 6884105471844611460
+        },
+        {
+          "ID": "7559a5f9-11dd-522e-9b4c-ba790fbe5930",
+          "home": "TABR",
+          "away": "CSBR",
+          "seed": 4538305821434349414
+        },
+        {
+          "ID": "d3807d84-3624-5d32-b935-cd4d8f827cc9",
+          "home": "SLTA",
+          "away": "SLMO",
+          "seed": 5215912091950199608
+        },
+        {
+          "ID": "16c3312b-416c-51f0-919b-65063de39e80",
+          "home": "VAKR",
+          "away": "SLNO",
+          "seed": 298399591280542956
+        },
+        {
+          "ID": "dadb1189-9438-5d69-8327-e54a0067df75",
+          "home": "DYKA",
+          "away": "SEKR",
+          "seed": 8602792603428176263
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "games": [
+        {
+          "ID": "a7c041de-b4dc-5cf7-9dae-577d59c3ba81",
+          "home": "VAMO",
+          "away": "SLPR",
+          "seed": 9134264736641223851
+        },
+        {
+          "ID": "f5a56f18-e5ed-56d6-97ef-79984781491f",
+          "home": "MEDO",
+          "away": "KAVA",
+          "seed": 9191149319616714337
+        },
+        {
+          "ID": "cb5a9f7b-b737-5f9a-89f6-98c0d58d4fb2",
+          "home": "SLTR",
+          "away": "CSDO",
+          "seed": 210983310326292059
+        },
+        {
+          "ID": "7129a115-b932-5d3b-be04-9fca80801134",
+          "home": "HAST",
+          "away": "DYZE",
+          "seed": 6687621587536722117
+        },
+        {
+          "ID": "2bab0e4d-88e6-5f8f-8898-7974e1903903",
+          "home": "RAMA",
+          "away": "SLDR",
+          "seed": 5917197755040152636
+        },
+        {
+          "ID": "6fb60440-1f6e-5e91-9c18-ef2db3836532",
+          "home": "CSBR",
+          "away": "ZAVO",
+          "seed": 4936596247051865001
+        },
+        {
+          "ID": "0d11c650-a980-5112-8285-6ef2132f2fd1",
+          "home": "SLMO",
+          "away": "SLDU",
+          "seed": 6617786767031749709
+        },
+        {
+          "ID": "4b9a4468-3761-5476-be6f-0d6d7f2ee2db",
+          "home": "SLNO",
+          "away": "TABR",
+          "seed": 2634559381528368107
+        },
+        {
+          "ID": "ce6e801a-f594-5560-9ca7-5f7a0714e768",
+          "home": "SEKR",
+          "away": "SLTA",
+          "seed": 7181499125541810537
+        },
+        {
+          "ID": "71d75d9b-b8d6-5914-acc0-d3b59eae0bfc",
+          "home": "DYKA",
+          "away": "VAKR",
+          "seed": 6734107140541172914
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "games": [
+        {
+          "ID": "17ef3751-c784-5578-8c3a-bf10e5894113",
+          "home": "MEDO",
+          "away": "VAMO",
+          "seed": 1875344491899884601
+        },
+        {
+          "ID": "c5e43a27-7f49-5ffb-b054-3fc83f597892",
+          "home": "SLPR",
+          "away": "SLTR",
+          "seed": 1519360254380060686
+        },
+        {
+          "ID": "e7ced440-4ecc-5260-adbd-9e8cafe65467",
+          "home": "KAVA",
+          "away": "HAST",
+          "seed": 2283643901511444021
+        },
+        {
+          "ID": "a6d6498e-1b79-583b-b26a-e540ce9eef66",
+          "home": "CSDO",
+          "away": "RAMA",
+          "seed": 6443245160463369675
+        },
+        {
+          "ID": "7351f6c4-2a24-59df-85b5-b6f6f6ed24f2",
+          "home": "DYZE",
+          "away": "CSBR",
+          "seed": 798977515904308819
+        },
+        {
+          "ID": "ab354b5e-882c-5039-aa93-eedb42bc6321",
+          "home": "SLDR",
+          "away": "SLMO",
+          "seed": 6633068568496049615
+        },
+        {
+          "ID": "fbd0c7a9-f33d-5805-ae3e-4fd39cde16cf",
+          "home": "ZAVO",
+          "away": "SLNO",
+          "seed": 6253185881179096903
+        },
+        {
+          "ID": "b3fa12e0-bed7-5290-a583-aaaea04abfad",
+          "home": "SLDU",
+          "away": "SEKR",
+          "seed": 1735122580113535160
+        },
+        {
+          "ID": "a7ace565-6614-546d-8b56-8e3aff583bb3",
+          "home": "TABR",
+          "away": "DYKA",
+          "seed": 163208570359661185
+        },
+        {
+          "ID": "a98a7631-c9ed-56f7-b47b-9bc9267de1e1",
+          "home": "SLTA",
+          "away": "VAKR",
+          "seed": 2817346160494685892
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "games": [
+        {
+          "ID": "88a7270f-7c00-5339-9122-e80a4f3511a9",
+          "home": "VAMO",
+          "away": "SLTR",
+          "seed": 5775128677351514816
+        },
+        {
+          "ID": "c9c9e146-0a5d-55fc-9e94-025fc37f5472",
+          "home": "HAST",
+          "away": "MEDO",
+          "seed": 2801728165225250071
+        },
+        {
+          "ID": "53b51611-5910-5848-a8d6-0a1ee2729c41",
+          "home": "RAMA",
+          "away": "SLPR",
+          "seed": 8081044656978328058
+        },
+        {
+          "ID": "df12fce1-e062-52c2-9eef-592acea628fa",
+          "home": "CSBR",
+          "away": "KAVA",
+          "seed": 4157242602985005213
+        },
+        {
+          "ID": "1a818ec7-1696-5d4e-bbb9-d461cb579a46",
+          "home": "SLMO",
+          "away": "CSDO",
+          "seed": 7299094091745367235
+        },
+        {
+          "ID": "4e565d2d-bb21-5bc5-a1c3-24b53faad10d",
+          "home": "SLNO",
+          "away": "DYZE",
+          "seed": 301874205516249974
+        },
+        {
+          "ID": "06e97a0e-b351-5f61-bdfe-c440e17c8b9b",
+          "home": "SEKR",
+          "away": "SLDR",
+          "seed": 2441772877435807306
+        },
+        {
+          "ID": "0d173850-1e1b-59ab-9e42-3c1988cdea5d",
+          "home": "DYKA",
+          "away": "ZAVO",
+          "seed": 6963690510522210217
+        },
+        {
+          "ID": "296091e9-c1d1-5d53-b78d-53777d811be3",
+          "home": "VAKR",
+          "away": "SLDU",
+          "seed": 3374410278923060958
+        },
+        {
+          "ID": "fee09671-ace3-52d8-851a-b70270c95aaf",
+          "home": "SLTA",
+          "away": "TABR",
+          "seed": 922197009305281802
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "games": [
+        {
+          "ID": "1e9b9b4a-a5a3-5544-98c1-6dcc5eba98b3",
+          "home": "HAST",
+          "away": "VAMO",
+          "seed": 7353914509555202151
+        },
+        {
+          "ID": "bce33e9a-fa05-55c5-97a0-237a72a28700",
+          "home": "SLTR",
+          "away": "RAMA",
+          "seed": 5526615309601346205
+        },
+        {
+          "ID": "7551abe5-3470-550d-9f11-9cffc7548c7a",
+          "home": "MEDO",
+          "away": "CSBR",
+          "seed": 8361444591360831314
+        },
+        {
+          "ID": "854cde0f-d554-571c-86ea-7bf7b8281d23",
+          "home": "SLPR",
+          "away": "SLMO",
+          "seed": 1266421750990665286
+        },
+        {
+          "ID": "2323590a-18bd-5a84-af01-70be99c023e1",
+          "home": "KAVA",
+          "away": "SLNO",
+          "seed": 1601654546812293370
+        },
+        {
+          "ID": "80667de2-15c8-574f-9e6f-33a69eb07b15",
+          "home": "CSDO",
+          "away": "SEKR",
+          "seed": 6843975160330966803
+        },
+        {
+          "ID": "5568eb93-0bb8-5999-b257-708a9501d973",
+          "home": "DYZE",
+          "away": "DYKA",
+          "seed": 2796860634576066596
+        },
+        {
+          "ID": "01ab6331-45dd-5e03-b8b7-c3e016a9b000",
+          "home": "SLDR",
+          "away": "VAKR",
+          "seed": 7735939544661731130
+        },
+        {
+          "ID": "324eae8d-d395-5bd5-99cf-41254ea7ddf3",
+          "home": "ZAVO",
+          "away": "SLTA",
+          "seed": 776853273601486137
+        },
+        {
+          "ID": "1192bf76-f95a-5522-822e-916100e1ed3c",
+          "home": "SLDU",
+          "away": "TABR",
+          "seed": 6229724545821672008
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "games": [
+        {
+          "ID": "d2be2fdb-dd75-53fe-bf62-d5fb878c2d61",
+          "home": "VAMO",
+          "away": "RAMA",
+          "seed": 6831132453004257539
+        },
+        {
+          "ID": "ebf62a98-ae7d-5ca0-b00a-a0a1daef0aa9",
+          "home": "CSBR",
+          "away": "HAST",
+          "seed": 4225139223414608817
+        },
+        {
+          "ID": "69acb052-a224-53bb-b229-7efbb7a92adc",
+          "home": "SLMO",
+          "away": "SLTR",
+          "seed": 8047267517075444041
+        },
+        {
+          "ID": "a330d2bd-a9df-5ecc-8d7a-60dbbf12ad07",
+          "home": "SLNO",
+          "away": "MEDO",
+          "seed": 6526700992162304580
+        },
+        {
+          "ID": "ae43e505-19d7-5b9a-a41c-1f780ba73071",
+          "home": "SEKR",
+          "away": "SLPR",
+          "seed": 8107447549589707823
+        },
+        {
+          "ID": "00ab55f3-6819-53f0-a676-d836ecadf79f",
+          "home": "DYKA",
+          "away": "KAVA",
+          "seed": 2121486699962422187
+        },
+        {
+          "ID": "1a35f007-8ba0-5401-86e0-b4d41ec2d42f",
+          "home": "VAKR",
+          "away": "CSDO",
+          "seed": 70342940758763627
+        },
+        {
+          "ID": "cf9cddc5-030e-51ba-8f00-f6ce724d6fb5",
+          "home": "SLTA",
+          "away": "DYZE",
+          "seed": 1985530732340346486
+        },
+        {
+          "ID": "36e4f54f-c093-5ab9-a7e8-cb27d6b1ad48",
+          "home": "TABR",
+          "away": "SLDR",
+          "seed": 8615395354546946501
+        },
+        {
+          "ID": "be38881a-9c5d-53b4-a453-39a6ab4e380f",
+          "home": "SLDU",
+          "away": "ZAVO",
+          "seed": 1450076664019032185
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "games": [
+        {
+          "ID": "f09862d0-5adb-5f17-a13b-8d6f068bb7aa",
+          "home": "CSBR",
+          "away": "VAMO",
+          "seed": 9118500685666449363
+        },
+        {
+          "ID": "5333a02b-1323-5021-99c3-72ac3ec91d66",
+          "home": "RAMA",
+          "away": "SLMO",
+          "seed": 7950321966321972411
+        },
+        {
+          "ID": "8ef00910-c6f4-5291-85e9-0930f4292345",
+          "home": "HAST",
+          "away": "SLNO",
+          "seed": 3755334058425422142
+        },
+        {
+          "ID": "077654f4-5a0f-58d4-8f6b-097c59ad32ec",
+          "home": "SLTR",
+          "away": "SEKR",
+          "seed": 5565590832406777087
+        },
+        {
+          "ID": "b0d0d7d5-d385-5859-95c0-eb3d87c73995",
+          "home": "MEDO",
+          "away": "DYKA",
+          "seed": 2804343349757445596
+        },
+        {
+          "ID": "5feb1620-0158-5185-b393-57cf1a68f65f",
+          "home": "SLPR",
+          "away": "VAKR",
+          "seed": 2325106327598381630
+        },
+        {
+          "ID": "281ac56d-0749-5b08-bc45-cc064380109c",
+          "home": "KAVA",
+          "away": "SLTA",
+          "seed": 8301597951423333411
+        },
+        {
+          "ID": "37c0d7eb-c052-528e-b597-5aa265baa554",
+          "home": "CSDO",
+          "away": "TABR",
+          "seed": 2964872571306532475
+        },
+        {
+          "ID": "e8472d7d-4c62-5373-a09c-65149ac1d8c8",
+          "home": "DYZE",
+          "away": "SLDU",
+          "seed": 4035687772048932797
+        },
+        {
+          "ID": "96fab175-975f-5b1b-bcfd-1a4a07749177",
+          "home": "SLDR",
+          "away": "ZAVO",
+          "seed": 591697362932092290
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "games": [
+        {
+          "ID": "47ba27e4-a8df-5e12-915b-0e1e57e1f884",
+          "home": "VAMO",
+          "away": "SLMO",
+          "seed": 6587073620368327843
+        },
+        {
+          "ID": "e11602af-b5b7-5516-8b23-bc72e4bfe768",
+          "home": "SLNO",
+          "away": "CSBR",
+          "seed": 5839106225225709337
+        },
+        {
+          "ID": "153fbea5-61d1-5c3a-a8a5-7d34baa98d88",
+          "home": "SEKR",
+          "away": "RAMA",
+          "seed": 1721807312910069342
+        },
+        {
+          "ID": "2e53169c-6273-59b4-ab7a-d83c24f72b83",
+          "home": "DYKA",
+          "away": "HAST",
+          "seed": 6721998008983759723
+        },
+        {
+          "ID": "a291a9ab-7f5c-52e4-945f-997cb649b70a",
+          "home": "VAKR",
+          "away": "SLTR",
+          "seed": 8092507960280584248
+        },
+        {
+          "ID": "1cb3899c-5af2-51e9-8394-1fd2f650b7c0",
+          "home": "SLTA",
+          "away": "MEDO",
+          "seed": 2276956602348275335
+        },
+        {
+          "ID": "135b5316-dc71-5cc4-904e-27bc70d3b228",
+          "home": "TABR",
+          "away": "SLPR",
+          "seed": 2758522100167502655
+        },
+        {
+          "ID": "a69291b2-a64e-533e-96f3-95873090f585",
+          "home": "SLDU",
+          "away": "KAVA",
+          "seed": 8414230043902851128
+        },
+        {
+          "ID": "a25feba7-1778-5448-a2ca-efacee833f36",
+          "home": "ZAVO",
+          "away": "CSDO",
+          "seed": 3706271095238300751
+        },
+        {
+          "ID": "b9bbc9e5-cc02-5df5-96cc-bf0b2708cb54",
+          "home": "SLDR",
+          "away": "DYZE",
+          "seed": 6139148779973731522
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "games": [
+        {
+          "ID": "fb4cec55-bc01-549a-b27f-31a3ef716d3e",
+          "home": "SLNO",
+          "away": "VAMO",
+          "seed": 106275942450711797
+        },
+        {
+          "ID": "c493c100-352d-5847-ac72-6c89b922142b",
+          "home": "SLMO",
+          "away": "SEKR",
+          "seed": 1176888902639354580
+        },
+        {
+          "ID": "9fb04fc1-60e7-5d72-a4b3-e7982f780c32",
+          "home": "CSBR",
+          "away": "DYKA",
+          "seed": 664743544444205761
+        },
+        {
+          "ID": "49bdc72c-c0e6-5971-8579-9c65698da3f1",
+          "home": "RAMA",
+          "away": "VAKR",
+          "seed": 4130418020551472844
+        },
+        {
+          "ID": "a5222fd3-80aa-546f-b0ed-4054f247ce55",
+          "home": "HAST",
+          "away": "SLTA",
+          "seed": 3308860791749726162
+        },
+        {
+          "ID": "dfa7e618-b1b7-51d1-ae66-a4472628c6ac",
+          "home": "SLTR",
+          "away": "TABR",
+          "seed": 3229714457153539148
+        },
+        {
+          "ID": "de5b3e7f-676a-532f-878c-f0fc9de9e28c",
+          "home": "MEDO",
+          "away": "SLDU",
+          "seed": 5351298305300474406
+        },
+        {
+          "ID": "88a02b01-704e-58d2-a35f-5a0fd4c01e29",
+          "home": "SLPR",
+          "away": "ZAVO",
+          "seed": 6153811892396154766
+        },
+        {
+          "ID": "f79034a6-55a3-5be1-a88f-fc9ba3a1dadc",
+          "home": "KAVA",
+          "away": "SLDR",
+          "seed": 4280994963486961522
+        },
+        {
+          "ID": "810c734b-bfa6-5602-ab7c-4cc0f2e2f8ea",
+          "home": "CSDO",
+          "away": "DYZE",
+          "seed": 5614996092374500128
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "games": [
+        {
+          "ID": "b8eef1d0-002d-588c-8655-315ac6138fcb",
+          "home": "VAMO",
+          "away": "SEKR",
+          "seed": 3060540690878338707
+        },
+        {
+          "ID": "f3af621f-7260-54c4-8be0-d795e5245ca4",
+          "home": "DYKA",
+          "away": "SLNO",
+          "seed": 8097444553704299925
+        },
+        {
+          "ID": "7d536c46-a305-5987-b9d1-1f9944ebe8b2",
+          "home": "VAKR",
+          "away": "SLMO",
+          "seed": 2786641300250858646
+        },
+        {
+          "ID": "cf1990dd-8f91-5e1a-a6b6-5b79a1381484",
+          "home": "SLTA",
+          "away": "CSBR",
+          "seed": 7214561595008861813
+        },
+        {
+          "ID": "768f3be5-9a99-5fbe-a271-a94b327248ad",
+          "home": "TABR",
+          "away": "RAMA",
+          "seed": 7203760441636396251
+        },
+        {
+          "ID": "1fd772a1-98f4-5b38-b78f-8e865b54d5a6",
+          "home": "SLDU",
+          "away": "HAST",
+          "seed": 1307897595417676612
+        },
+        {
+          "ID": "55e8c906-720f-5858-9734-baea09c20deb",
+          "home": "ZAVO",
+          "away": "SLTR",
+          "seed": 8617483736395828110
+        },
+        {
+          "ID": "543a9039-a2c9-5b4e-bb7f-d985afe98b5d",
+          "home": "SLDR",
+          "away": "MEDO",
+          "seed": 7811146094122303353
+        },
+        {
+          "ID": "b8016684-f8e1-5bd2-b853-6155daad1503",
+          "home": "DYZE",
+          "away": "SLPR",
+          "seed": 573744375055814478
+        },
+        {
+          "ID": "fb631b50-071c-58ba-8875-113b99ca9354",
+          "home": "CSDO",
+          "away": "KAVA",
+          "seed": 393147522884452002
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "games": [
+        {
+          "ID": "307cb034-4b1f-5a6d-8993-004653ae6667",
+          "home": "DYKA",
+          "away": "VAMO",
+          "seed": 4222278203897023181
+        },
+        {
+          "ID": "226ca8e7-3777-56db-a01f-1375c4d82db5",
+          "home": "SEKR",
+          "away": "VAKR",
+          "seed": 6406188679512006571
+        },
+        {
+          "ID": "62d2e9cb-d9e6-59a4-a938-d940368ea291",
+          "home": "SLNO",
+          "away": "SLTA",
+          "seed": 4198151138203079532
+        },
+        {
+          "ID": "11c54f20-01f2-5605-a982-2bc966e2e557",
+          "home": "SLMO",
+          "away": "TABR",
+          "seed": 9018405494408136218
+        },
+        {
+          "ID": "cfc5838f-141c-5658-a63f-5187415311f7",
+          "home": "CSBR",
+          "away": "SLDU",
+          "seed": 1257322776194336857
+        },
+        {
+          "ID": "dcae0188-cdac-53bb-bd29-1bb64a5d4ef0",
+          "home": "RAMA",
+          "away": "ZAVO",
+          "seed": 3956085049505837114
+        },
+        {
+          "ID": "0fab7054-07c0-5216-a3bd-e1d46a3fba4d",
+          "home": "HAST",
+          "away": "SLDR",
+          "seed": 4028371084569274786
+        },
+        {
+          "ID": "f1949be1-7979-52fc-b117-549e8095abf3",
+          "home": "SLTR",
+          "away": "DYZE",
+          "seed": 5561510944313924851
+        },
+        {
+          "ID": "0e150780-fe41-54e6-b7bf-fc051703830e",
+          "home": "MEDO",
+          "away": "CSDO",
+          "seed": 7885026662348435870
+        },
+        {
+          "ID": "f0cb3a7a-9abf-5dd5-8e79-d53c1c1bc0a1",
+          "home": "SLPR",
+          "away": "KAVA",
+          "seed": 9164452292443280552
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "games": [
+        {
+          "ID": "f1f23946-90af-5624-baee-678a4829320d",
+          "home": "VAMO",
+          "away": "VAKR",
+          "seed": 6292468281028658202
+        },
+        {
+          "ID": "f582e037-457a-51e5-aee2-6830b3f5fa2a",
+          "home": "SLTA",
+          "away": "DYKA",
+          "seed": 5862750727479111833
+        },
+        {
+          "ID": "f4af11eb-4ba3-5559-9671-2852c6740341",
+          "home": "TABR",
+          "away": "SEKR",
+          "seed": 4600246983210946693
+        },
+        {
+          "ID": "3d726db9-bad0-5a8a-8230-c00b609083ca",
+          "home": "SLDU",
+          "away": "SLNO",
+          "seed": 856482243175941395
+        },
+        {
+          "ID": "6cb09f66-4d80-5c64-969c-1adbc72dde5c",
+          "home": "ZAVO",
+          "away": "SLMO",
+          "seed": 3903316539405469028
+        },
+        {
+          "ID": "99474c5b-4cc1-5f8a-97ef-3bb172db2aff",
+          "home": "SLDR",
+          "away": "CSBR",
+          "seed": 1593552398713015899
+        },
+        {
+          "ID": "afb4a3a2-7f01-566e-9285-753805b3a84c",
+          "home": "DYZE",
+          "away": "RAMA",
+          "seed": 1233366464267899476
+        },
+        {
+          "ID": "83b02dbc-78ee-5b83-b2bf-7fda76d3af1e",
+          "home": "CSDO",
+          "away": "HAST",
+          "seed": 2009145235322958413
+        },
+        {
+          "ID": "de802541-e0db-526f-9512-c732842f6a8f",
+          "home": "KAVA",
+          "away": "SLTR",
+          "seed": 4643520774375081923
+        },
+        {
+          "ID": "f6a9621f-6728-516b-a052-b4df139388e9",
+          "home": "SLPR",
+          "away": "MEDO",
+          "seed": 6164415711343195455
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "games": [
+        {
+          "ID": "d577e2db-e9f9-57be-b0cb-684551e99591",
+          "home": "SLTA",
+          "away": "VAMO",
+          "seed": 7771750665511032614
+        },
+        {
+          "ID": "86742c62-1da7-5c87-8786-8ca06fde5617",
+          "home": "VAKR",
+          "away": "TABR",
+          "seed": 2128177340161291658
+        },
+        {
+          "ID": "17d5f4c0-0ee1-592e-aec7-112be0da564f",
+          "home": "DYKA",
+          "away": "SLDU",
+          "seed": 9194904928797236254
+        },
+        {
+          "ID": "0fe31861-bc0d-5c71-af31-711ba272aa99",
+          "home": "SEKR",
+          "away": "ZAVO",
+          "seed": 2030797035013234878
+        },
+        {
+          "ID": "0d51de9b-54cd-5fbd-b18d-d95d02cc6250",
+          "home": "SLNO",
+          "away": "SLDR",
+          "seed": 5279042711072230327
+        },
+        {
+          "ID": "8f08f986-aef4-5661-a5ac-2f7a29c5c5cd",
+          "home": "SLMO",
+          "away": "DYZE",
+          "seed": 1933171324780188587
+        },
+        {
+          "ID": "198c941a-a769-5604-9f03-dc04f51abb05",
+          "home": "CSBR",
+          "away": "CSDO",
+          "seed": 4531118487732825061
+        },
+        {
+          "ID": "11fbe9ce-2281-57c6-a5f0-5a969a28248b",
+          "home": "RAMA",
+          "away": "KAVA",
+          "seed": 2160360864221764396
+        },
+        {
+          "ID": "050b6674-d051-5d85-8e97-2a415f55693e",
+          "home": "HAST",
+          "away": "SLPR",
+          "seed": 1898045132693671933
+        },
+        {
+          "ID": "73807323-144d-5051-8850-d27f0e4f3b90",
+          "home": "SLTR",
+          "away": "MEDO",
+          "seed": 4125886327061893691
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "games": [
+        {
+          "ID": "f2bed4d0-62fe-51c3-8b97-751d592309f1",
+          "home": "VAMO",
+          "away": "TABR",
+          "seed": 5698234050357792710
+        },
+        {
+          "ID": "113285a5-ce12-5897-b3a5-ca28257ea71e",
+          "home": "SLDU",
+          "away": "SLTA",
+          "seed": 4819703996975766269
+        },
+        {
+          "ID": "550b2f7b-e718-507d-97a2-f82dcd4504b1",
+          "home": "ZAVO",
+          "away": "VAKR",
+          "seed": 5398248379044087669
+        },
+        {
+          "ID": "55e9b0f5-ab84-528d-b214-69be5f7deb3a",
+          "home": "SLDR",
+          "away": "DYKA",
+          "seed": 473312794242937950
+        },
+        {
+          "ID": "f89f671c-1d42-5a96-9bc8-f5ff3c416f04",
+          "home": "DYZE",
+          "away": "SEKR",
+          "seed": 4956692169603464498
+        },
+        {
+          "ID": "dba9814e-24aa-552f-b9d0-f0bdc99b0023",
+          "home": "CSDO",
+          "away": "SLNO",
+          "seed": 8817821845120702738
+        },
+        {
+          "ID": "5aaa9f74-5087-5d6e-8345-2c9cb1573bd1",
+          "home": "KAVA",
+          "away": "SLMO",
+          "seed": 5474273430889757741
+        },
+        {
+          "ID": "91c58efc-2f10-579d-ba4c-a8996b86e105",
+          "home": "SLPR",
+          "away": "CSBR",
+          "seed": 7210034858594106516
+        },
+        {
+          "ID": "6c8af9fc-c4d4-5f92-9415-1d4c8dcd8f71",
+          "home": "MEDO",
+          "away": "RAMA",
+          "seed": 8113720675217066708
+        },
+        {
+          "ID": "fbf4a8df-f1f1-5d43-b57a-0089afa05e62",
+          "home": "SLTR",
+          "away": "HAST",
+          "seed": 1667057294217209015
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "games": [
+        {
+          "ID": "6eb7cff8-63aa-52a4-a822-e233cfb543ed",
+          "home": "SLDU",
+          "away": "VAMO",
+          "seed": 6407831179932200915
+        },
+        {
+          "ID": "c27e2a4c-1d01-502c-90c2-d556a343acd1",
+          "home": "TABR",
+          "away": "ZAVO",
+          "seed": 5481824616118530924
+        },
+        {
+          "ID": "ddc9b8c7-c41c-52f4-84b6-3e883c92eea9",
+          "home": "SLTA",
+          "away": "SLDR",
+          "seed": 103629286871485832
+        },
+        {
+          "ID": "86a6f940-7ed4-55cf-a86e-8d0480133cdf",
+          "home": "VAKR",
+          "away": "DYZE",
+          "seed": 8685703371772623942
+        },
+        {
+          "ID": "43505f9c-afbb-5218-a210-34f199f7f5ab",
+          "home": "DYKA",
+          "away": "CSDO",
+          "seed": 1673795879418287873
+        },
+        {
+          "ID": "7f7d5ab3-c185-5fd7-aa16-c3faf8c8ed0d",
+          "home": "SEKR",
+          "away": "KAVA",
+          "seed": 6765742796401604807
+        },
+        {
+          "ID": "d73b5f41-ed18-5083-b2a6-6ca0dd4fd7fa",
+          "home": "SLNO",
+          "away": "SLPR",
+          "seed": 2588913728509028843
+        },
+        {
+          "ID": "75f382e2-22ce-52cb-836a-897ef38d2271",
+          "home": "SLMO",
+          "away": "MEDO",
+          "seed": 3871521870731724380
+        },
+        {
+          "ID": "934fe98f-7738-5284-a18b-632f284ea5bb",
+          "home": "CSBR",
+          "away": "SLTR",
+          "seed": 6500817338076736335
+        },
+        {
+          "ID": "3810f635-56c2-5261-b7ce-f36e819f3252",
+          "home": "RAMA",
+          "away": "HAST",
+          "seed": 4133530746266444658
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "games": [
+        {
+          "ID": "ddf8f9ce-bb76-597d-b81b-69f2cacafbec",
+          "home": "VAMO",
+          "away": "ZAVO",
+          "seed": 2191843674416561879
+        },
+        {
+          "ID": "fe747f41-21bd-5103-88e1-a7ad0829b774",
+          "home": "SLDR",
+          "away": "SLDU",
+          "seed": 808985762114341753
+        },
+        {
+          "ID": "23296c86-a011-548a-93a4-a42cf6f60acf",
+          "home": "DYZE",
+          "away": "TABR",
+          "seed": 2155436659895067112
+        },
+        {
+          "ID": "bb4af5f8-d70e-5dc8-8204-4f75a5208dc0",
+          "home": "CSDO",
+          "away": "SLTA",
+          "seed": 3371336102518797619
+        },
+        {
+          "ID": "9c6bf51c-8f76-5ad8-8416-ab5c3a8b33d2",
+          "home": "KAVA",
+          "away": "VAKR",
+          "seed": 4179937317064089365
+        },
+        {
+          "ID": "268d9e72-17f2-5e0d-a70d-ef593eb458e5",
+          "home": "SLPR",
+          "away": "DYKA",
+          "seed": 8384364894229762534
+        },
+        {
+          "ID": "85b59084-44dc-577d-a4fa-0341fc679457",
+          "home": "MEDO",
+          "away": "SEKR",
+          "seed": 3542069267340044743
+        },
+        {
+          "ID": "79542d57-958f-5820-ba08-daaf9b125e8a",
+          "home": "SLTR",
+          "away": "SLNO",
+          "seed": 6174190163316618866
+        },
+        {
+          "ID": "b67417bd-9415-514b-9e9b-6c43aa55aaa8",
+          "home": "HAST",
+          "away": "SLMO",
+          "seed": 506612069419179357
+        },
+        {
+          "ID": "462d19b0-63ae-5273-b6db-752affdc18b1",
+          "home": "RAMA",
+          "away": "CSBR",
+          "seed": 4782784471725145863
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "games": [
+        {
+          "ID": "a269e426-d169-5d49-8d25-4f2fb9f878f2",
+          "home": "SLDR",
+          "away": "VAMO",
+          "seed": 4181992047588216165
+        },
+        {
+          "ID": "a039d7cc-2d7e-5d3b-963c-7bdbe120f5c3",
+          "home": "ZAVO",
+          "away": "DYZE",
+          "seed": 7449330353570036370
+        },
+        {
+          "ID": "3a1de8c7-50b2-5f04-9141-b91abb9b60ed",
+          "home": "SLDU",
+          "away": "CSDO",
+          "seed": 7517714809444971900
+        },
+        {
+          "ID": "5d9739cd-67fd-5631-9827-1dd6032f050a",
+          "home": "TABR",
+          "away": "KAVA",
+          "seed": 5314696658565376498
+        },
+        {
+          "ID": "6269d78e-5f53-5e34-8287-970f3cf3be99",
+          "home": "SLTA",
+          "away": "SLPR",
+          "seed": 6725419519720713308
+        },
+        {
+          "ID": "9e121975-60f0-5c5a-975d-25b6e4b8f276",
+          "home": "VAKR",
+          "away": "MEDO",
+          "seed": 1893817864802137379
+        },
+        {
+          "ID": "77c6f58a-12af-5738-baf9-d0e750ecfe3c",
+          "home": "DYKA",
+          "away": "SLTR",
+          "seed": 6662783840230923557
+        },
+        {
+          "ID": "30a72c86-0e26-54cf-9a1b-0803ddd9e404",
+          "home": "SEKR",
+          "away": "HAST",
+          "seed": 436661819635289584
+        },
+        {
+          "ID": "85417c12-d319-5cf0-aa13-a0284d166759",
+          "home": "SLNO",
+          "away": "RAMA",
+          "seed": 2159851059708182782
+        },
+        {
+          "ID": "85a235a8-9437-561f-ad27-80a9d6ebeb81",
+          "home": "SLMO",
+          "away": "CSBR",
+          "seed": 7974753503603105399
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "games": [
+        {
+          "ID": "b13629c7-4b85-5f35-91da-7f8cbed5c411",
+          "home": "VAMO",
+          "away": "DYZE",
+          "seed": 4108354136262150182
+        },
+        {
+          "ID": "e1de035e-eb1c-557d-b03c-422b05f8afdf",
+          "home": "CSDO",
+          "away": "SLDR",
+          "seed": 4396864979283627578
+        },
+        {
+          "ID": "0b28d6d3-8e5b-595c-8efe-a273f72629a2",
+          "home": "KAVA",
+          "away": "ZAVO",
+          "seed": 5650174894069511201
+        },
+        {
+          "ID": "b5622dc1-bcaa-5d22-a465-1413c6bb359c",
+          "home": "SLPR",
+          "away": "SLDU",
+          "seed": 4610731240933770896
+        },
+        {
+          "ID": "5b08d1dd-d25b-59ec-b69c-e0b6de5bdc55",
+          "home": "MEDO",
+          "away": "TABR",
+          "seed": 385922802460388260
+        },
+        {
+          "ID": "6c5eff11-0591-535c-ad94-6f67d213d0b9",
+          "home": "SLTR",
+          "away": "SLTA",
+          "seed": 3498990673584417371
+        },
+        {
+          "ID": "6d1bf6ec-8837-58ea-800c-ec8ae36e4d99",
+          "home": "HAST",
+          "away": "VAKR",
+          "seed": 1513070692889194258
+        },
+        {
+          "ID": "cb23baac-4445-5d86-85f6-f9a288b85309",
+          "home": "RAMA",
+          "away": "DYKA",
+          "seed": 4105313197189032818
+        },
+        {
+          "ID": "33f22195-be65-5156-913c-6af735796a3c",
+          "home": "CSBR",
+          "away": "SEKR",
+          "seed": 5154980262461435118
+        },
+        {
+          "ID": "4c3c6083-db14-51e7-8941-c99ba905b8ef",
+          "home": "SLMO",
+          "away": "SLNO",
+          "seed": 1924258509191108956
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "games": [
+        {
+          "ID": "e12d6f53-5e3f-5c1b-a9d1-342c439b0fa1",
+          "home": "CSDO",
+          "away": "VAMO",
+          "seed": 2678977638591484564
+        },
+        {
+          "ID": "aa4b9a49-cfd7-5247-ad7c-7fe742c71094",
+          "home": "DYZE",
+          "away": "KAVA",
+          "seed": 2073755092517012598
+        },
+        {
+          "ID": "3e99b8fd-47e4-5841-9585-9ec46625da75",
+          "home": "SLDR",
+          "away": "SLPR",
+          "seed": 1372730630402263287
+        },
+        {
+          "ID": "cf481772-6cc2-5646-8744-5eb47e87c75e",
+          "home": "ZAVO",
+          "away": "MEDO",
+          "seed": 617484040701469139
+        },
+        {
+          "ID": "9b3a9c00-8812-5bda-bf80-210322d61a3d",
+          "home": "SLDU",
+          "away": "SLTR",
+          "seed": 4490037571447553243
+        },
+        {
+          "ID": "205a9b46-835f-57c8-b24a-8ae18fed4811",
+          "home": "TABR",
+          "away": "HAST",
+          "seed": 5171112234309105024
+        },
+        {
+          "ID": "4d6fed49-0881-5d47-8098-7094a28bceea",
+          "home": "SLTA",
+          "away": "RAMA",
+          "seed": 1675680074242586216
+        },
+        {
+          "ID": "15b5c56f-ea15-5ad7-ad81-eb073ebe275b",
+          "home": "VAKR",
+          "away": "CSBR",
+          "seed": 777564356310653999
+        },
+        {
+          "ID": "89a1efdb-525e-5dae-a7b2-b19139997cbe",
+          "home": "DYKA",
+          "away": "SLMO",
+          "seed": 6007373804696612644
+        },
+        {
+          "ID": "9e13b688-64c2-53cb-a839-7e622b88d1fb",
+          "home": "SEKR",
+          "away": "SLNO",
+          "seed": 7516548421255574161
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "games": [
+        {
+          "ID": "dee27a72-de31-503b-8c9b-8e6f95c8931c",
+          "home": "VAMO",
+          "away": "KAVA",
+          "seed": 154393641738179003
+        },
+        {
+          "ID": "84aba6c8-bd2f-57ce-a4fd-e47f8a2e9804",
+          "home": "SLPR",
+          "away": "CSDO",
+          "seed": 8854660370728388391
+        },
+        {
+          "ID": "d157694a-ba88-54d9-9069-70b15caabcd4",
+          "home": "MEDO",
+          "away": "DYZE",
+          "seed": 3641350695431775471
+        },
+        {
+          "ID": "1d3a1e83-cd07-5501-9fb1-ede3cd1802f3",
+          "home": "SLTR",
+          "away": "SLDR",
+          "seed": 3285293046092507691
+        },
+        {
+          "ID": "33b438d0-1f5e-58ea-bb46-fdb9bfd4a607",
+          "home": "HAST",
+          "away": "ZAVO",
+          "seed": 1667600241127965707
+        },
+        {
+          "ID": "8bf01958-80d6-5702-81f6-449ed43ca27e",
+          "home": "RAMA",
+          "away": "SLDU",
+          "seed": 1614282358276460740
+        },
+        {
+          "ID": "6db95bf8-a5dc-5065-a7eb-2ea70c26ba12",
+          "home": "CSBR",
+          "away": "TABR",
+          "seed": 3334341918214066343
+        },
+        {
+          "ID": "67d832bd-a90e-5548-9cef-46a0c4a45848",
+          "home": "SLMO",
+          "away": "SLTA",
+          "seed": 7759136979831547708
+        },
+        {
+          "ID": "9d3d4ae6-ba9b-5693-a7c0-c371c8eed8cd",
+          "home": "SLNO",
+          "away": "VAKR",
+          "seed": 874353511005906577
+        },
+        {
+          "ID": "8ab8e7d0-0764-5ace-875e-8cd4b30e6fe8",
+          "home": "SEKR",
+          "away": "DYKA",
+          "seed": 6320161525930604865
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "games": [
+        {
+          "ID": "4e1e8987-57e0-51f8-944e-9fc25cedc403",
+          "home": "SLPR",
+          "away": "VAMO",
+          "seed": 2485333069077337089
+        },
+        {
+          "ID": "70dec150-6ddf-5855-bbec-743f2efa7439",
+          "home": "KAVA",
+          "away": "MEDO",
+          "seed": 3046063849548410536
+        },
+        {
+          "ID": "720893e3-6b1f-5ed0-b27e-106ac4e04e20",
+          "home": "CSDO",
+          "away": "SLTR",
+          "seed": 1560943420702926397
+        },
+        {
+          "ID": "84df899f-bd39-585c-aa9f-c6b85388e690",
+          "home": "DYZE",
+          "away": "HAST",
+          "seed": 3381510448267174595
+        },
+        {
+          "ID": "526017ab-8af8-50c6-824f-4223025362e1",
+          "home": "SLDR",
+          "away": "RAMA",
+          "seed": 2030727601076268282
+        },
+        {
+          "ID": "198ce15e-cc25-5e7e-a9c2-3a9ab73d75a3",
+          "home": "ZAVO",
+          "away": "CSBR",
+          "seed": 495270157693619839
+        },
+        {
+          "ID": "bc1e94a0-d74b-589e-aaf2-95399fbae90b",
+          "home": "SLDU",
+          "away": "SLMO",
+          "seed": 1910036527469277679
+        },
+        {
+          "ID": "df2fc5a3-b8a3-58b5-9517-af08487bb215",
+          "home": "TABR",
+          "away": "SLNO",
+          "seed": 995767033516999424
+        },
+        {
+          "ID": "0f13c971-c0e5-5368-8cf5-0adcdd4baca9",
+          "home": "SLTA",
+          "away": "SEKR",
+          "seed": 819615719820423281
+        },
+        {
+          "ID": "a0089a5e-20aa-51f2-ae29-652a5c869a7f",
+          "home": "VAKR",
+          "away": "DYKA",
+          "seed": 8641796787092492348
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "games": [
+        {
+          "ID": "ce06bb3e-eee5-51ad-ac65-31fe1318f0c8",
+          "home": "VAMO",
+          "away": "MEDO",
+          "seed": 3134204099499582737
+        },
+        {
+          "ID": "9c323365-766b-5c31-a5d6-a04091d02ce4",
+          "home": "SLTR",
+          "away": "SLPR",
+          "seed": 1561241096804219388
+        },
+        {
+          "ID": "a5e1d3df-1b64-5c8e-a2b4-d61df41f57e0",
+          "home": "HAST",
+          "away": "KAVA",
+          "seed": 1744314631844874194
+        },
+        {
+          "ID": "bbb5df76-cbcd-585c-8261-d4e835a17e10",
+          "home": "RAMA",
+          "away": "CSDO",
+          "seed": 8885852656133321048
+        },
+        {
+          "ID": "1ff0f986-5a4f-5c44-aab7-8f6114e6b687",
+          "home": "CSBR",
+          "away": "DYZE",
+          "seed": 7457332142045746023
+        },
+        {
+          "ID": "80a8573a-0f0a-596a-af25-8865317d5bee",
+          "home": "SLMO",
+          "away": "SLDR",
+          "seed": 4306870106561898122
+        },
+        {
+          "ID": "e860b272-9cad-55cf-af98-aba2ca5295e0",
+          "home": "SLNO",
+          "away": "ZAVO",
+          "seed": 6535060375752607147
+        },
+        {
+          "ID": "aacd3006-88d2-59f3-87c4-9fcd49c25ffb",
+          "home": "SEKR",
+          "away": "SLDU",
+          "seed": 6907053392557567059
+        },
+        {
+          "ID": "44103d5e-f4f0-5516-9e8d-65457661e860",
+          "home": "DYKA",
+          "away": "TABR",
+          "seed": 657638992430092765
+        },
+        {
+          "ID": "8a3731f6-1085-50fe-a500-986b30418c89",
+          "home": "VAKR",
+          "away": "SLTA",
+          "seed": 8901568222769707764
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "games": [
+        {
+          "ID": "62f16290-2677-5068-8d27-7673288398cc",
+          "home": "SLTR",
+          "away": "VAMO",
+          "seed": 1867424876226203003
+        },
+        {
+          "ID": "c46e6125-afb6-5f68-a470-ca7ead82fd2f",
+          "home": "MEDO",
+          "away": "HAST",
+          "seed": 3192740883556187254
+        },
+        {
+          "ID": "4c442b4e-07ff-5711-a078-248dbb9a06af",
+          "home": "SLPR",
+          "away": "RAMA",
+          "seed": 168944877422252815
+        },
+        {
+          "ID": "f592102e-b6cd-5eb3-8cbe-d2fc6e0ec4c0",
+          "home": "KAVA",
+          "away": "CSBR",
+          "seed": 1905869855206162681
+        },
+        {
+          "ID": "f1c5c8c3-2189-55a0-aad0-6058dbcfc77e",
+          "home": "CSDO",
+          "away": "SLMO",
+          "seed": 1798426104797625615
+        },
+        {
+          "ID": "d6761e1a-b978-55b3-8166-168e4edfa4c4",
+          "home": "DYZE",
+          "away": "SLNO",
+          "seed": 6122592826642677120
+        },
+        {
+          "ID": "9d9cc1bd-a21d-50cd-8c3a-f8f1e2c24f92",
+          "home": "SLDR",
+          "away": "SEKR",
+          "seed": 4221515825108155488
+        },
+        {
+          "ID": "a7bc13f7-a109-5090-a077-b78640ba5d6f",
+          "home": "ZAVO",
+          "away": "DYKA",
+          "seed": 7162312449766564587
+        },
+        {
+          "ID": "47557a1e-b4eb-5bfd-95ab-aed80a1fd71e",
+          "home": "SLDU",
+          "away": "VAKR",
+          "seed": 8787916350994628895
+        },
+        {
+          "ID": "8adc74c9-d61e-51a0-8870-7ff44b2deb03",
+          "home": "TABR",
+          "away": "SLTA",
+          "seed": 8580049603679898502
+        }
+      ]
+    }
+  ]
+}

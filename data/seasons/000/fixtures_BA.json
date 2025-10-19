@@ -1,0 +1,1774 @@
+{
+  "league": "BA",
+  "season": 0,
+  "clubs": {
+    "AUVE": {
+      "name": "Aurora Velenik",
+      "colors": {
+        "primary": "#FF69B4",
+        "Secondary": "#4B0082"
+      },
+      "code": "AUVE",
+      "city": "Velenik",
+      "elo": 1574,
+      "league": "BA"
+    },
+    "BAOR": {
+      "name": "Balkan Ormen",
+      "colors": {
+        "primary": "#8B0000",
+        "Secondary": "#1E90FF"
+      },
+      "code": "BAOR",
+      "city": "Ormen",
+      "elo": 1375,
+      "league": "BA"
+    },
+    "BOKO": {
+      "name": "Botev Korvin",
+      "colors": {
+        "primary": "#FFD700",
+        "Secondary": "#228B22"
+      },
+      "code": "BOKO",
+      "city": "Korvin",
+      "elo": 1303,
+      "league": "BA"
+    },
+    "KRDL": {
+      "name": "Krila Dolnik",
+      "colors": {
+        "primary": "#003366",
+        "Secondary": "#C0C0C0"
+      },
+      "code": "KRDL",
+      "city": "Dolnik",
+      "elo": 1524,
+      "league": "BA"
+    },
+    "RABE": {
+      "name": "Radnik Belovar",
+      "colors": {
+        "primary": "#2E8B57",
+        "Secondary": "#B22222"
+      },
+      "code": "RABE",
+      "city": "Belovar",
+      "elo": 1354,
+      "league": "BA"
+    },
+    "RUKR": {
+      "name": "Rudar Krovnik",
+      "colors": {
+        "primary": "#4B5320",
+        "Secondary": "#FFD700"
+      },
+      "code": "RUKR",
+      "city": "Krovnik",
+      "elo": 1252,
+      "league": "BA"
+    },
+    "RUSA": {
+      "name": "Rubin Sarnov",
+      "colors": {
+        "primary": "#9B111E",
+        "Secondary": "#003366"
+      },
+      "code": "RUSA",
+      "city": "Sarnov",
+      "elo": 1398,
+      "league": "BA"
+    },
+    "SHMI": {
+      "name": "Shakhtar Mirov",
+      "colors": {
+        "primary": "#FF7F00",
+        "Secondary": "#000000"
+      },
+      "code": "SHMI",
+      "city": "Mirov",
+      "elo": 1223,
+      "league": "BA"
+    },
+    "SPNO": {
+      "name": "Sparta Norvik",
+      "colors": {
+        "primary": "#B22222",
+        "Secondary": "#2E8B57"
+      },
+      "code": "SPNO",
+      "city": "Norvik",
+      "elo": 1448,
+      "league": "BA"
+    },
+    "SUDA": {
+      "name": "Sutjeska Darnov",
+      "colors": {
+        "primary": "#0047AB",
+        "Secondary": "#DAA520"
+      },
+      "code": "SUDA",
+      "city": "Darnov",
+      "elo": 1422,
+      "league": "BA"
+    },
+    "TAZE": {
+      "name": "Tatran Zelov",
+      "colors": {
+        "primary": "#2E8B57",
+        "Secondary": "#FFDAB9"
+      },
+      "code": "TAZE",
+      "city": "Zelov",
+      "elo": 1598,
+      "league": "BA"
+    },
+    "TOZA": {
+      "name": "Torpedo Zagrad",
+      "colors": {
+        "primary": "#1C1C1C",
+        "Secondary": "#E41E26"
+      },
+      "code": "TOZA",
+      "city": "Zagrad",
+      "elo": 1320,
+      "league": "BA"
+    },
+    "VOTA": {
+      "name": "Vojvodina Tarlov",
+      "colors": {
+        "primary": "#C8102E",
+        "Secondary": "#0047AB"
+      },
+      "code": "VOTA",
+      "city": "Tarlov",
+      "elo": 1549,
+      "league": "BA"
+    },
+    "ZEBR": {
+      "name": "Zemun Brovik",
+      "colors": {
+        "primary": "#228B22",
+        "Secondary": "#F5DEB3"
+      },
+      "code": "ZEBR",
+      "city": "Brovik",
+      "elo": 1493,
+      "league": "BA"
+    },
+    "ZOBE": {
+      "name": "Zorya Belvik",
+      "colors": {
+        "primary": "#AA0000",
+        "Secondary": "#1E90FF"
+      },
+      "code": "ZOBE",
+      "city": "Belvik",
+      "elo": 1276,
+      "league": "BA"
+    },
+    "ZVRA": {
+      "name": "Zvezda Radan",
+      "colors": {
+        "primary": "#B22222",
+        "Secondary": "#000000"
+      },
+      "code": "ZVRA",
+      "city": "Radan",
+      "elo": 1478,
+      "league": "BA"
+    }
+  },
+  "weeks": [
+    {
+      "id": 1,
+      "games": [
+        {
+          "ID": "034be658-2900-52cb-914e-2e3540ba6bce",
+          "home": "TAZE",
+          "away": "AUVE",
+          "seed": 4603058389005991429
+        },
+        {
+          "ID": "54bb9a69-abe1-5877-a9d2-108a172c4455",
+          "home": "VOTA",
+          "away": "KRDL",
+          "seed": 8578230257850728015
+        },
+        {
+          "ID": "bfb30a1e-3642-5fb7-b2fb-bfde63c6bf81",
+          "home": "ZEBR",
+          "away": "ZVRA",
+          "seed": 8084410523879396169
+        },
+        {
+          "ID": "aef26810-4d14-5791-a14a-2424d0564c31",
+          "home": "SPNO",
+          "away": "SUDA",
+          "seed": 6282564629716098927
+        },
+        {
+          "ID": "57918403-d581-510b-9065-442ab4db5085",
+          "home": "RUSA",
+          "away": "BAOR",
+          "seed": 3912940615361389406
+        },
+        {
+          "ID": "17c38990-30de-5495-9292-52fe3dd46a8f",
+          "home": "RABE",
+          "away": "TOZA",
+          "seed": 2543457220942728650
+        },
+        {
+          "ID": "ea479de8-1533-5ef5-97db-36985c383d24",
+          "home": "BOKO",
+          "away": "ZOBE",
+          "seed": 3579709879141060622
+        },
+        {
+          "ID": "e04ab6be-14c9-5589-9141-ce499319984b",
+          "home": "RUKR",
+          "away": "SHMI",
+          "seed": 307205851760495028
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "games": [
+        {
+          "ID": "9270977c-c202-57a7-b40c-7166927066dc",
+          "home": "VOTA",
+          "away": "TAZE",
+          "seed": 3793731708904985829
+        },
+        {
+          "ID": "4aa07584-7ce7-5142-80ae-cd93506a2e59",
+          "home": "AUVE",
+          "away": "ZEBR",
+          "seed": 7481422996151633224
+        },
+        {
+          "ID": "4832e6cf-6ef2-5dc9-8b07-8046ed0f6d55",
+          "home": "KRDL",
+          "away": "SPNO",
+          "seed": 6138649908369634824
+        },
+        {
+          "ID": "27666a69-cc63-5f4c-bb6f-771a1e3824d9",
+          "home": "ZVRA",
+          "away": "RUSA",
+          "seed": 8326457705538435459
+        },
+        {
+          "ID": "b7d29711-b179-5cc4-8503-080e6bbb85b4",
+          "home": "SUDA",
+          "away": "RABE",
+          "seed": 4523310975144551653
+        },
+        {
+          "ID": "4b60b024-fc30-54ab-9c2a-6d2a6d4fc601",
+          "home": "BAOR",
+          "away": "BOKO",
+          "seed": 6233773931905914434
+        },
+        {
+          "ID": "5a9ce2ff-106d-5e40-86ef-52988a29b95e",
+          "home": "TOZA",
+          "away": "RUKR",
+          "seed": 7524497489189117740
+        },
+        {
+          "ID": "396bd7a4-e123-5b6f-84a4-1ff06246cfa9",
+          "home": "ZOBE",
+          "away": "SHMI",
+          "seed": 9052345292082969566
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "games": [
+        {
+          "ID": "aad386cc-961b-568b-b803-2859ec41842c",
+          "home": "TAZE",
+          "away": "ZEBR",
+          "seed": 6896973612124690217
+        },
+        {
+          "ID": "82301e6c-3135-5be5-a37d-3816fa8c383e",
+          "home": "SPNO",
+          "away": "VOTA",
+          "seed": 962834318320227548
+        },
+        {
+          "ID": "f1236008-65b2-52a1-ba39-a3b2e0fb9636",
+          "home": "RUSA",
+          "away": "AUVE",
+          "seed": 3697011572188682542
+        },
+        {
+          "ID": "aa3d89ca-9fcb-5727-a410-fdc5cd8dfce4",
+          "home": "RABE",
+          "away": "KRDL",
+          "seed": 7006638341813949752
+        },
+        {
+          "ID": "1718e59f-8592-56e3-965c-851f23b2bfc1",
+          "home": "BOKO",
+          "away": "ZVRA",
+          "seed": 3457631394701989210
+        },
+        {
+          "ID": "486bfca0-fd5d-541b-9e75-a4da697a3cf8",
+          "home": "RUKR",
+          "away": "SUDA",
+          "seed": 8459294572324375500
+        },
+        {
+          "ID": "d6e1eff6-30cb-5002-bdf2-f9ad933658e5",
+          "home": "SHMI",
+          "away": "BAOR",
+          "seed": 1203043282866190900
+        },
+        {
+          "ID": "a98c7318-d748-5108-af0b-db478202c7e3",
+          "home": "ZOBE",
+          "away": "TOZA",
+          "seed": 7409270164221686276
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "games": [
+        {
+          "ID": "806acc18-159a-5583-a209-e63b319bf273",
+          "home": "SPNO",
+          "away": "TAZE",
+          "seed": 7965634070390775542
+        },
+        {
+          "ID": "c90a7d66-e1eb-5ba8-9399-157c46edede0",
+          "home": "ZEBR",
+          "away": "RUSA",
+          "seed": 2300872810347516199
+        },
+        {
+          "ID": "9d647b15-1d58-50e0-8f76-fcd029a141cc",
+          "home": "VOTA",
+          "away": "RABE",
+          "seed": 5944956555211664682
+        },
+        {
+          "ID": "94f9d9fa-0846-5693-8c05-40c72018d459",
+          "home": "AUVE",
+          "away": "BOKO",
+          "seed": 6503103590196380752
+        },
+        {
+          "ID": "1a9f4161-3ca7-5601-b84d-56e23b03a803",
+          "home": "KRDL",
+          "away": "RUKR",
+          "seed": 2566993559501484958
+        },
+        {
+          "ID": "4b535769-9c9f-5ab2-b72d-975548f67004",
+          "home": "ZVRA",
+          "away": "SHMI",
+          "seed": 370117458907229436
+        },
+        {
+          "ID": "4a2bb8bc-15f1-5275-9b19-2d6adf69d765",
+          "home": "SUDA",
+          "away": "ZOBE",
+          "seed": 7221322185557104827
+        },
+        {
+          "ID": "b47dd52f-157f-5f4b-9dc0-f13e33587bb9",
+          "home": "BAOR",
+          "away": "TOZA",
+          "seed": 1672985868793220445
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "games": [
+        {
+          "ID": "af61735a-7a5d-5750-9eb8-47b207566cae",
+          "home": "TAZE",
+          "away": "RUSA",
+          "seed": 7420323698376163980
+        },
+        {
+          "ID": "f56fce4b-543a-5b40-8f42-25efdf9f3b18",
+          "home": "RABE",
+          "away": "SPNO",
+          "seed": 6912385866583129637
+        },
+        {
+          "ID": "1eebeca3-608e-5930-8558-a3a732ddc076",
+          "home": "BOKO",
+          "away": "ZEBR",
+          "seed": 3027946651927802477
+        },
+        {
+          "ID": "dbf5594b-6b5e-513f-b3d1-11a6d968fa56",
+          "home": "RUKR",
+          "away": "VOTA",
+          "seed": 7841833044780343273
+        },
+        {
+          "ID": "82bd92b3-cde7-5eae-ac50-b4f5bee6b77a",
+          "home": "SHMI",
+          "away": "AUVE",
+          "seed": 896876057409515706
+        },
+        {
+          "ID": "d9e46393-bb8c-5863-88c8-310508e2c26c",
+          "home": "ZOBE",
+          "away": "KRDL",
+          "seed": 4763198097902810921
+        },
+        {
+          "ID": "f18cb0e3-136a-5e61-a18b-76b3744afccd",
+          "home": "TOZA",
+          "away": "ZVRA",
+          "seed": 8462753849567259805
+        },
+        {
+          "ID": "b957c5c4-e012-5c9a-936c-bbebb58c5e66",
+          "home": "BAOR",
+          "away": "SUDA",
+          "seed": 4995887504681757325
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "games": [
+        {
+          "ID": "c0cf67f0-6c07-5bab-8233-f7e14f59ffb7",
+          "home": "RABE",
+          "away": "TAZE",
+          "seed": 5712028348682174021
+        },
+        {
+          "ID": "ba149457-ed63-5cc8-b0f2-63e79a169cb7",
+          "home": "RUSA",
+          "away": "BOKO",
+          "seed": 6279438933553838737
+        },
+        {
+          "ID": "435a5431-45e4-555a-9fdf-57f7f5cbfb49",
+          "home": "SPNO",
+          "away": "RUKR",
+          "seed": 7031108057066049073
+        },
+        {
+          "ID": "3406b6ba-b988-56c0-9299-e8ae37297ba7",
+          "home": "ZEBR",
+          "away": "SHMI",
+          "seed": 3168124296758277273
+        },
+        {
+          "ID": "6a340db8-1151-5171-8b72-4ec4654070e9",
+          "home": "VOTA",
+          "away": "ZOBE",
+          "seed": 3243178985419459910
+        },
+        {
+          "ID": "f2eb5577-0745-57c9-ae28-ff85a0c0288f",
+          "home": "AUVE",
+          "away": "TOZA",
+          "seed": 8425671238120189832
+        },
+        {
+          "ID": "d8a45f7b-4d48-5ec8-8f0f-a61db9301ac7",
+          "home": "KRDL",
+          "away": "BAOR",
+          "seed": 3034885265015026524
+        },
+        {
+          "ID": "089ab8d4-8ca1-5e8b-8b60-046622e424b1",
+          "home": "ZVRA",
+          "away": "SUDA",
+          "seed": 2366127596640325997
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "games": [
+        {
+          "ID": "289031bd-8399-5f0b-901f-6e237f0d6f89",
+          "home": "TAZE",
+          "away": "BOKO",
+          "seed": 478731344736976903
+        },
+        {
+          "ID": "d2015ebb-d532-5914-952f-de3e09a51887",
+          "home": "RUKR",
+          "away": "RABE",
+          "seed": 3187521817638723609
+        },
+        {
+          "ID": "824932a9-36ff-5b33-aa1c-eb757263d6fb",
+          "home": "SHMI",
+          "away": "RUSA",
+          "seed": 3723591403675663307
+        },
+        {
+          "ID": "54fefb9c-4559-5073-8a81-37c76d89fb21",
+          "home": "ZOBE",
+          "away": "SPNO",
+          "seed": 8851894378922757905
+        },
+        {
+          "ID": "93fb1b18-9ac6-59fa-ac53-188e3d78f90c",
+          "home": "TOZA",
+          "away": "ZEBR",
+          "seed": 7615861347577292526
+        },
+        {
+          "ID": "7cbd128d-9482-5a02-affc-b62f5b70a400",
+          "home": "BAOR",
+          "away": "VOTA",
+          "seed": 4849829797156195110
+        },
+        {
+          "ID": "e179da0b-6d2d-5eb3-b725-b10c194f0113",
+          "home": "SUDA",
+          "away": "AUVE",
+          "seed": 7047007915010267865
+        },
+        {
+          "ID": "25ae6686-d840-59c7-a1ac-2c6907077d73",
+          "home": "ZVRA",
+          "away": "KRDL",
+          "seed": 4379480747747877430
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "games": [
+        {
+          "ID": "8aa0a9d6-8359-57f0-93ee-fe453516746b",
+          "home": "RUKR",
+          "away": "TAZE",
+          "seed": 4521685008846209446
+        },
+        {
+          "ID": "f977e223-8309-5ee3-91c8-022f63c76a21",
+          "home": "BOKO",
+          "away": "SHMI",
+          "seed": 3877019622157695442
+        },
+        {
+          "ID": "034696ac-d1cc-56d4-886c-0f4a9eebb382",
+          "home": "RABE",
+          "away": "ZOBE",
+          "seed": 8914986417258755107
+        },
+        {
+          "ID": "ccecc22b-2abd-51a4-8923-382eae88e390",
+          "home": "RUSA",
+          "away": "TOZA",
+          "seed": 1283432973196091305
+        },
+        {
+          "ID": "4e49d413-7fb7-5e7c-91fa-2bd889c63b51",
+          "home": "SPNO",
+          "away": "BAOR",
+          "seed": 2879465849807727210
+        },
+        {
+          "ID": "152b888e-d320-5e55-8700-fef6d936d8a0",
+          "home": "ZEBR",
+          "away": "SUDA",
+          "seed": 1216303585903106048
+        },
+        {
+          "ID": "769bde2a-dd39-5e33-bc41-9dd67ead2e7c",
+          "home": "VOTA",
+          "away": "ZVRA",
+          "seed": 2742429949450572433
+        },
+        {
+          "ID": "759357b8-561b-55e9-9f03-fdd4f7a747a2",
+          "home": "AUVE",
+          "away": "KRDL",
+          "seed": 7180016356069962664
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "games": [
+        {
+          "ID": "bf9d4891-35ce-57c2-9561-1dd65002dc1e",
+          "home": "TAZE",
+          "away": "SHMI",
+          "seed": 2564991679238489457
+        },
+        {
+          "ID": "8a3ede41-3bd3-576f-8d77-a8080258f8dd",
+          "home": "ZOBE",
+          "away": "RUKR",
+          "seed": 5235637780620172912
+        },
+        {
+          "ID": "148c80b8-b10d-5994-839e-81444ec1c575",
+          "home": "TOZA",
+          "away": "BOKO",
+          "seed": 4834984446402855180
+        },
+        {
+          "ID": "b1273838-58bb-5b11-bf71-dfaedcfdb5af",
+          "home": "BAOR",
+          "away": "RABE",
+          "seed": 2380815574004966404
+        },
+        {
+          "ID": "bc061e46-aa65-54e2-b6f7-bd62867961da",
+          "home": "SUDA",
+          "away": "RUSA",
+          "seed": 8153522841303206068
+        },
+        {
+          "ID": "bb7d7410-139d-5698-925f-606fb69a07ba",
+          "home": "ZVRA",
+          "away": "SPNO",
+          "seed": 7737971977189849307
+        },
+        {
+          "ID": "04f4ff73-6ba4-5f94-a2de-9425c25bb08a",
+          "home": "KRDL",
+          "away": "ZEBR",
+          "seed": 5550248218992193092
+        },
+        {
+          "ID": "ae504d09-4589-58be-9499-a9a85fa7f812",
+          "home": "AUVE",
+          "away": "VOTA",
+          "seed": 3392742871387606320
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "games": [
+        {
+          "ID": "41d88019-971a-517c-8fc3-59e0a9e98ab8",
+          "home": "ZOBE",
+          "away": "TAZE",
+          "seed": 207166783960709728
+        },
+        {
+          "ID": "240cfa0a-80ce-5503-8aec-0a27d5178bff",
+          "home": "SHMI",
+          "away": "TOZA",
+          "seed": 8387011718893663597
+        },
+        {
+          "ID": "9f788938-0a2b-51e0-a4b3-bcf540f95ea5",
+          "home": "RUKR",
+          "away": "BAOR",
+          "seed": 1023212404113854027
+        },
+        {
+          "ID": "11b6685c-185e-5ca6-8646-aeb8b00ca13f",
+          "home": "BOKO",
+          "away": "SUDA",
+          "seed": 5586097793569852727
+        },
+        {
+          "ID": "657d365d-6483-59af-974e-f0d459d20a21",
+          "home": "RABE",
+          "away": "ZVRA",
+          "seed": 4947531936981222055
+        },
+        {
+          "ID": "6ed993b7-446e-5857-9a7f-0f3e2eb82796",
+          "home": "RUSA",
+          "away": "KRDL",
+          "seed": 7241941944131475598
+        },
+        {
+          "ID": "04d8f7a0-2650-5a5f-9c36-61074237fb82",
+          "home": "SPNO",
+          "away": "AUVE",
+          "seed": 1635796507332730229
+        },
+        {
+          "ID": "32b8c724-4034-5862-bff2-f9258920d653",
+          "home": "ZEBR",
+          "away": "VOTA",
+          "seed": 5362858821917619501
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "games": [
+        {
+          "ID": "01e5423b-9529-5071-a4e8-2b62fa8738db",
+          "home": "TAZE",
+          "away": "TOZA",
+          "seed": 53431400349112841
+        },
+        {
+          "ID": "b486ceb4-1af1-5690-9d76-cf50caf4e40f",
+          "home": "BAOR",
+          "away": "ZOBE",
+          "seed": 166511533063903185
+        },
+        {
+          "ID": "aa40dccb-0e80-5c9d-a931-37a3fa63c5ac",
+          "home": "SUDA",
+          "away": "SHMI",
+          "seed": 8062668078408100737
+        },
+        {
+          "ID": "66fcf86e-9146-510b-9382-e7200219ff8f",
+          "home": "ZVRA",
+          "away": "RUKR",
+          "seed": 4215837827788264824
+        },
+        {
+          "ID": "9ced01d5-4b2f-591d-89a4-f67e66d9b4a6",
+          "home": "KRDL",
+          "away": "BOKO",
+          "seed": 2451250225606659147
+        },
+        {
+          "ID": "f94a5991-60b4-50ff-bfc3-a455682604f4",
+          "home": "AUVE",
+          "away": "RABE",
+          "seed": 2527382334726250093
+        },
+        {
+          "ID": "21ef07a6-25b2-5f44-9e15-16fe6a11d51a",
+          "home": "VOTA",
+          "away": "RUSA",
+          "seed": 6010816038373416636
+        },
+        {
+          "ID": "2fc3b3ed-a293-5c8a-8c03-bf9b8380e8d6",
+          "home": "ZEBR",
+          "away": "SPNO",
+          "seed": 1365592087821471409
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "games": [
+        {
+          "ID": "160cdb04-66f2-5dac-974c-1bd444f1e321",
+          "home": "BAOR",
+          "away": "TAZE",
+          "seed": 955496326948069291
+        },
+        {
+          "ID": "e9415b0a-b105-5a5c-bae1-041d5fff2dc2",
+          "home": "TOZA",
+          "away": "SUDA",
+          "seed": 6175631222809644844
+        },
+        {
+          "ID": "b438a618-f00a-5441-9fdb-182f874edea7",
+          "home": "ZOBE",
+          "away": "ZVRA",
+          "seed": 2893572330921555637
+        },
+        {
+          "ID": "6ade0756-0a7f-5d97-8b46-7cf368a9cbb9",
+          "home": "SHMI",
+          "away": "KRDL",
+          "seed": 7799997396092693108
+        },
+        {
+          "ID": "46d07d44-6229-57bf-bb45-23553f5cd49e",
+          "home": "RUKR",
+          "away": "AUVE",
+          "seed": 2774128655260284081
+        },
+        {
+          "ID": "66af23a9-970c-582f-9e33-af15816827f3",
+          "home": "BOKO",
+          "away": "VOTA",
+          "seed": 8415335139360218252
+        },
+        {
+          "ID": "f4dd7686-e386-5220-a639-dba8cca406fd",
+          "home": "RABE",
+          "away": "ZEBR",
+          "seed": 1016986103248303743
+        },
+        {
+          "ID": "f0035da2-0cc9-5b9c-8e52-1f6c288dddfd",
+          "home": "RUSA",
+          "away": "SPNO",
+          "seed": 3928533144772527360
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "games": [
+        {
+          "ID": "2b233397-2b73-511a-954a-8bd23f8aed70",
+          "home": "TAZE",
+          "away": "SUDA",
+          "seed": 5179778927258983462
+        },
+        {
+          "ID": "7763f74f-1cf9-5b49-9017-3a2f4b0ac58c",
+          "home": "ZVRA",
+          "away": "BAOR",
+          "seed": 5847763389900529954
+        },
+        {
+          "ID": "788a9add-4d17-5d57-93fa-a433e9baa2d7",
+          "home": "KRDL",
+          "away": "TOZA",
+          "seed": 2395767564569674021
+        },
+        {
+          "ID": "0689de7e-a9c8-58c0-8b3a-86e1e3ce1ffe",
+          "home": "AUVE",
+          "away": "ZOBE",
+          "seed": 1348848091002366014
+        },
+        {
+          "ID": "abfaa4b4-faa1-5042-9fa9-725eb418daa0",
+          "home": "VOTA",
+          "away": "SHMI",
+          "seed": 3405303571576745665
+        },
+        {
+          "ID": "085c684d-faaf-5da2-b56e-59177e7a24cf",
+          "home": "ZEBR",
+          "away": "RUKR",
+          "seed": 8818840918199235962
+        },
+        {
+          "ID": "3ebd956d-08fd-563f-a000-f23d46fda183",
+          "home": "SPNO",
+          "away": "BOKO",
+          "seed": 5399850629599128231
+        },
+        {
+          "ID": "8d8d90d4-c508-5acf-8e6c-73e72ed99987",
+          "home": "RUSA",
+          "away": "RABE",
+          "seed": 7146662696097174253
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "games": [
+        {
+          "ID": "190213a3-da49-59ad-9367-1ed3bfe87a26",
+          "home": "ZVRA",
+          "away": "TAZE",
+          "seed": 1080420711722047443
+        },
+        {
+          "ID": "6dde69b5-8dbe-5ec9-a05b-d3e5fc4eed17",
+          "home": "SUDA",
+          "away": "KRDL",
+          "seed": 7462285161007123653
+        },
+        {
+          "ID": "e0855c5e-e367-587a-9c4f-b8354da615ed",
+          "home": "BAOR",
+          "away": "AUVE",
+          "seed": 5612032266060020118
+        },
+        {
+          "ID": "3cff0a51-2d27-5a41-9de8-3838571f6e47",
+          "home": "TOZA",
+          "away": "VOTA",
+          "seed": 700431328134890570
+        },
+        {
+          "ID": "0e1c50ee-1036-5b7c-b19c-93ae72f12618",
+          "home": "ZOBE",
+          "away": "ZEBR",
+          "seed": 8686800966281884465
+        },
+        {
+          "ID": "e20fe375-660a-5808-9e97-c2ec06e1d1cf",
+          "home": "SHMI",
+          "away": "SPNO",
+          "seed": 686286711981840132
+        },
+        {
+          "ID": "6dbd29c0-af56-5c69-90d0-7eb6fc5fb154",
+          "home": "RUKR",
+          "away": "RUSA",
+          "seed": 5285699627902309582
+        },
+        {
+          "ID": "3d2d07ed-f289-575d-b2f4-76456a135d0c",
+          "home": "BOKO",
+          "away": "RABE",
+          "seed": 5089076736598577645
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "games": [
+        {
+          "ID": "3fe8c4be-e8d3-5f80-97f5-7b8daa052fae",
+          "home": "TAZE",
+          "away": "KRDL",
+          "seed": 8285232942953501585
+        },
+        {
+          "ID": "ab01f92d-bc8d-5f28-9d52-d34d31c30c06",
+          "home": "AUVE",
+          "away": "ZVRA",
+          "seed": 9214650886498021520
+        },
+        {
+          "ID": "8300f4dc-44ad-523c-902e-39fa4b042c68",
+          "home": "VOTA",
+          "away": "SUDA",
+          "seed": 121764554046795905
+        },
+        {
+          "ID": "3d7518c3-73a8-54b6-9f65-46feab28b5a1",
+          "home": "ZEBR",
+          "away": "BAOR",
+          "seed": 7918948602593254023
+        },
+        {
+          "ID": "660ea8da-1961-5e0f-b2f0-889a08d5af78",
+          "home": "SPNO",
+          "away": "TOZA",
+          "seed": 8048457207135231845
+        },
+        {
+          "ID": "ddcbed17-3d17-512a-bc26-60d824537757",
+          "home": "RUSA",
+          "away": "ZOBE",
+          "seed": 9059478337118468808
+        },
+        {
+          "ID": "8d0f3116-94b4-501f-a850-8959d6385477",
+          "home": "RABE",
+          "away": "SHMI",
+          "seed": 2362038167755206895
+        },
+        {
+          "ID": "bac19f92-97e7-575d-9825-16d8a3a0f9c4",
+          "home": "BOKO",
+          "away": "RUKR",
+          "seed": 3708491481985433096
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "games": [
+        {
+          "ID": "3be100ce-a458-5d0b-8b3d-bb6e6b420af3",
+          "home": "AUVE",
+          "away": "TAZE",
+          "seed": 8599951764805041099
+        },
+        {
+          "ID": "d76a5fd4-1cca-53b0-8a68-e10d29a2f00c",
+          "home": "KRDL",
+          "away": "VOTA",
+          "seed": 7763762588006383146
+        },
+        {
+          "ID": "1644e45e-78ff-5224-bd37-8f232ec01a7c",
+          "home": "ZVRA",
+          "away": "ZEBR",
+          "seed": 4564214551493288515
+        },
+        {
+          "ID": "a81e6ff7-5c5f-553f-954f-bc4678ca8d4e",
+          "home": "SUDA",
+          "away": "SPNO",
+          "seed": 761570123919772793
+        },
+        {
+          "ID": "e2a99656-0ce2-5547-b90c-abb93ff81d54",
+          "home": "BAOR",
+          "away": "RUSA",
+          "seed": 975885345050178493
+        },
+        {
+          "ID": "f9818416-e39d-5936-8e8d-032cf89084db",
+          "home": "TOZA",
+          "away": "RABE",
+          "seed": 5690598195033419579
+        },
+        {
+          "ID": "ab56f15b-5eb4-5f85-b6db-8b2e699887ed",
+          "home": "ZOBE",
+          "away": "BOKO",
+          "seed": 4697784423552451907
+        },
+        {
+          "ID": "5e2a8987-5108-5295-8f10-2a6bb80d4ee6",
+          "home": "SHMI",
+          "away": "RUKR",
+          "seed": 2626736805653257248
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "games": [
+        {
+          "ID": "0a48df25-29b5-5306-a904-a117e76b6ea9",
+          "home": "TAZE",
+          "away": "VOTA",
+          "seed": 5671541055929169603
+        },
+        {
+          "ID": "aa269040-0d5b-5651-94c1-e9240fbd1ff1",
+          "home": "ZEBR",
+          "away": "AUVE",
+          "seed": 5286031660047546333
+        },
+        {
+          "ID": "329980f7-d305-584d-b565-cbfd85d17c96",
+          "home": "SPNO",
+          "away": "KRDL",
+          "seed": 587927976486711591
+        },
+        {
+          "ID": "0152cfbb-14c9-592c-b61c-4bfb8b151990",
+          "home": "RUSA",
+          "away": "ZVRA",
+          "seed": 3548636244005357820
+        },
+        {
+          "ID": "9c2340b6-6746-5ca8-9f6d-a6c1bf5b22ff",
+          "home": "RABE",
+          "away": "SUDA",
+          "seed": 7530757526473423048
+        },
+        {
+          "ID": "f23a7619-a7a9-59cd-a6b0-bbc85a60e8e2",
+          "home": "BOKO",
+          "away": "BAOR",
+          "seed": 4409064720930526873
+        },
+        {
+          "ID": "58fd3f78-b125-5fa3-9764-7ff44b1a6f0f",
+          "home": "RUKR",
+          "away": "TOZA",
+          "seed": 8705058380083618133
+        },
+        {
+          "ID": "92b17e02-0473-51ad-9d2e-67a8106db19d",
+          "home": "SHMI",
+          "away": "ZOBE",
+          "seed": 304226445872642416
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "games": [
+        {
+          "ID": "40d803d6-bd2c-5a88-b68f-368517cd4149",
+          "home": "ZEBR",
+          "away": "TAZE",
+          "seed": 2410479287121481417
+        },
+        {
+          "ID": "19a2ffc9-bd9a-51b1-92d1-64c549da8ef6",
+          "home": "VOTA",
+          "away": "SPNO",
+          "seed": 340196245195444448
+        },
+        {
+          "ID": "f215bfcd-7697-5b10-8435-bf717668d8d1",
+          "home": "AUVE",
+          "away": "RUSA",
+          "seed": 6070766233745754349
+        },
+        {
+          "ID": "d2ddba82-277c-5127-8754-13c2d53373d1",
+          "home": "KRDL",
+          "away": "RABE",
+          "seed": 3744381546689425891
+        },
+        {
+          "ID": "975e166a-d8b4-5fc5-b8df-0aac52344072",
+          "home": "ZVRA",
+          "away": "BOKO",
+          "seed": 8325018842524283321
+        },
+        {
+          "ID": "3d434b7b-651c-5b8a-8f61-99157340d571",
+          "home": "SUDA",
+          "away": "RUKR",
+          "seed": 794163477000821949
+        },
+        {
+          "ID": "e421d754-ca16-5337-886d-66ed0f77dfa9",
+          "home": "BAOR",
+          "away": "SHMI",
+          "seed": 7206495859540109714
+        },
+        {
+          "ID": "f3a8e0ed-d586-5fad-b6b1-0eb919ddfffc",
+          "home": "TOZA",
+          "away": "ZOBE",
+          "seed": 4745527793996749222
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "games": [
+        {
+          "ID": "e306ec35-e918-5219-a30d-f90232e0472e",
+          "home": "TAZE",
+          "away": "SPNO",
+          "seed": 715329078279919801
+        },
+        {
+          "ID": "997f882a-7538-5414-8b13-fcd787416982",
+          "home": "RUSA",
+          "away": "ZEBR",
+          "seed": 1804661045663636264
+        },
+        {
+          "ID": "5a0b7d4b-db0c-56de-96f4-b43c68886edd",
+          "home": "RABE",
+          "away": "VOTA",
+          "seed": 6027328880056734041
+        },
+        {
+          "ID": "8f14009f-654e-5b6d-ba50-d3b4db392b54",
+          "home": "BOKO",
+          "away": "AUVE",
+          "seed": 3102228743533962877
+        },
+        {
+          "ID": "0ad4e653-69d1-5246-8100-6abfd6d1894f",
+          "home": "RUKR",
+          "away": "KRDL",
+          "seed": 1401802280424139091
+        },
+        {
+          "ID": "80aa013a-a945-5cc3-8c77-e86973493268",
+          "home": "SHMI",
+          "away": "ZVRA",
+          "seed": 2164022441315438087
+        },
+        {
+          "ID": "3084f690-f11f-5d6d-97fd-03229af1869c",
+          "home": "ZOBE",
+          "away": "SUDA",
+          "seed": 1681568852905341588
+        },
+        {
+          "ID": "b80ebdd7-24a8-5e07-9b42-c661966ff09f",
+          "home": "TOZA",
+          "away": "BAOR",
+          "seed": 4903493056101937388
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "games": [
+        {
+          "ID": "058965bf-5c28-5eec-b369-1d8914a6867b",
+          "home": "RUSA",
+          "away": "TAZE",
+          "seed": 5225175897700782438
+        },
+        {
+          "ID": "848f136a-1ad6-52e9-a92d-a72347ef4814",
+          "home": "SPNO",
+          "away": "RABE",
+          "seed": 3334489251894992512
+        },
+        {
+          "ID": "68556e41-dfe9-5e4d-86b9-a4efe0dd0ee0",
+          "home": "ZEBR",
+          "away": "BOKO",
+          "seed": 1013268257264748359
+        },
+        {
+          "ID": "92f4eb44-76ed-554f-91df-a2968f656d90",
+          "home": "VOTA",
+          "away": "RUKR",
+          "seed": 1409315009184625416
+        },
+        {
+          "ID": "4ac534ec-17b9-56b3-89c6-e33a01ee9641",
+          "home": "AUVE",
+          "away": "SHMI",
+          "seed": 2664471032051815745
+        },
+        {
+          "ID": "9c94e456-7f28-547a-bcaf-873e0eada8e5",
+          "home": "KRDL",
+          "away": "ZOBE",
+          "seed": 1893403099936159234
+        },
+        {
+          "ID": "7f5fb4e3-fcc7-5034-a8aa-4f10bacfac0d",
+          "home": "ZVRA",
+          "away": "TOZA",
+          "seed": 4793677272004999790
+        },
+        {
+          "ID": "6d8d3b67-8291-586c-8d54-88acfc5d960c",
+          "home": "SUDA",
+          "away": "BAOR",
+          "seed": 6635590717963570045
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "games": [
+        {
+          "ID": "f7bfd537-bc8a-561d-abc2-d975be77bf21",
+          "home": "TAZE",
+          "away": "RABE",
+          "seed": 1608805383873202235
+        },
+        {
+          "ID": "6ac110fd-9848-535b-93ea-b5b75ea200e7",
+          "home": "BOKO",
+          "away": "RUSA",
+          "seed": 6326166800314589857
+        },
+        {
+          "ID": "56eb5fec-28f6-5ac7-8a11-baebd588f6bd",
+          "home": "RUKR",
+          "away": "SPNO",
+          "seed": 6485573383386072116
+        },
+        {
+          "ID": "11db73b3-396e-5933-93e0-866e00441c2c",
+          "home": "SHMI",
+          "away": "ZEBR",
+          "seed": 6324315141325998177
+        },
+        {
+          "ID": "ee3e1a22-9ed2-510b-9235-58040810abf3",
+          "home": "ZOBE",
+          "away": "VOTA",
+          "seed": 3114120021761420102
+        },
+        {
+          "ID": "c1d73324-5dc0-56c7-a1d7-8ffcef923e3c",
+          "home": "TOZA",
+          "away": "AUVE",
+          "seed": 782072702606655629
+        },
+        {
+          "ID": "bbfafbaf-a9f1-5aec-a0cd-3aec94d5f3c5",
+          "home": "BAOR",
+          "away": "KRDL",
+          "seed": 8165351006697703919
+        },
+        {
+          "ID": "308276f3-7a63-5992-afe2-e5d7e4bf91ee",
+          "home": "SUDA",
+          "away": "ZVRA",
+          "seed": 2204979131786498258
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "games": [
+        {
+          "ID": "c2b9e4f0-512a-5860-8498-bd354bb64620",
+          "home": "BOKO",
+          "away": "TAZE",
+          "seed": 4482654616026764606
+        },
+        {
+          "ID": "959d5689-048a-5377-b5b7-2a9b649b6846",
+          "home": "RABE",
+          "away": "RUKR",
+          "seed": 8681152810558923144
+        },
+        {
+          "ID": "ec4d5a61-5af0-555f-b2bd-4d2107574ed9",
+          "home": "RUSA",
+          "away": "SHMI",
+          "seed": 6233335707009850057
+        },
+        {
+          "ID": "fba00a3c-f5c2-529e-87f7-afad1c350742",
+          "home": "SPNO",
+          "away": "ZOBE",
+          "seed": 7696199530005794761
+        },
+        {
+          "ID": "b4881ecf-78a8-559f-9c57-c8530eb62332",
+          "home": "ZEBR",
+          "away": "TOZA",
+          "seed": 4721745731275609717
+        },
+        {
+          "ID": "ceca23d8-60c5-5960-8298-8c061a16dea8",
+          "home": "VOTA",
+          "away": "BAOR",
+          "seed": 1150038287360454987
+        },
+        {
+          "ID": "f5d5b4b3-e61a-5766-897c-3878a1029de3",
+          "home": "AUVE",
+          "away": "SUDA",
+          "seed": 241048174467592443
+        },
+        {
+          "ID": "d17f4917-f17f-5a4a-8618-9b3f5bf78143",
+          "home": "KRDL",
+          "away": "ZVRA",
+          "seed": 3147977939741135349
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "games": [
+        {
+          "ID": "eae90fa2-5003-54db-8c80-b531e0f86fa0",
+          "home": "TAZE",
+          "away": "RUKR",
+          "seed": 2928622203666847636
+        },
+        {
+          "ID": "930a68c3-c7e0-5a8d-9f30-88453d88a9cd",
+          "home": "SHMI",
+          "away": "BOKO",
+          "seed": 8698522987627980743
+        },
+        {
+          "ID": "4370f17d-5036-505e-8937-7390f62e3d9a",
+          "home": "ZOBE",
+          "away": "RABE",
+          "seed": 7376221126577160764
+        },
+        {
+          "ID": "8ab45076-7e40-5ca7-8322-f6ebbf10d763",
+          "home": "TOZA",
+          "away": "RUSA",
+          "seed": 2594432478312622488
+        },
+        {
+          "ID": "fe6461c1-f507-527b-a4c6-ae81dc340c80",
+          "home": "BAOR",
+          "away": "SPNO",
+          "seed": 1826970008903908883
+        },
+        {
+          "ID": "26f290c0-dad5-5f72-a910-06acd6ce0711",
+          "home": "SUDA",
+          "away": "ZEBR",
+          "seed": 2057708254260961017
+        },
+        {
+          "ID": "f2d90ab6-dbf2-5d85-949e-0601506f8729",
+          "home": "ZVRA",
+          "away": "VOTA",
+          "seed": 1589853087051208293
+        },
+        {
+          "ID": "211164d0-92c0-56da-ad37-2d41cf212b42",
+          "home": "KRDL",
+          "away": "AUVE",
+          "seed": 7688872919240732367
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "games": [
+        {
+          "ID": "66b5f814-8e22-5eca-af4d-7908eb541e59",
+          "home": "SHMI",
+          "away": "TAZE",
+          "seed": 6212069243954231475
+        },
+        {
+          "ID": "9fa178b1-bae8-5c66-8aaf-8bc4fcfb9f97",
+          "home": "RUKR",
+          "away": "ZOBE",
+          "seed": 7982500849980416445
+        },
+        {
+          "ID": "bb641af5-e722-5433-9e7b-e63b27c20b55",
+          "home": "BOKO",
+          "away": "TOZA",
+          "seed": 2054019979151008932
+        },
+        {
+          "ID": "0ea63aaf-00b6-5b2b-bacc-d1653ea8b7c8",
+          "home": "RABE",
+          "away": "BAOR",
+          "seed": 8729385560592546635
+        },
+        {
+          "ID": "d2f2cf61-4149-5a9c-80c5-fc2cddece08c",
+          "home": "RUSA",
+          "away": "SUDA",
+          "seed": 4102166713537664200
+        },
+        {
+          "ID": "200be762-ce36-5389-be6d-a446b2818a00",
+          "home": "SPNO",
+          "away": "ZVRA",
+          "seed": 4380404009757966968
+        },
+        {
+          "ID": "bc440f29-76ab-5d32-b259-c3d142d52015",
+          "home": "ZEBR",
+          "away": "KRDL",
+          "seed": 6501111193704266662
+        },
+        {
+          "ID": "9a43c710-8161-5349-9959-a70e9738ae77",
+          "home": "VOTA",
+          "away": "AUVE",
+          "seed": 72725366864318216
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "games": [
+        {
+          "ID": "18feb3d2-923b-5482-8f9d-5ee87bdcaed1",
+          "home": "TAZE",
+          "away": "ZOBE",
+          "seed": 7459607506744481339
+        },
+        {
+          "ID": "2c71c9f6-360b-58b7-b087-13f0a391e00a",
+          "home": "TOZA",
+          "away": "SHMI",
+          "seed": 4791973762346840466
+        },
+        {
+          "ID": "5e4fffe5-2b2f-5e47-8619-b99e9cf83b2a",
+          "home": "BAOR",
+          "away": "RUKR",
+          "seed": 7910499047006993055
+        },
+        {
+          "ID": "f60284f9-9e14-539f-9f5e-dbcd47095e45",
+          "home": "SUDA",
+          "away": "BOKO",
+          "seed": 5288174960509591274
+        },
+        {
+          "ID": "e4776409-b468-5dcf-9fda-e74e00f0751d",
+          "home": "ZVRA",
+          "away": "RABE",
+          "seed": 2300521433107349128
+        },
+        {
+          "ID": "7bf5d096-5315-522d-96a3-7c0dffe9776d",
+          "home": "KRDL",
+          "away": "RUSA",
+          "seed": 1386221024274230517
+        },
+        {
+          "ID": "6b307aa9-bb1e-5a81-add7-7d5aed367835",
+          "home": "AUVE",
+          "away": "SPNO",
+          "seed": 4651452467787523099
+        },
+        {
+          "ID": "f8038473-8fd9-5978-be66-5afe1b731a49",
+          "home": "VOTA",
+          "away": "ZEBR",
+          "seed": 4999424340221696854
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "games": [
+        {
+          "ID": "e5903d61-129d-52e5-9efd-0477e4ade2b0",
+          "home": "TOZA",
+          "away": "TAZE",
+          "seed": 7269381512861373282
+        },
+        {
+          "ID": "7da46408-a32e-58b8-ab1c-07b24de8e1a0",
+          "home": "ZOBE",
+          "away": "BAOR",
+          "seed": 6478569995531407813
+        },
+        {
+          "ID": "1e3c9b68-94e8-5d96-9a54-7762bed38e19",
+          "home": "SHMI",
+          "away": "SUDA",
+          "seed": 2969527979446791506
+        },
+        {
+          "ID": "ab509b00-3405-5ec0-9adb-cccdc5e2ff01",
+          "home": "RUKR",
+          "away": "ZVRA",
+          "seed": 1738065312948723706
+        },
+        {
+          "ID": "38d9c4b8-0416-58d4-b8a9-da745a2b5120",
+          "home": "BOKO",
+          "away": "KRDL",
+          "seed": 2480120643733205269
+        },
+        {
+          "ID": "6e356daa-46c3-5033-b475-eb46a7b838ef",
+          "home": "RABE",
+          "away": "AUVE",
+          "seed": 698970536492514040
+        },
+        {
+          "ID": "93a935b0-c221-5b35-8373-ddf18a440973",
+          "home": "RUSA",
+          "away": "VOTA",
+          "seed": 2850354321479160735
+        },
+        {
+          "ID": "88e0b30d-0ac7-5d14-b444-c4fce6c17b24",
+          "home": "SPNO",
+          "away": "ZEBR",
+          "seed": 1186259646233881165
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "games": [
+        {
+          "ID": "4cbb55a1-dde1-585a-a6c2-27c99bb0c026",
+          "home": "TAZE",
+          "away": "BAOR",
+          "seed": 2497839219463310263
+        },
+        {
+          "ID": "7731d6be-d1a3-591c-a2e1-767713cdba48",
+          "home": "SUDA",
+          "away": "TOZA",
+          "seed": 7108806949186871874
+        },
+        {
+          "ID": "abf1b960-dcca-5423-8187-8a39774d8937",
+          "home": "ZVRA",
+          "away": "ZOBE",
+          "seed": 4365781684437205702
+        },
+        {
+          "ID": "88fa5d20-ba33-5beb-864c-39276c059ffa",
+          "home": "KRDL",
+          "away": "SHMI",
+          "seed": 5849677436569644563
+        },
+        {
+          "ID": "2578ea0c-ebf3-5666-a924-2ed2a67a1b26",
+          "home": "AUVE",
+          "away": "RUKR",
+          "seed": 5964405686479521972
+        },
+        {
+          "ID": "592d1e45-c8c6-5e15-8ca1-6c0f785f09bc",
+          "home": "VOTA",
+          "away": "BOKO",
+          "seed": 1752122914335709214
+        },
+        {
+          "ID": "414a5a1e-9a36-56d0-9285-8c63ca47b49c",
+          "home": "ZEBR",
+          "away": "RABE",
+          "seed": 6087642583253312261
+        },
+        {
+          "ID": "039e24b8-9a8c-5ffd-b230-4066a5d863c8",
+          "home": "SPNO",
+          "away": "RUSA",
+          "seed": 7130959408796666996
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "games": [
+        {
+          "ID": "e50fa4c5-0d33-546e-b795-4cae0685bf95",
+          "home": "SUDA",
+          "away": "TAZE",
+          "seed": 8212330458002115748
+        },
+        {
+          "ID": "6d7f7612-954a-5d8e-873c-53997a4d54e6",
+          "home": "BAOR",
+          "away": "ZVRA",
+          "seed": 7379993556358561473
+        },
+        {
+          "ID": "8d2dfaff-f05c-590d-ad7d-b2d8468fc6ff",
+          "home": "TOZA",
+          "away": "KRDL",
+          "seed": 4898423235721896262
+        },
+        {
+          "ID": "1bc24cc3-8095-5d87-a145-6b66785c52be",
+          "home": "ZOBE",
+          "away": "AUVE",
+          "seed": 1298420407272593220
+        },
+        {
+          "ID": "8110bb8d-969b-583c-aa6e-c59611e2076a",
+          "home": "SHMI",
+          "away": "VOTA",
+          "seed": 366108804824760541
+        },
+        {
+          "ID": "0ebf063f-5f5d-57f4-9866-fa280e2fc674",
+          "home": "RUKR",
+          "away": "ZEBR",
+          "seed": 7584600148585991383
+        },
+        {
+          "ID": "d85823e0-d560-57ce-a26c-ca30f4045fa2",
+          "home": "BOKO",
+          "away": "SPNO",
+          "seed": 3953543617030523931
+        },
+        {
+          "ID": "89c510e8-9a26-5883-b350-c7486f436242",
+          "home": "RABE",
+          "away": "RUSA",
+          "seed": 110700320041647447
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "games": [
+        {
+          "ID": "2935d253-2d88-5088-acc4-c3003f7efd22",
+          "home": "TAZE",
+          "away": "ZVRA",
+          "seed": 4893366257046300194
+        },
+        {
+          "ID": "aa7dbc03-8e13-576f-be6b-d5ceec489a93",
+          "home": "KRDL",
+          "away": "SUDA",
+          "seed": 264180061092275120
+        },
+        {
+          "ID": "6b375668-5972-5056-9443-0a4895b79332",
+          "home": "AUVE",
+          "away": "BAOR",
+          "seed": 7870828310837153247
+        },
+        {
+          "ID": "86ad2e15-dc68-5365-9ca6-aadb127e88a2",
+          "home": "VOTA",
+          "away": "TOZA",
+          "seed": 8815918933960896697
+        },
+        {
+          "ID": "fdf50d02-5252-56ad-ac2c-36e288157a83",
+          "home": "ZEBR",
+          "away": "ZOBE",
+          "seed": 3408071913231083824
+        },
+        {
+          "ID": "102b2250-59b6-5602-88f9-3875a5cf10d8",
+          "home": "SPNO",
+          "away": "SHMI",
+          "seed": 5908058244423981242
+        },
+        {
+          "ID": "11dc508a-4f2a-569f-8753-0f9ebf6f9fbc",
+          "home": "RUSA",
+          "away": "RUKR",
+          "seed": 4725118864125469400
+        },
+        {
+          "ID": "6c6f0b45-1146-574c-abff-a24eb40eeaa4",
+          "home": "RABE",
+          "away": "BOKO",
+          "seed": 2858627220771364628
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "games": [
+        {
+          "ID": "c6c4f8e0-bef7-5f89-a89c-563cf5b5b5a0",
+          "home": "KRDL",
+          "away": "TAZE",
+          "seed": 6539780629164194907
+        },
+        {
+          "ID": "858f57f9-bd46-51e6-9ecd-42c2460daee3",
+          "home": "ZVRA",
+          "away": "AUVE",
+          "seed": 8933092771888296489
+        },
+        {
+          "ID": "d1192edb-dac4-5c98-840a-51de96d7f75c",
+          "home": "SUDA",
+          "away": "VOTA",
+          "seed": 8927646079858376583
+        },
+        {
+          "ID": "9fdcb7c8-f136-5dfe-95ca-788b254b4732",
+          "home": "BAOR",
+          "away": "ZEBR",
+          "seed": 2119578116705287104
+        },
+        {
+          "ID": "adf89078-4e48-5fed-a789-46c0265ce42b",
+          "home": "TOZA",
+          "away": "SPNO",
+          "seed": 2317266094820993201
+        },
+        {
+          "ID": "d6fd31e9-a206-5cb0-865f-cea7dccf864b",
+          "home": "ZOBE",
+          "away": "RUSA",
+          "seed": 8848188281121411364
+        },
+        {
+          "ID": "95f9f27f-ba32-56fe-9746-3ea0ec12342c",
+          "home": "SHMI",
+          "away": "RABE",
+          "seed": 5702559015581971399
+        },
+        {
+          "ID": "90666494-8940-5770-8640-99d4ee791d41",
+          "home": "RUKR",
+          "away": "BOKO",
+          "seed": 5838247042509636828
+        }
+      ]
+    }
+  ]
+}

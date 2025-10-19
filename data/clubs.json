@@ -1,0 +1,1202 @@
+[
+    {
+        "name": "Torpedo Drasnik",
+        "colors": {
+            "primary": "#006400",
+            "secondary": "#FFFFFF"
+        },
+        "style": "bologna",
+        "code": "TODR",
+        "city": "Drasnik",
+        "elo": 1920,
+        "league": "A"
+    },
+    {
+        "name": "Energetik Tavros",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "ENTA",
+        "city": "Tavros",
+        "elo": 1902,
+        "league": "A"
+    },
+    {
+        "name": "Rubin Drezha",
+        "colors": {
+            "primary": "#0066CC",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "RUDR",
+        "city": "Drezha",
+        "elo": 1885,
+        "league": "A"
+    },
+    {
+        "name": "Karpaty Drusk",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "KADR",
+        "city": "Drusk",
+        "elo": 1870,
+        "league": "A"
+    },
+    {
+        "name": "Severna Kralov",
+        "colors": {
+            "primary": "#007A3D",
+            "secondary": "#000000"
+        },
+        "style": "top",
+        "code": "SEKR",
+        "city": "Kralov",
+        "elo": 1842,
+        "league": "A"
+    },
+    {
+        "name": "Zorya Blenik",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "ZOBL",
+        "city": "Blenik",
+        "elo": 1817,
+        "league": "A"
+    },
+    {
+        "name": "Dynamo Tvarin",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "DYTV",
+        "city": "Tvarin",
+        "elo": 1805,
+        "league": "A"
+    },
+    {
+        "name": "Dynamo Kalenov",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "DYKA",
+        "city": "Kalenov",
+        "elo": 1781,
+        "league": "A"
+    },
+    {
+        "name": "CSKA Broven",
+        "colors": {
+            "primary": "#6A1B9A",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "CSBR",
+        "city": "Broven",
+        "elo": 1756,
+        "league": "A"
+    },
+    {
+        "name": "Slavia Narsk",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "SLNA",
+        "city": "Narsk",
+        "elo": 1741,
+        "league": "A"
+    },
+    {
+        "name": "Vojvodina Dralov",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "boca",
+        "code": "VODR",
+        "city": "Dralov",
+        "elo": 1712,
+        "league": "A"
+    },
+    {
+        "name": "Metalist Norvak",
+        "colors": {
+            "primary": "#0077C2",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "MENO",
+        "city": "Norvak",
+        "elo": 1694,
+        "league": "A"
+    },
+    {
+        "name": "Sloga Drunov",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "SLDR",
+        "city": "Drunov",
+        "elo": 1686,
+        "league": "A"
+    },
+    {
+        "name": "Sloga Pradven",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "SLPR",
+        "city": "Pradven",
+        "elo": 1655,
+        "league": "A"
+    },
+    {
+        "name": "Partizan Molgor",
+        "colors": {
+            "primary": "#6A1B9A",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "PAMO",
+        "city": "Molgor",
+        "elo": 1631,
+        "league": "A"
+    },
+    {
+        "name": "Vardar Kravena",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#00008B"
+        },
+        "style": "juve",
+        "code": "VAKR",
+        "city": "Kravena",
+        "elo": 1611,
+        "league": "A"
+    },
+    {
+        "name": "Spartak Velgorod",
+        "colors": {
+            "primary": "#B90000",
+            "secondary": "#000000"
+        },
+        "style": "river",
+        "code": "SPVE",
+        "city": "Velgorod",
+        "elo": 1593,
+        "league": "A"
+    },
+    {
+        "name": "Spartak Nardev",
+        "colors": {
+            "primary": "#FF77A8",
+            "secondary": "#000000"
+        },
+        "style": "juve",
+        "code": "SPNA",
+        "city": "Nardev",
+        "elo": 1574,
+        "league": "A"
+    },
+    {
+        "name": "Zorya Blornik",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "boca",
+        "code": "ZOBO",
+        "city": "Blornik",
+        "elo": 1559,
+        "league": "A"
+    },
+    {
+        "name": "Lokomotiv Ornash",
+        "colors": {
+            "primary": "#B22222",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "LOOR",
+        "city": "Ornash",
+        "elo": 1537,
+        "league": "A"
+    },
+    {
+        "name": "Metalist Dorvak",
+        "colors": {
+            "primary": "#0B3B5F",
+            "secondary": "#FFD700"
+        },
+        "style": "genoa",
+        "code": "MEDO",
+        "city": "Dorvak",
+        "elo": 1602,
+        "league": "BA"
+    },
+    {
+        "name": "Metalurg Praven",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "MEPR",
+        "city": "Praven",
+        "elo": 1578,
+        "league": "BA"
+    },
+    {
+        "name": "Botev Trusna",
+        "colors": {
+            "primary": "#0066CC",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "BOTR",
+        "city": "Trusna",
+        "elo": 1548,
+        "league": "BA"
+    },
+    {
+        "name": "Radnički Drosmar",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "top",
+        "code": "RADR",
+        "city": "Drosmar",
+        "elo": 1528,
+        "league": "BA"
+    },
+    {
+        "name": "Spartak Trevon",
+        "colors": {
+            "primary": "#1E90FF",
+            "secondary": "#FFD700"
+        },
+        "style": "ajax",
+        "code": "SPTR",
+        "city": "Trevon",
+        "elo": 1498,
+        "league": "BA"
+    },
+    {
+        "name": "Slavia Tresnik",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "boca",
+        "code": "SLTR",
+        "city": "Tresnik",
+        "elo": 1467,
+        "league": "BA"
+    },
+    {
+        "name": "Vardar Molgrad",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "VAMO",
+        "city": "Molgrad",
+        "elo": 1453,
+        "league": "BA"
+    },
+    {
+        "name": "Vardar Kolven",
+        "colors": {
+            "primary": "#FFFFFF",
+            "secondary": "#000000"
+        },
+        "style": "river",
+        "code": "VAKO",
+        "city": "Kolven",
+        "elo": 1424,
+        "league": "BA"
+    },
+    {
+        "name": "Sloga Tavrin",
+        "colors": {
+            "primary": "#B6E3FF",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "SLTA",
+        "city": "Tavrin",
+        "elo": 1402,
+        "league": "BA"
+    },
+    {
+        "name": "Dynamo Bresnar",
+        "colors": {
+            "primary": "#0066CC",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "DYBR",
+        "city": "Bresnar",
+        "elo": 1374,
+        "league": "BA"
+    },
+    {
+        "name": "Partizan Velgrad",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#003399"
+        },
+        "style": "celtic",
+        "code": "PAVE",
+        "city": "Velgrad",
+        "elo": 1353,
+        "league": "BA"
+    },
+    {
+        "name": "Polonia Mirkov",
+        "colors": {
+            "primary": "#FFFFFF",
+            "secondary": "#FF0000"
+        },
+        "style": "genoa",
+        "code": "POMI",
+        "city": "Mirkov",
+        "elo": 1326,
+        "league": "BA"
+    },
+    {
+        "name": "Volga Pradnik",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#003399"
+        },
+        "style": "juve",
+        "code": "VOPR",
+        "city": "Pradnik",
+        "elo": 1305,
+        "league": "BA"
+    },
+    {
+        "name": "Torpedo Marnik",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#1E90FF"
+        },
+        "style": "ajax",
+        "code": "TOMA",
+        "city": "Marnik",
+        "elo": 1276,
+        "league": "BA"
+    },
+    {
+        "name": "Lokomotiv Krusha",
+        "colors": {
+            "primary": "#B6E3FF",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "LOKR",
+        "city": "Krusha",
+        "elo": 1258,
+        "league": "BA"
+    },
+    {
+        "name": "Slavia Korvenik",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "top",
+        "code": "SLKO",
+        "city": "Korvenik",
+        "elo": 1232,
+        "league": "BA"
+    },
+    {
+        "name": "Volga Kravich",
+        "colors": {
+            "primary": "#1E90FF",
+            "secondary": "#FFD700"
+        },
+        "style": "celtic",
+        "code": "VOKR",
+        "city": "Kravich",
+        "elo": 1590,
+        "league": "BB"
+    },
+    {
+        "name": "Karpaty Vornes",
+        "colors": {
+            "primary": "#33A1DE",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "KAVO",
+        "city": "Vornes",
+        "elo": 1565,
+        "league": "BB"
+    },
+    {
+        "name": "Slovan Brevik",
+        "colors": {
+            "primary": "#8B0000",
+            "secondary": "#003366"
+        },
+        "style": "genoa",
+        "code": "SLBR",
+        "city": "Brevik",
+        "elo": 1548,
+        "league": "BB"
+    },
+    {
+        "name": "Rudar Zelenik",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "RUZE",
+        "city": "Zelenik",
+        "elo": 1530,
+        "league": "BB"
+    },
+    {
+        "name": "Arda Lysvek",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#003399"
+        },
+        "style": "celtic",
+        "code": "ARLY",
+        "city": "Lysvek",
+        "elo": 1498,
+        "league": "BB"
+    },
+    {
+        "name": "CSKA Brezhin",
+        "colors": {
+            "primary": "#0077C2",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "CSBE",
+        "city": "Brezhin",
+        "elo": 1470,
+        "league": "BB"
+    },
+    {
+        "name": "Torpedo Blazna",
+        "colors": {
+            "primary": "#800000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "top",
+        "code": "TOBL",
+        "city": "Blazna",
+        "elo": 1456,
+        "league": "BB"
+    },
+    {
+        "name": "Hajduk Krezna",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#0077C2"
+        },
+        "style": "river",
+        "code": "HAKR",
+        "city": "Krezna",
+        "elo": 1424,
+        "league": "BB"
+    },
+    {
+        "name": "Spartak Traven",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "SPTA",
+        "city": "Traven",
+        "elo": 1396,
+        "league": "BB"
+    },
+    {
+        "name": "Rubin Kovnar",
+        "colors": {
+            "primary": "#FFFFFF",
+            "secondary": "#FF0000"
+        },
+        "style": "ajax",
+        "code": "RUKO",
+        "city": "Kovnar",
+        "elo": 1378,
+        "league": "BB"
+    },
+    {
+        "name": "Lokomotiv Dravik",
+        "colors": {
+            "primary": "#B90000",
+            "secondary": "#000000"
+        },
+        "style": "river",
+        "code": "LODR",
+        "city": "Dravik",
+        "elo": 1344,
+        "league": "BB"
+    },
+    {
+        "name": "CSKA Dornov",
+        "colors": {
+            "primary": "#007A3D",
+            "secondary": "#000000"
+        },
+        "style": "juve",
+        "code": "CSDO",
+        "city": "Dornov",
+        "elo": 1332,
+        "league": "BB"
+    },
+    {
+        "name": "Obolon Krevik",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "OBKR",
+        "city": "Krevik",
+        "elo": 1306,
+        "league": "BB"
+    },
+    {
+        "name": "Karpaty Norvash",
+        "colors": {
+            "primary": "#8B0000",
+            "secondary": "#003366"
+        },
+        "style": "juve",
+        "code": "KANO",
+        "city": "Norvash",
+        "elo": 1283,
+        "league": "BB"
+    },
+    {
+        "name": "Tatran Bredov",
+        "colors": {
+            "primary": "#FFFFFF",
+            "secondary": "#FF0000"
+        },
+        "style": "top",
+        "code": "TABR",
+        "city": "Bredov",
+        "elo": 1258,
+        "league": "BB"
+    },
+    {
+        "name": "Karpaty Valenik",
+        "colors": {
+            "primary": "#A51C30",
+            "secondary": "#FFD700"
+        },
+        "style": "celtic",
+        "code": "KAVA",
+        "city": "Valenik",
+        "elo": 1224,
+        "league": "BB"
+    },
+    {
+        "name": "Torpedo Dovnar",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "TODO",
+        "city": "Dovnar",
+        "elo": 1273,
+        "league": "CA"
+    },
+    {
+        "name": "Mladost Ornar",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#B22222"
+        },
+        "style": "ajax",
+        "code": "MLOR",
+        "city": "Ornar",
+        "elo": 1259,
+        "league": "CA"
+    },
+    {
+        "name": "Hajduk Straven",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "HAST",
+        "city": "Straven",
+        "elo": 1243,
+        "league": "CA"
+    },
+    {
+        "name": "Dynamo Zelgor",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "DYZE",
+        "city": "Zelgor",
+        "elo": 1221,
+        "league": "CA"
+    },
+    {
+        "name": "Slavia Branik",
+        "colors": {
+            "primary": "#FF6A00",
+            "secondary": "#000000"
+        },
+        "style": "river",
+        "code": "SLBA",
+        "city": "Branik",
+        "elo": 1210,
+        "league": "CA"
+    },
+    {
+        "name": "Rudar Zelgrad",
+        "colors": {
+            "primary": "#B22222",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "RUZL",
+        "city": "Zelgrad",
+        "elo": 1190,
+        "league": "CA"
+    },
+    {
+        "name": "Partizan Trevna",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "PATR",
+        "city": "Trevna",
+        "elo": 1173,
+        "league": "CA"
+    },
+    {
+        "name": "Metalurg Varnov",
+        "colors": {
+            "primary": "#A51C30",
+            "secondary": "#FFD700"
+        },
+        "style": "juve",
+        "code": "MEVA",
+        "city": "Varnov",
+        "elo": 1160,
+        "league": "CA"
+    },
+    {
+        "name": "Sloboda Orshen",
+        "colors": {
+            "primary": "#007A3D",
+            "secondary": "#000000"
+        },
+        "style": "juve",
+        "code": "SLOR",
+        "city": "Orshen",
+        "elo": 1136,
+        "league": "CA"
+    },
+    {
+        "name": "Cherno More Dreznik",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "boca",
+        "code": "CMDR",
+        "city": "Dreznik",
+        "elo": 1126,
+        "league": "CA"
+    },
+    {
+        "name": "Obolon Karvich",
+        "colors": {
+            "primary": "#0066CC",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "OBKA",
+        "city": "Karvich",
+        "elo": 1109,
+        "league": "CA"
+    },
+    {
+        "name": "Spartak Dornik",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#003399"
+        },
+        "style": "boca",
+        "code": "SPDO",
+        "city": "Dornik",
+        "elo": 1095,
+        "league": "CA"
+    },
+    {
+        "name": "Slavia Norven",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#1E90FF"
+        },
+        "style": "celtic",
+        "code": "SLNO",
+        "city": "Norven",
+        "elo": 1071,
+        "league": "CA"
+    },
+    {
+        "name": "Slovan Greven",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#00008B"
+        },
+        "style": "boca",
+        "code": "SLGR",
+        "city": "Greven",
+        "elo": 1053,
+        "league": "CA"
+    },
+    {
+        "name": "Zaglebie Vorna",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "ZAVO",
+        "city": "Vorna",
+        "elo": 1039,
+        "league": "CA"
+    },
+    {
+        "name": "Spartak Krelov",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "SPKR",
+        "city": "Krelov",
+        "elo": 1026,
+        "league": "CA"
+    },
+    {
+        "name": "Tatran Zelvik",
+        "colors": {
+            "primary": "#8B0000",
+            "secondary": "#003366"
+        },
+        "style": "celtic",
+        "code": "TAZE",
+        "city": "Zelvik",
+        "elo": 1274,
+        "league": "CB"
+    },
+    {
+        "name": "Partizan Korvik",
+        "colors": {
+            "primary": "#B22222",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "PAKO",
+        "city": "Korvik",
+        "elo": 1261,
+        "league": "CB"
+    },
+    {
+        "name": "Rotor Belvik",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "top",
+        "code": "ROBE",
+        "city": "Belvik",
+        "elo": 1240,
+        "league": "CB"
+    },
+    {
+        "name": "Rotor Kalven",
+        "colors": {
+            "primary": "#0077C2",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "ROKA",
+        "city": "Kalven",
+        "elo": 1223,
+        "league": "CB"
+    },
+    {
+        "name": "Górnik Dovran",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#003399"
+        },
+        "style": "boca",
+        "code": "GÓDO",
+        "city": "Dovran",
+        "elo": 1211,
+        "league": "CB"
+    },
+    {
+        "name": "Sloga Dornesk",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "SLDO",
+        "city": "Dornesk",
+        "elo": 1193,
+        "league": "CB"
+    },
+    {
+        "name": "Zorya Mirgrad",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "ZOMI",
+        "city": "Mirgrad",
+        "elo": 1175,
+        "league": "CB"
+    },
+    {
+        "name": "Slavia Mornav",
+        "colors": {
+            "primary": "#6A1B9A",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "SLMO",
+        "city": "Mornav",
+        "elo": 1153,
+        "league": "CB"
+    },
+    {
+        "name": "Hajduk Vrasna",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "HAVR",
+        "city": "Vrasna",
+        "elo": 1137,
+        "league": "CB"
+    },
+    {
+        "name": "Volga Orsden",
+        "colors": {
+            "primary": "#6A1B9A",
+            "secondary": "#FFFFFF"
+        },
+        "style": "genoa",
+        "code": "VOOR",
+        "city": "Orsden",
+        "elo": 1120,
+        "league": "CB"
+    },
+    {
+        "name": "Ruch Kroslav",
+        "colors": {
+            "primary": "#6A1B9A",
+            "secondary": "#FFFFFF"
+        },
+        "style": "top",
+        "code": "RUKR",
+        "city": "Kroslav",
+        "elo": 1104,
+        "league": "CB"
+    },
+    {
+        "name": "Dynamo Lornik",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#0077C2"
+        },
+        "style": "celtic",
+        "code": "DYLO",
+        "city": "Lornik",
+        "elo": 1087,
+        "league": "CB"
+    },
+    {
+        "name": "Radnički Malgor",
+        "colors": {
+            "primary": "#C8102E",
+            "secondary": "#FFFFFF"
+        },
+        "style": "celtic",
+        "code": "RAMA",
+        "city": "Malgor",
+        "elo": 1069,
+        "league": "CB"
+    },
+    {
+        "name": "Partizan Drezal",
+        "colors": {
+            "primary": "#0B2D63",
+            "secondary": "#000000"
+        },
+        "style": "top",
+        "code": "PADR",
+        "city": "Drezal",
+        "elo": 1057,
+        "league": "CB"
+    },
+    {
+        "name": "Torpedo Ruznar",
+        "colors": {
+            "primary": "#FFD700",
+            "secondary": "#B22222"
+        },
+        "style": "genoa",
+        "code": "TORU",
+        "city": "Ruznar",
+        "elo": 1034,
+        "league": "CB"
+    },
+    {
+        "name": "Tatran Orlovec",
+        "colors": {
+            "primary": "#FFFFFF",
+            "secondary": "#000000"
+        },
+        "style": "celtic",
+        "code": "TAOR",
+        "city": "Orlovec",
+        "elo": 1020,
+        "league": "CB"
+    },
+    {
+        "name": "Rudar Treznik",
+        "colors": {
+            "primary": "#B6E3FF",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "RUTR",
+        "city": "Treznik",
+        "elo": 1274,
+        "league": "CC"
+    },
+    {
+        "name": "Volga Mirvos",
+        "colors": {
+            "primary": "#A51C30",
+            "secondary": "#FFD700"
+        },
+        "style": "ajax",
+        "code": "VOMI",
+        "city": "Mirvos",
+        "elo": 1262,
+        "league": "CC"
+    },
+    {
+        "name": "Partizan Zelgor",
+        "colors": {
+            "primary": "#B6E3FF",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "PAZE",
+        "city": "Zelgor",
+        "elo": 1242,
+        "league": "CC"
+    },
+    {
+        "name": "Sloboda Kriven",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#0077C2"
+        },
+        "style": "river",
+        "code": "SLKR",
+        "city": "Kriven",
+        "elo": 1227,
+        "league": "CC"
+    },
+    {
+        "name": "Tatran Drunov",
+        "colors": {
+            "primary": "#B22222",
+            "secondary": "#FFFFFF"
+        },
+        "style": "ajax",
+        "code": "TADR",
+        "city": "Drunov",
+        "elo": 1212,
+        "league": "CC"
+    },
+    {
+        "name": "Dynamo Dalvik",
+        "colors": {
+            "primary": "#0066CC",
+            "secondary": "#FFFFFF"
+        },
+        "style": "top",
+        "code": "DYDA",
+        "city": "Dalvik",
+        "elo": 1196,
+        "league": "CC"
+    },
+    {
+        "name": "Metalist Tavrin",
+        "colors": {
+            "primary": "#B90000",
+            "secondary": "#000000"
+        },
+        "style": "genoa",
+        "code": "META",
+        "city": "Tavrin",
+        "elo": 1180,
+        "league": "CC"
+    },
+    {
+        "name": "Radnički Zelven",
+        "colors": {
+            "primary": "#2AA6E0",
+            "secondary": "#FFFFFF"
+        },
+        "style": "boca",
+        "code": "RAZE",
+        "city": "Zelven",
+        "elo": 1154,
+        "league": "CC"
+    },
+    {
+        "name": "Lokomotiv Brezna",
+        "colors": {
+            "primary": "#1E90FF",
+            "secondary": "#FFD700"
+        },
+        "style": "boca",
+        "code": "LOBR",
+        "city": "Brezna",
+        "elo": 1144,
+        "league": "CC"
+    },
+    {
+        "name": "Rudar Velmar",
+        "colors": {
+            "primary": "#800000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "river",
+        "code": "RUVE",
+        "city": "Velmar",
+        "elo": 1121,
+        "league": "CC"
+    },
+    {
+        "name": "CSKA Marnov",
+        "colors": {
+            "primary": "#007A3D",
+            "secondary": "#000000"
+        },
+        "style": "boca",
+        "code": "CSMA",
+        "city": "Marnov",
+        "elo": 1102,
+        "league": "CC"
+    },
+    {
+        "name": "Energetik Narven",
+        "colors": {
+            "primary": "#000000",
+            "secondary": "#FFFFFF"
+        },
+        "style": "boca",
+        "code": "ENNA",
+        "city": "Narven",
+        "elo": 1088,
+        "league": "CC"
+    },
+    {
+        "name": "Lokomotiv Draskar",
+        "colors": {
+            "primary": "#B6E3FF",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "LODA",
+        "city": "Draskar",
+        "elo": 1072,
+        "league": "CC"
+    },
+    {
+        "name": "Olimpija Tarnovik",
+        "colors": {
+            "primary": "#6A1B9A",
+            "secondary": "#FFFFFF"
+        },
+        "style": "juve",
+        "code": "OLTA",
+        "city": "Tarnovik",
+        "elo": 1056,
+        "league": "CC"
+    },
+    {
+        "name": "Sloga Durven",
+        "colors": {
+            "primary": "#8B0000",
+            "secondary": "#FFD700"
+        },
+        "style": "juve",
+        "code": "SLDU",
+        "city": "Durven",
+        "elo": 1037,
+        "league": "CC"
+    },
+    {
+        "name": "Lokomotiv Varlen",
+        "colors": {
+            "primary": "#8B0000",
+            "secondary": "#003366"
+        },
+        "style": "juve",
+        "code": "LOVA",
+        "city": "Varlen",
+        "elo": 1021,
+        "league": "CC"
+    }
+]

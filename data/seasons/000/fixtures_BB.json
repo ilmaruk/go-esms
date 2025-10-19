@@ -1,0 +1,1774 @@
+{
+  "league": "BB",
+  "season": 0,
+  "clubs": {
+    "BOKR": {
+      "name": "Botev Kradov",
+      "colors": {
+        "primary": "#FFD700",
+        "Secondary": "#008000"
+      },
+      "code": "BOKR",
+      "city": "Kradov",
+      "elo": 1298,
+      "league": "BB"
+    },
+    "CHVA": {
+      "name": "Chornomorets Valin",
+      "colors": {
+        "primary": "#0284C7",
+        "Secondary": "#FBBF24"
+      },
+      "code": "CHVA",
+      "city": "Valin",
+      "elo": 1453,
+      "league": "BB"
+    },
+    "CSVE": {
+      "name": "CSK Vetrin",
+      "colors": {
+        "primary": "#0033A0",
+        "Secondary": "#E41E26"
+      },
+      "code": "CSVE",
+      "city": "Vetrin",
+      "elo": 1398,
+      "league": "BB"
+    },
+    "DIVE": {
+      "name": "Dinamo Velstin",
+      "colors": {
+        "primary": "#1E90FF",
+        "Secondary": "#E41E26"
+      },
+      "code": "DIVE",
+      "city": "Velstin",
+      "elo": 1568,
+      "league": "BB"
+    },
+    "ENSL": {
+      "name": "Energia Slobod",
+      "colors": {
+        "primary": "#1E90FF",
+        "Secondary": "#FF4500"
+      },
+      "code": "ENSL",
+      "city": "Slobod",
+      "elo": 1283,
+      "league": "BB"
+    },
+    "MAKR": {
+      "name": "Maribor Kravnik",
+      "colors": {
+        "primary": "#5B2C6F",
+        "Secondary": "#F4D03F"
+      },
+      "code": "MAKR",
+      "city": "Kravnik",
+      "elo": 1331,
+      "league": "BB"
+    },
+    "PADR": {
+      "name": "Partizan Drovin",
+      "colors": {
+        "primary": "#000000",
+        "Secondary": "#DAA520"
+      },
+      "code": "PADR",
+      "city": "Drovin",
+      "elo": 1423,
+      "league": "BB"
+    },
+    "POSA": {
+      "name": "Podrinje Salav",
+      "colors": {
+        "primary": "#2E8B57",
+        "Secondary": "#DAA520"
+      },
+      "code": "POSA",
+      "city": "Salav",
+      "elo": 1504,
+      "league": "BB"
+    },
+    "PRKV": {
+      "name": "Progres Kovnar",
+      "colors": {
+        "primary": "#003366",
+        "Secondary": "#FF8C00"
+      },
+      "code": "PRKV",
+      "city": "Kovnar",
+      "elo": 1382,
+      "league": "BB"
+    },
+    "RALO": {
+      "name": "Radetsky Lornov",
+      "colors": {
+        "primary": "#FFD700",
+        "Secondary": "#8B0000"
+      },
+      "code": "RALO",
+      "city": "Lornov",
+      "elo": 1227,
+      "league": "BB"
+    },
+    "RAPO": {
+      "name": "Radnik Poljan",
+      "colors": {
+        "primary": "#006400",
+        "Secondary": "#FF8C00"
+      },
+      "code": "RAPO",
+      "city": "Poljan",
+      "elo": 1250,
+      "league": "BB"
+    },
+    "SLGR": {
+      "name": "Slavia Grebnik",
+      "colors": {
+        "primary": "#B22222",
+        "Secondary": "#FFD700"
+      },
+      "code": "SLGR",
+      "city": "Grebnik",
+      "elo": 1542,
+      "league": "BB"
+    },
+    "TRIS": {
+      "name": "Trud Islov",
+      "colors": {
+        "primary": "#006400",
+        "Secondary": "#DAA520"
+      },
+      "code": "TRIS",
+      "city": "Islov",
+      "elo": 1520,
+      "league": "BB"
+    },
+    "VAPE": {
+      "name": "Vardar Pelgor",
+      "colors": {
+        "primary": "#C8102E",
+        "Secondary": "#000000"
+      },
+      "code": "VAPE",
+      "city": "Pelgor",
+      "elo": 1592,
+      "league": "BB"
+    },
+    "VORU": {
+      "name": "Vozdova Rusk",
+      "colors": {
+        "primary": "#B91C1C",
+        "Secondary": "#15803D"
+      },
+      "code": "VORU",
+      "city": "Rusk",
+      "elo": 1475,
+      "league": "BB"
+    },
+    "ZOHA": {
+      "name": "Zora Halvik",
+      "colors": {
+        "primary": "#483D8B",
+        "Secondary": "#FFD700"
+      },
+      "code": "ZOHA",
+      "city": "Halvik",
+      "elo": 1347,
+      "league": "BB"
+    }
+  },
+  "weeks": [
+    {
+      "id": 1,
+      "games": [
+        {
+          "ID": "a5ff6f3c-386f-518b-ab73-87e701d4508d",
+          "home": "VAPE",
+          "away": "DIVE",
+          "seed": 7494661137126576333
+        },
+        {
+          "ID": "5532c657-deea-52d2-8099-a8a999f5ec0a",
+          "home": "SLGR",
+          "away": "TRIS",
+          "seed": 1244451489582099923
+        },
+        {
+          "ID": "52724f25-055b-52ff-b483-ac1fd1bbb825",
+          "home": "POSA",
+          "away": "VORU",
+          "seed": 4883929163239649452
+        },
+        {
+          "ID": "84f0ccd2-87d4-5dbe-b476-5e783a7b8b17",
+          "home": "CHVA",
+          "away": "PADR",
+          "seed": 5329135727840818622
+        },
+        {
+          "ID": "8a3ed6c4-7338-5f7d-9cae-1e854ca9323f",
+          "home": "CSVE",
+          "away": "PRKV",
+          "seed": 6407855435372058218
+        },
+        {
+          "ID": "2f3272f3-f1f2-53cf-8479-97fbff27ae4a",
+          "home": "ZOHA",
+          "away": "MAKR",
+          "seed": 6043761252404648278
+        },
+        {
+          "ID": "2e29bdde-ea64-5fb5-9f78-f1f1008e82be",
+          "home": "BOKR",
+          "away": "ENSL",
+          "seed": 7381797879201327072
+        },
+        {
+          "ID": "34c96962-b2b9-5258-b373-0a1ac5fd76f0",
+          "home": "RAPO",
+          "away": "RALO",
+          "seed": 2035974928590491836
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "games": [
+        {
+          "ID": "2d9538b7-32cf-5b88-acd5-d47e5c868ad3",
+          "home": "SLGR",
+          "away": "VAPE",
+          "seed": 533843744648372542
+        },
+        {
+          "ID": "01d25501-b3cb-5649-8fcb-610c3ad71ee2",
+          "home": "DIVE",
+          "away": "POSA",
+          "seed": 2773136400560415264
+        },
+        {
+          "ID": "6ab3be8b-b107-5821-9459-90257dea28e9",
+          "home": "TRIS",
+          "away": "CHVA",
+          "seed": 2592856576279785467
+        },
+        {
+          "ID": "6c2565eb-4ad7-54c7-937a-85c81e843d39",
+          "home": "VORU",
+          "away": "CSVE",
+          "seed": 4339724619504101372
+        },
+        {
+          "ID": "92292025-ce19-53d5-8c63-6e3c12b36de2",
+          "home": "PADR",
+          "away": "ZOHA",
+          "seed": 3109933993303968579
+        },
+        {
+          "ID": "c43caea7-4b6e-53c0-a8cf-e2e792d91e0f",
+          "home": "PRKV",
+          "away": "BOKR",
+          "seed": 1132439879303982896
+        },
+        {
+          "ID": "68011fce-f4db-56e2-aa34-ef05a6bd3e90",
+          "home": "MAKR",
+          "away": "RAPO",
+          "seed": 2386762229419903699
+        },
+        {
+          "ID": "16e16df3-1a6d-54fe-bd98-6c3cee51b36c",
+          "home": "ENSL",
+          "away": "RALO",
+          "seed": 7369045046572079019
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "games": [
+        {
+          "ID": "da8ccd50-a204-5d95-845a-a48a0ea3d585",
+          "home": "VAPE",
+          "away": "POSA",
+          "seed": 6269342238789438610
+        },
+        {
+          "ID": "a4d9a591-469c-5360-b5db-a9b8572773bf",
+          "home": "CHVA",
+          "away": "SLGR",
+          "seed": 459581150276165937
+        },
+        {
+          "ID": "6fd05527-440c-5a72-9c10-e2ea65490b43",
+          "home": "CSVE",
+          "away": "DIVE",
+          "seed": 4419616119781097156
+        },
+        {
+          "ID": "15525775-25aa-539b-80be-cca5f203e2d1",
+          "home": "ZOHA",
+          "away": "TRIS",
+          "seed": 4902575687756575074
+        },
+        {
+          "ID": "2b7c7355-bd56-56bd-9993-7b633a262951",
+          "home": "BOKR",
+          "away": "VORU",
+          "seed": 1378139979997508092
+        },
+        {
+          "ID": "2f676bd3-4029-5548-82bb-ab60269c1398",
+          "home": "RAPO",
+          "away": "PADR",
+          "seed": 5733732242860213562
+        },
+        {
+          "ID": "a6958aca-9aac-5a6d-a735-3a05d66121ca",
+          "home": "RALO",
+          "away": "PRKV",
+          "seed": 1222405010585521190
+        },
+        {
+          "ID": "32a3dd42-dabc-55ee-bfd6-ac54c1aa94c5",
+          "home": "ENSL",
+          "away": "MAKR",
+          "seed": 2322754404415381560
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "games": [
+        {
+          "ID": "24ed7162-9d3f-5df8-af38-43a93815a166",
+          "home": "CHVA",
+          "away": "VAPE",
+          "seed": 3911599324901437762
+        },
+        {
+          "ID": "fd50c13e-1e6e-5f75-9c06-fc83e3070d71",
+          "home": "POSA",
+          "away": "CSVE",
+          "seed": 5074988133384333971
+        },
+        {
+          "ID": "f7dc080c-f435-55d9-8556-f49dd4a18aa6",
+          "home": "SLGR",
+          "away": "ZOHA",
+          "seed": 865938137614613313
+        },
+        {
+          "ID": "72dc0b3f-c7f7-5431-991a-98a2b2a6cc3d",
+          "home": "DIVE",
+          "away": "BOKR",
+          "seed": 4318740010644428217
+        },
+        {
+          "ID": "d730c48c-ca4a-5551-a7ee-780ed2b2119d",
+          "home": "TRIS",
+          "away": "RAPO",
+          "seed": 3564354026507799740
+        },
+        {
+          "ID": "67b1ebbd-6bae-553c-b0da-a4829217fcf2",
+          "home": "VORU",
+          "away": "RALO",
+          "seed": 7710006549263131079
+        },
+        {
+          "ID": "79624da0-9421-5ef2-a488-bbe0cff73415",
+          "home": "PADR",
+          "away": "ENSL",
+          "seed": 164190966181202870
+        },
+        {
+          "ID": "70edda51-f0ff-55a8-b08d-d0c1b3a34fb8",
+          "home": "PRKV",
+          "away": "MAKR",
+          "seed": 4923748199065142850
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "games": [
+        {
+          "ID": "e4c62cb0-7546-500e-b5d5-891558b5f32f",
+          "home": "VAPE",
+          "away": "CSVE",
+          "seed": 3352410946550780195
+        },
+        {
+          "ID": "912ef6e5-b0c3-5ea0-b8a3-08996cd74663",
+          "home": "ZOHA",
+          "away": "CHVA",
+          "seed": 7454121837920244005
+        },
+        {
+          "ID": "2355a3ac-25c6-598b-b2d3-408f7dd6396e",
+          "home": "BOKR",
+          "away": "POSA",
+          "seed": 676714349401977638
+        },
+        {
+          "ID": "bcc2fbbd-aa86-5c57-b247-b5ff4e4d6dc3",
+          "home": "RAPO",
+          "away": "SLGR",
+          "seed": 1319701129599847417
+        },
+        {
+          "ID": "826865a1-e056-52f5-9044-f75c139b5297",
+          "home": "RALO",
+          "away": "DIVE",
+          "seed": 6164196642629029481
+        },
+        {
+          "ID": "1f2e050e-7b92-5b55-a38c-f7355fdf2e88",
+          "home": "ENSL",
+          "away": "TRIS",
+          "seed": 5324332302897703595
+        },
+        {
+          "ID": "c1860700-7b9f-5ccd-ba30-be7dab955a61",
+          "home": "MAKR",
+          "away": "VORU",
+          "seed": 2706332331978051048
+        },
+        {
+          "ID": "dca7a120-ba85-5cf2-a1ba-d97cd002aec8",
+          "home": "PRKV",
+          "away": "PADR",
+          "seed": 4460527620941484051
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "games": [
+        {
+          "ID": "6428a2be-af60-571a-8d7c-91698f6d71ba",
+          "home": "ZOHA",
+          "away": "VAPE",
+          "seed": 8378764104435016280
+        },
+        {
+          "ID": "66d6da90-2d56-5a8f-98ca-0d5afb3c9d09",
+          "home": "CSVE",
+          "away": "BOKR",
+          "seed": 6238617972665436392
+        },
+        {
+          "ID": "15b75ed3-f652-54be-a5bf-bd35d6470a89",
+          "home": "CHVA",
+          "away": "RAPO",
+          "seed": 1565468297191339189
+        },
+        {
+          "ID": "fbc671f0-75fe-5de9-920a-ddf779fc06ef",
+          "home": "POSA",
+          "away": "RALO",
+          "seed": 6822497198923034966
+        },
+        {
+          "ID": "57beba15-2df3-55bf-9659-c1fd8ddc3985",
+          "home": "SLGR",
+          "away": "ENSL",
+          "seed": 6618337323727142023
+        },
+        {
+          "ID": "76c2a0ca-579c-51b2-9586-e8468ca05a6a",
+          "home": "DIVE",
+          "away": "MAKR",
+          "seed": 114952034375108054
+        },
+        {
+          "ID": "2438dc03-ec5a-53db-884f-94bc568cedae",
+          "home": "TRIS",
+          "away": "PRKV",
+          "seed": 4551828417838433002
+        },
+        {
+          "ID": "4fc396f3-d21b-549a-9127-2103434a61f7",
+          "home": "VORU",
+          "away": "PADR",
+          "seed": 7667836458065192464
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "games": [
+        {
+          "ID": "b9b773c0-9301-56ff-8b5c-75a321c59013",
+          "home": "VAPE",
+          "away": "BOKR",
+          "seed": 6161823061538855599
+        },
+        {
+          "ID": "ab61e57d-325c-5ab9-9c6b-7170b0d0d8aa",
+          "home": "RAPO",
+          "away": "ZOHA",
+          "seed": 4105618748328682083
+        },
+        {
+          "ID": "8fa10fae-30c5-5440-adee-c62e09435edf",
+          "home": "RALO",
+          "away": "CSVE",
+          "seed": 3582998995417292628
+        },
+        {
+          "ID": "9519fe27-451e-54e7-ab4d-2e7bbeb68d1b",
+          "home": "ENSL",
+          "away": "CHVA",
+          "seed": 2842318193293100785
+        },
+        {
+          "ID": "ccb0d2ec-df11-50f4-8be3-64246be43e76",
+          "home": "MAKR",
+          "away": "POSA",
+          "seed": 875431884048706190
+        },
+        {
+          "ID": "22ab1339-6396-5e5f-a52e-d5e524f18ba9",
+          "home": "PRKV",
+          "away": "SLGR",
+          "seed": 5145161322449595299
+        },
+        {
+          "ID": "575e9db9-7ebc-57b7-b094-67bb33dc4b32",
+          "home": "PADR",
+          "away": "DIVE",
+          "seed": 857964572415992702
+        },
+        {
+          "ID": "7fdf68b4-4d04-5e56-b8a3-93e742032479",
+          "home": "VORU",
+          "away": "TRIS",
+          "seed": 1477853282439134520
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "games": [
+        {
+          "ID": "61553969-abe4-5064-a3ea-83b104dbbd9f",
+          "home": "RAPO",
+          "away": "VAPE",
+          "seed": 4715140164874655598
+        },
+        {
+          "ID": "dde941fb-ea69-5d04-b6bb-c7f63753ea4c",
+          "home": "BOKR",
+          "away": "RALO",
+          "seed": 2658864037429530890
+        },
+        {
+          "ID": "af757801-8c46-51c2-be53-638efafedd05",
+          "home": "ZOHA",
+          "away": "ENSL",
+          "seed": 1441906165935563263
+        },
+        {
+          "ID": "20df5b10-411d-52b6-a157-59f6bb516dde",
+          "home": "CSVE",
+          "away": "MAKR",
+          "seed": 2540938203566806381
+        },
+        {
+          "ID": "dbc2ef61-3e50-55ca-93c6-ad2d94bcbd84",
+          "home": "CHVA",
+          "away": "PRKV",
+          "seed": 4886843650264400963
+        },
+        {
+          "ID": "7797badd-9d7c-5d2a-a8e3-6f3b56d0b4bc",
+          "home": "POSA",
+          "away": "PADR",
+          "seed": 1570914500705653162
+        },
+        {
+          "ID": "67aa57f0-7eb4-5454-b615-743b04294a49",
+          "home": "SLGR",
+          "away": "VORU",
+          "seed": 5545227323105572084
+        },
+        {
+          "ID": "d110d1cf-e57c-5453-9bdc-26781201ebb6",
+          "home": "DIVE",
+          "away": "TRIS",
+          "seed": 8947890420952053977
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "games": [
+        {
+          "ID": "15ea68f2-10b9-5629-8450-ae91cfb17cf6",
+          "home": "VAPE",
+          "away": "RALO",
+          "seed": 2443043762015082871
+        },
+        {
+          "ID": "2521e9ae-8d5c-5717-80c8-36ad9aa01af1",
+          "home": "ENSL",
+          "away": "RAPO",
+          "seed": 2003453039203583631
+        },
+        {
+          "ID": "aecde2fa-c9fb-58c3-8857-5d5c4e01ba1f",
+          "home": "MAKR",
+          "away": "BOKR",
+          "seed": 4348586968451249660
+        },
+        {
+          "ID": "4267f1bd-bc4d-501f-bb52-ce27960605f5",
+          "home": "PRKV",
+          "away": "ZOHA",
+          "seed": 7072117792580598067
+        },
+        {
+          "ID": "f765f144-dbaa-523b-92e1-80db218fa692",
+          "home": "PADR",
+          "away": "CSVE",
+          "seed": 3977817934527053479
+        },
+        {
+          "ID": "cfeb6521-cf02-56a2-b591-afbe078352ac",
+          "home": "VORU",
+          "away": "CHVA",
+          "seed": 8590653948540002901
+        },
+        {
+          "ID": "43fb4bce-6a17-5c6d-8c31-def88d8febe5",
+          "home": "TRIS",
+          "away": "POSA",
+          "seed": 24264645646271919
+        },
+        {
+          "ID": "e82cd6ba-cd82-5be4-a0e8-1be24f01650b",
+          "home": "DIVE",
+          "away": "SLGR",
+          "seed": 6710122960207139601
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "games": [
+        {
+          "ID": "ac993119-b006-5b73-8864-5d696b687517",
+          "home": "ENSL",
+          "away": "VAPE",
+          "seed": 1936220845240366936
+        },
+        {
+          "ID": "b7c0ebb3-89c6-52ba-8424-05653778d822",
+          "home": "RALO",
+          "away": "MAKR",
+          "seed": 3784084786766286858
+        },
+        {
+          "ID": "f6295fd5-6c7d-519e-be75-4e7c592189b4",
+          "home": "RAPO",
+          "away": "PRKV",
+          "seed": 3893841684069873333
+        },
+        {
+          "ID": "0f7ebd9b-2ba3-5a6e-9abb-2cb869ea1b8a",
+          "home": "BOKR",
+          "away": "PADR",
+          "seed": 1349598334106286291
+        },
+        {
+          "ID": "e83c5b21-c7e7-5091-90ff-45b7d8ff05a8",
+          "home": "ZOHA",
+          "away": "VORU",
+          "seed": 7511268489351377121
+        },
+        {
+          "ID": "ea79f424-3cf4-546b-9b8e-b24d94fb63ac",
+          "home": "CSVE",
+          "away": "TRIS",
+          "seed": 5308330020684637400
+        },
+        {
+          "ID": "be98c948-a86b-5794-b63f-55a77fc22135",
+          "home": "CHVA",
+          "away": "DIVE",
+          "seed": 5700169450392220211
+        },
+        {
+          "ID": "880a4bd2-33b7-5ed7-ac1b-94be7b7fc86c",
+          "home": "POSA",
+          "away": "SLGR",
+          "seed": 2622307160515094503
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "games": [
+        {
+          "ID": "29a175f5-de79-5643-8214-7790ae891747",
+          "home": "VAPE",
+          "away": "MAKR",
+          "seed": 2665058080607485353
+        },
+        {
+          "ID": "4de12621-97b6-5434-9a80-159a66f69b1e",
+          "home": "PRKV",
+          "away": "ENSL",
+          "seed": 9120369652490459245
+        },
+        {
+          "ID": "2a57f57a-17b5-5981-a676-f3eab8f23b01",
+          "home": "PADR",
+          "away": "RALO",
+          "seed": 3219351172020672635
+        },
+        {
+          "ID": "65166a50-63be-5dfb-ad6e-8fb6da9be3a4",
+          "home": "VORU",
+          "away": "RAPO",
+          "seed": 1056395145240159603
+        },
+        {
+          "ID": "c332d80d-cb83-5925-82ec-d329b0c10448",
+          "home": "TRIS",
+          "away": "BOKR",
+          "seed": 2372878648521517422
+        },
+        {
+          "ID": "5a51eb48-6637-5d4c-9e27-ca2a118ae547",
+          "home": "DIVE",
+          "away": "ZOHA",
+          "seed": 3720272749307548572
+        },
+        {
+          "ID": "84fb8fc3-a43e-5692-b596-f98777525e0c",
+          "home": "SLGR",
+          "away": "CSVE",
+          "seed": 7721123466912272175
+        },
+        {
+          "ID": "da61398b-a212-5c40-8c4e-6df0b603e25b",
+          "home": "POSA",
+          "away": "CHVA",
+          "seed": 3812336864400373883
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "games": [
+        {
+          "ID": "9db1e22a-ede1-509f-bad3-09f3337f0534",
+          "home": "PRKV",
+          "away": "VAPE",
+          "seed": 2474446934344936617
+        },
+        {
+          "ID": "b6b22632-6c9e-51ce-929d-1aab3acda6a1",
+          "home": "MAKR",
+          "away": "PADR",
+          "seed": 86261566126765818
+        },
+        {
+          "ID": "f1d77234-13b8-5854-99ca-9df380384570",
+          "home": "ENSL",
+          "away": "VORU",
+          "seed": 2387948592944148847
+        },
+        {
+          "ID": "ce041525-9b82-5736-8a78-1927be981c53",
+          "home": "RALO",
+          "away": "TRIS",
+          "seed": 894809508484173553
+        },
+        {
+          "ID": "5432460e-fc64-5cc1-882e-b0f7e1473b26",
+          "home": "RAPO",
+          "away": "DIVE",
+          "seed": 9117188902437850510
+        },
+        {
+          "ID": "c131434c-1cc1-53cd-bf31-9222f34aabe3",
+          "home": "BOKR",
+          "away": "SLGR",
+          "seed": 327759060231751566
+        },
+        {
+          "ID": "8911a8a2-c2c7-5272-bfa5-de96bee35441",
+          "home": "ZOHA",
+          "away": "POSA",
+          "seed": 1245588097808571726
+        },
+        {
+          "ID": "ec55daed-aeb7-512e-b823-7c7487643bee",
+          "home": "CSVE",
+          "away": "CHVA",
+          "seed": 557980081927679244
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "games": [
+        {
+          "ID": "1a466f93-aa15-5050-8e52-30b1e4d2bc28",
+          "home": "VAPE",
+          "away": "PADR",
+          "seed": 1539337220103739773
+        },
+        {
+          "ID": "9a6e98f6-e26e-59d7-bacb-74a8547fb4ff",
+          "home": "VORU",
+          "away": "PRKV",
+          "seed": 5306673984103043329
+        },
+        {
+          "ID": "965a65d2-e98f-56d8-9c8f-bbbd4ff7b8f7",
+          "home": "TRIS",
+          "away": "MAKR",
+          "seed": 8172350956584797007
+        },
+        {
+          "ID": "548d225e-45ee-59f2-be8b-4ef309133fea",
+          "home": "DIVE",
+          "away": "ENSL",
+          "seed": 90783975309853338
+        },
+        {
+          "ID": "c15a4602-bf74-5288-919d-165b58f41cf0",
+          "home": "SLGR",
+          "away": "RALO",
+          "seed": 5789016772785596664
+        },
+        {
+          "ID": "db1d735e-c2af-5178-9e32-7b583a29d36b",
+          "home": "POSA",
+          "away": "RAPO",
+          "seed": 6314114694977454690
+        },
+        {
+          "ID": "9bf2a19f-1e25-5b6c-aaaf-cbf15d488278",
+          "home": "CHVA",
+          "away": "BOKR",
+          "seed": 2482683670539841574
+        },
+        {
+          "ID": "09d2f9f5-8702-5b4d-a0fe-aad2e2ae87c2",
+          "home": "CSVE",
+          "away": "ZOHA",
+          "seed": 1396960605893956008
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "games": [
+        {
+          "ID": "fc4b6e73-25dd-5df5-9e0f-3eb53633e6ad",
+          "home": "VORU",
+          "away": "VAPE",
+          "seed": 5214743884106211946
+        },
+        {
+          "ID": "e418dc6a-5278-5f75-b4e6-e1171501d657",
+          "home": "PADR",
+          "away": "TRIS",
+          "seed": 1229904191693999982
+        },
+        {
+          "ID": "49a10b58-7c31-566f-9a6b-60d5d11475a3",
+          "home": "PRKV",
+          "away": "DIVE",
+          "seed": 2326420048641200990
+        },
+        {
+          "ID": "83d74aef-f4af-5044-aa18-3164ed2e4171",
+          "home": "MAKR",
+          "away": "SLGR",
+          "seed": 1849031845285090369
+        },
+        {
+          "ID": "e76b7999-a08a-508c-8f47-af95c5cb0096",
+          "home": "ENSL",
+          "away": "POSA",
+          "seed": 2925129380312201062
+        },
+        {
+          "ID": "85ebef6f-9688-5b7c-bba5-41d860ba9d55",
+          "home": "RALO",
+          "away": "CHVA",
+          "seed": 5960563164987293888
+        },
+        {
+          "ID": "83aa933d-c1ee-5bfb-b165-6cd6e44aa6a6",
+          "home": "RAPO",
+          "away": "CSVE",
+          "seed": 955466217550286972
+        },
+        {
+          "ID": "96327ebb-0561-58b8-b434-61ed57d371d4",
+          "home": "BOKR",
+          "away": "ZOHA",
+          "seed": 7456787919925927768
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "games": [
+        {
+          "ID": "6fed6f68-f92a-549f-8215-6903b87bc19b",
+          "home": "VAPE",
+          "away": "TRIS",
+          "seed": 6933539022747580589
+        },
+        {
+          "ID": "cc63e4a2-74f6-59b3-992f-54c07e352f5c",
+          "home": "DIVE",
+          "away": "VORU",
+          "seed": 8297659292302860399
+        },
+        {
+          "ID": "87f8152e-a657-5ca3-8696-f1dd732d9e94",
+          "home": "SLGR",
+          "away": "PADR",
+          "seed": 1171554810995168722
+        },
+        {
+          "ID": "bba16625-316c-589a-ad24-865f3dc6bd4a",
+          "home": "POSA",
+          "away": "PRKV",
+          "seed": 6018021428832600535
+        },
+        {
+          "ID": "964f4473-40b6-5fb4-85fb-ed9efa75d6a3",
+          "home": "CHVA",
+          "away": "MAKR",
+          "seed": 6410488478526015415
+        },
+        {
+          "ID": "9d5ce333-01c9-57bb-8f07-54f7043f32a7",
+          "home": "CSVE",
+          "away": "ENSL",
+          "seed": 7597674500579817765
+        },
+        {
+          "ID": "144dd51c-a673-58b7-ba8d-3e0547309199",
+          "home": "ZOHA",
+          "away": "RALO",
+          "seed": 6767796586141892569
+        },
+        {
+          "ID": "0f127b2c-95ed-54de-945a-e739cfb2d37c",
+          "home": "BOKR",
+          "away": "RAPO",
+          "seed": 7964742425496785661
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "games": [
+        {
+          "ID": "c97a47f2-e49f-57a7-8515-892b8ebb7ac1",
+          "home": "DIVE",
+          "away": "VAPE",
+          "seed": 3226911487410680675
+        },
+        {
+          "ID": "16301385-23b1-5fca-b1ae-5036953ea18c",
+          "home": "TRIS",
+          "away": "SLGR",
+          "seed": 8576000513644111555
+        },
+        {
+          "ID": "00fc158f-750f-5eed-bae1-707d3bd65d6b",
+          "home": "VORU",
+          "away": "POSA",
+          "seed": 5352035706035793504
+        },
+        {
+          "ID": "b98b0b4f-6a44-5e3f-b631-247c7be8c7d7",
+          "home": "PADR",
+          "away": "CHVA",
+          "seed": 4950917631000573119
+        },
+        {
+          "ID": "a50c4d32-f7b2-5ee7-a11a-df8c3c4ec26d",
+          "home": "PRKV",
+          "away": "CSVE",
+          "seed": 677203961318626326
+        },
+        {
+          "ID": "7a1a25cc-a75e-594c-b717-8f291d45f54a",
+          "home": "MAKR",
+          "away": "ZOHA",
+          "seed": 424192827119158465
+        },
+        {
+          "ID": "f1510ee7-8044-55e7-af00-55a269e86140",
+          "home": "ENSL",
+          "away": "BOKR",
+          "seed": 8701768560977967305
+        },
+        {
+          "ID": "f06c1f0b-bd63-5a06-ae97-e6be7295a5e1",
+          "home": "RALO",
+          "away": "RAPO",
+          "seed": 5821703836766433947
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "games": [
+        {
+          "ID": "75361bdd-ff4e-5880-a7e7-de6a88fcdf8d",
+          "home": "VAPE",
+          "away": "SLGR",
+          "seed": 1773689338659766477
+        },
+        {
+          "ID": "6cb56792-607f-5c9a-bb79-98d0060ea254",
+          "home": "POSA",
+          "away": "DIVE",
+          "seed": 7208012602089342516
+        },
+        {
+          "ID": "add91be3-d19e-551f-8b60-d4d22a8c2962",
+          "home": "CHVA",
+          "away": "TRIS",
+          "seed": 1820185798738283556
+        },
+        {
+          "ID": "a0dc56f5-d1f4-54c2-9f7f-580d74833ba3",
+          "home": "CSVE",
+          "away": "VORU",
+          "seed": 3468071657172809367
+        },
+        {
+          "ID": "10a900f8-2e65-5da1-816e-91708055c740",
+          "home": "ZOHA",
+          "away": "PADR",
+          "seed": 2168337343127405185
+        },
+        {
+          "ID": "9111b039-75a9-519d-a3a8-1980e1e306d2",
+          "home": "BOKR",
+          "away": "PRKV",
+          "seed": 3507483813665944194
+        },
+        {
+          "ID": "1ccb2ed9-662d-5381-aa06-125b482844a9",
+          "home": "RAPO",
+          "away": "MAKR",
+          "seed": 5555857828930000003
+        },
+        {
+          "ID": "f17d2d29-71f5-5d0c-bdc7-b8edcc35f636",
+          "home": "RALO",
+          "away": "ENSL",
+          "seed": 3831340273012436871
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "games": [
+        {
+          "ID": "4f7b320d-5eb0-582c-8b0f-4068b8c3a252",
+          "home": "POSA",
+          "away": "VAPE",
+          "seed": 6897291665771773724
+        },
+        {
+          "ID": "2e28237f-7681-5bea-b3ca-44210a8d1d09",
+          "home": "SLGR",
+          "away": "CHVA",
+          "seed": 6685843731581364257
+        },
+        {
+          "ID": "14ae2de4-dc99-55a6-9d7f-65d17bcb7347",
+          "home": "DIVE",
+          "away": "CSVE",
+          "seed": 4974572491286939667
+        },
+        {
+          "ID": "85935b9e-8a48-5a18-8e0f-3a29379b07ed",
+          "home": "TRIS",
+          "away": "ZOHA",
+          "seed": 6004263327471873684
+        },
+        {
+          "ID": "f3af2391-b590-524e-aafc-d9bc5fe5faf4",
+          "home": "VORU",
+          "away": "BOKR",
+          "seed": 6251907139254799544
+        },
+        {
+          "ID": "130f1f7e-cb0a-52a0-ad33-da8c75efd273",
+          "home": "PADR",
+          "away": "RAPO",
+          "seed": 8457950120281244719
+        },
+        {
+          "ID": "2d52d370-4edc-5519-9dd5-59fc450da45f",
+          "home": "PRKV",
+          "away": "RALO",
+          "seed": 4978979998908808831
+        },
+        {
+          "ID": "5297025e-f281-57f9-852c-ef8f6a625d78",
+          "home": "MAKR",
+          "away": "ENSL",
+          "seed": 1064559408266176934
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "games": [
+        {
+          "ID": "2a549dfd-28f9-5cd0-8d1f-9bdd83359270",
+          "home": "VAPE",
+          "away": "CHVA",
+          "seed": 612823172687379145
+        },
+        {
+          "ID": "e605a2c1-b686-54b2-b908-a1c208854bd2",
+          "home": "CSVE",
+          "away": "POSA",
+          "seed": 3773118200594216651
+        },
+        {
+          "ID": "ad3a1814-fbed-536e-8d7d-76c10edf4212",
+          "home": "ZOHA",
+          "away": "SLGR",
+          "seed": 2528076331273419167
+        },
+        {
+          "ID": "74442bb8-2b83-5d39-bff9-859a4b16efb7",
+          "home": "BOKR",
+          "away": "DIVE",
+          "seed": 4872955154503244455
+        },
+        {
+          "ID": "691c688b-72d6-5fd5-ad5e-16961bd0ebb2",
+          "home": "RAPO",
+          "away": "TRIS",
+          "seed": 25105454234047867
+        },
+        {
+          "ID": "00e06507-9f81-59fb-929d-0a79766fb8e2",
+          "home": "RALO",
+          "away": "VORU",
+          "seed": 6997979262282704124
+        },
+        {
+          "ID": "4bd6ec08-bd08-5186-a38f-80ab8f323606",
+          "home": "ENSL",
+          "away": "PADR",
+          "seed": 5651853651306740862
+        },
+        {
+          "ID": "b2e4dc05-aeb6-51da-a73c-f130be0ff2bf",
+          "home": "MAKR",
+          "away": "PRKV",
+          "seed": 3759647376610454836
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "games": [
+        {
+          "ID": "87ee72d0-35c5-5b20-b030-74230d1afff2",
+          "home": "CSVE",
+          "away": "VAPE",
+          "seed": 3935580861446505963
+        },
+        {
+          "ID": "515e7daa-9212-5b39-b15c-e4e669155359",
+          "home": "CHVA",
+          "away": "ZOHA",
+          "seed": 745729474499445698
+        },
+        {
+          "ID": "ec29559f-27c6-5b21-9b53-3f25806b618e",
+          "home": "POSA",
+          "away": "BOKR",
+          "seed": 2178582818309907301
+        },
+        {
+          "ID": "d54eb190-d8d9-5201-a1fe-f3d8e753c912",
+          "home": "SLGR",
+          "away": "RAPO",
+          "seed": 7222647733293789002
+        },
+        {
+          "ID": "2eabab8d-ca59-5368-90fa-c3671bf14bb5",
+          "home": "DIVE",
+          "away": "RALO",
+          "seed": 4656424805938440178
+        },
+        {
+          "ID": "7ee8871c-c27a-5a15-8bdc-1f22ddb957eb",
+          "home": "TRIS",
+          "away": "ENSL",
+          "seed": 1170019061377592163
+        },
+        {
+          "ID": "fbec71b8-dcda-5eb3-b0a0-07734c3a9df2",
+          "home": "VORU",
+          "away": "MAKR",
+          "seed": 2933025956463142051
+        },
+        {
+          "ID": "09a72c6a-2c7d-50a8-bb89-620b4afc5448",
+          "home": "PADR",
+          "away": "PRKV",
+          "seed": 127769212183540523
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "games": [
+        {
+          "ID": "e4d0c528-9271-5a89-b733-bd464fb774ac",
+          "home": "VAPE",
+          "away": "ZOHA",
+          "seed": 2563518205466769970
+        },
+        {
+          "ID": "47f02350-d0b5-54ef-9c83-3f2c24870acf",
+          "home": "BOKR",
+          "away": "CSVE",
+          "seed": 3150220890737221331
+        },
+        {
+          "ID": "d153643b-8246-5825-8ed3-521d4062b871",
+          "home": "RAPO",
+          "away": "CHVA",
+          "seed": 3196089434444094606
+        },
+        {
+          "ID": "56b5bbad-3fea-5eb6-b119-6743c2cf4d95",
+          "home": "RALO",
+          "away": "POSA",
+          "seed": 7726626773280571251
+        },
+        {
+          "ID": "566b6464-b8b8-505b-83c1-69533461f366",
+          "home": "ENSL",
+          "away": "SLGR",
+          "seed": 2997394019939481320
+        },
+        {
+          "ID": "2e9732fc-ea7b-571a-91b9-4a8cd02c8515",
+          "home": "MAKR",
+          "away": "DIVE",
+          "seed": 3348577885845622879
+        },
+        {
+          "ID": "3d35f933-af61-5dd3-9a1f-6bdd11128e3a",
+          "home": "PRKV",
+          "away": "TRIS",
+          "seed": 4253259089401233402
+        },
+        {
+          "ID": "1864030a-8868-5a6d-abbd-4ad021e615ee",
+          "home": "PADR",
+          "away": "VORU",
+          "seed": 8308875190166815902
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "games": [
+        {
+          "ID": "0add5095-2ce0-57db-8678-81b0a1df0619",
+          "home": "BOKR",
+          "away": "VAPE",
+          "seed": 442775425808787172
+        },
+        {
+          "ID": "6206cc53-5a8c-51a9-a377-15cbab23ba08",
+          "home": "ZOHA",
+          "away": "RAPO",
+          "seed": 5591366279565623692
+        },
+        {
+          "ID": "bd823203-f44b-568d-abfc-785c7a0e8bde",
+          "home": "CSVE",
+          "away": "RALO",
+          "seed": 2727950422111804688
+        },
+        {
+          "ID": "18c9970c-a0d2-5f15-b28d-3686a87cbfc3",
+          "home": "CHVA",
+          "away": "ENSL",
+          "seed": 4863021158083948943
+        },
+        {
+          "ID": "8bcdd672-3167-54ab-a8c1-b8aebbd789d4",
+          "home": "POSA",
+          "away": "MAKR",
+          "seed": 2505456552178293745
+        },
+        {
+          "ID": "e1239042-1630-5c23-afa8-7978fc09bc08",
+          "home": "SLGR",
+          "away": "PRKV",
+          "seed": 2263014175912910251
+        },
+        {
+          "ID": "5ad112a8-e34d-571e-996e-aaea90b47ed5",
+          "home": "DIVE",
+          "away": "PADR",
+          "seed": 1928855258099272702
+        },
+        {
+          "ID": "7283dfb5-02ae-5f46-bf6a-4ab821956726",
+          "home": "TRIS",
+          "away": "VORU",
+          "seed": 554142968669778523
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "games": [
+        {
+          "ID": "0962cd83-d9ee-586d-8a5d-46dd6cc77689",
+          "home": "VAPE",
+          "away": "RAPO",
+          "seed": 8411970828944827756
+        },
+        {
+          "ID": "5c8ba57e-b41c-583f-8566-3db171b5f49d",
+          "home": "RALO",
+          "away": "BOKR",
+          "seed": 1830203836066252520
+        },
+        {
+          "ID": "8365285a-3a57-5641-9b05-e6b27b88ca1e",
+          "home": "ENSL",
+          "away": "ZOHA",
+          "seed": 717164209842570898
+        },
+        {
+          "ID": "030868d1-2d98-5a2c-9c37-de2f674d04f5",
+          "home": "MAKR",
+          "away": "CSVE",
+          "seed": 5733589081792880633
+        },
+        {
+          "ID": "759c342b-e1f8-5d1e-b9f0-962466a942a8",
+          "home": "PRKV",
+          "away": "CHVA",
+          "seed": 1733106697548675236
+        },
+        {
+          "ID": "d690db1c-9f88-56e1-a796-28e55f485878",
+          "home": "PADR",
+          "away": "POSA",
+          "seed": 7196197879224061518
+        },
+        {
+          "ID": "83f5682f-ae73-51f8-b3ad-bc268398bf98",
+          "home": "VORU",
+          "away": "SLGR",
+          "seed": 5391160162641036645
+        },
+        {
+          "ID": "5cfc561a-f63c-51e6-89ea-3d5aed68cf7c",
+          "home": "TRIS",
+          "away": "DIVE",
+          "seed": 4829849375210166698
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "games": [
+        {
+          "ID": "6ab0de96-d36d-5b8e-af10-df9d9587088d",
+          "home": "RALO",
+          "away": "VAPE",
+          "seed": 6709185393937987765
+        },
+        {
+          "ID": "ea0ac0ce-96ea-5c20-8812-0689be6585ba",
+          "home": "RAPO",
+          "away": "ENSL",
+          "seed": 4996891603826175832
+        },
+        {
+          "ID": "cedeb433-9b6e-516f-9a1c-e854550570ae",
+          "home": "BOKR",
+          "away": "MAKR",
+          "seed": 1127113113151770640
+        },
+        {
+          "ID": "0b292c05-778e-5c84-a691-34621d09b6c9",
+          "home": "ZOHA",
+          "away": "PRKV",
+          "seed": 8699198407393082245
+        },
+        {
+          "ID": "3bb4d46c-6ea7-5be0-9bfe-277f905c6e98",
+          "home": "CSVE",
+          "away": "PADR",
+          "seed": 3823764863849072429
+        },
+        {
+          "ID": "c1c82fbf-211c-5d72-abd7-a6ddcb6ee3ed",
+          "home": "CHVA",
+          "away": "VORU",
+          "seed": 5651867103113850831
+        },
+        {
+          "ID": "4d40533f-e783-50d3-b63b-f7c0aed5b945",
+          "home": "POSA",
+          "away": "TRIS",
+          "seed": 8340364770678004183
+        },
+        {
+          "ID": "688ae65e-7e5e-5efb-aba6-ab38712e3d6f",
+          "home": "SLGR",
+          "away": "DIVE",
+          "seed": 5901275745689200319
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "games": [
+        {
+          "ID": "413f0ecf-1496-52ec-892b-185672475f1e",
+          "home": "VAPE",
+          "away": "ENSL",
+          "seed": 8537511127142042326
+        },
+        {
+          "ID": "fde556d0-e097-525a-8054-abe51fe44bf7",
+          "home": "MAKR",
+          "away": "RALO",
+          "seed": 2091872968276683584
+        },
+        {
+          "ID": "9f4f461e-5a2f-5c61-bb70-9d6e1c0a60e0",
+          "home": "PRKV",
+          "away": "RAPO",
+          "seed": 1209579785700252408
+        },
+        {
+          "ID": "cfc96a10-df4b-522b-98d1-1a38c2ad04a1",
+          "home": "PADR",
+          "away": "BOKR",
+          "seed": 3190559004360057766
+        },
+        {
+          "ID": "0b09f4c3-91a2-5ffc-8e60-e81c5ba91d7c",
+          "home": "VORU",
+          "away": "ZOHA",
+          "seed": 61070541156264987
+        },
+        {
+          "ID": "1648e74a-be9e-53a9-9a69-92ffce29c08a",
+          "home": "TRIS",
+          "away": "CSVE",
+          "seed": 4649206698902257620
+        },
+        {
+          "ID": "8547d3f1-94ae-519d-a62b-936901caea60",
+          "home": "DIVE",
+          "away": "CHVA",
+          "seed": 2531657011728443282
+        },
+        {
+          "ID": "7fc5eefd-517a-55ab-a113-7c99d816fc8e",
+          "home": "SLGR",
+          "away": "POSA",
+          "seed": 5340840455795967489
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "games": [
+        {
+          "ID": "3b35f95a-aa9c-57e8-a086-07718923d262",
+          "home": "MAKR",
+          "away": "VAPE",
+          "seed": 2239521194092287813
+        },
+        {
+          "ID": "ca3bdb1e-8871-5c98-928b-063df93cc2e6",
+          "home": "ENSL",
+          "away": "PRKV",
+          "seed": 4954118057615752427
+        },
+        {
+          "ID": "d55ea369-6b0f-53e5-af4b-6d4220779b27",
+          "home": "RALO",
+          "away": "PADR",
+          "seed": 2126539747596755189
+        },
+        {
+          "ID": "352422dd-f0f5-5b01-b27a-43b01fc4d026",
+          "home": "RAPO",
+          "away": "VORU",
+          "seed": 792717399405469842
+        },
+        {
+          "ID": "e2b5a6ba-9d94-531f-a7e4-4244ef237f37",
+          "home": "BOKR",
+          "away": "TRIS",
+          "seed": 2317932701127779362
+        },
+        {
+          "ID": "bdfe571c-a3ad-5d1d-a82c-ccd50361c78b",
+          "home": "ZOHA",
+          "away": "DIVE",
+          "seed": 4060612888315493021
+        },
+        {
+          "ID": "932a1750-b5ad-5ddc-ae4a-10a90745f604",
+          "home": "CSVE",
+          "away": "SLGR",
+          "seed": 3741759721584694275
+        },
+        {
+          "ID": "0f7cca72-95e1-500a-9921-5d7315dd2976",
+          "home": "CHVA",
+          "away": "POSA",
+          "seed": 4075366242923614116
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "games": [
+        {
+          "ID": "fd539d16-3fdf-5e6e-8097-298dbc2a45d5",
+          "home": "VAPE",
+          "away": "PRKV",
+          "seed": 4157455814425049419
+        },
+        {
+          "ID": "6956f0d4-8927-5cd2-ba5c-491e7cf75c94",
+          "home": "PADR",
+          "away": "MAKR",
+          "seed": 4974792750937578254
+        },
+        {
+          "ID": "7d84fa82-432e-53ad-a770-221a0ed2daca",
+          "home": "VORU",
+          "away": "ENSL",
+          "seed": 4199667489771347643
+        },
+        {
+          "ID": "051df5f0-78e3-58be-8034-f67e6b0bf58f",
+          "home": "TRIS",
+          "away": "RALO",
+          "seed": 2871847565975856405
+        },
+        {
+          "ID": "18985280-934d-5b12-bf03-e7e953e2b829",
+          "home": "DIVE",
+          "away": "RAPO",
+          "seed": 8519942787256517092
+        },
+        {
+          "ID": "32e3ddae-efc1-57cf-8416-6378347d1be6",
+          "home": "SLGR",
+          "away": "BOKR",
+          "seed": 2431138909704321814
+        },
+        {
+          "ID": "ae6d3aa0-e377-5392-a523-fd575cde811b",
+          "home": "POSA",
+          "away": "ZOHA",
+          "seed": 6233201134279711913
+        },
+        {
+          "ID": "1e4a17f5-f986-590f-9507-61612a42782c",
+          "home": "CHVA",
+          "away": "CSVE",
+          "seed": 463353141026297710
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "games": [
+        {
+          "ID": "c6894e66-13d1-548d-9989-268bbd8e54e7",
+          "home": "PADR",
+          "away": "VAPE",
+          "seed": 3877897971417258729
+        },
+        {
+          "ID": "0243c12d-d8a4-5cb7-9504-34d5c2cf14a7",
+          "home": "PRKV",
+          "away": "VORU",
+          "seed": 2266119882807866882
+        },
+        {
+          "ID": "b8274294-542c-55bc-9d2f-3bb8d11d165c",
+          "home": "MAKR",
+          "away": "TRIS",
+          "seed": 3780510663400922258
+        },
+        {
+          "ID": "91eacb71-fce5-51ff-be38-94045cbdbfa9",
+          "home": "ENSL",
+          "away": "DIVE",
+          "seed": 6737340059140098964
+        },
+        {
+          "ID": "ab237d22-cdfd-579d-9382-14e69851939e",
+          "home": "RALO",
+          "away": "SLGR",
+          "seed": 8455600568450446137
+        },
+        {
+          "ID": "66b46a81-ef22-5685-95d8-fb568dc83835",
+          "home": "RAPO",
+          "away": "POSA",
+          "seed": 8616082943344184278
+        },
+        {
+          "ID": "877d5f71-07c9-5569-8dc7-1f51d3c95f17",
+          "home": "BOKR",
+          "away": "CHVA",
+          "seed": 2948614505001207243
+        },
+        {
+          "ID": "4fa59e7b-09a4-573c-8766-722784c6d9b9",
+          "home": "ZOHA",
+          "away": "CSVE",
+          "seed": 5063437973090164158
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "games": [
+        {
+          "ID": "c7ffcd7e-dedb-5506-a274-1d5e53f06e6f",
+          "home": "VAPE",
+          "away": "VORU",
+          "seed": 7583530912936158724
+        },
+        {
+          "ID": "c6944079-9f1e-5a92-9d2f-569017cf1711",
+          "home": "TRIS",
+          "away": "PADR",
+          "seed": 8564495360505501812
+        },
+        {
+          "ID": "9a1761bc-1474-50c2-ba85-935c38f358df",
+          "home": "DIVE",
+          "away": "PRKV",
+          "seed": 5275842993444067479
+        },
+        {
+          "ID": "07db4561-df1d-5aa2-ad73-c674313f4b90",
+          "home": "SLGR",
+          "away": "MAKR",
+          "seed": 17955256429461405
+        },
+        {
+          "ID": "7564e81f-8168-5c07-8f14-86372db879d0",
+          "home": "POSA",
+          "away": "ENSL",
+          "seed": 4114032216158931241
+        },
+        {
+          "ID": "80322fbd-0d16-5426-8da3-124da8e62da9",
+          "home": "CHVA",
+          "away": "RALO",
+          "seed": 3302979617015455430
+        },
+        {
+          "ID": "3d545ed3-c7ff-54ac-84ad-7efbd90c1cf6",
+          "home": "CSVE",
+          "away": "RAPO",
+          "seed": 8096009133804862294
+        },
+        {
+          "ID": "00607b52-b8af-568e-812e-9b43e177e174",
+          "home": "ZOHA",
+          "away": "BOKR",
+          "seed": 6978891225119030092
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "games": [
+        {
+          "ID": "26a10271-0835-59e6-9b55-8ef5865cdf6b",
+          "home": "TRIS",
+          "away": "VAPE",
+          "seed": 7794005039329986888
+        },
+        {
+          "ID": "ce9a2352-eaa0-59e6-9570-e7c52ca75083",
+          "home": "VORU",
+          "away": "DIVE",
+          "seed": 285797153507490762
+        },
+        {
+          "ID": "0170e5a5-4884-5268-89e9-a95010163cc0",
+          "home": "PADR",
+          "away": "SLGR",
+          "seed": 3291776502959386221
+        },
+        {
+          "ID": "8c57ba60-613d-5906-9836-5b65da1d4c97",
+          "home": "PRKV",
+          "away": "POSA",
+          "seed": 3809495375642547096
+        },
+        {
+          "ID": "e71384ff-9a33-5fc7-b639-a37c1300f54b",
+          "home": "MAKR",
+          "away": "CHVA",
+          "seed": 4822104486656441898
+        },
+        {
+          "ID": "9c500cc0-f21c-519e-8451-a58dc5597ca5",
+          "home": "ENSL",
+          "away": "CSVE",
+          "seed": 1378168235814366355
+        },
+        {
+          "ID": "654b6fd3-5240-5ba1-ac5d-64f7b1172b47",
+          "home": "RALO",
+          "away": "ZOHA",
+          "seed": 7562512692417251312
+        },
+        {
+          "ID": "fc1441e9-003c-5652-afef-0de488fb2c6e",
+          "home": "RAPO",
+          "away": "BOKR",
+          "seed": 7824765702137091776
+        }
+      ]
+    }
+  ]
+}
