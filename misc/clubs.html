@@ -1,0 +1,4730 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Football Clubs</title>
+
+<!-- Modern font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  padding: 2em;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* grid layout for 4 columns */
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5em;
+  max-width: 1000px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+/* each club "card" */
+.club-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.club-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* circular crest */
+.club-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background: var(--bg);
+  box-shadow: 0 0 4px rgba(0,0,0,0.15);
+  margin-bottom: 0.6em;
+}
+
+.club-elo {
+  font-size: 0.8em;
+}
+</style>
+</head>
+<body>
+
+<h1>Suciet&agrave; da F&ugrave;bal</h1>
+
+
+<h2>S&eacute;rie A</h2>
+
+<ul class="club-grid">
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-1" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#6A1B9A" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-1)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#6A1B9A" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">CSKA Broven</div>
+    <div class="club-elo">[1756]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-2" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#000000" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-2)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Dynamo Kalenov</div>
+    <div class="club-elo">[1781]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-3" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#000000" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-3)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Dynamo Tvarin</div>
+    <div class="club-elo">[1805]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-4" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#2AA6E0" />
+          <stop offset="55%" stop-color="#2AA6E0" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#2AA6E0" />
+          <stop offset="100%" stop-color="#2AA6E0" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-4)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Energetik Tavros</div>
+    <div class="club-elo">[1902]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-5" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#2AA6E0" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-5)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Karpaty Drusk</div>
+    <div class="club-elo">[1870]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-6" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#B22222" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-6)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B22222" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Lokomotiv Ornash</div>
+    <div class="club-elo">[1537]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-7" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#0077C2" />
+          <stop offset="55%" stop-color="#0077C2" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#0077C2" />
+          <stop offset="100%" stop-color="#0077C2" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-7)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0077C2" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Metalist Norvak</div>
+    <div class="club-elo">[1694]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-8" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#6A1B9A" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-8)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#6A1B9A" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Partizan Molgor</div>
+    <div class="club-elo">[1631]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-9" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#0066CC" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-9)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0066CC" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rubin Drezha</div>
+    <div class="club-elo">[1885]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-10" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#007A3D" />
+          <rect x="0" y="30" width="100" height="70" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-10)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#007A3D" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Severna Kralov</div>
+    <div class="club-elo">[1842]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-11" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#000000" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="100%" stop-color="#000000" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-11)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slavia Narsk</div>
+    <div class="club-elo">[1741]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-12" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#2AA6E0" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-12)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloga Drunov</div>
+    <div class="club-elo">[1686]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-13" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#2AA6E0" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-13)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloga Pradven</div>
+    <div class="club-elo">[1655]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-14" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#FF77A8" />
+          <rect x="20" y="0" width="20" height="100" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-14)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FF77A8" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Spartak Nardev</div>
+    <div class="club-elo">[1574]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-15" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#B90000" />
+          <stop offset="55%" stop-color="#B90000" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#B90000" />
+          <stop offset="100%" stop-color="#B90000" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-15)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B90000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Spartak Velgorod</div>
+    <div class="club-elo">[1593]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="bologna-16" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#006400" />
+          <rect x="20" y="0" width="30" height="100" fill="#FFFFFF" />
+          <rect x="50" y="0" width="30" height="100" fill="#006400" />
+          <rect x="80" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#bologna-16)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#006400" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Torpedo Drasnik</div>
+    <div class="club-elo">[1920]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-17" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#FFD700" />
+          <rect x="20" y="0" width="20" height="100" fill="#00008B" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-17)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#00008B" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Vardar Kravena</div>
+    <div class="club-elo">[1611]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-18" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#000000" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFFFFF" />
+          <rect x="0" y="60" width="100" height="40" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-18)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Vojvodina Dralov</div>
+    <div class="club-elo">[1712]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-19" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#C8102E" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-19)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Zorya Blenik</div>
+    <div class="club-elo">[1817]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-20" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#C8102E" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFFFFF" />
+          <rect x="0" y="60" width="100" height="40" fill="#C8102E" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-20)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Zorya Blornik</div>
+    <div class="club-elo">[1559]</div>
+  </li>
+  
+</ul>
+
+<!-- <ul class="club-grid">
+  
+  <li class="club-item" style="--bg: conic-gradient(#6A1B9A 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">CSKA Broven</div>
+    <div class="club-elo">[1756]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Dynamo Kalenov</div>
+    <div class="club-elo">[1781]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Dynamo Tvarin</div>
+    <div class="club-elo">[1805]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Energetik Tavros</div>
+    <div class="club-elo">[1902]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Karpaty Drusk</div>
+    <div class="club-elo">[1870]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B22222 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Lokomotiv Ornash</div>
+    <div class="club-elo">[1537]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0077C2 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Metalist Norvak</div>
+    <div class="club-elo">[1694]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#6A1B9A 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Partizan Molgor</div>
+    <div class="club-elo">[1631]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0066CC 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rubin Drezha</div>
+    <div class="club-elo">[1885]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#007A3D 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Severna Kralov</div>
+    <div class="club-elo">[1842]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slavia Narsk</div>
+    <div class="club-elo">[1741]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloga Drunov</div>
+    <div class="club-elo">[1686]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloga Pradven</div>
+    <div class="club-elo">[1655]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FF77A8 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Spartak Nardev</div>
+    <div class="club-elo">[1574]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B90000 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Spartak Velgorod</div>
+    <div class="club-elo">[1593]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#006400 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Torpedo Drasnik</div>
+    <div class="club-elo">[1920]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #00008B 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Vardar Kravena</div>
+    <div class="club-elo">[1611]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Vojvodina Dralov</div>
+    <div class="club-elo">[1712]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Zorya Blenik</div>
+    <div class="club-elo">[1817]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Zorya Blornik</div>
+    <div class="club-elo">[1559]</div>
+  </li>
+  
+</ul> -->
+
+<h2>S&eacute;rie BA</h2>
+
+<ul class="club-grid">
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-1" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#0066CC" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-1)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0066CC" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Botev Trusna</div>
+    <div class="club-elo">[1548]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-2" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#0066CC" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-2)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0066CC" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Dynamo Bresnar</div>
+    <div class="club-elo">[1374]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-3" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#B6E3FF" />
+          <stop offset="55%" stop-color="#B6E3FF" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#B6E3FF" />
+          <stop offset="100%" stop-color="#B6E3FF" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-3)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B6E3FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Lokomotiv Krusha</div>
+    <div class="club-elo">[1258]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-4" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#0B3B5F" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-4)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0B3B5F" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Metalist Dorvak</div>
+    <div class="club-elo">[1602]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-5" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#000000" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-5)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Metalurg Praven</div>
+    <div class="club-elo">[1578]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-6" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#FFD700" />
+          <rect x="0" y="20" width="100" height="20" fill="#003399" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-6)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003399" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Partizan Velgrad</div>
+    <div class="club-elo">[1353]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-7" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#FFFFFF" />
+          <rect x="50" y="0" width="50" height="100" fill="#FF0000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-7)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FF0000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Polonia Mirkov</div>
+    <div class="club-elo">[1326]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-8" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#2AA6E0" />
+          <rect x="0" y="30" width="100" height="70" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-8)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Radnički Drosmar</div>
+    <div class="club-elo">[1528]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-9" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#000000" />
+          <rect x="0" y="30" width="100" height="70" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-9)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slavia Korvenik</div>
+    <div class="club-elo">[1232]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-10" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#C8102E" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFFFFF" />
+          <rect x="0" y="60" width="100" height="40" fill="#C8102E" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-10)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slavia Tresnik</div>
+    <div class="club-elo">[1467]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-11" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#B6E3FF" />
+          <stop offset="55%" stop-color="#B6E3FF" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#B6E3FF" />
+          <stop offset="100%" stop-color="#B6E3FF" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-11)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B6E3FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloga Tavrin</div>
+    <div class="club-elo">[1402]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-12" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#1E90FF" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-12)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#1E90FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Spartak Trevon</div>
+    <div class="club-elo">[1498]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-13" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#FFD700" />
+          <rect x="25" y="0" width="50" height="100" fill="#1E90FF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-13)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#1E90FF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Torpedo Marnik</div>
+    <div class="club-elo">[1276]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-14" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#FFFFFF" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="100%" stop-color="#FFFFFF" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-14)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Vardar Kolven</div>
+    <div class="club-elo">[1424]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-15" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#C8102E" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-15)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Vardar Molgrad</div>
+    <div class="club-elo">[1453]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-16" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#000000" />
+          <rect x="20" y="0" width="20" height="100" fill="#003399" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-16)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003399" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Volga Pradnik</div>
+    <div class="club-elo">[1305]</div>
+  </li>
+  
+</ul>
+
+<!-- <ul class="club-grid">
+  
+  <li class="club-item" style="--bg: conic-gradient(#0066CC 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Botev Trusna</div>
+    <div class="club-elo">[1548]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0066CC 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Dynamo Bresnar</div>
+    <div class="club-elo">[1374]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B6E3FF 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Lokomotiv Krusha</div>
+    <div class="club-elo">[1258]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0B3B5F 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Metalist Dorvak</div>
+    <div class="club-elo">[1602]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Metalurg Praven</div>
+    <div class="club-elo">[1578]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #003399 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Partizan Velgrad</div>
+    <div class="club-elo">[1353]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFFFFF 0deg 180deg, #FF0000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Polonia Mirkov</div>
+    <div class="club-elo">[1326]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Radnički Drosmar</div>
+    <div class="club-elo">[1528]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slavia Korvenik</div>
+    <div class="club-elo">[1232]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slavia Tresnik</div>
+    <div class="club-elo">[1467]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B6E3FF 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloga Tavrin</div>
+    <div class="club-elo">[1402]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#1E90FF 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Spartak Trevon</div>
+    <div class="club-elo">[1498]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #1E90FF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Torpedo Marnik</div>
+    <div class="club-elo">[1276]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFFFFF 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Vardar Kolven</div>
+    <div class="club-elo">[1424]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Vardar Molgrad</div>
+    <div class="club-elo">[1453]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #003399 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Volga Pradnik</div>
+    <div class="club-elo">[1305]</div>
+  </li>
+  
+</ul> -->
+
+<h2>S&eacute;rie BB</h2>
+
+<ul class="club-grid">
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-1" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#FFD700" />
+          <rect x="0" y="20" width="100" height="20" fill="#003399" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-1)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003399" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Arda Lysvek</div>
+    <div class="club-elo">[1498]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-2" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#0077C2" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-2)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0077C2" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">CSKA Brezhin</div>
+    <div class="club-elo">[1470]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-3" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#007A3D" />
+          <rect x="20" y="0" width="20" height="100" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-3)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#007A3D" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">CSKA Dornov</div>
+    <div class="club-elo">[1332]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-4" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#000000" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="55%" stop-color="#0077C2" />
+          <stop offset="90%" stop-color="#0077C2" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="100%" stop-color="#000000" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-4)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0077C2" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Hajduk Krezna</div>
+    <div class="club-elo">[1424]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-5" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#8B0000" />
+          <rect x="20" y="0" width="20" height="100" fill="#003366" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-5)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#8B0000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003366" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Karpaty Norvash</div>
+    <div class="club-elo">[1283]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-6" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#A51C30" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-6)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#A51C30" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Karpaty Valenik</div>
+    <div class="club-elo">[1224]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-7" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#33A1DE" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-7)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#33A1DE" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Karpaty Vornes</div>
+    <div class="club-elo">[1565]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-8" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#B90000" />
+          <stop offset="55%" stop-color="#B90000" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#B90000" />
+          <stop offset="100%" stop-color="#B90000" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-8)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B90000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Lokomotiv Dravik</div>
+    <div class="club-elo">[1344]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-9" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#000000" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-9)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Obolon Krevik</div>
+    <div class="club-elo">[1306]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-10" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#FFFFFF" />
+          <rect x="25" y="0" width="50" height="100" fill="#FF0000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-10)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FF0000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rubin Kovnar</div>
+    <div class="club-elo">[1378]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-11" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#C8102E" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-11)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rudar Zelenik</div>
+    <div class="club-elo">[1530]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-12" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#8B0000" />
+          <rect x="50" y="0" width="50" height="100" fill="#003366" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-12)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#8B0000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003366" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slovan Brevik</div>
+    <div class="club-elo">[1548]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-13" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#C8102E" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-13)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Spartak Traven</div>
+    <div class="club-elo">[1396]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-14" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#FFFFFF" />
+          <rect x="0" y="30" width="100" height="70" fill="#FF0000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-14)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FF0000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Tatran Bredov</div>
+    <div class="club-elo">[1258]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-15" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#800000" />
+          <rect x="0" y="30" width="100" height="70" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-15)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#800000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Torpedo Blazna</div>
+    <div class="club-elo">[1456]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-16" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#1E90FF" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-16)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#1E90FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Volga Kravich</div>
+    <div class="club-elo">[1590]</div>
+  </li>
+  
+</ul>
+
+<!-- <ul class="club-grid">
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #003399 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Arda Lysvek</div>
+    <div class="club-elo">[1498]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0077C2 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">CSKA Brezhin</div>
+    <div class="club-elo">[1470]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#007A3D 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">CSKA Dornov</div>
+    <div class="club-elo">[1332]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #0077C2 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Hajduk Krezna</div>
+    <div class="club-elo">[1424]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#8B0000 0deg 180deg, #003366 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Karpaty Norvash</div>
+    <div class="club-elo">[1283]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#A51C30 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Karpaty Valenik</div>
+    <div class="club-elo">[1224]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#33A1DE 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Karpaty Vornes</div>
+    <div class="club-elo">[1565]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B90000 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Lokomotiv Dravik</div>
+    <div class="club-elo">[1344]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Obolon Krevik</div>
+    <div class="club-elo">[1306]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFFFFF 0deg 180deg, #FF0000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rubin Kovnar</div>
+    <div class="club-elo">[1378]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rudar Zelenik</div>
+    <div class="club-elo">[1530]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#8B0000 0deg 180deg, #003366 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slovan Brevik</div>
+    <div class="club-elo">[1548]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Spartak Traven</div>
+    <div class="club-elo">[1396]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFFFFF 0deg 180deg, #FF0000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Tatran Bredov</div>
+    <div class="club-elo">[1258]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#800000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Torpedo Blazna</div>
+    <div class="club-elo">[1456]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#1E90FF 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Volga Kravich</div>
+    <div class="club-elo">[1590]</div>
+  </li>
+  
+</ul> -->
+
+<h2>S&eacute;rie CA</h2>
+
+<ul class="club-grid">
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-1" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#2AA6E0" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFFFFF" />
+          <rect x="0" y="60" width="100" height="40" fill="#2AA6E0" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-1)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Cherno More Dreznik</div>
+    <div class="club-elo">[1126]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-2" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#2AA6E0" />
+          <stop offset="55%" stop-color="#2AA6E0" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#2AA6E0" />
+          <stop offset="100%" stop-color="#2AA6E0" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-2)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Dynamo Zelgor</div>
+    <div class="club-elo">[1221]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-3" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#C8102E" />
+          <stop offset="55%" stop-color="#C8102E" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#C8102E" />
+          <stop offset="100%" stop-color="#C8102E" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-3)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Hajduk Straven</div>
+    <div class="club-elo">[1243]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-4" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#A51C30" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-4)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#A51C30" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Metalurg Varnov</div>
+    <div class="club-elo">[1160]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-5" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#FFD700" />
+          <rect x="25" y="0" width="50" height="100" fill="#B22222" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-5)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B22222" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Mladost Ornar</div>
+    <div class="club-elo">[1259]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-6" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#0066CC" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-6)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0066CC" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Obolon Karvich</div>
+    <div class="club-elo">[1109]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-7" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#2AA6E0" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-7)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Partizan Trevna</div>
+    <div class="club-elo">[1173]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-8" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#B22222" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-8)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B22222" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rudar Zelgrad</div>
+    <div class="club-elo">[1190]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-9" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#FF6A00" />
+          <stop offset="55%" stop-color="#FF6A00" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="90%" stop-color="#FF6A00" />
+          <stop offset="100%" stop-color="#FF6A00" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-9)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FF6A00" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slavia Branik</div>
+    <div class="club-elo">[1210]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-10" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#FFD700" />
+          <rect x="0" y="20" width="100" height="20" fill="#1E90FF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-10)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#1E90FF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slavia Norven</div>
+    <div class="club-elo">[1071]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-11" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#007A3D" />
+          <rect x="20" y="0" width="20" height="100" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-11)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#007A3D" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloboda Orshen</div>
+    <div class="club-elo">[1136]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-12" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#FFD700" />
+          <rect x="0" y="25" width="100" height="35" fill="#00008B" />
+          <rect x="0" y="60" width="100" height="40" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-12)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#00008B" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slovan Greven</div>
+    <div class="club-elo">[1053]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-13" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#FFD700" />
+          <rect x="0" y="25" width="100" height="35" fill="#003399" />
+          <rect x="0" y="60" width="100" height="40" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-13)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003399" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Spartak Dornik</div>
+    <div class="club-elo">[1095]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-14" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#C8102E" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-14)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Spartak Krelov</div>
+    <div class="club-elo">[1026]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-15" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#C8102E" />
+          <stop offset="55%" stop-color="#C8102E" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#C8102E" />
+          <stop offset="100%" stop-color="#C8102E" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-15)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Torpedo Dovnar</div>
+    <div class="club-elo">[1273]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-16" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#000000" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-16)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Zaglebie Vorna</div>
+    <div class="club-elo">[1039]</div>
+  </li>
+  
+</ul>
+
+<!-- <ul class="club-grid">
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Cherno More Dreznik</div>
+    <div class="club-elo">[1126]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Dynamo Zelgor</div>
+    <div class="club-elo">[1221]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Hajduk Straven</div>
+    <div class="club-elo">[1243]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#A51C30 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Metalurg Varnov</div>
+    <div class="club-elo">[1160]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #B22222 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Mladost Ornar</div>
+    <div class="club-elo">[1259]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0066CC 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Obolon Karvich</div>
+    <div class="club-elo">[1109]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Partizan Trevna</div>
+    <div class="club-elo">[1173]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B22222 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rudar Zelgrad</div>
+    <div class="club-elo">[1190]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FF6A00 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slavia Branik</div>
+    <div class="club-elo">[1210]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #1E90FF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slavia Norven</div>
+    <div class="club-elo">[1071]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#007A3D 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloboda Orshen</div>
+    <div class="club-elo">[1136]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #00008B 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slovan Greven</div>
+    <div class="club-elo">[1053]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #003399 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Spartak Dornik</div>
+    <div class="club-elo">[1095]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Spartak Krelov</div>
+    <div class="club-elo">[1026]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Torpedo Dovnar</div>
+    <div class="club-elo">[1273]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Zaglebie Vorna</div>
+    <div class="club-elo">[1039]</div>
+  </li>
+  
+</ul> -->
+
+<h2>S&eacute;rie CB</h2>
+
+<ul class="club-grid">
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-1" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#000000" />
+          <rect x="0" y="20" width="100" height="20" fill="#0077C2" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-1)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0077C2" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Dynamo Lornik</div>
+    <div class="club-elo">[1087]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-2" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#FFD700" />
+          <rect x="0" y="25" width="100" height="35" fill="#003399" />
+          <rect x="0" y="60" width="100" height="40" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-2)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003399" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Górnik Dovran</div>
+    <div class="club-elo">[1211]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-3" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#C8102E" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-3)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Hajduk Vrasna</div>
+    <div class="club-elo">[1137]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-4" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#0B2D63" />
+          <rect x="0" y="30" width="100" height="70" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-4)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0B2D63" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Partizan Drezal</div>
+    <div class="club-elo">[1057]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-5" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#B22222" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-5)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B22222" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Partizan Korvik</div>
+    <div class="club-elo">[1261]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-6" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#C8102E" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-6)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#C8102E" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Radnički Malgor</div>
+    <div class="club-elo">[1069]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-7" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#2AA6E0" />
+          <rect x="0" y="30" width="100" height="70" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-7)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rotor Belvik</div>
+    <div class="club-elo">[1240]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-8" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#0077C2" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-8)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0077C2" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rotor Kalven</div>
+    <div class="club-elo">[1223]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-9" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#6A1B9A" />
+          <rect x="0" y="30" width="100" height="70" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-9)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#6A1B9A" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Ruch Kroslav</div>
+    <div class="club-elo">[1104]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-10" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#6A1B9A" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-10)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#6A1B9A" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Slavia Mornav</div>
+    <div class="club-elo">[1153]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-11" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#000000" />
+          <rect x="0" y="20" width="100" height="20" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-11)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloga Dornesk</div>
+    <div class="club-elo">[1193]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-12" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#FFFFFF" />
+          <rect x="0" y="20" width="100" height="20" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-12)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Tatran Orlovec</div>
+    <div class="club-elo">[1020]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="celtic-13" width="100" height="40" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="20" fill="#8B0000" />
+          <rect x="0" y="20" width="100" height="20" fill="#003366" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#celtic-13)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#8B0000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003366" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Tatran Zelvik</div>
+    <div class="club-elo">[1274]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-14" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#FFD700" />
+          <rect x="50" y="0" width="50" height="100" fill="#B22222" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-14)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B22222" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Torpedo Ruznar</div>
+    <div class="club-elo">[1034]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-15" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#6A1B9A" />
+          <rect x="50" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-15)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#6A1B9A" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Volga Orsden</div>
+    <div class="club-elo">[1120]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-16" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#000000" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-16)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Zorya Mirgrad</div>
+    <div class="club-elo">[1175]</div>
+  </li>
+  
+</ul>
+
+<!-- <ul class="club-grid">
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #0077C2 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Dynamo Lornik</div>
+    <div class="club-elo">[1087]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #003399 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Górnik Dovran</div>
+    <div class="club-elo">[1211]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Hajduk Vrasna</div>
+    <div class="club-elo">[1137]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0B2D63 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Partizan Drezal</div>
+    <div class="club-elo">[1057]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B22222 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Partizan Korvik</div>
+    <div class="club-elo">[1261]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#C8102E 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Radnički Malgor</div>
+    <div class="club-elo">[1069]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rotor Belvik</div>
+    <div class="club-elo">[1240]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0077C2 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rotor Kalven</div>
+    <div class="club-elo">[1223]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#6A1B9A 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Ruch Kroslav</div>
+    <div class="club-elo">[1104]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#6A1B9A 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Slavia Mornav</div>
+    <div class="club-elo">[1153]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloga Dornesk</div>
+    <div class="club-elo">[1193]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFFFFF 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Tatran Orlovec</div>
+    <div class="club-elo">[1020]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#8B0000 0deg 180deg, #003366 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Tatran Zelvik</div>
+    <div class="club-elo">[1274]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#FFD700 0deg 180deg, #B22222 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Torpedo Ruznar</div>
+    <div class="club-elo">[1034]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#6A1B9A 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Volga Orsden</div>
+    <div class="club-elo">[1120]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Zorya Mirgrad</div>
+    <div class="club-elo">[1175]</div>
+  </li>
+  
+</ul> -->
+
+<h2>S&eacute;rie CC</h2>
+
+<ul class="club-grid">
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-1" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#007A3D" />
+          <rect x="0" y="25" width="100" height="35" fill="#000000" />
+          <rect x="0" y="60" width="100" height="40" fill="#007A3D" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-1)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#007A3D" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">CSKA Marnov</div>
+    <div class="club-elo">[1102]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="top-2" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="30" fill="#0066CC" />
+          <rect x="0" y="30" width="100" height="70" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#top-2)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0066CC" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Dynamo Dalvik</div>
+    <div class="club-elo">[1196]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-3" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#000000" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFFFFF" />
+          <rect x="0" y="60" width="100" height="40" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-3)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Energetik Narven</div>
+    <div class="club-elo">[1088]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-4" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#1E90FF" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFD700" />
+          <rect x="0" y="60" width="100" height="40" fill="#1E90FF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-4)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#1E90FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Lokomotiv Brezna</div>
+    <div class="club-elo">[1144]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-5" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#B6E3FF" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-5)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B6E3FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Lokomotiv Draskar</div>
+    <div class="club-elo">[1072]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-6" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#8B0000" />
+          <rect x="20" y="0" width="20" height="100" fill="#003366" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-6)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#8B0000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#003366" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Lokomotiv Varlen</div>
+    <div class="club-elo">[1021]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="genoa-7" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="50" height="100" fill="#B90000" />
+          <rect x="50" y="0" width="50" height="100" fill="#000000" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#genoa-7)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B90000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Metalist Tavrin</div>
+    <div class="club-elo">[1180]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-8" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#6A1B9A" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-8)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#6A1B9A" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Olimpija Tarnovik</div>
+    <div class="club-elo">[1056]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-9" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#B6E3FF" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-9)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B6E3FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Partizan Zelgor</div>
+    <div class="club-elo">[1242]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="boca-10" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="100" height="25" fill="#2AA6E0" />
+          <rect x="0" y="25" width="100" height="35" fill="#FFFFFF" />
+          <rect x="0" y="60" width="100" height="40" fill="#2AA6E0" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#boca-10)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#2AA6E0" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Radnički Zelven</div>
+    <div class="club-elo">[1154]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-11" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#B6E3FF" />
+          <stop offset="55%" stop-color="#B6E3FF" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#B6E3FF" />
+          <stop offset="100%" stop-color="#B6E3FF" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-11)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B6E3FF" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rudar Treznik</div>
+    <div class="club-elo">[1274]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-12" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#800000" />
+          <stop offset="55%" stop-color="#800000" />
+          <stop offset="55%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#FFFFFF" />
+          <stop offset="90%" stop-color="#800000" />
+          <stop offset="100%" stop-color="#800000" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-12)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#800000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Rudar Velmar</div>
+    <div class="club-elo">[1121]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="river-13" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#000000" />
+          <stop offset="55%" stop-color="#000000" />
+          <stop offset="55%" stop-color="#0077C2" />
+          <stop offset="90%" stop-color="#0077C2" />
+          <stop offset="90%" stop-color="#000000" />
+          <stop offset="100%" stop-color="#000000" />
+        </linearGradient>
+      </defs>
+
+      <circle cx="50" cy="50" r="48" fill="url(#river-13)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#000000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#0077C2" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloboda Kriven</div>
+    <div class="club-elo">[1227]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="juve-14" width="40" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="100" fill="#8B0000" />
+          <rect x="20" y="0" width="20" height="100" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#juve-14)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#8B0000" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Sloga Durven</div>
+    <div class="club-elo">[1037]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-15" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#B22222" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFFFFF" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-15)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#B22222" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFFFFF" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Tatran Drunov</div>
+    <div class="club-elo">[1212]</div>
+  </li>
+  
+  <li class="club-item">
+    
+    
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="ajax-16" width="75" height="100" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="25" height="100" fill="#A51C30" />
+          <rect x="25" y="0" width="50" height="100" fill="#FFD700" />
+        </pattern>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#ajax-16)" stroke="#333" stroke-width="2" />
+    </svg>
+    
+    <!-- <svg width="70" height="70" viewBox="0 0 100 100">
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#A51C30" clip-path="url(#leftHalf)" />
+
+      <path d="M50,50 m0,-50
+              a50,50 0 1,0 0,100
+              a50,50 0 1,0 0,-100"
+            fill="#FFD700" clip-path="url(#rightHalf)" />
+
+      <defs>
+        <clipPath id="leftHalf">
+          <rect x="0" y="0" width="50" height="100" />
+        </clipPath>
+        <clipPath id="rightHalf">
+          <rect x="50" y="0" width="50" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="50" cy="50" r="49" fill="none" stroke="#333" stroke-width="2" />
+    </svg> -->
+    <div class="club-name">Volga Mirvos</div>
+    <div class="club-elo">[1262]</div>
+  </li>
+  
+</ul>
+
+<!-- <ul class="club-grid">
+  
+  <li class="club-item" style="--bg: conic-gradient(#007A3D 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">CSKA Marnov</div>
+    <div class="club-elo">[1102]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#0066CC 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Dynamo Dalvik</div>
+    <div class="club-elo">[1196]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Energetik Narven</div>
+    <div class="club-elo">[1088]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#1E90FF 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Lokomotiv Brezna</div>
+    <div class="club-elo">[1144]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B6E3FF 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Lokomotiv Draskar</div>
+    <div class="club-elo">[1072]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#8B0000 0deg 180deg, #003366 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Lokomotiv Varlen</div>
+    <div class="club-elo">[1021]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B90000 0deg 180deg, #000000 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Metalist Tavrin</div>
+    <div class="club-elo">[1180]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#6A1B9A 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Olimpija Tarnovik</div>
+    <div class="club-elo">[1056]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B6E3FF 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Partizan Zelgor</div>
+    <div class="club-elo">[1242]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#2AA6E0 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Radnički Zelven</div>
+    <div class="club-elo">[1154]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B6E3FF 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rudar Treznik</div>
+    <div class="club-elo">[1274]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#800000 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Rudar Velmar</div>
+    <div class="club-elo">[1121]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#000000 0deg 180deg, #0077C2 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloboda Kriven</div>
+    <div class="club-elo">[1227]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#8B0000 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Sloga Durven</div>
+    <div class="club-elo">[1037]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#B22222 0deg 180deg, #FFFFFF 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Tatran Drunov</div>
+    <div class="club-elo">[1212]</div>
+  </li>
+  
+  <li class="club-item" style="--bg: conic-gradient(#A51C30 0deg 180deg, #FFD700 180deg 360deg);">
+    <div class="club-circle"></div>
+    <div class="club-name">Volga Mirvos</div>
+    <div class="club-elo">[1262]</div>
+  </li>
+  
+</ul> -->
+
+
+</body>
+</html>

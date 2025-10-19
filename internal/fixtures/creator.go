@@ -1,11 +1,8 @@
 package fixtures
 
 import (
-	"encoding/json"
 	"fmt"
 	"math/rand"
-	"os"
-	"path/filepath"
 	"time"
 
 	"github.com/google/uuid"
@@ -32,16 +29,7 @@ func Create(rootDir, league string, season int) error {
 		return err
 	}
 
-	fh, err := os.Create(filepath.Join(rootDir, "data", "fixtures.json"))
-	if err != nil {
-		return err
-	}
-	defer fh.Close()
-
-	b, _ := json.MarshalIndent(calendar, "", "  ")
-	fh.Write(b)
-
-	return nil
+	return database.SaveFixtrues(rootDir, calendar)
 }
 
 func createFixtures(league string, season int, teams []internal.Club) (internal.Fixtures, error) {

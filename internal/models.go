@@ -89,7 +89,6 @@ type TeamsheetPlayer struct {
 type ClubColors struct {
 	Primary   string `json:"primary"`
 	Secondary string `jsson:"secondary"`
-	Accent    string `json:"accent"`
 }
 
 type Club struct {
